@@ -1,0 +1,11 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel" >
+	<div class="carousel-inner">
+		<#list images_list as image >
+		<div class="<#if image_index == 0>active </#if>item">
+			<img src="document?id=${image.id}" alt="" title=""/>
+		</div>
+		</#list>
+	</div>
+	<a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+	<a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>

@@ -1,0 +1,27 @@
+<#if user_email??>
+	<div class="row bg-color1 alert-container">
+		<div class="col-xs-12 col-sm-12">
+		<form role="form" action="#" id="form-alert">
+		  <input type="hidden" name="token" value="${token}" id="token-form-alert">
+		  <div class="form-group">
+				<label for="email" class="content-type1">#i18n{parisconnect.alerteInclude.description}</label>
+		  </div>
+		  <div class="form-group">
+				<button class="btn btn-block btn-include btn-submit"  type="submit" data-loading-text="#i18n{parisconnect.alerteInclude.btnSubmitLoading}">#i18n{parisconnect.alerteInclude.btnSubmit}</button>
+				<span class="messages_infos_div_text"></span>
+				<span class="messages_errors_div_text"></span>
+		  </div>
+		</form>
+		<p class="alert-bottom-text">
+			<a href="https://connect.paris.fr" target="_blank" title="#i18n{parisconnect.alerteInclude.linkManageParisConnectTitle}">
+				#i18n{parisconnect.alerteInclude.linkManageParisConnect}
+			</a>
+		</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$( function(){
+			addControlOnFormAlert();
+		});
+	</script>
+</#if>

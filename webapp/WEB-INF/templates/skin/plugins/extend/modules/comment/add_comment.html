@@ -1,0 +1,148 @@
+<#--
+-- Get the email from a given MyLuteceUser.
+-- It returns the "user.home-info.online.email" information.
+-- If there are no information, then it returns the information "user.business-info.online.email".
+-- @param myLuteceUser the MyLuteceUser
+-- @return the email
+-->
+<#function getEmail myLuteceUser>
+    <#assign email = "" />
+    <#if myLuteceUser??>
+        <#assign email = myLuteceUser.getUserInfo( "user.home-info.online.email" ) />
+        <#if email == "">
+            <#assign email = myLuteceUser.getUserInfo( "user.business-info.online.email" ) />
+        </#if>
+    </#if>
+    <#return email />
+</#function>
+
+<#--
+-- Get the user name from a given MyLuteceUser.
+-- It returns the concatenation of the information "user.name.given" with "user.name.family".
+-- @param myLuteceUser the MyLuteceUser
+-->
+<#function getUserName myLuteceUser>
+    <#assign userName = "" />
+    <#if myLuteceUser??>
+        <#assign givenName = myLuteceUser.getUserInfo( "user.name.given" ) />
+        <#assign familyName = myLuteceUser.getUserInfo( "user.name.family" ) />
+        <#assign userName = givenName />
+        <#if userName != "" && familyName != "">
+            <#assign userName = userName + " " />
+        </#if>
+        <#assign userName = userName + familyName />
+    </#if>
+    <#return userName />
+</#function>
+
+<#-- Init variables -->
+<#assign email = "" />
+<#assign userName = "" />
+
+<#-- [FIXME - JPO 2019/01/16 : should be improved to use MyInfosService.loadUserInfos(user).getIsValid() and pass it into the freemarker model of the commentary extend] -->
+<#assign userNotValid = ( nickname?? && ((nickname = '') || (nickname = '(pas de pseudo)')) ) /> 
+
+<#if extendableResourceType??>
+
+	<#if myLuteceUser??>
+		<#assign email = getEmail( myLuteceUser! ) />
+		<#assign userName = getUserName( myLuteceUser! ) />
+		
+		<#if userNotValid>
+			<p>
+				Vous devez avoir complété votre profil pour poster un commentaire. 
+			</p>
+		</#if>
+
+	<#else>
+		<div id="comment-footer" class="idee">
+			<p>
+				Vous devez être connecté pour commenter un projet !
+			</p>
+			<div id="action-comment" style="display:none">
+				<a href="#" id="icomment" class="btn btn-lg btn-lt-bg  btn-comment btn-connect" >Je me connecte</a>
+			</div>
+			<br/>
+			<br/>
+		</div>
+	</#if>
+	
+</#if>
+
+<#-- Affiche le formulaire de commentaire sur les propositions -->
+
+<#if extendableResourceType??>
+	<#-- TURNAROUND JPO 23/03/2017 : le formulaire de commentaires s'affiche sur les idées dès qu'on l'active sur les ateliers -->
+
+	<#if (!commentConfig.enabledAuthMode || myLuteceUser??) && !userNotValid >
+	  <div id="comment-form" class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		  <form class="form" method="post" action="jsp/site/Portal.jsp">
+			<input type="hidden" name="page" value="extend-comment">
+			<input type="hidden" name="action" value="doAddComment">
+			<#if idComment??>
+				<input type="hidden" name="idParentComment" value="${idComment}">
+			</#if>
+			<#if returnToCommentList?? && returnToCommentList>
+				<input type="hidden" name="returnToCommentList" value="true">
+			</#if>
+			<#if from_url?? && from_url?has_content && from_url != "null">
+				<input type="hidden" name="from_url" value="${from_url!}">
+			</#if>
+			<input type="hidden" name="idExtendableResource" value="${idExtendableResource!}">
+			<input type="hidden" name="extendableResourceType" value="${extendableResourceType!}">
+			<#if !commentConfig.enabledAuthMode>
+			  <div class="form-group">
+				  <label  for="email">#i18n{module.extend.comment.add_comment.labelEmail} * :</label>
+				  <input type="text" name="email" class="form-control" maxlength="255" value="${email!}" />
+			  </div>
+			<#else>
+			  <input type="hidden" name="email" class="form-control" value="${email!}">
+			</#if>
+			<#if commentConfig.enabledAuthMode>
+				<#if nickname?? && nickname?has_content>
+					<input type="hidden" id="comment-name" name="name" value="${nickname!'?'}">
+				<#else>
+					<input type="hidden" id="comment-name" name="name" value="(pas de pseudo)">
+				</#if>
+			<#else>
+			  <div class="form-group">
+				<label  for="name">#i18n{module.extend.comment.add_comment.labelName} * :</label>
+				<input type="text" id="comment-name" name="name" size="20" maxlength="255" value="${userName!}" />
+			  </div>
+			</#if>
+			<div class="form-group">
+			  <label for="comment" class="sr-only">#i18n{module.extend.comment.add_comment.labelComment} * :</label>
+			  <textarea  name="comment" class="form-control" rows="6" placeholder="Merci d'indiquer votre commentaire"></textarea>
+			</div>
+			<#if is_active_captcha>
+			  <div class="form-group">
+				${captcha!}
+			  </div>
+			</#if>
+			<div class="form-group">
+			  <button class="btn btn-lg btn-lt-bg" type="submit" name="add" value="#i18n{portal.util.labelValidate}" title="Publier mon commentaire" style="font-size:1.6rem">
+				 Publier mon commentaire
+			  </button>
+			  
+			  <#if addCommentPosition = 0>
+				<button class="btn btn-lg btn-lt-bg" type="button" name="cancel" onclick="javascript:history.back();" value="#i18n{portal.util.labelBack}" title="#i18n{portal.util.labelBack}" >
+				  #i18n{portal.util.labelBack}
+				</button>
+			  </#if>
+			</div>
+		  </form>
+		</div>
+	  </div>
+	</#if>
+</#if>
+
+<#-- *********************************************************************************** 
+     * BBCODE BBCODE BBCODE BBCODE BBCODE BBCODE BBCODE BBCODE BBCODE BBCODE BBCODE BB *
+     * BBCODE BBCODE BBCODE BBCODE BBCODE BBCODE BBCODE BBCODE BBCODE BBCODE BBCODE BB *
+     *********************************************************************************** -->
+
+<#if commentConfig.useBBCodeEditor>
+    <#include "/util/editor/editor.html" />
+</#if>
+

@@ -1,0 +1,348 @@
+
+<#if conf_user_query??>
+<#assign conf_query = "&amp;conf=${conf_user_query}">
+<#else>
+<#assign conf_query = "">
+</#if>
+
+<#setting url_escaping_charset=encoding>
+<#-- Encode facet queries -->
+<#assign allParisCity = "-localisation_text:Tout Paris"> 
+<#assign allArrParisCity = "localisation_text:"> 
+<#macro EncodeFQ list_fq  optionalParam1="" optionalParam2="">
+    <#assign bCheck = false>
+    <#assign encoded_facets_queries = ""> 
+        <#list list_fq as facet>
+        <#if optionalParam1?has_content && optionalParam2?has_content && facet?starts_with(optionalParam2) >
+            <#assign encoded_facets_queries = encoded_facets_queries+"&fq="+optionalParam1>
+            <#assign bCheck = true>
+        <#else>
+            <#assign encoded_facets_queries = encoded_facets_queries+"&fq="+facet?url>
+            <#if facet?starts_with(optionalParam1)>
+                <#assign bCheck = true>
+            </#if>
+        </#if>
+        </#list>
+        <#if optionalParam1?has_content && optionalParam2?has_content && !bCheck>
+                <#assign encoded_facets_queries = encoded_facets_queries+"&fq="+optionalParam1>
+        </#if>
+${encoded_facets_queries}</#macro>
+
+<#assign sQuery = "">
+
+<#macro EncodeFQArrondissement list_fq >
+    <#assign encoded_facets_queries = "">
+        
+    <#list list_fq as facet>
+    <#if facet?starts_with("localisation_text") || facet?starts_with("type") || facet?starts_with("-localisation_text")>
+            <#assign encoded_facets_queries = encoded_facets_queries+"&fq="+facet?url>
+    </#if>
+    </#list>
+${encoded_facets_queries}
+</#macro>
+
+<#if query?has_content>
+    <#if !query?starts_with("categorie")>
+        <#if !query?starts_with("(")>
+            <#assign sQuery = "${query}">
+        <#else>
+            <#assign sQuery = "${query?split(' AND')?first?substring(1, query?split(' AND')?first?length)}">
+        </#if>
+    </#if>
+   
+</#if>
+ <#assign sQueryUrlSave = sQuery> 
+ <#assign sQuery = sQuery?split(":")?last>
+ <#assign arr= "">
+ <#assign facet_theme= "">
+ <#assign facet_depositaire_type= "">
+ <#assign monTri ="">
+ <#assign ordre_aleatoire= "true"> 
+ <#assign sQueryUrl= sQuery>
+<#assign cadre_de_vie= 'false'>
+<#assign education_et_jeunesse= 'false'>
+<#assign logement_et_habitat= 'false'>
+<#assign environnement= 'false'>
+<#assign sport= 'false'>
+<#if sQuery?has_content && sQuery?starts_with("(") && sQuery?ends_with(")") >
+    <#assign sQuery = sQuery?remove_beginning("(")>
+    <#assign sQuery = sQuery?remove_ending(")")>
+</#if>
+<#-- facets -->
+
+ <#assign number_random="${.now?long?string}"?number />
+<div class="row bg-color6" id="project_list_2015">
+
+	<div class="row">
+	<div class="project-list-freetext content-type1">
+	#dskey{sitelabels.site_property.intro_projets.textblock}
+	</div>
+	</div>
+	
+	
+	<div class="row">
+
+	</div>
+
+<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2" id="search_filter_column">
+
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+  
+	<div class="row">
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div id="resultItems" class="row resultats-recherche project_list_container">
+	<div id="budget_alloue">
+	</div>
+        <div class="solr-paginator">
+            <@paginationSolr paginator=paginator />      
+        </div>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 search_item_count" style="text-align:right; padding-right:15px;">
+        #i18n{portal.search.search_results.labelResultsCount} : <strong>${paginator.itemsCount}</strong>
+        - #i18n{portal.search.search_results.labelResultsRange} : <strong>${paginator.rangeMin} - ${paginator.rangeMax}</strong>
+    </div>
+		<#assign theme_class = "autre">
+        <#list results_list as result>
+
+		<#if result.type?? &&  result.type="Projet 2015">
+		<#if result.dynamicFields?? && result.dynamicFields.thematique_text??>
+		<#if result.dynamicFields.thematique_text = "Cadre de vie"><#assign theme_class = "cadre_vie">
+		<#elseif result.dynamicFields.thematique_text = "Culture" || result.dynamicFields.thematique_text = "Culture et patrimoine"><#assign theme_class = "culture">
+		<#elseif result.dynamicFields.thematique_text = "Economie et emploi"><#assign theme_class = "economie_emploi">
+		<#elseif result.dynamicFields.thematique_text = "Education et jeunesse"><#assign theme_class = "education">
+		<#elseif result.dynamicFields.thematique_text = "Environnement" || result.dynamicFields.thematique_text = "Nature en ville"><#assign theme_class = "environnement">
+		<#elseif result.dynamicFields.thematique_text = "Logement et habitat"><#assign theme_class = "logement">
+		<#elseif result.dynamicFields.thematique_text = "Participation citoyenne"><#assign theme_class = "participation_citoyenne">
+		<#elseif result.dynamicFields.thematique_text = "Prévention et sécurité"><#assign theme_class = "prevention_securite">
+		<#elseif result.dynamicFields.thematique_text = "Propreté"><#assign theme_class = "proprete">
+		<#elseif result.dynamicFields.thematique_text = "Solidarité" || result.dynamicFields.thematique_text = "Vivre ensemble"><#assign theme_class = "solidarite">
+		<#elseif result.dynamicFields.thematique_text = "Sport"><#assign theme_class = "sport">
+		<#elseif result.dynamicFields.thematique_text = "Transport et mobilité"><#assign theme_class = "transport">
+		<#elseif result.dynamicFields.thematique_text = "Ville intelligente et numérique"><#assign theme_class = "ville_numerique">
+		<#elseif result.dynamicFields.thematique_text = "Santé"><#assign theme_class = "sante">
+		</#if>
+		</#if>
+						
+        <div class="item" style="margin:10px;"> 
+            <div id="right-item" class="col-xs-12 col-sm-6 col-md-4 col-lg-4" style="padding:10px;">
+				<div class="row projectlist_project">
+					<div class="col-sm-6 project_ref project_${theme_class}">
+						<#if result.dynamicFields?? && result.dynamicFields.nombre_de_votes_long??>
+							${result.dynamicFields.nombre_de_votes_long} votes
+						<#else>PROJET A CORRIGER
+						</#if>
+					</div>
+					<div class="col-sm-6 project_ref project_${theme_class}" style="text-align:right;">
+						<#if result.dynamicFields?? && result.dynamicFields.code_projet_long??>
+							PROJET N°${result.dynamicFields.code_projet_long}
+						<#else>PROJET A CORRIGER
+						</#if>
+					</div>
+					
+                    <div class="project_category col-xs-12 hidden-sm hidden-md hidden-lg
+						<#if result.dynamicFields?? && result.dynamicFields.thematique_text??>
+							${theme_class}"><img src="images/local/skin/i_${theme_class}.png" alt="${result.dynamicFields.thematique_text}" title="${result.dynamicFields.thematique_text}">
+					
+						${result.dynamicFields.thematique_text}
+						<#else>
+							<#assign theme_class = "notheme">
+							${theme_class}">
+							<img src="images/local/skin/i_notheme.png">
+							PAS DE THEMATIQUE
+						</#if>
+						
+					</div>
+					<div class="project_category hidden-xs col-sm-12 hidden-md hidden-lg 
+						<#if result.dynamicFields?? && result.dynamicFields.thematique_text??>
+							${theme_class}"><img src="images/local/skin/i_${theme_class}.png" alt="${result.dynamicFields.thematique_text}" title="${result.dynamicFields.thematique_text}">
+					
+						<#if result.dynamicFields.thematique_text?length &gt; 32>${result.dynamicFields.thematique_text?substring(0,32)}...<#else>${result.dynamicFields.thematique_text}</#if>
+						<#else>
+							<#assign theme_class = "notheme">
+							${theme_class}">
+							<img src="images/local/skin/i_notheme.png">
+							PAS DE THEMATIQUE
+						</#if>
+					</div>
+					<div class="project_category hidden-xs hidden-sm col-md-12 hidden-lg 
+						<#if result.dynamicFields?? && result.dynamicFields.thematique_text??>
+							${theme_class}"><img src="images/local/skin/i_${theme_class}.png" alt="${result.dynamicFields.thematique_text}" title="${result.dynamicFields.thematique_text}">
+					
+						<#if result.dynamicFields.thematique_text?length &gt; 16>${result.dynamicFields.thematique_text?substring(0,16)}...<#else>${result.dynamicFields.thematique_text}</#if>
+						<#else>
+							<#assign theme_class = "notheme">
+							${theme_class}">
+							<img src="images/local/skin/i_notheme.png">
+							PAS DE THEMATIQUE
+						</#if>
+					</div>
+					<div class="project_category hidden-xs hidden-sm hidden-md col-lg-12 
+						<#if result.dynamicFields?? && result.dynamicFields.thematique_text??>
+							${theme_class}"><img src="images/local/skin/i_${theme_class}.png" alt="${result.dynamicFields.thematique_text}" title="${result.dynamicFields.thematique_text}">
+					
+						<#if result.dynamicFields.thematique_text?length &gt; 27>${result.dynamicFields.thematique_text?substring(0,27)}...<#else>${result.dynamicFields.thematique_text}</#if>
+						<#else>
+							<#assign theme_class = "notheme">
+							${theme_class}">
+							<img src="images/local/skin/i_notheme.png">
+							PAS DE THEMATIQUE
+						</#if>
+					</div>
+					
+                    <div class="project_title col-xs-12 hidden-sm hidden-md hidden-lg">
+						<a href="${result.url}" alt="${result.title}" title="${result.title}">
+							${result.title}
+						</a>
+					</div>
+					<div class="project_title hidden-xs col-sm-12 hidden-md hidden-lg">
+						<a href="${result.url}" alt="${result.title}" title="${result.title}">
+							<#if result.title?length &gt; 45>${result.title?substring(0,45)}...<#else>${result.title}</#if>
+						</a>
+					</div>
+					<div class="project_title hidden-xs hidden-sm col-md-12 hidden-lg">
+						<a href="${result.url}" alt="${result.title}" title="${result.title}">
+							<#if result.title?length &gt; 40>${result.title?substring(0,40)}...<#else>${result.title}</#if>
+						</a>
+					</div>
+					<div class="project_title hidden-xs hidden-sm hidden-md col-lg-12">
+						<a href="${result.url}" alt="${result.title}" title="${result.title}">
+							<#if result.title?length &gt; 65>${result.title?substring(0,65)}...<#else>${result.title}</#if>
+						</a>
+					</div>
+					<div>
+						<span class="project_location">
+						<img src="images/local/skin/projet_localisation.png" width="25px" height="25px" alt="Localisation" title="Localisation">
+						<#if result.dynamicFields?? && result.dynamicFields.localisation_text??>
+							<#if result.dynamicFields.localisation_text = "Tout Paris">
+								${result.dynamicFields.localisation_text}
+							<#elseif result.dynamicFields.localisation_text?length &gt; 3>${result.dynamicFields.localisation_text?substring(0,3)}<#else>${result.dynamicFields.localisation_text}</#if>
+						</#if>
+						</span>
+						<span class="project_budget">
+							<#if result.dynamicFields?? && result.dynamicFields.budget_long?? && result.dynamicFields.budget_long &gt; 0>
+							<#setting locale="fr_FR">
+							${result.dynamicFields.budget_long?string("#,###")} &#8364;
+							<#else>-
+							</#if>
+						</span>
+					</div>
+                    <div class="project_description col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <#if result.summary?has_content>
+						<#if result.summary?length &gt; 200>${result.summary?substring(0,200)}...<#else>${result.summary}</#if>
+                    </#if>  
+					</div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="lien-detail">
+                          <!--  <a href="${result.url}">
+                            Fiche Projet
+                                 </a>
+							-->
+	               		 <#assign id_document = "${(result.id?split('null_')?last)?split('_')?first}">
+		      			<!-- @Extender[${id_document},document,vote,{show:"all"}]@ -->
+					<#if result.dynamicFields.statut_project_text='GAGNANT'>
+					<div id="" class="vote">
+					     <a  class="budget-cancel-vote-button"  >
+						 <div class="bg-gagnant">
+						    <span class="budget-label-jai-vote"><i class="glyphicon glyphicon-ok-circle"></i> Projet gagnant</span>
+						 </div>
+   					    </a>
+					</div>
+					<#elseif result.dynamicFields.statut_project_text='PERDANT'>
+					<div id="" class="vote">
+					     <a  class="budget-cancel-vote-button"  >
+						 <div class="bg-perdant">
+						     <span class="budget-label-remove-vote"><i class='glyphicon glyphicon-remove-circle'></i> Projet perdant</span>
+						 </div>
+   					    </a>
+					</div>
+					</#if>
+
+
+						<input type="hidden" name="localisation_${id_document}" id="localisation_${id_document}" value="${result.dynamicFields.localisation_text}" />
+						<input type="hidden" name="title_${id_document}" id="title_${id_document}" value="${result.title}" />
+						<input type="hidden" name="thematique_${id_document}" id="thematique_${id_document}" value="${result.dynamicFields.thematique_text}" />
+                    </div>
+                </div> 
+            </div> 
+		</div>
+	</#if>
+        </#list>
+		<div class="clearfix">&#160;</div>
+		<div class="solr-paginator">
+			<@paginationSolr paginator=paginator />      
+		</div>
+        </div>
+    </div>
+   </div>
+
+<#-- Freemarker macros -->
+
+<#-- Number of items per page selector - Combo Box implementation -->
+<#macro NbItemsPerPageSelectorCombo nb_items_per_page>
+    <select name="items_per_page">
+        <#list [ "10" , "20" , "50" , "100" ] as nb>
+            <#if nb_items_per_page = nb >
+                <option selected="selected" value="${nb}">${nb}</option>
+            <#else>
+                <option value="${nb}">${nb}</option>
+            </#if>
+        </#list>
+    </select>
+</#macro>
+
+<#-- Number of items per page selector - Radio List implementation -->
+<#macro NbItemsPerPageSelectorRadioList nb_items_per_page>
+    <#list [ 5 , 10 , 20 , 50 ] as nb>
+    <#if nb = nb_items_per_page > 
+    <input value="${nb}" id="items_per_page${nb}" name="items_per_page" class="radio" type="radio" checked /><label for="items_per_page${nb}">${nb}</label>
+    <#else>
+    <input value="${nb}" id="items_per_page${nb}" name="items_per_page" class="radio" type="radio" /><label for="items_per_page${nb}">${nb}</label>
+    </#if>
+    </#list>
+</#macro>
+
+<#macro paginationSolr paginator >
+    <#assign nbLinkPages = 3 />
+    <#assign offsetPrev = nbLinkPages/2 />
+    <#assign offsetNext = nbLinkPages/2 />
+    
+    <#if paginator.pageCurrent &lt; nbLinkPages-offsetPrev>
+        <#assign offsetPrev = nbLinkPages - paginator.pageCurrent />
+        <#assign offsetNext = nbLinkPages - offsetPrev />
+    <#elseif paginator.pageCurrent &gt; paginator.pagesCount - (nbLinkPages - offsetNext) >
+        <#assign offsetNext = nbLinkPages - (paginator.pagesCount - paginator.pageCurrent) />
+        <#assign offsetPrev = nbLinkPages - offsetNext />
+    </#if>
+
+    <#if (paginator.pagesCount > 1) >
+        <#if paginator.pageCurrent &gt; nbLinkPages-offsetPrev >
+          <a href="${paginator.firstPageLink?xhtml}${monTri}" alt="Première page" title="Première page"><i class="fa fa-fast-backward"></i></a>
+        </#if>
+        <#if (paginator.pageCurrent > 1) >
+           <a href="${paginator.previousPageLink?xhtml}${monTri}" alt="Page précédente" title="Page précédente"><i class="fa fa-step-backward"></i></a>
+        </#if>
+        <#if paginator.pageCurrent &gt; nbLinkPages-offsetPrev >
+           <span>...</span>
+        </#if>
+        <#list paginator.pagesLinks as link>
+            <#if ( link.index == paginator.pageCurrent )>
+				<span class="paginator-current-page">${link.name}</span> |
+            <#else>
+                <a href="${link.url?xhtml}${monTri}">${link.name}</a> |
+            </#if>
+        </#list>
+        <#if paginator.pageCurrent &lt; paginator.pagesCount - (nbLinkPages-offsetNext) >
+            <span>...</span>
+        </#if>
+        <#if (paginator.pageCurrent < paginator.pagesCount) > 
+			<a href="${paginator.nextPageLink?xhtml}${monTri}" alt="Page suivante" title="Page suivante"><i class="fa fa-step-forward"></i></a>
+			<#if paginator.pageCurrent &lt; paginator.pagesCount - (nbLinkPages-offsetNext) >
+				  <a href="${paginator.lastPageLink?xhtml}${monTri}" alt="Dernière page" title="Dernière page"><i class="fa fa-fast-forward"></i></a>
+			</#if>
+        </#if>
+        </ul>
+    </#if>
+</#macro>
+</div>
+</div>

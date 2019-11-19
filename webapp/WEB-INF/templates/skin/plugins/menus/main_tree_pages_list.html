@@ -1,0 +1,7 @@
+<#if menu.childs?has_content>
+	<#list menu.childs as submenu >
+		<li>
+			<a href="${site_path}?page_id=${submenu.page.id}" >${submenu.page.name}</a>
+		</li>
+	</#list>
+</#if>

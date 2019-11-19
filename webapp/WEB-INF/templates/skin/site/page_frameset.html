@@ -1,0 +1,618 @@
+
+
+<#assign webapp_version="1.0.0">
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<base href="${base_url}">
+<title><#if page_name == "Home">${favourite}<#else>${page_name?lower_case?cap_first} - ${favourite}</#if></title>
+<meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1" >
+<meta charset="${encoding}">
+<meta http-equiv="Content-Type" content="text/html;charset=${encoding}">
+<meta http-equiv="Content-Language" content="fr">
+<meta name="author" content="${meta_author}">
+<meta name="copyright" content="${meta_copyright}">
+<meta name="keywords" content="${meta_keywords}">
+<meta name="description" content="${meta_description}">
+<meta name="generator" content="${meta_generator}">
+<!-- Facebook default picture -->
+<meta property="og:title" content="Budget Participatif - Paris"/>
+<meta property="og:image" content="http://budgetparticipatif.paris.fr/bp/images/logo-header.png"/>
+<meta property="og:image:secure_url" content="https://budgetparticipatif.paris.fr/bp/images/logo-header.png"/>
+<!-- Dublin Core metadatas -->
+<meta name="DC.Creator" content="${meta_author}">
+<meta name="DC.Rights" content="${meta_copyright}">
+<meta name="DC.Subject" content="${meta_keywords}">
+<meta name="DC.Description" content="${meta_description}">
+<!-- Set the viewport width to device width for mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Le style -->
+<#if plugin_theme?? >
+    <#assign thetheme=plugin_theme />
+<#else>
+    <#assign thetheme=theme />
+</#if>
+<link href="${thetheme.pathCss}/font-awesome.min.css" rel="stylesheet">
+<link href="css/datepicker.css" rel="stylesheet">
+<link href="js/jquery/plugins/ui/css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+<link href="js/jquery/plugins/lightbox/ekko-lightbox.min.css" rel="stylesheet">
+<link href="js/jquery/plugins/scrollbars/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+<link href="js/jquery/plugins/dataTables/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="${thetheme.pathCss}/bootstrap.min.css" rel="stylesheet">
+<link href="${thetheme.pathCss}/bootstrap-theme.min.css" rel="stylesheet">
+<link href="${thetheme.pathCss}/page_template_styles_v${webapp_version!'1.0.0'}.css" rel="stylesheet" media="screen">
+<link href="${thetheme.pathCss}/print_template_styles.css" rel="stylesheet" media="print">
+<link href="${url_moncompte}/css/banner-moncompte.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,600"           rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700,700i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700"      rel="stylesheet">
+
+<#assign bpBodyClass="" />
+<#if campagneService.isDuring("VOTE") >
+	<#--
+	<link href="${thetheme.pathCss}/navbar.css" rel="stylesheet" media="screen">
+	-->
+	<#assign bpBodyClass=" phaseVote" />
+	<#include "/skin/plugins/budgetparticipatif/votes_modal.html" />
+</#if>
+
+${plugins_css_links}
+<!--[if lt IE 10]>
+    <script src="js/placeholders.min.js"></script>
+<![endif]-->
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!-- JQUERY UI: Keep for compatibility -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <link rel="stylesheet" href="js/jquery/plugins/ui/css/jquery.ui-1.10.0.ie.css">
+<![endif]-->
+<!-- Le fav and touch icons -->
+<link rel="shortcut icon" href="${base_url}favicon.ico"/>
+<!--
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="${base_url}apple-touch-icon-120x120-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="${base_url}apple-touch-icon.png">
+-->
+<#include "/skin/plugins/budgetparticipatif/modal_info.html" />
+<#if isExtendInstalled?? && isExtendInstalled >
+	<#if page_id??>
+		@Extender[${page_id},PAGE,opengraph,{header:true}]@
+	</#if>
+	@Extender[ExtendParameteredId,document,opengraph,{header:true}]@
+	@Extender[ExtendParameteredId,DIRECTORY_RECORD,opengraph,{header:true}]@
+</#if>
+${extend_meta!}
+${document_meta?default("<!-- no document_meta -->")}
+${rss?default( "<!-- no RSS feed -->" )}
+<!-- Included JS Files -->
+<script src="js/jquery/jquery.min.js"></script>
+<script src="${url_moncompte}/js/banner-moncompte.js"></script>
+</head>
+<body class="${bpBodyClass}">
+
+	<#-- Container pour les logs Javascript -->
+	<div id="logs" style="display:none;">&nbsp;</div>
+
+
+	<!-- banner-mon-compte begin -->
+	<div class="banner-mon-compte__connexion-wrapper banner-mon-compte__bp">
+		<a class="banner-mon-compte__connexion-avatar" href="">
+			<span class="banner-mon-compte__my-account"></span>
+		</a>
+	</div>
+	<!-- banner-mon-compte end -->
+  
+	<nav id="main-navbar-bp" class="navbar-fixed-top" role="navigation">
+		<#-- Logo MDP responsive -->
+		
+		<a href="." title="Accueil" onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu', 'Retour accueil', 0]);">
+			<div class="brand">
+				<div class="nef"><img src="images/local/skin/nef.svg"/></div>
+				<div class="paris"><img src="images/local/skin/paris-logo.svg"/></div>
+				<div class="logo"><img src="images/local/skin/logo_paris_bp_nav.png"/></div>
+			</div>
+		</a>
+		
+		<#-- Menu -->
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-main">
+			<ul>
+				
+				<li>
+					<a href="jsp/site/Portal.jsp?page_id=10"                                                                                                              
+			   		   onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu', 'Démarche', 0]);">
+			   		   <span>Comment &ccedil;a marche ?</span>
+			   		</a>
+				</li>
+				
+				<#if campagneService.isDuring("IDEATION")>
+					<li>
+						<a href="jsp/site/Portal.jsp?page_id=2"                                                                                                               
+						   onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu', 'Déposer depuis menu', 0]);">
+							<span>D&eacute;poser votre projet</span>
+						</a>
+					</li>
+				</#if>
+				
+				<#if (campagneService.isAfterBeginning("IDEATION") && campagneService.isBeforeEnd("PRE_VOTE")) || (campagneService.isAfterBeginning("POST_VOTE") && campagneService.isBeforeEnd("RESULT")) >
+					<li>
+						<a href="jsp/site/Portal.jsp?page=search-solr&amp;conf=list_idees&amp;fq=campagne_text:${campagneService.lastCampagne.code}&amp;sort_name=${RANDOM!123456789}_random&amp;sort_order=asc" 
+						   onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu', 'Projets déposés', 0]);">
+							<span>Projets d&eacute;pos&eacute;s</span>
+						</a>
+					</li>
+				</#if>
+				
+				<#if campagneService.isAfterBeginning("SUBMIT") && campagneService.isBeforeBeginning("RESULT") >
+					<li>
+						<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;conf=projects_mdp"                                   
+						   onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu', 'Projets au vote', 0]);">
+							<span><#if campagneService.isDuring("VOTE")>Je vote !<#else>Projets au vote</#if></span>
+						</a>
+					</li>
+				</#if>
+				
+				<#if campagneService.isDuring("RESULT") >
+					<li>
+						<a href="jsp/site/Portal.jsp?page=search-solr&conf=elected_projects"                                   
+						   onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu', 'Projets gagnants', 0]);">
+							<span>Projets lauréats</span>
+						</a>
+					</li>
+				</#if>
+
+				<li class="last">
+					<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;&amp;conf=list_projects"                             
+					   onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu', 'Suivi des réalisations', 0]);">
+						<span>Suivi des r&eacute;alisations</span>
+					</a>
+				</li>
+				
+				${header_connexion}
+			</ul>
+		</div>
+		
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main" class="visible-xs">
+			<span class="sr-only">Toggle navigation</span>
+			<i class="fa fa-bars fa-2x"></i><br>Menu
+		</button>
+	</nav>
+	
+	<#if campagneService.isDuring("VOTE") >
+	<#assign classConnect=" btn-connect"/>
+	<#if user?has_content>
+		<#assign classConnect=""/>
+	</#if>
+	<nav id="vote-navbar-bp" class="navbar navbar-fixed-top${classConnect}" role="navigation" style="z-index:1025" onclick="_paq.push(['trackEvent', 'PROD - VOTE', 'Barre VOTE', 'Toggle barre', 0]);">
+		<div id="main_vote_navbar" class="container-fluid">
+			<div class="navbar-wrapper">
+				<div class="brand">
+					<div class="name"><span>MES VOTES</span></div>
+				</div>
+				
+				<div class="hidden-xs" id="navbar-collapse-main">
+					<span>Projet Tout&nbsp;Paris</span>
+					<div id="progress_paris">
+						<div class="squareVoteLeft">1</div>
+						<div class="squareVote">2</div>
+						<div class="squareVote">3</div>
+						<div class="squareVoteRight">4</div>
+					</div>
+					<#if arrondUser?? && arrondUser != "">
+						<span>Projets&nbsp;du ${arrondUser?number}<#if arrondUser == '01'>er<#else>e</#if>&nbsp;arrdt.</span>
+					<#else>
+						<span>Projet d'arrondissement</span>
+					</#if>
+					<div id="progress_arr">
+						<div class="squareVoteLeft">1</div>
+						<div class="squareVote">2</div>
+						<div class="squareVote">3</div>
+						<div class="squareVoteRight">4</div>
+					</div>
+				</div>
+				
+				<div id="verifyBtn" class="hidden-xs btn btn-14rem btn-white-on-green">
+					<#if voteValidated?has_content && ! voteValidated >
+						<span class="hidden-xs">V&eacute;rifier et valider mes votes !</span>
+						<span class="visible-xs">V&eacute;rifier mes votes !</span>
+					<#else>
+						<span>Consulter mes votes !</span>
+					</#if>
+				</div>
+				
+				<div id="verifyBtnXS" class="visible-xs expand_caret" onclick="">
+					<i class="fa fa-angle-down"></i>
+				</div>
+			</div>
+		</div>
+				
+		<div id="recap_vote" class="container-fluid" style="display:none;">
+			<#if user?has_content>
+			
+				<div class="row-fluid recap_vote_lists">
+					<div id="votes_tout_paris" class="col-xs-12 col-md-6 recap_vote_list" >
+						
+					</div> 
+					
+					<div id="votes_user_arr" class="col-xs-12 col-md-6 recap_vote_list">
+						
+					</div>
+				</div>
+
+				<#if voteValidated?has_content && voteValidated >
+					<div style="background-color:#369661; padding-top:20px; padding-bottom:20px; margin-bottom:20px; font-size: 3rem; " class="col-xs-12 col-md-8 col-md-offset-2">
+						<p>Vous avez d&eacute;j&agrave; vot&eacute; !</p>
+					</div>
+				<#elseif voteValidated?has_content && ! voteValidated >
+					<div id="confirm_vote" class=" ">
+						<#if arrondUser?? && arrondUser!="">
+							<button class="btn btn-16rem btn-white-on-green" onclick="_paq.push(['trackEvent', 'PROD - VOTE', 'Barre VOTE', 'Affichage confirmation vote', 0]); valideVotes('${arrondUser?number}e arrondissement', 4, 4, false);">
+						<#else>
+							<button class="btn btn-16rem btn-white-on-green" onclick="_paq.push(['trackEvent', 'PROD - VOTE', 'Barre VOTE', 'Affichage confirmation vote', 0]); valideVotes('1e arrondissement', 4, 4, false);">
+						</#if>
+							JE VALIDE MON VOTE
+						</button>
+					</div>
+				</#if>
+
+				<div class="infos">
+					<a href="jsp/site/Portal.jsp?page_id=9" onclick="_paq.push(['trackEvent', 'PROD - VOTE', 'Barre VOTE', 'Voir r�gles', 0]);"><span>Consulter les r&egrave;gles du vote</span></a>
+				</div>
+
+				<#-- div style="padding-top:20px; margin-top:20px; margin-bottom:20px;" class="col-xs-12 col-md-8 col-md-offset-2">
+					<p><strong>Donnez de la voix &agrave; vos projets !</strong> Faites voter votre entourage, parlez-en autour de vous et sur les r&eacute;seaux sociaux !</p>
+					<p>
+						<a title="Partager sur Facebook" class="share" data-action="facebook-vote" href="http://www.facebook.com">
+							<img title="Partager sur Facebook" alt="Partager sur Facebook" src="images/local/skin/pastille-fb.png" width="60px" height="60px" >
+						</a>
+						&nbsp;
+						<a target="_blank" title="Partager sur Twitter" class="share" data-action="twitter-vote" href="https://twitter.com">
+							<img title="Partager sur Twitter" alt="Partager sur Twitter" src="images/local/skin/pastille-tw.png" width="60px" height="60px" >
+						</a>
+					</p>
+				</div -->
+				
+			</#if>
+		</div>
+	</nav> 
+  	</#if>
+	
+  <div>
+
+
+	<!-- end header -->
+	
+	${mes_infos_include!''}
+	${social!}
+	${contextinclude!}
+	${contextinclude_1!}
+	<!-- ${page_path} -->
+	<#if page_id?? && isExtendInstalled?? && isExtendInstalled >
+		@Extender[${page_id},PAGE,opengraph,{header:false,footer:false}]@
+		@Extender[${page_id},PAGE,hit,{show:true}]@
+		@Extender[${page_id},PAGE,rating,{show:"all"}]@
+		@Extender[${page_id},PAGE,actionbar]@
+	</#if>
+	${page_content}
+	<#if page_id?? && isExtendInstalled?? && isExtendInstalled>
+		@Extender[${page_id},PAGE,comment]@
+		@Extender[${page_id},PAGE,feedback]@
+	</#if>
+  ${contextinclude_2!}
+	<!-- container-fluid -->
+	</div>
+  <!-- footer -->
+	<footer>
+		${page_footer}
+		<div class="links-wrapper app-version">Budget participatif de la ville de Paris v${webapp_version!'.'}</div>
+	</footer>
+	
+	<!-- Static Modal -->
+	<div class="modal modal-static fade" id="processing-modal" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content bg-color7">
+				<div class="modal-body">
+					<div class="text-center">
+						<div class="" role="alert">
+							Vous avez effectu&#233; tous vos votes !
+							<div class="btn-in-popup">
+								<span>
+									<a href="jsp/site/Portal.jsp?page=mesInfos&amp;view=myVotes" class="btn-block btn-modal-valid glyphicon glyphicon-ok-circle">
+										<span> Voir et valider mes votes</span>
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Piwik OptOut Modal -->
+	<div class="modal modal-static fade" id="piwik-optout-modal" role="dialog" aria-hidden="false">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+					<h4 class="modal-title">Politique de gestion des statistiques</h4>
+				</div>
+				<div class="modal-body">
+					<iframe style="border: 0; width: 100%; height:160px" src="https://piwik.apps.paris.fr:443/piwik/index.php?module=CoreAdminHome&amp;action=optOut&amp;language=fr"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<#if page_id?? && isExtendInstalled?? && isExtendInstalled >
+		@Extender[${page_id},PAGE,opengraph,{footer:true}]@
+	</#if>
+
+<!-- Le javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script>
+	$( function(){
+
+		<#-- *********************************************************************************** -->
+		<#-- * POPOVER POPOVER POPOVER POPOVER POPOVER POPOVER POPOVER POPOVER POPOVER POPOVER * -->
+		<#-- * POPOVER POPOVER POPOVER POPOVER POPOVER POPOVER POPOVER POPOVER POPOVER POPOVER * -->
+		<#-- *********************************************************************************** -->
+
+		/* Favorites PopOver */
+		$('[data-toggle="popover"]').popover();
+		
+		/* QP PopOver*/
+		if ($(".img-qp").length > 0){
+			$(".img-qp").popover({placement: "right", container:"body", trigger:"click",html:"true", template:'<div class="popover qp" role="tooltip"><div class="arrow"></div><div class="popover-content"></div></div>', content:"#dskey{ideation.site_property.view_idee.userInfoPopQP.htmlblock}"});
+		}
+
+		/* RATP Popover*/
+		if ($(".img-ratp").length > 0){
+			$(".img-ratp").popover({placement: "right", container:"body", trigger:"click",html:"true", template:'<div class="popover ratp" role="tooltip"><div class="arrow"></div><div class="popover-content"></div></div>', content:"#dskey{ideation.site_property.view_idee.userInfoPopRATP.htmlblock}"});
+		}
+		
+		$(".summary").mCustomScrollbar({
+			setHeight: "110px",
+			theme:"dark-thick"
+		});
+	  
+		<#-- *********************************************************************************** -->
+		<#-- * NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NA * -->
+		<#-- * NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NA * -->
+		<#-- *********************************************************************************** -->
+
+		/* Top fixed on scroll */
+		var nav = $('#menu-main');
+		$(window).scroll(function () {
+			if ( $(this).scrollTop() > 200 && $(".navbar-toggle").css("display") == "none" ) {
+				nav.addClass("steky col-xs-12 col-sm-12 col-md-12");
+			} else {
+				nav.removeClass("steky col-xs-12 col-sm-12 col-md-12");
+			}
+		});
+
+		$('.portlet-tout-comprendre').click( function(){
+			$('.portlet-tout-comprendre a').ekkoLightbox();
+			return false;
+		});
+		
+		// Hide Navbar on scroll down
+		/*
+		var didScroll;
+		var lastScrollTop = 0;
+		var delta = 80;
+		var navbarHeight = $('#main-navbar-bp').outerHeight();
+
+		$(window).scroll(function(event){
+			didScroll = true;
+		});
+
+		setInterval(function() {
+			if (didScroll) {
+				hasScrolled();
+				didScroll = false;
+			}
+		}, 250);
+
+		function hasScrolled() {
+			var st = $(this).scrollTop();
+
+			// Make sure they scroll more than delta
+			if (Math.abs(lastScrollTop - st) <= delta)
+				return;
+
+			if (st > lastScrollTop && st > navbarHeight){				
+				$('#main-navbar-bp').addClass('shrink'); // Scroll Down
+				$('#vote-navbar-bp').css('top', '0');
+			} else if (st + $(window).height() < $(document).height()) { // Scroll Up
+				$('#main-navbar-bp').removeClass('shrink');
+				$('#vote-navbar-bp').css('top', '70px');
+			}
+		
+			lastScrollTop = st;
+		}
+		*/
+		
+		<#-- Sets active link in Bootstrap menu : location url (key) matching relay to navbar url (value). For document viewing, specific treatment... -->
+		if ( $('input[value = "SOUMIS"]').length > 0 )
+		{
+			$('a[href *= "conf=projects_mdp"]').parent('li').addClass('active');
+		}
+		else
+		{
+			var arr = {
+				"la-demarche-sommaire.html" : "la-demarche-sommaire.html", 
+
+				"conf=list_idees"           : "conf=list_idees", 
+				"conf=map_idees"            : "conf=list_idees", 
+				"page=idee"                 : "conf=list_idees",
+				
+				"conf=projects_mdp"         : "conf=projects_mdp", 
+				"conf=map_projets"          : "conf=projects_mdp", 
+				
+				"conf=elected_projects"     : "conf=elected_projects", 
+				
+				"conf=list_projects"        : "conf=list_projects", 
+				"conf=map_projects"         : "conf=list_projects", 
+				"portlet_id=158"            : "conf=list_projects",
+				
+				"je-depose.html"            : "je-depose.html",
+				"page=ideation"             : "je-depose.html",
+				
+				"page=agenda"               : "page=agenda",
+				"page=mesInfos"             : "page=mesInfos",
+				"page=myProjects"           : "page=myProjects",
+				"page=myFavourites"         : "page=myFavourites",
+				"page=mySubscriptions"      : "page=mySubscriptions"
+			};
+			for (var key in arr) {
+				var value = arr[key];
+				if (this.location.href.indexOf(key) >= 0) {
+					$('a[href *= "' + value + '"]').parent('li').addClass('active');
+					break;
+				}
+			}
+		}
+		
+		<#-- Randomizing SOLR calls -->
+		$(function() {
+			$("a[href*='RANDOM']").each(function() {
+				$(this).attr( 'href', this.href.replace("RANDOM", Math.floor(Math.random() * 1000000) + "_random") );
+			});
+		});
+				
+		<#-- *********************************************************************************** -->
+		<#-- * VARIOUS VARIOUS VARIOUS VARIOUS VARIOUS VARIOUS VARIOUS VARIOUS VARIOUS VARIOUS * -->
+		<#-- * VARIOUS VARIOUS VARIOUS VARIOUS VARIOUS VARIOUS VARIOUS VARIOUS VARIOUS VARIOUS * -->
+		<#-- *********************************************************************************** -->
+		
+	  /* DATE is MM/dd/yyyy format */
+	  /* Date calculation and message display for portlet home deposal */
+	  var dtJN="#dskey{sitelabels.site_property.comptearebours}";
+	  if( dtJN !="0"){
+		var start = new Date(),end = new Date( dtJN ),diff = new Date(end - start),diffDays = Math.floor( diff/1000/60/60/24 );
+		if( diffDays > 0 ){
+		  $(".logo-depot-v1 .portlet-content p:first-of-type").append("<br><span>J-" + diffDays + "</span>");
+		}  else if ( diffDays==-1 ){
+		  $(".logo-depot-v1 .portlet-content p:first-of-type").append("<br><span> Dernier Jour</span>");
+		}
+	  }
+	});
+
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	// Copyright 2014-2015 Twitter, Inc.
+	// Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+	if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+	  var msViewportStyle = document.createElement('style')
+	  msViewportStyle.appendChild(
+		document.createTextNode(
+		  '@-ms-viewport{width:auto!important}'
+		)
+	  )
+	  document.querySelector('head').appendChild(msViewportStyle)
+	}
+</script>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery/plugins/ui/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery/plugins/lightbox/ekko-lightbox.min.js"></script>
+<script type="text/javascript" src="js/jquery/plugins/scrollbars/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="js/jquery/plugins/scrollbars/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="js/jquery/plugins/js-cookie/js.cookie.js"></script>
+<script type="text/javascript" src="js/jquery/plugins/dataTables/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript" src="js/site-bp.js"></script>
+<#if campagneService.isDuring("VOTE") >
+<script type="text/javascript" src="js/plugins/budgetparticipatif/navbar.js"></script>
+</#if>
+
+${plugins_javascript_links}
+
+<#-- Consent cookie -->
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		var socials = false;
+		var ads     = false;
+	
+		var cookieContent = Cookies.get('cookie-consent');
+		if ( typeof cookieContent !== 'undefined' ) 
+		{
+			var cookieContentGet = JSON.parse( cookieContent );
+			if ( cookieContentGet['categories']['socials'] !== false ) socials = true;
+			if ( cookieContentGet['categories']['ads'    ] !== false ) ads     = true;
+		} 
+		else 
+		{
+			var cookieCnil    = Cookies.get('cookie-cnil-parisfr');
+			if ( cookieCnil == 'true' ) {
+				socials = true;
+				ads     = true;
+			}
+		}
+
+		if ( socials ) 
+		{
+			!function(f,b,e,v,n,t,s)
+			{
+			  if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+			  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+			  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+			  n.queue=[];t=b.createElement(e);t.async=!0;
+			  t.src=v;s=b.getElementsByTagName(e)[0];
+			  s.parentNode.insertBefore(t,s)
+			} (window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js');
+			fbq('init', '2217257515158361');
+			fbq('track', 'PageView');
+		}
+		
+		if ( ads ) 
+		{
+			window._adftrack = Array.isArray(window._adftrack) ? window._adftrack : (window._adftrack ? [window._adftrack] : []);
+			window._adftrack.push({
+				pm: 1676043
+			});
+			(function () { 
+				var s = document.createElement('script'); 
+				s.type = 'text/javascript'; s.async = true; s.src = 'https://track.adform.net/serving/scripts/trackpoint/async/'; 
+				var x = document.getElementsByTagName('script')[0]; 
+				x.parentNode.insertBefore(s, x); 
+			})();
+		}
+	});
+</script>
+
+<noscript>
+	<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2217257515158361&ev=PageView&noscript=1" />
+	<p style="margin:0;padding:0;border:0;"><img src="https://track.adform.net/Serving/TrackPoint/?pm=1676043" width="1" height="1" alt="" /></p>
+</noscript>
+
+
+<#-- ${piwik!} -->
+<link href="css/cnil.css" rel="stylesheet">
+<script type="text/javascript" src="js/cnil.js"></script>
+
+<script type="text/javascript">
+	$('#main_vote_navbar').click(function () {
+		if($('#recap_vote').css('display') == 'none'){
+			$('#verifyBtnXS').addClass('open');
+			$('#recap_vote').show(500);
+			// $('#verifyBtn').fadeTo("fast", 0.5);
+		} else {
+			$('#verifyBtnXS').removeClass('open');
+			$('#recap_vote').hide(500);
+				// $('#verifyBtn').fadeTo("fast", 1);
+		}
+		
+	});
+</script>
+
+<#include "/skin/plugins/campagnebp/include/popin_save_personal_info.html" />
+<@addPopinSavePersonalInfo />
+</body>
+</html>

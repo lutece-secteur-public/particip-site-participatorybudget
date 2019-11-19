@@ -1,0 +1,226 @@
+<#assign canCommentOrDelete = true>
+<#if commentClosed?has_content && commentClosed>
+    <#assign canCommentOrDelete = false>
+</#if>
+
+<#if canCommentOrDelete>
+	<#include "/skin/plugins/extend/modules/comment/add_comment.html" />
+</#if>
+
+<#-- Affiche la liste des commentaires postés, pour une PROPOSITION comme pour un ATELIER -->
+
+<#if listComments?? && listComments?has_content>
+
+	<#-- Nombre de commentaires postés -->
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<#if listComments?size &gt; 0>
+				<p id="comment-num">${nbPublishedComments} commentaire<#if nbPublishedComments &gt; 1>s</#if></p>
+			</#if>
+		</div>
+	</div>
+
+	<#-- Liste des commentaires -->
+
+	<#list listComments as comment>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="commentBlock row">
+
+					<div class="separator"></div>
+				
+					<#-- ***********************************************************************************
+					     * COMMENTS COMMENTS COMMENTS COMMENTS COMMENTS COMMENTS COMMENTS COMMENTS COMMENT *
+					     * COMMENTS COMMENTS COMMENTS COMMENTS COMMENTS COMMENTS COMMENTS COMMENTS COMMENT *
+					     *********************************************************************************** -->
+					<div class="col-xs-2 col-sm-1 paddingoverride">					
+						<#-- Selon le cas : avatar de l'usager, de l'équipe du BP ou de la RATP -->
+						<#if comment.isAdminComment>
+							<#if (comment.name!'') = 'RATP'>
+								<img class="img-responsive" src="images/local/skin/ratp_color.png" title="${comment.name!}" alt="${comment.name!}">
+							<#else>
+								<img class="img-responsive img-circle" src="images/logo_paris.png" title="Admin" alt="Admin">
+							</#if>
+						<#else>
+							<img class="img-responsive img-circle" src="${comment.avatarUrl}" title="${comment.name!}" alt="${comment.name!}">
+						</#if>
+					</div>
+
+					<div class="col-xs-10 col-sm-11">
+					
+						<#-- Nom du commentateur et bouton de suppression (sauf si non prévu, ou sous-commentaires présents) -->
+						<h4><span>${comment.name!}</span> le ${comment.dateComment!?string("dd/MM/yyyy")} 
+							<#if canCommentOrDelete>
+								<#if registeredUserEmail??&&  comment.email ?? && comment.email == registeredUserEmail && comment.numberSubComments <= 0 >
+									<#if canDeleteComments?has_content && canDeleteComments>
+										<a href="jsp/site/Portal.jsp?page=extend-comment&amp;action=confirmRemoveComment&amp;idExtendableResource=${idExtendableResource!}&amp;extendableResourceType=${extendableResourceType!}&amp;idComment=${comment.idComment}" title="#i18n{portal.util.labelDelete}">
+											<i class="glyphicon glyphicon-trash"></i>
+										</a>
+									</#if>
+								</#if>
+							</#if>
+						</h4>
+						
+						<#-- Like de commentaire si l'usager est connecté -->
+						<#if registeredUserEmail?? >
+							<div class="pull-right">
+								@Extender[${comment.idComment},comment,rating,{show:"all"}]@
+							</div>
+						</#if>
+						
+						<#if use_bbcode>
+							${comment.BBCodeComment!}
+						<#else>
+							${comment.comment!}
+						</#if>
+					</div>
+				</div>
+			</div>
+					
+			<#-- ***********************************************************************************
+				 * SUB-COMMENT   SUB-COMMENT   SUB-COMMENT   SUB-COMMENT   SUB-COMMENT   SUB-COMME *
+				 * SUB-COMMENT   SUB-COMMENT   SUB-COMMENT   SUB-COMMENT   SUB-COMMENT   SUB-COMME *
+				 *********************************************************************************** -->
+			
+			<div class="row" style="padding-left:15px; padding-right:15px;">
+				<#if comment.listSubComments?? && 0 < comment.listSubComments?size && displaySubComments>
+					<div <#if !idComment?? || comment.idComment?string != idComment>class="commentComments"</#if>>
+						<#list comment.listSubComments as subComment>
+							<div class="row" style="padding-left:15px; padding-right:15px; margin-bottom:20px;">
+							
+								<#-- Bouton "répondre" et avatar -->
+								<div class="col-xs-2 col-sm-1 col-md-1 col-lg-1" style="text-align:right;">
+									<img src="./images/local/skin/comment_reply.png">
+								</div>
+								<div class="col-xs-2 col-sm-1 col-md-1 col-lg-1 paddingoverride">
+									<#if !subComment.isAdminComment>
+										<img class="img-responsive img-circle" src="${subComment.avatarUrl}" title="${subComment.name!}" alt="${subComment.name!}">
+									<#else>
+										<img class="img-responsive img-circle" src="images/logo_paris.png" title="Admin" alt="Admin">
+									</#if>
+								</div>
+
+								<#-- Commentaire et bouton de suppression -->
+								<div class="col-xs-6 col-sm-9 col-md-9 col-lg-9">
+									<h4>#i18n{module.extend.comment.view_comments.labelPosted} ${subComment.dateComment!} #i18n{module.extend.comment.view_comments.labelBy} <span>${subComment.name!}</span>
+										<#if canCommentOrDelete>
+											<#if subComment.email == registeredUserEmail && subComment.numberSubComments <= 0 >
+												<#if canDeleteComments?has_content && canDeleteComments>
+													<a href="jsp/site/Portal.jsp?page=extend-comment&amp;action=confirmRemoveComment&amp;idExtendableResource=${idExtendableResource!}&amp;extendableResourceType=${extendableResourceType!}&amp;idComment=${subComment.idComment}" title="#i18n{portal.util.labelDelete}" >
+														<i class="glyphicon glyphicon-trash"></i>
+													</a>
+												</#if>
+											</#if>
+										</#if>
+									</h4>
+									<p>
+										<#if use_bbcode>
+											${subComment.BBCodeComment!}
+										<#else>
+											${subComment.comment!}
+										</#if>
+									</p>
+								</div>
+								
+								<#-- Bouton "like" -->
+								<#if registeredUserEmail??>
+									<div class="col-xs-2 col-sm-1 col-md-1 col-lg-1">
+										@Extender[${subComment.idComment},comment,rating,{show:"all"}]@
+									</div>
+								</#if>
+							</div>
+						</#list>
+					</div>
+				</#if>
+			</div>
+
+			<#-- Formulaire de réponse à un commentaire -->
+			<#if canCommentOrDelete && allowSubComments && myLuteceUser??>
+				<div class="row" style="padding-left:30px; padding-right:30px;">
+					<div class="col-xs-offset-2 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+						<a id="${comment.idComment!}" class="commentReply" onclick="addComment(${comment.idComment!})">
+							#i18n{module.extend.comment.view_comments.labelAnswerComment}
+						</a>
+					</div>
+				</div>
+
+				<div id="comment-form">
+					<div class="col-xs-offset-2 col-xs-10 col-sm-offset-1 col-sm-11 col-md-offset-1 col-md-11 col-lg-offset-1 col-lg-11">
+						<div class="iComment" id="addComment_${comment.idComment!}">
+							<form class="form" method="post" action="jsp/site/Portal.jsp">
+								<input type="hidden" name="page" value="extend-comment">
+								<input type="hidden" name="action" value="doAddComment">
+								<input type="hidden" name="idParentComment" value="${comment.idComment!}">
+
+								<#if returnToCommentList?? && returnToCommentList>
+									<input type="hidden" name="returnToCommentList" value="true">
+								</#if>
+								<#if from_url?? && from_url?has_content && from_url != "null">
+									<input type="hidden" name="from_url" value="${from_url!}">
+								</#if>
+								<input type="hidden" name="idExtendableResource" value="${idExtendableResource!}">
+								<input type="hidden" name="extendableResourceType" value="${extendableResourceType!}">
+								<#if !commentConfig.enabledAuthMode>
+									<div class="form-group">
+										<label for="email">#i18n{module.extend.comment.add_comment.labelEmail} * :</label>
+										<input type="text" name="email" class="form-control" maxlength="255" value="${email!}" />
+									</div>
+									<div class="form-group">
+										<label  for="name">#i18n{module.extend.comment.add_comment.labelName} * :</label>
+										<input type="text" id="comment-name" name="name" size="20" maxlength="255" value="${userName!}" />
+									</div>
+								<#else>
+									<input type="hidden" name="email" class="form-control" value="${registeredUserEmail!}">
+									<input type="hidden" id="comment-name" name="name" value="${nickname!}">
+								</#if>
+
+								<div class="form-group">
+									<label for="comment" class="sr-only">#i18n{module.extend.comment.add_comment.labelComment} * :</label>
+									<textarea  name="comment" class="form-control" rows="6" placeholder="Merci d'indiquer votre commentaire"></textarea>
+								</div>
+								<#if is_active_captcha>
+									<div class="form-group">
+										${captcha!}
+									</div>
+								</#if>
+								<div class="form-group text-center">
+									<button class="btn btn-lg btn-lt-bg" type="submit" name="add" value="#i18n{portal.util.labelValidate}" title="#i18n{portal.util.labelValidate}" >
+									#i18n{portal.util.labelValidate}
+									</button>
+									<#if addCommentPosition = 0>
+										<button class="btn btn-lg btn-lt-bg" type="button" name="cancel" onclick="javascript:history.back();" value="#i18n{portal.util.labelBack}" title="#i18n{portal.util.labelBack}" >
+										#i18n{portal.util.labelBack}
+										</button>
+									</#if>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</#if>
+		</div>
+	</#list>
+</#if>
+
+<#-- Selon le cas, affiche ou supprime la barre d'action des commentaires -->
+<script type="text/javascript">
+	$( function() {
+		<#if canCommentOrDelete == false>
+			$("#action-comment").remove();
+		<#else>
+			$("#action-comment").show();
+		</#if>
+	});
+</script>
+
+<script>
+  $(document).ready( function () {
+    $( "div.iComment" ).hide();
+  });
+
+  function addComment(i)
+  {
+      $( "#addComment_" + i ).slideToggle( "slow" );
+  }
+</script>
+

@@ -1,0 +1,156 @@
+
+/* CSS print utilise pour generer les catalogues des projets soumis au vote. */
+
+
+/* *********************************************************************************** */
+/* * GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL * */
+/* * GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL * */
+/* *********************************************************************************** */
+
+* {-webkit-print-color-adjust:exact;}
+
+@page {
+    margin: 0;
+}
+
+html {
+  font-size: 15%;
+}
+
+html * {
+  float:none!important;
+}
+
+body {zoom: 73%; }
+
+h1 		{ display:none; }
+/* a		{ display:none; } */
+.btn	{ display:none!important; }
+
+.banner-mon-compte__connexion-wrapper { display:none; }
+
+a[href]:after {
+	content: none !important;
+}
+
+/* *********************************************************************************** */
+/* * NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV * */
+/* * NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV * */
+/* *********************************************************************************** */
+
+nav 	{ display:none; }
+
+/* *********************************************************************************** */
+/* * SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SE * */
+/* * SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SE * */
+/* *********************************************************************************** */
+
+h1.visuallyhidden	{ display:none; }
+h2.visuallyhidden	{ display:none; }
+#search-prj			{ display: none; }
+
+/* *********************************************************************************** */
+/* * PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP * */
+/* * PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP * */
+/* *********************************************************************************** */
+
+#prop-card 										{ margin:2cm; font-size:8rem; }
+#prop-card *									{ background-color:white!important; }
+#prop-card h1									{ display:inherit; }
+#prop-card #prop-vote-result 					{ display:none; }
+#prop-card #prop-header							{ margin-left:0px; }
+#prop-card #carto								{ display:none; }
+#prop-card #prop-data-avatar  a:nth-of-type(2)	{ display:inherit; }
+#prop-card #prop-data-regroup a					{ display:inherit; }
+#prop-card .status-btn-follow					{ display:none; }
+#prop-card .prop-desc-pj						{ display:none; }
+#prop-card #comments img						{ display:none; }
+#prop-card #comments h4							{ font-weight:bold; }
+#prop-card #comments h4							{ font-weight:bold; margin-top:1cm; }
+
+
+/* *********************************************************************************** */
+/* * PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM P * */
+/* * PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM P * */
+/* *********************************************************************************** */
+
+.bgcolor-theme-cadre_vie               { background-color:#37284b!important; }
+.bgcolor-theme-culture                 { background-color:#2297d0!important; }
+.bgcolor-theme-economie_emploi         { background-color:#905e36!important; }
+
+.bgcolor-theme-education               { background-color:#0f71b3!important; }
+.bgcolor-theme-environnement           { background-color:#42a52c!important; }
+.bgcolor-theme-logement                { background-color:#ed7214!important; }
+
+.bgcolor-theme-prevention_securite     { background-color:#bd0a27!important; }
+.bgcolor-theme-proprete                { background-color:#09632e!important; }
+.bgcolor-theme-sante                   { background-color:#f0940a!important; }
+
+.bgcolor-theme-solidarite              { background-color:#e0137a!important; }
+.bgcolor-theme-sport                   { background-color:#1fa095!important; }
+.bgcolor-theme-transport               { background-color:#91127d!important; }
+.bgcolor-theme-ville_numerique         { background-color:#e75221!important; }
+
+
+
+.print-theme-cadre_vie:before           { content:url(../images/local/skin/i_cadre_vie_badge.png);           position:absolute; top:1cm; left:1.2cm; display: inline-block; }
+.print-theme-culture:before             { content:url(../images/local/skin/i_culture_badge.png);             position:absolute; top:1cm; left:1.2cm; display: inline-block; }
+.print-theme-economie_emploi:before     { content:url(../images/local/skin/i_economie_badge.png);            position:absolute; top:1cm; left:1.2cm; display: inline-block; }
+
+.print-theme-education:before           { content:url(../images/local/skin/i_education_badge.png);           position:absolute; top:1cm; left:1.2cm; display: inline-block; }
+.print-theme-environnement:before       { content:url(../images/local/skin/i_environnement_badge.png);       position:absolute; top:1cm; left:1.2cm; display: inline-block; }
+.print-theme-logement:before            { content:url(../images/local/skin/i_cadre_vie_badge.png);           position:absolute; top:1cm; left:1.2cm; display: inline-block; }
+
+.print-theme-prevention_securite:before { content:url(../images/local/skin/i_prevention_securite_badge.png); position:absolute; top:1cm; left:1.2cm; display: inline-block; }
+.print-theme-proprete:before            { content:url(../images/local/skin/i_proprete_badge.png);            position:absolute; top:1cm; left:1.2cm; display: inline-block; }
+.print-theme-sante:before               { content:url(../images/local/skin/i_sante_badge.png);               position:absolute; top:1cm; left:1.2cm; display: inline-block; }
+
+.print-theme-solidarite:before          { content:url(../images/local/skin/i_solidarite_badge.png);          position:absolute; top:1cm; left:1.2cm; display: inline-block; }
+.print-theme-sport:before               { content:url(../images/local/skin/i_sport_badge.png);               position:absolute; top:1cm; left:1.2cm; display: inline-block; }
+.print-theme-transport:before           { content:url(../images/local/skin/i_transport_badge.png);           position:absolute; top:1cm; left:1.2cm; display: inline-block; }
+.print-theme-ville_numerique:before     { content:url(../images/local/skin/i_ville_numerique_badge.png);     position:absolute; top:1cm; left:1.2cm; display: inline-block; }
+
+
+#psoum-list-container { margin:0; padding:0; }
+
+.psoum-panel	{ margin:0; padding:0; page-break-before:always; }
+
+.psoum-card a		{ display:block; }
+
+.psoum-card-theme		{ padding:0.2cm 0cm 0.2cm 1.2cm; width:100%!important; position:absolute; top:7cm; left:0cm; }
+.psoum-card-theme img	{ width:0px; }
+.psoum-card-theme span	{ color:#ffffff!important; font-family:'Arial'!important; font-size:16rem; font-weight:bold; text-transform:uppercase; }
+
+.psoum-card-img p { Display:none; }
+
+.psoum-card-titre h3:before	{ content:'N°'; }
+.psoum-card-titre h3		{ color:#77787b!important; font-family:'Arial'!important; font-weight:bold; font-size:16rem; position:absolute; top:0.2cm; left:8cm; }
+
+.budget:before	{ content:url(../images/local/skin/money-print.png); vertical-align:sub; }
+.budget			{ color:#77787b!important; font-family:'Arial'!important; font-weight:bold; font-size:12rem; position:absolute; top:3.9cm; left:8cm; }
+.budget img		{ display:none; }
+
+.psoum-card-loc img					{ display:none; }
+.psoum-card-loc .for-screen			{ display:none; }
+.psoum-card-loc .for-print:before	{ content:url(../images/local/skin/loc-print.png); vertical-align:sub; }
+.psoum-card-loc .for-print			{ color:#77787b!important; font-family:'Arial'!important; font-weight:bold; font-size:12rem; position:absolute; top:5.2cm; left:8cm; }
+
+.psoum-card-footer:after			{ content:url(../images/local/skin/logo-mdp-print.jpg); position:absolute; bottom:0cm; right:0.5cm; }
+.psoum-card-footer > img.img-qp		{ content:url(../images/local/skin/qp-print.png);       position:absolute; top:6.3cm; right:1.2cm; }
+.psoum-card-footer > img.img-ratp	{ content:url(../images/local/skin/ratp-print.png);       position:absolute; top:6.3cm; right:1.2cm; }
+
+.psoum-card-origin:before	{ content:'Origine'; padding:2cm 0 0.5cm 0; font-size:15rem; font-weight:bold; display:block; }
+.psoum-card-origin			{ display:block; color:#000000!important; font-family:'Arial'!important; font-size:8rem; line-height:4rem; position:absolute; top:7.5cm; left:1.2cm; right:5cm; white-space:pre-wrap; }
+
+.psoum-card-description:before	{ content:'Descriptif'; padding:1.5cm 0 0.5cm 0; font-size:15rem; font-weight:bold; display:block; }
+.psoum-card-description			{ display:block; color:#000000!important; font-family:'Arial'!important; font-size:8rem; line-height:4rem; position:absolute; top:13cm; left:1.2cm; right:5cm; text-align:justify; }
+
+/* *********************************************************************************** */
+/* * FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FO * */
+/* * FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FO * */
+/* *********************************************************************************** */
+
+/* Footer is not useful on print. */
+
+footer { display:none; }
+

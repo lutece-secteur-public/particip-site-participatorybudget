@@ -1,0 +1,37 @@
+<#include "/admin/util/editor/editor.html" />
+<div>
+	<form class="form-horizontal" action="jsp/admin/plugins/extend/modules/comment/DoCreateComment.jsp<#if idComment??>#comment_${idComment}</#if>">
+		<fieldset>
+			<div class="control-group">
+				<label class="control-label" for="name">#i18n{module.extend.comment.comment_info.labelName}</label>
+				<div class="controls">
+					<input type="text" name="name" value="#i18n{ideation.comment_info.labelCreateCommentTeam}" >
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="comment">#i18n{module.extend.comment.add_comment.labelComment}</label>
+				<div class="controls">
+					<textarea class="richtext" name="comment" ></textarea>
+				</div>
+			</div>
+			<div class="form-actions">
+				<input type="hidden" name="idExtendableResource" value="${idExtendableResource}">
+				<input type="hidden" name="extendableResourceType" value="${extendableResourceType}">
+		
+				<input type="hidden" name="viewAllResources" value="${allResources?c}">
+				<#if from_url?? && from_url?has_content && from_url != "null">
+					<input type="hidden" name="from_url" value="${from_url!}" />
+				</#if>
+				<input type="hidden" name="idComment" value="${idComment!}">
+				<button class="btn btn-primary btn-small">
+					<i class="icon-white icon-ok"></i>&nbsp;#i18n{portal.util.labelValidate}
+				</button>
+				<button class="btn btn-small" type="button" onClick="javascript:history.go(-1);">
+					#i18n{portal.util.labelCancel}
+				</button>
+			</div>
+		</fieldset>
+	</form>
+</div>
+
+<@initEditor />

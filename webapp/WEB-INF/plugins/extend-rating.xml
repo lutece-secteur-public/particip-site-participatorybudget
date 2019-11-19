@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?><plug-in>
+
+    <!-- Plugin Informations -->
+    <name>extend-rating</name>
+    <class>fr.paris.lutece.plugins.extend.modules.rating.service.RatingPlugin</class>
+    <version>1.1.2</version>
+    <description>module.extend.rating.module.description</description>
+    <provider>module.extend.rating.module.provider</provider>
+    <documentation/>
+    <installation/>
+    <changes/>
+    <user-guide/>
+    <provider-url>http://lutece.paris.fr</provider-url>
+    <icon-url>images/admin/skin/plugins/extend/modules/rating/extend-rating.png</icon-url>
+    <copyright>Copyright 2001-2012 Mairie de Paris</copyright>
+    <core-version-dependency>
+        <min-core-version>4.0.0</min-core-version>
+        <max-core-version/>
+    </core-version-dependency>
+
+    <!-- if the plugin must have a connection pool with parameter : 1 - yes, 0 - no -->
+    <db-pool-required>1</db-pool-required>
+    
+    <!--Administration interface parameters -->
+    <admin-features>
+        <admin-feature>
+            <feature-id>EXTEND_VOTE_TYPES_MANAGEMENT</feature-id>
+            <feature-title>module.extend.rating.adminFeature.vote_types_management.name</feature-title>
+            <feature-description>module.extend.rating.adminFeature.vote_types_management.description</feature-description>
+            <feature-level>2</feature-level>
+            <feature-url>jsp/admin/plugins/extend/modules/rating/ManageVoteTypes.jsp</feature-url>
+            <feature-icon-url>images/admin/skin/plugins/extend/modules/rating/extend-rating.png</feature-icon-url>
+            <feature-documentation-url>jsp/admin/documentation/AdminDocumentation.jsp?doc=admin-extend-rating</feature-documentation-url>
+        </admin-feature>
+    </admin-features>
+    
+    <!-- Specific plugin CSS stylesheet -->
+    <css-stylesheets>
+        <css-stylesheets-scope>portal</css-stylesheets-scope>
+       <!--  <css-stylesheet>../../js/jquery/plugins/star-rating/jquery.rating.css</css-stylesheet>--> 
+    </css-stylesheets>
+    <!-- Specific plugin JAVASCRIPT -->
+    <javascript-files>
+        <javascript-files-scope>portal</javascript-files-scope>
+        <!--  <javascript-file>extend/modules/rating/extend-rating.js</javascript-file>
+        <javascript-file>../jquery/plugins/star-rating/jquery.rating.js</javascript-file>-->
+    </javascript-files>
+    
+</plug-in>

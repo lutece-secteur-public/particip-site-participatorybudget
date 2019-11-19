@@ -1,0 +1,16 @@
+<script>
+  window.location.href ='<#if (returnToCommentList?? && returnToCommentList) || !(from_url??)>${postBackUrl}<#if postBackUrl?contains('?')>&<#else>?</#if>idExtendableResource=${idExtendableResource}&extendableResourceType=${extendableResourceType}&idComment=${idComment!}&from_url=from_session<#if idComment??>#comment_${idComment!}</#if><#else>${from_url}</#if>&dt=${.now?long}#comment-num'
+</script>
+
+<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9" style="min-height:550px;padding-top:100px;">
+	<div class="alert">
+		<br />
+		${message_comment_created}
+		<br />
+		<div>
+			<a class="btn btn-sm" href="<#if (returnToCommentList?? && returnToCommentList) || !(from_url??)>${postBackUrl}<#if postBackUrl?contains('?')>&<#else>?</#if>idExtendableResource=${idExtendableResource}&extendableResourceType=${extendableResourceType}&idComment=${idComment!}&from_url=from_session<#if idComment??>#comment_${idComment!}</#if><#else>${from_url}</#if>" title="#i18n{portal.util.labelBack}">
+				<i class="glyphicon glyphicon-remove-circle">&nbsp;</i>&nbsp;#i18n{portal.util.labelBack}
+			</a>
+		</div>
+	</div>
+</div>

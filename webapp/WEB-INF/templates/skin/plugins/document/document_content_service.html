@@ -1,0 +1,111 @@
+<#--
+Available objects :
+- String 				document 			The HTML code for the document (Xsl transformation result)
+- String 				portlet				The HTML code for documents list portlet containing the document
+- String 				categories			The HTML code for category list portlet linked with the document
+- String 				document_comments	The HTML code for the comments area
+- String 				document_id			The document id
+- String 				portlet_id			The portlet id
+- DocumentPublication 	publication 		The publication object.
+How to display the date publication : ${publication.datePublishing?date} or ${publication.datePublishing?datetime}
+-->
+<#if isExtendInstalled?? && isExtendInstalled>
+	@ExtenderParameter[${document_id},document,opengraph]@
+</#if>
+<#assign numb_random="${.now?long?string}"?number />
+<div id="project-content">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="bg-bleu-clair">
+				<#if isExtendInstalled?? && isExtendInstalled>
+				<div id="toolbar" class="row content-padding hidden-print">
+					<div class="col-xs-12 col-sm-4 col-md-5 col-lg-5">
+						<a class="btn btn-link btn-retour" title="Retour" href="jsp/site/Portal.jsp?page=search-solr&sort_name=${numb_random}_random&sort_order=random&fq=localisation_text:Tout Paris&fq=type:Projet 2015">
+						<i class="fa fa-arrow-left"></i>
+						<span class="hidden-xs hidden-sm">Retour aux projets</span>
+						</a>
+						<a href="javascript:window.print();" title="Imprimer" class="btn btn-link btn-retour">
+							<i class="fa fa-print"></i><span class="hidden-xs hidden-sm">&nbsp;Imprimer</span>
+						</a>
+					</div>
+					<div class="hidden-xs col-sm-8 col-md-7 col-lg-7 project_social_share">
+						@Extender[${document_id},document,opengraph,{footer:false, header:false}]@
+					</div>
+				</div>
+				</#if>
+				<div class="content-padding">
+					${document}
+					<div class="row">
+						<div id="project-sharing-buttons" class="col-xs-12 col-sm-12 col-md-8 col-md-offset-4 col-lg-8 col-lg-offset-4 text-center hidden-print">
+							<h2 class="title2">Je Partage !</h2>
+								<a href="http://www.facebook.com" data-action="facebook" class="share" title="Partager sur Facebook"><img src="document?id=68&amp;id_attribute=43" alt="Partager sur Facebook" title="Partager sur Facebook"/></a>&#160;&#160;
+								<a href="http://www.twitter.com" data-action="twitter" class="share" title="Partager sur Twitter" target="_blank"><img src="document?id=69&amp;id_attribute=43" alt="Partager sur Twitter" title="Partager sur Twitter"/></a>&#160;&#160;
+
+								<#assign user_params>
+									<#if user?has_content>
+										<#assign userNameGiven = user.getUserInfo('user.name.given') >
+										<#assign userNameFamily = user.getUserInfo('user.name.family') >
+										&amp;senderName=${userNameFamily}&amp;senderFirstname=${userNameGiven}&amp;email=${user.email}
+									</#if>
+								</#assign>
+								<!--
+								<a href="jsp/site/SendResource.jsp?idExtendableResource=${document_id}&amp;extendableResourceType=document${user_params}" id="btn_send_email" alt="Envoyer par e-mail" title="Envoyer par e-mail" target="_blank">
+									<img src="document?id=70&amp;id_attribute=43" alt="Envoyer par e-mail" title="Envoyer par e-mail">
+								</a>
+								-->
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-4 col-lg-8 col-lg-offset-4 project-sharing text-center hidden-print">
+							${avis_include}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 hidden-print">
+			${alerte_include}
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="sendModal" tabindex="-1" role="dialog" aria-labelledby="sendModalLabel" aria-hidden="true">
+   <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fermer</span></button>
+        <h4 class="modal-title" id="myModalLabel">Envoyer un message</h4>
+      </div>
+      <div class="modal-body">
+		<iframe src="jsp/site/SendResource.jsp?idExtendableResource=${document_id}&amp;extendableResourceType=document${user_params}" width="100%" height="650" style="overflow:hidden;" frameborder="0"></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+<#include "/skin/plugins/budgetparticipatif/modal_info.html">
+<script>
+$(document).ready( function(){
+	$('#btn_send_email').click( function(e){
+		$('#sendModal').modal();
+		return false;
+	});
+
+	$(".item img").each( function(){
+		$(this).addClass("lightbox");
+		$(this).attr("data-type","image");
+		$(this).attr("data-width","100%");
+		var attrSrc = $(this).attr("src");
+		$(this).attr("data-remote",attrSrc );
+	});
+
+	$(".lightbox").click( function(){
+		$(this).ekkoLightbox();
+	});
+});
+</script>

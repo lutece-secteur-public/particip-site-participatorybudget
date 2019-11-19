@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<schema name="lutece" version="1.5">
+  <types>
+    <field name="_version_" type="long" indexed="true" stored="true"/>
+    <field name="_root_" type="string" indexed="true" stored="false"/>
+    <fieldType name="string" class="solr.StrField" sortMissingLast="true"/>
+    <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
+    <fieldType name="int" class="solr.TrieIntField" precisionStep="0" positionIncrementGap="0"/>
+    <fieldType name="float" class="solr.TrieFloatField" precisionStep="0" positionIncrementGap="0"/>
+    <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+    <fieldType name="double" class="solr.TrieDoubleField" precisionStep="0" positionIncrementGap="0"/>
+    <fieldType name="date" class="solr.TrieDateField" precisionStep="0" positionIncrementGap="0"/>
+    <fieldtype name="binary" class="solr.BinaryField"/>
+    <fieldType name="random" class="solr.RandomSortField" indexed="true"/>
+    <fieldType name="text" class="solr.TextField">
+      <analyzer>
+        <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-ISOLatin1Accent.txt"/>
+        <tokenizer class="solr.StandardTokenizerFactory"/>
+        <!-- removes l', etc -->
+        <filter class="solr.ElisionFilterFactory" ignoreCase="true" articles="lang/contractions_fr.txt"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+        <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_fr.txt" format="snowball" />
+		<filter class="solr.KeywordMarkerFilterFactory" protected="lang/protwords.txt" />
+        <!-- if using another stemmer, check that the charFilter mapping-ISOLatin1Accent.txt does not interfere.
+             For FrenchLightStemmer used by the FrenchLightStemFilterFactory, it looks OK because it does not use
+             many accents (only check for "ième", "ète" and "ère"); the effects are only on numbers:
+             vingtième was interpreted as "vingt" (note: vingtieme was interpreted as vingtieme...). With the accents remove,
+             vingtième is always interpreted as "vingtieme".
+
+             Other stemmers are reported not to work, for example:
+             (from http://lucene.472066.n3.nabble.com/question-on-solr-ASCIIFoldingFilterFactory-td2780463.html)
+             "étranglée" => ASCIIFoldingFilterFactory => "etranglee" => FrencheStemmer => "etranglee"
+             "étranglé" => ASCIIFoldingFilterFactory => "etrangle" => FrencheStemmer => "etrangl"
+
+             "étranglée" => FrencheStemmer => "étrangl" => ASCIIFoldingFilterFactory => "etrangl"
+             "étranglé" => FrencheStemmer => "étrangl" => ASCIIFoldingFilterFactory => "etrangl"
+         -->
+        <filter class="solr.FrenchLightStemFilterFactory"/>
+        <!-- less aggressive: <filter class="solr.FrenchMinimalStemFilterFactory"/> -->
+        <!-- more aggressive: <filter class="solr.SnowballPorterFilterFactory" language="French"/> -->
+      </analyzer>
+    </fieldType>
+    <fieldType name="geoloc" class="solr.LatLonType" subFieldSuffix="_coordinate"/>
+    <fieldType name="string_without_accents" class="solr.TextField" >
+       <analyzer type="index">
+         <tokenizer class="solr.KeywordTokenizerFactory"/>
+         <filter class="solr.ASCIIFoldingFilterFactory"/>
+	<charFilter class="solr.PatternReplaceCharFilterFactory" pattern="[^A-Za-z0-9]" replacement=""/>
+	<filter class="solr.TrimFilterFactory"/>  
+	     <filter class="solr.LowerCaseFilterFactory"/>
+       </analyzer>
+       <analyzer type="query">
+         <tokenizer class="solr.KeywordTokenizerFactory"/>
+             <filter class="solr.ASCIIFoldingFilterFactory"/>
+	     <filter class="solr.TrimFilterFactory"/>  
+	     <filter class="solr.LowerCaseFilterFactory"/>
+	     <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="[^A-Za-z0-9]" replacement=""/>
+       </analyzer>
+       
+     
+   	</fieldType>
+
+    <fieldType name="foTagPipeDelimited" class="solr.TextField">
+        <analyzer>
+            <tokenizer class="solr.PatternTokenizerFactory" pattern="\|"/>
+        </analyzer>
+    </fieldType>
+  </types>
+  <fields>
+    <field name="url" type="text" stored="true" indexed="true"/>
+    <field name="date" type="date" stored="true" indexed="true"/>
+    <field name="title" type="text" indexed="true" stored="true"/>
+    <field name="uid" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
+    <field name="content" type="text" stored="true" indexed="true" required="true"/>
+    <field name="site" type="string" stored="true" indexed="true"/>
+    <field name="summary" type="text" stored="true" indexed="true"/>
+    <field name="type" type="string" stored="true" indexed="true"/>
+    <field name="role" type="string" indexed="true" stored="true"/>
+    <field name="xml_content" type="text" indexed="true" stored="true"/>
+    <field name="categorie" type="string" indexed="true" stored="true"/>
+    <field name="hiedate" type="string" indexed="true" stored="true"/>
+    <field name="metadata" type="string" indexed="true" stored="true"/>
+    <field name="document_portlet_id" type="string" indexed="true" stored="true"/>
+    <field name="titre" type="string_without_accents" stored="false" indexed="true"/>
+    <copyField source="title" dest="titre"/>
+    <dynamicField name="*_fotag_text" type="foTagPipeDelimited" indexed="true" stored="true"/>
+    <dynamicField name="*_string" type="string" indexed="true" stored="true"/>
+    <dynamicField name="*_text" type="string" indexed="true" stored="true"/>
+    <dynamicField name="*_date" type="date" indexed="true" stored="true"/>
+    <dynamicField name="*_long" type="long" indexed="true" stored="true"/>
+    <dynamicField name="*_list" type="text" indexed="true" stored="true"/>
+    <dynamicField name="*_geojson" type="string" indexed="false" stored="true"/>
+    <dynamicField name="*_geolayer" type="string" indexed="true" stored="true"/>
+    <dynamicField name="*_geoloc" type="geoloc" indexed="true" stored="true"/>
+    <dynamicField name="*_geoloc_0_coordinate" type="double" indexed="true" stored="true"/>
+    <dynamicField name="*_geoloc_1_coordinate" type="double" indexed="true" stored="true"/>
+    <dynamicField name="*_random" type="random" />
+  </fields>
+  <uniqueKey>uid</uniqueKey>
+</schema>

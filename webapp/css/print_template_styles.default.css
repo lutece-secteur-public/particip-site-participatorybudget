@@ -1,0 +1,143 @@
+
+
+/* CSS print pour l'affichage des projets en liste, entoure d'un cadre. NON utilise pour les catalogues des projets soumis au vote. */
+
+
+/* *********************************************************************************** */
+/* * GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL * */
+/* * GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL * */
+/* *********************************************************************************** */
+
+html {
+  font-size: 100%;
+}
+
+body::before { margin-bottom:1rem; content:' Budget Participatif de la ville de Paris'; font-size:2rem; text-transform:uppercase; display:inline-block; }
+
+a		{ display:none; }
+.btn	{ display:none!important; }
+
+.banner-mon-compte__connexion-wrapper { display:none; }
+
+@media print {
+  a[href]:after {
+    content: none !important;
+  }
+}
+
+/* *********************************************************************************** */
+/* * HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HE * */
+/* * HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HE * */
+/* *********************************************************************************** */
+
+/* This job is made by Bootstrap ! */
+
+/* *********************************************************************************** */
+/* * HOMEPAGE HOMEPAGE HOMEPAGE HOMEPAGE HOMEPAGE HOMEPAGE HOMEPAGE HOMEPAGE HOMEPAG * */
+/* * HOMEPAGE HOMEPAGE HOMEPAGE HOMEPAGE HOMEPAGE HOMEPAGE HOMEPAGE HOMEPAGE HOMEPAG * */
+/* *********************************************************************************** */
+
+#homepage img	 					{ margin-bottom:3%; }
+#homepage .line p 					{ display:inline; }
+#homepage .period::after				{ content:' : '; }
+#homepage a							{ display:none; }
+
+#homepage  .portlet-homepage-generic	{ display:none; }
+
+#homepage  .portlet-verbatim			{ margin-top:2%; padding:1%; border:1px solid black; }
+
+#homepage #main-page-mib-alert		{ display:none; }
+
+/* *********************************************************************************** */
+/* * SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SE * */
+/* * SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SEARCH SE * */
+/* *********************************************************************************** */
+
+h1.visuallyhidden	{ display:none; }
+h2.visuallyhidden	{ display:none; }
+#search-prj			{ display:none; }
+
+/* *********************************************************************************** */
+/* * PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP * */
+/* * PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP PROP * */
+/* *********************************************************************************** */
+
+/* Liste des vignettes */
+
+.prop-panel	{ margin-top:2%; padding:1%; border:1px solid black; }
+
+.prop-card a		{ display:block; }
+.prop-card a		{ display:block; }
+
+/* Fiche */
+
+#prop-card 						img	{ display:none; }
+#prop-card 							{ margin-top:2%; padding:1%; border:1px solid black; }
+#prop-card #prop-data-regroup a		{ display:inline-block; }
+
+/* *********************************************************************************** */
+/* * PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM P * */
+/* * PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM PSOUM P * */
+/* *********************************************************************************** */
+
+/* Liste des vignettes */
+
+.psoum-panel	{ margin-top:2%; padding:1%; border:1px solid black; }
+
+.psoum-card a	{ display:block; }
+.psoum-card a	{ display:block; }
+
+/* Fiche */
+
+#psoum-card 						img	{ display:none; }
+#psoum-card .container				{ margin-top:2%; padding:1%; border:1px solid black; }
+#psoum-card .psoum-data-planning	img	{ display:inline-block; }
+#psoum-card .psoum-data-origin a		{ display:inline-block; }
+
+/* *********************************************************************************** */
+/* * MY-PROJECTS   MY-PROJECTS   MY-PROJECTS   MY-PROJECTS   MY-PROJECTS   MY-PROJEC * */
+/* * MY-PROJECTS   MY-PROJECTS   MY-PROJECTS   MY-PROJECTS   MY-PROJECTS   MY-PROJEC * */
+/* *********************************************************************************** */
+
+#my-projects-container h2						{ font-size:2rem; }
+#my-projects-container img						{ display:none; }
+#my-projects-container .prop-card-unsubscribe	{ display:none; }
+
+/* *********************************************************************************** */
+/* * MY-SUBSCRIPTIONS   MY-SUBSCRIPTIONS   MY-SUBSCRIPTIONS   MY-SUBSCRIPTIONS   MY- * */
+/* * MY-SUBSCRIPTIONS   MY-SUBSCRIPTIONS   MY-SUBSCRIPTIONS   MY-SUBSCRIPTIONS   MY- * */
+/* *********************************************************************************** */
+
+#my-favs-container h2						{ font-size:2rem; }
+#my-favs-container .table					{ margin-top:2%; padding:1%; border:1px solid black!important; }
+#my-favs-container .table a 					{ display:inline-block; }
+#my-favs-container .table th:last-of-type,
+#my-favs-container .table td:last-of-type	{ display:none!important; }
+
+/* *********************************************************************************** */
+/* * FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FO * */
+/* * FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FO * */
+/* *********************************************************************************** */
+
+/* Footer is not useful on print. */
+
+footer { display:none; }
+
+/* *********************************************************************************** */
+/* * OLD-CODE   OLD-CODE   OLD-CODE   OLD-CODE   OLD-CODE   OLD-CODE   OLD-CODE   OL * */
+/* * OLD-CODE   OLD-CODE   OLD-CODE   OLD-CODE   OLD-CODE   OLD-CODE   OLD-CODE   OL * */
+/* *********************************************************************************** */
+
+/* @import url("page_template_styles.css"); */
+
+/* EXPORT IMPRESSION : VISUALISATION DU DOCUMENT */
+/*
+#project2015_print .project-data {background-color:#ededed;}
+#project2015_print .project_image {border-color:#ededed;}
+#project2015_print .project-description {margin-left:0;}
+#project2015_print .project2015_title {font-size:190%;}
+#project2015_print .project-data-title {font-size: 110%;}
+#project2015_print .project-data img {width:20px; height:20px;}
+#project2015_print .project2015_extend_vote {display:none;}
+#project2015_print .project-description {border-bottom:none;}
+*/

@@ -1,0 +1,16 @@
+<div class="container" style="font-family:'Montserrat'">
+	<p>Vous avez souhait&eacute; r&eacute;aliser une action qui n&eacute;cessite d'&ecirc;tre connect&eacute;. Une fen&ecirc;tre de connexion &quot;Mon Compte&quot; devrait &ecirc;tre apparue sur votre navigateur.</p>
+	<p>Si vous ne voyez pas cette fen&ecirc;tre, merci de v&eacute;rifier que votre navigateur ne bloque pas les popups.</p>
+	<p>Si la fen&ecirc;tre reste absente, merci de <strong><a href="https://moncompte.paris.fr/moncompte/jsp/site/Portal.jsp?page=myluteceusergu&view=createAccountModal">cliquer ici</a></strong> pour vous connecter, puis de r&eacute;it&eacute;rer votre action.</p>
+	<p>&nbsp;</p>
+</div>
+
+<script>
+  $( function() {
+    baseUrl = document.getElementsByTagName('base')[0].href;
+	  
+	if (!checkIfUserIsAuthenticated()) {
+	  displayLoginBp(baseUrl + "jsp/site/plugins/mylutece/DoMyLuteceLogin.jsp%3Fauth_provider%3Dmylutece-openam");
+	}
+  });
+</script>
