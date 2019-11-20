@@ -1,1 +1,66 @@
-<#-- Bandeau 'Qui sommes-nous' --><div class="who-wrapper container-fluid" style="display: none">	<div class="container">		<div class="row">			<div class="col-xs-12">				<p class="who-even">Qui sommes-nous ?</p>				<p class="who-even">					<span class="who-even">Le Budget Participatif propose aux Parisien·ne·s</span>					<span class="who-odd" >de décider de l'utilisation de 5% du budget d'investissement entre 2014 et 2020,</span>				</p>				<p class="who-even">soit un demi-milliard d'euros.</p>			</div>		</div>	</div></div><#-- Making previous div displayed only if not on the homepage --><script type="text/javascript">	var contents = $('#homepage');	if ( contents.length != 1 ) {		$('.who-wrapper').show();	}</script><#-- Bandeau 'Liens' --><div class="links-wrapper container-fluid">	<div class="container">		<div class="row">			<div class="links col-xs-12">				<#-- Logo MDP avec retour à l'accueil -->				<img src="images/local/skin/logo-paris.svg"/>							<#-- Liens textuels -->				<ul>					<#-- li class="nav"><a href="jsp/site/Portal.jsp?page_id=4">Actualités</a></li -->					<#-- li class="nav"><a href="https://sollicitations.paris.fr/ticketing">Contact</a></li -->					<li class="nav"><a href="https://sollicitations.paris.fr/ticketing">Contact</a></li>					<li class="nav"><a href="#" data-toggle="modal" data-target="#piwik-optout-modal">Politique de suivi</a></li>					<li class="nav"><a href="jsp/site/Portal.jsp?page=htmlpage&amp;htmlpage_id=5">Mentions légales</a></li>					<li class="nav"><a href="https://budgetparticipatif.paris.fr/bp/plugins/download/PB_in_Paris.pdf" onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click footer', 'EN', 0]);" target="_blank">English version</a></li>				</li>																			<li class="nav"><a href="http://fr.lutece.paris.fr">Propulsé par <strong>Lutèce</strong></a></li>				</ul>				<#-- Réseaux sociaux -->				<div class="sharing">					<a href="http://www.facebook.com/Paris" title="Nous suivre sur Facebook" onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click footer', 'Suivre Paris FB', 0]);">						<span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span>					</a>					<a href="http://www.twitter.com/Paris" title="Nous suivre sur Twitter" onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click footer', 'Suivre Paris TW', 0]);">						<span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span>					</a>				</div>				</div>		</div>	</div></div>
+<#-- Bandeau 'Qui sommes-nous' -->
+<div class="who-wrapper container-fluid" style="display: none">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<p class="who-even">Qui sommes-nous ?</p>
+				<p class="who-even">
+					<span class="who-even">Le Budget Participatif propose aux Parisien·ne·s</span>
+					<span class="who-odd" >de décider de l'utilisation de 5% du budget d'investissement entre 2014 et 2020,</span>
+				</p>
+				<p class="who-even">soit un demi-milliard d'euros.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<#-- Making previous div displayed only if not on the homepage -->
+<script type="text/javascript">
+	var contents = $('#homepage');
+	if ( contents.length != 1 ) {
+		$('.who-wrapper').show();
+	}
+</script>
+
+<#-- Bandeau 'Liens' -->
+<div class="links-wrapper container-fluid">
+
+	<div class="container">
+		<div class="row">
+			<div class="links col-xs-12">
+
+				<#-- Logo MDP avec retour à l'accueil -->
+				<img src="images/local/skin/logo-paris.svg"/>
+			
+				<#-- Liens textuels -->
+				<ul>
+					<#-- li class="nav"><a href="jsp/site/Portal.jsp?page_id=4">Actualités</a></li -->
+
+					<#-- li class="nav"><a href="https://sollicitations.paris.fr/ticketing">Contact</a></li -->
+					<li class="nav"><a href="https://sollicitations.paris.fr/ticketing">Contact</a></li>
+
+					<li class="nav"><a href="#" data-toggle="modal" data-target="#piwik-optout-modal">Politique de suivi</a></li>
+					<li class="nav"><a href="jsp/site/Portal.jsp?page=htmlpage&amp;htmlpage_id=5">Mentions légales</a></li>
+					<li class="nav"><a href="https://budgetparticipatif.paris.fr/bp/plugins/download/PB_in_Paris.pdf" onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click footer', 'EN', 0]);" target="_blank">English version</a></li>
+				</li>
+				
+					
+					
+					<li class="nav"><a href="http://fr.lutece.paris.fr">Propulsé par <strong>Lutèce</strong></a></li>
+				</ul>
+
+				<#-- Réseaux sociaux -->
+				<div class="sharing">
+					<a href="http://www.facebook.com/Paris" title="Nous suivre sur Facebook" onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click footer', 'Suivre Paris FB', 0]);">
+						<span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span>
+					</a>
+					<a href="http://www.twitter.com/Paris" title="Nous suivre sur Twitter" onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click footer', 'Suivre Paris TW', 0]);">
+						<span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span>
+					</a>
+				</div>
+	
+			</div>
+		</div>
+	</div>
+
+</div>

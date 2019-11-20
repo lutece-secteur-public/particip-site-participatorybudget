@@ -1,1 +1,175 @@
-<div id="homepage">	<#-- ---------------------------------------- Who is BP panel ---------------------------------------- -->		<div id="who-wrapper" class="container hidden-xs">		<div class="row">			<div class="col-xs-12">				${htmlpage_1!}			</div>		</div>	</div>		<#-- ---------------------------------------- HomeMsg ---------------------------------------- -->		<#assign date="">	<#assign slogan="">	<#assign button="">	<#if campagneService?? > <#-- Class not instanciated when this page is indexed by SOLR. This test avoid a lot of message into logs. -->		<#attempt>			<#if     campagneService.isDuring( "PRE_IDEATION" ) >				<#assign date="rendez-vous le<br/><span class=\"hl\">" + campagneService.startStr("IDEATION", "dd MMMMM", true)?replace(" ","&nbsp;")?replace("1er","1<sup style=\"text-transform:lowercase\">er</sup>") + " à 9H</span><br/>pour déposer vos projets&nbsp;!">					<#elseif campagneService.isDuring( "IDEATION" ) >				<#assign date="Déposez vos projets jusqu'au <span class=\"hl\">" + campagneService.endStr("IDEATION", "dd MMMMM", true)?replace(" ","&nbsp;")?replace("1er","1<sup style=\"text-transform:lowercase\">er</sup>") + "</span> à&nbsp;20H">				<#assign button="<a class=\"btn btn-18rem btn-white-on-green \" href=\"jsp/site/Portal.jsp?page_id=2\">déposer une idée de projet</a>">					<#elseif campagneService.isDuring( "POST_IDEATION" ) >				<#assign date="<span class=\"hl\">merci</span> pour vos projets !">					<#elseif campagneService.isDuring( "PRE_SUBMIT" ) >				<#assign date="rendez-vous le<br/><span class=\"hl\">" + campagneService.startStr("SUBMIT", "dd MMMMM", true)?replace(" ","&nbsp;")?replace("1er","1<sup style=\"text-transform:lowercase\">er</sup>") + "</span><br/>pour découvrir les projets<br/>soumis au vote&nbsp;!">					<#elseif campagneService.isDuring( "SUBMIT" ) >				<#assign date="les&nbsp;projets soumis au&nbsp;vote sont en&nbsp;ligne&nbsp;!">				<#assign button="<a class=\"btn btn-18rem btn-white-on-green \" href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=projects_mdp&sort_name=RANDOM\">Découvrir les projets</a>">					<#elseif campagneService.isDuring( "PRE_VOTE" ) >				<#assign date="rendez-vous le<br/><span class=\"hl\">" + campagneService.startStr("VOTE", "dd MMMMM", true)?replace(" ","&nbsp;")?replace("1er","1<sup style=\"text-transform:lowercase\">er</sup>") + "</span><br/>pour voter&nbsp;!">				<#assign button="<a href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=projects_mdp&sort_name=RANDOM\" class=\"btn btn-18rem btn-black-on-white\">Découvrir les projets soumis au vote</a>">					<#elseif campagneService.isDuring( "VOTE" ) >				<#assign date="C'est le&nbsp;moment de&nbsp;choisir vos projets&nbsp;préférés&nbsp;!">				<#assign button="<a href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=projects_mdp&sort_name=RANDOM\" class=\"btn btn-24rem btn-black-on-white\">Je&nbsp;clique ici pour&nbsp;voter&nbsp;!</a>">					<#elseif campagneService.isDuring( "POST_VOTE" ) >				<#assign date="le vote est cloture.<br/>merci pour vos votes.">					<#elseif campagneService.isDuring( "PRE_RESULT" ) >				<#assign date="rendez-vous le<br/>" + campagneService.startStr("RESULT", "dd MMMMM", false)?replace(" ","&nbsp;") + "<br/>pour découvrir<br/>les <span class=\"hl\">projets gagnants</span>&nbsp;!">					<#elseif campagneService.isDuring( "RESULT" ) >				<#assign date="découvrez les <span class=\"hl\">projets gagnants</span>&nbsp;!">				<#assign button="<a class=\"btn btn-18rem btn-white-on-green \" href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=elected_projects\">Découvrir les projets gagnants</a>">				<#else>				<#assign slogan="Faites&nbsp;Paris à&nbsp;votre&nbsp;idée&nbsp;!">							</#if>		<#recover>		</#attempt>	</#if>		<div id="homemsg" class="container-fluid">		<div class="container">			<div class="row">				<div class="col-xs-12">					<div id="homemsg-head">						<img src="images/local/skin/bg-front-doc.png"/>						<span id="homemsg-head-msg">en ce moment</span>					</div>					<div id="homemsg-date">${date!''}</div>					<div id="homemsg-slogan">${slogan!''}</div>					<div id="homemsg-button">${button!''}</div>					<nav id="homemsg-foot">						<ul>							<li><a href="jsp/site/Portal.jsp?page=helpdesk&faq_id=3">Tout savoir sur le Budget Participatif</a></li>							<li><a href="jsp/site/Portal.jsp?page_id=10">Voir le calendrier</a></li>						</ul>					</nav>				</div>			</div>		</div>	</div>	<#-- ---------------------------------------- Realization Focus ---------------------------------------- -->		<div id="pgagn">			<div class="container">			<div class="row">				<div class="col-xs-12">									<div id="pgagn-focus">						${page_content_col7}					</div>										<div id="pgagn-discover">						<p>Découvrir les réalisations par :</p>						<div class="row row-eq-height">							<div class="col-md-4 col-sm-12 col-xs-12">								<p>Arrondissement</p>								<div>									<a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects">										<img src="images/local/skin/bg-front-maparrdt.png" class="responsive"/>									</a>								</div>							</div>							<div class="col-md-4 col-sm-6 col-xs-12">								<p>Thématique</p>								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3ACadre+de+vie"><img src="images/local/skin/i2_cadre_vie.png"/><span>Cadre de vie</span></a></div>								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3ACulture+et+patrimoine"><img src="images/local/skin/i2_culture.png"/><span>Culture et patrimoine</span></a></div>								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3AÉconomie%2C+emploi+et+attractivité"><img src="images/local/skin/i2_economie.png"/><span>Économie, emploi et attractivité</span></a></div>								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3AEducation+et+jeunesse"><img src="images/local/skin/i2_education.png"/><span>Éducation et jeunesse</span></a></div>								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3AEnvironnement"><img src="images/local/skin/i2_environnement.png"/><span>Environnement</span></a></div>								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3APrévention+et+sécurité"><img src="images/local/skin/i2_prevention_securite.png"/><span>Prévention et sécurité</span></a></div>							</div>							<div class="col-md-4 col-sm-6 col-xs-12">								<p class="hidden-xs">&nbsp;</p>								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3APropreté"><img src="images/local/skin/i2_proprete.png"/><span>Propreté</span></a></div>								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3ASanté"><img src="images/local/skin/i2_sante.png"/><span>Santé</span></a></div>								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3ASolidarité+et+cohésion+sociale"><img src="images/local/skin/i2_solidarite.png"/><span>Solidarité et cohésion sociale</span></a></div>								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3ASport"><img src="images/local/skin/i2_sport.png"/><span>Sport</span></a></div>								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3ATransport+et+mobilité"><img src="images/local/skin/i2_transport.png"/><span>Transport et mobilité</span></a></div>								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3AVille+intelligente+et+numérique"><img src="images/local/skin/i2_ville_numerique.png"/><span>Ville intelligente et numérique</span></a></div>							</div>						</div>												<div class="final-btn">							<a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects" class="btn btn-14rem btn-black-on-white">								découvrir toutes les réalisations							</a>						</div>					</div>				</div>			</div>		</div>	</div>	<#-- ---------------------------------------- Actualités ---------------------------------------- -->	<div id="actus" class="container-fluid">		<div class="container">			<div class="row">				<div class="col-xs-12">					<div class="actus-title">dans l'actualité</div>				</div>			</div>			${page_content_col5}		</div>	</div>			<#-- ---------------------------------------- Agenda ---------------------------------------- -->		<div id="agenda" class="container-fluid">		<img src="images/local/skin/bg-front-agenda.png"/>		<div>			<p>agenda</p>			<a href="jsp/site/Portal.jsp?page=agenda&view=agendaEvents&id=1">Les évènements à venir</a>		</div>	</div>			<#-- ---------------------------------------- Mayor citation ---------------------------------------- -->		<div id="mayormsg" class="container">		<div class="row">			<div class="col-xs-12">				${page_content_col6}			</div>		</div>	</div></div>
+<div id="homepage">
+
+	<#-- ---------------------------------------- Who is BP panel ---------------------------------------- -->
+	
+	<div id="who-wrapper" class="container hidden-xs">
+		<div class="row">
+			<div class="col-xs-12">
+				${htmlpage_1!}
+			</div>
+		</div>
+	</div>
+	
+	<#-- ---------------------------------------- HomeMsg ---------------------------------------- -->
+	
+	<#assign date="">
+	<#assign slogan="">
+	<#assign button="">
+
+	<#if campagneService?? > <#-- Class not instanciated when this page is indexed by SOLR. This test avoid a lot of message into logs. -->
+		<#attempt>
+			<#if     campagneService.isDuring( "PRE_IDEATION" ) >
+				<#assign date="rendez-vous le<br/><span class=\"hl\">" + campagneService.startStr("IDEATION", "dd MMMMM", true)?replace(" ","&nbsp;")?replace("1er","1<sup style=\"text-transform:lowercase\">er</sup>") + " à 9H</span><br/>pour déposer vos projets&nbsp;!">
+		
+			<#elseif campagneService.isDuring( "IDEATION" ) >
+				<#assign date="Déposez vos projets jusqu'au <span class=\"hl\">" + campagneService.endStr("IDEATION", "dd MMMMM", true)?replace(" ","&nbsp;")?replace("1er","1<sup style=\"text-transform:lowercase\">er</sup>") + "</span> à&nbsp;20H">
+				<#assign button="<a class=\"btn btn-18rem btn-white-on-green \" href=\"jsp/site/Portal.jsp?page_id=2\">déposer une idée de projet</a>">
+		
+			<#elseif campagneService.isDuring( "POST_IDEATION" ) >
+				<#assign date="<span class=\"hl\">merci</span> pour vos projets !">
+		
+			<#elseif campagneService.isDuring( "PRE_SUBMIT" ) >
+				<#assign date="rendez-vous le<br/><span class=\"hl\">" + campagneService.startStr("SUBMIT", "dd MMMMM", true)?replace(" ","&nbsp;")?replace("1er","1<sup style=\"text-transform:lowercase\">er</sup>") + "</span><br/>pour découvrir les projets<br/>soumis au vote&nbsp;!">
+		
+			<#elseif campagneService.isDuring( "SUBMIT" ) >
+				<#assign date="les&nbsp;projets soumis au&nbsp;vote sont en&nbsp;ligne&nbsp;!">
+				<#assign button="<a class=\"btn btn-18rem btn-white-on-green \" href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=projects_mdp&sort_name=RANDOM\">Découvrir les projets</a>">
+		
+			<#elseif campagneService.isDuring( "PRE_VOTE" ) >
+				<#assign date="rendez-vous le<br/><span class=\"hl\">" + campagneService.startStr("VOTE", "dd MMMMM", true)?replace(" ","&nbsp;")?replace("1er","1<sup style=\"text-transform:lowercase\">er</sup>") + "</span><br/>pour voter&nbsp;!">
+				<#assign button="<a href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=projects_mdp&sort_name=RANDOM\" class=\"btn btn-18rem btn-black-on-white\">Découvrir les projets soumis au vote</a>">
+		
+			<#elseif campagneService.isDuring( "VOTE" ) >
+				<#assign date="C'est le&nbsp;moment de&nbsp;choisir vos projets&nbsp;préférés&nbsp;!">
+				<#assign button="<a href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=projects_mdp&sort_name=RANDOM\" class=\"btn btn-24rem btn-black-on-white\">Je&nbsp;clique ici pour&nbsp;voter&nbsp;!</a>">
+		
+			<#elseif campagneService.isDuring( "POST_VOTE" ) >
+				<#assign date="le vote est cloture.<br/>merci pour vos votes.">
+		
+			<#elseif campagneService.isDuring( "PRE_RESULT" ) >
+				<#assign date="rendez-vous le<br/>" + campagneService.startStr("RESULT", "dd MMMMM", false)?replace(" ","&nbsp;") + "<br/>pour découvrir<br/>les <span class=\"hl\">projets gagnants</span>&nbsp;!">
+		
+			<#elseif campagneService.isDuring( "RESULT" ) >
+				<#assign date="découvrez les <span class=\"hl\">projets gagnants</span>&nbsp;!">
+				<#assign button="<a class=\"btn btn-18rem btn-white-on-green \" href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=elected_projects\">Découvrir les projets gagnants</a>">
+	
+			<#else>
+				<#assign slogan="Faites&nbsp;Paris à&nbsp;votre&nbsp;idée&nbsp;!">
+				
+			</#if>
+		<#recover>
+		</#attempt>
+	</#if>
+	
+	<div id="homemsg" class="container-fluid">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div id="homemsg-head">
+						<img src="images/local/skin/bg-front-doc.png"/>
+						<span id="homemsg-head-msg">en ce moment</span>
+					</div>
+					<div id="homemsg-date">${date!''}</div>
+					<div id="homemsg-slogan">${slogan!''}</div>
+					<div id="homemsg-button">${button!''}</div>
+					<nav id="homemsg-foot">
+						<ul>
+							<li><a href="jsp/site/Portal.jsp?page=helpdesk&faq_id=3">Tout savoir sur le Budget Participatif</a></li>
+							<li><a href="jsp/site/Portal.jsp?page_id=10">Voir le calendrier</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<#-- ---------------------------------------- Realization Focus ---------------------------------------- -->
+	
+	<div id="pgagn">
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+				
+					<div id="pgagn-focus">
+						${page_content_col7}
+					</div>
+					
+					<div id="pgagn-discover">
+						<p>Découvrir les réalisations par :</p>
+						<div class="row row-eq-height">
+							<div class="col-md-4 col-sm-12 col-xs-12">
+								<p>Arrondissement</p>
+								<div>
+									<a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects">
+										<img src="images/local/skin/bg-front-maparrdt.png" class="responsive"/>
+									</a>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-6 col-xs-12">
+								<p>Thématique</p>
+								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3ACadre+de+vie"><img src="images/local/skin/i2_cadre_vie.png"/><span>Cadre de vie</span></a></div>
+								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3ACulture+et+patrimoine"><img src="images/local/skin/i2_culture.png"/><span>Culture et patrimoine</span></a></div>
+								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3AÉconomie%2C+emploi+et+attractivité"><img src="images/local/skin/i2_economie.png"/><span>Économie, emploi et attractivité</span></a></div>
+								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3AEducation+et+jeunesse"><img src="images/local/skin/i2_education.png"/><span>Éducation et jeunesse</span></a></div>
+								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3AEnvironnement"><img src="images/local/skin/i2_environnement.png"/><span>Environnement</span></a></div>
+								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3APrévention+et+sécurité"><img src="images/local/skin/i2_prevention_securite.png"/><span>Prévention et sécurité</span></a></div>
+							</div>
+							<div class="col-md-4 col-sm-6 col-xs-12">
+								<p class="hidden-xs">&nbsp;</p>
+								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3APropreté"><img src="images/local/skin/i2_proprete.png"/><span>Propreté</span></a></div>
+								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3ASanté"><img src="images/local/skin/i2_sante.png"/><span>Santé</span></a></div>
+								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3ASolidarité+et+cohésion+sociale"><img src="images/local/skin/i2_solidarite.png"/><span>Solidarité et cohésion sociale</span></a></div>
+								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3ASport"><img src="images/local/skin/i2_sport.png"/><span>Sport</span></a></div>
+								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3ATransport+et+mobilité"><img src="images/local/skin/i2_transport.png"/><span>Transport et mobilité</span></a></div>
+								<div><a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects&fq=thematique_text%3AVille+intelligente+et+numérique"><img src="images/local/skin/i2_ville_numerique.png"/><span>Ville intelligente et numérique</span></a></div>
+							</div>
+						</div>
+						
+						<div class="final-btn">
+							<a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects" class="btn btn-14rem btn-black-on-white">
+								découvrir toutes les réalisations
+							</a>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<#-- ---------------------------------------- Actualités ---------------------------------------- -->
+
+	<div id="actus" class="container-fluid">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="actus-title">dans l'actualité</div>
+				</div>
+			</div>
+			${page_content_col5}
+		</div>
+	</div>
+		
+	<#-- ---------------------------------------- Agenda ---------------------------------------- -->
+	
+	<div id="agenda" class="container-fluid">
+		<img src="images/local/skin/bg-front-agenda.png"/>
+		<div>
+			<p>agenda</p>
+			<a href="jsp/site/Portal.jsp?page=agenda&view=agendaEvents&id=1">Les évènements à venir</a>
+		</div>
+	</div>
+		
+	<#-- ---------------------------------------- Mayor citation ---------------------------------------- -->
+	
+	<div id="mayormsg" class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				${page_content_col6}
+			</div>
+		</div>
+	</div>
+
+</div>
