@@ -44,7 +44,6 @@
 <link href="${thetheme.pathCss}/bootstrap-theme.min.css" rel="stylesheet">
 <link href="${thetheme.pathCss}/page_template_styles_v${webapp_version!'1.0.0'}.css" rel="stylesheet" media="screen">
 <link href="${thetheme.pathCss}/print_template_styles.css" rel="stylesheet" media="print">
-<link href="${url_moncompte}/css/banner-moncompte.css" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,600"           rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700,700i" rel="stylesheet">
@@ -56,7 +55,7 @@
 	<link href="${thetheme.pathCss}/navbar.css" rel="stylesheet" media="screen">
 	-->
 	<#assign bpBodyClass=" phaseVote" />
-	<#include "/skin/plugins/budgetparticipatif/votes_modal.html" />
+	<#include "/skin/plugins/participatorybudget/votes_modal.html" />
 </#if>
 
 ${plugins_css_links}
@@ -77,7 +76,7 @@ ${plugins_css_links}
 <link rel="apple-touch-icon-precomposed" sizes="120x120" href="${base_url}apple-touch-icon-120x120-precomposed.png">
 <link rel="apple-touch-icon-precomposed" href="${base_url}apple-touch-icon.png">
 -->
-<#include "/skin/plugins/budgetparticipatif/modal_info.html" />
+<#include "/skin/plugins/participatorybudget/modal_info.html" />
 <#if isExtendInstalled?? && isExtendInstalled >
 	<#if page_id??>
 		@Extender[${page_id},PAGE,opengraph,{header:true}]@
@@ -90,7 +89,6 @@ ${document_meta?default("<!-- no document_meta -->")}
 ${rss?default( "<!-- no RSS feed -->" )}
 <!-- Included JS Files -->
 <script src="js/jquery/jquery.min.js"></script>
-<script src="${url_moncompte}/js/banner-moncompte.js"></script>
 </head>
 <body class="${bpBodyClass}">
 
@@ -528,7 +526,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 
 <script type="text/javascript" src="js/site-bp.js"></script>
 <#if campagneService.isDuring("VOTE") >
-<script type="text/javascript" src="js/plugins/budgetparticipatif/navbar.js"></script>
+<script type="text/javascript" src="js/plugins/participatorybudget/navbar.js"></script>
 </#if>
 
 ${plugins_javascript_links}
@@ -612,7 +610,7 @@ ${plugins_javascript_links}
 	});
 </script>
 
-<#include "/skin/plugins/campagnebp/include/popin_save_personal_info.html" />
+<#include "/skin/plugins/participatorybudget/include/popin_save_personal_info.html" />
 <@addPopinSavePersonalInfo />
 </body>
 </html>

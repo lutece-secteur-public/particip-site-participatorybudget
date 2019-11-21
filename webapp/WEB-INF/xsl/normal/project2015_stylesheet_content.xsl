@@ -9,7 +9,7 @@
 
 	<xsl:template match="content">
 		<xsl:choose>
-			<xsl:when test="(string(project_2015/project_2015-statut_project)!='SUIVI') and (java:isBeforeBeginning(java:fr.paris.lutece.plugins.campagnebp.service.CampagnesService.getInstance(), 'SUBMIT'))" >
+			<xsl:when test="(string(project_2015/project_2015-statut_project)!='SUIVI') and (java:isBeforeBeginning(java:fr.paris.lutece.plugins.participatorybudget.service.CampagnesService.getInstance(), 'SUBMIT'))" >
 				<div id="prop-card">
 					<div class="row">
 						<div class="col-xs-12 col-sm-offset-2 col-sm-8">
