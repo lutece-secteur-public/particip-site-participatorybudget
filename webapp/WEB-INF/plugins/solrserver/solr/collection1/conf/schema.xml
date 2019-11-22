@@ -76,11 +76,6 @@
      
    	</fieldType>
 
-    <fieldType name="foTagPipeDelimited" class="solr.TextField">
-        <analyzer>
-            <tokenizer class="solr.PatternTokenizerFactory" pattern="\|"/>
-        </analyzer>
-    </fieldType>
   </types>
   <fields>
     <field name="url" type="text" stored="true" indexed="true"/>
@@ -99,7 +94,6 @@
     <field name="document_portlet_id" type="string" indexed="true" stored="true"/>
     <field name="titre" type="string_without_accents" stored="false" indexed="true"/>
     <copyField source="title" dest="titre"/>
-    <dynamicField name="*_fotag_text" type="foTagPipeDelimited" indexed="true" stored="true"/>
     <dynamicField name="*_string" type="string" indexed="true" stored="true"/>
     <dynamicField name="*_text" type="string" indexed="true" stored="true"/>
     <dynamicField name="*_date" type="date" indexed="true" stored="true"/>

@@ -1,313 +1,937 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-	 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
-	 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-             
-    <url>
-        <loc>projet/rendre-la-rue-aux-enfants.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-04</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>rubrique/tout-comprendre-en-30-secondes-.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-08-21</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>actualite/anne-hidalgo-je-souhaite-donner-les-cles-du-budget-aux-citoyens.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-05</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>rubrique/verbatim.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-05</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>rubrique/le-budget-participatif-.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-08-21</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>actualite/anne-hidalgo-je-souhaite-donner-les-cles-du-budget-aux-citoyens.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-05</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>rubrique-multi-texte-multi-image/le-budget-de-paris-.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-04</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/rendre-la-rue-aux-enfants.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-04</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>rubrique-multi-texte-multi-image/etapes-du-vote.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-08-13</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>rubrique/la-charte-de-notrebudget.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-08-13</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/des-kiosques-pour-faire-la-fete.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-03</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>rubrique/abonnement-lettre-d-information.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-07-11</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>rubrique/le-mode-d-emploi-du-budget-participatif.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-02</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>actualite/formations-expositions-et-rencontres-paris-accompagne-les-citoyens-qui-veulent-participer.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-05</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/cultiver-dans-les-ecoles.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-05</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/l-art-aux-portes-de-paris.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-04</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>rubrique/tout-comprendre-en-30-secondes-.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-08-21</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/des-tipis-et-des-bougies.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-04</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/cultiver-dans-les-ecoles.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-05</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>actualite/le-budget-comment-ca-marche-.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-05</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/musees-parisiens-3-0.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-05</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>actualite/le-budget-participatif-a-travers-le-monde.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-04</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/des-tipis-et-des-bougies.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-04</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>actualite/isaac-jabola-carolus-le-budget-participatif-change-la-maniere-de-gouverner-une-ville-.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-05</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/reconquete-urbaine.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-05</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/musees-parisiens-3-0.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-05</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/reconquete-urbaine.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-05</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/les-evenements-sur-grand-ecrans.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-03</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/les-evenements-sur-grand-ecrans.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-03</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/des-piscines-ephemeres.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-05</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/des-piscines-ephemeres.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-05</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/trier-ses-dechets-au-plus-pres.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-05</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/sport-urbain-en-liberte.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-03</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/trier-ses-dechets-au-plus-pres.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-05</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/sport-urbain-en-liberte.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-03</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/jouer-de-7-a-77-ans.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-04</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/des-kiosques-pour-faire-la-fete.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-03</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/jouer-de-7-a-77-ans.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-04</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/des-jardins-sur-les-murs.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-04</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/des-jardins-sur-les-murs.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-04</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/coworking-etudiants-entrepreneurs.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-03</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/coworking-etudiants-entrepreneurs.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-03</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/les-uvres-d-art-investissent-la-rue.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-05</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/les-uvres-d-art-investissent-la-rue.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-05</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>projet/l-art-aux-portes-de-paris.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-04</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>accueil.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-03</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>le-budget-participatif-.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-08-04</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>les-projets.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-09-02</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>actualites.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-08-07</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>actualites/article.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-07-23</lastmod>
-        <changefreq>always</changefreq>
-    </url>
-    <url>
-        <loc>contact.html</loc>
-        <priority>1.0</priority>
-        <lastmod>2014-08-12</lastmod>
-        <changefreq>always</changefreq>
-    </url>
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+
+	 xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+
+
+	 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+
+
+	 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+             
+
+
+    <url>
+
+
+        <loc>projet/rendre-la-rue-aux-enfants.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-04</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>rubrique/tout-comprendre-en-30-secondes-.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-08-21</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>actualite/anne-hidalgo-je-souhaite-donner-les-cles-du-budget-aux-citoyens.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-05</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>rubrique/verbatim.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-05</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>rubrique/le-budget-participatif-.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-08-21</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>actualite/anne-hidalgo-je-souhaite-donner-les-cles-du-budget-aux-citoyens.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-05</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>rubrique-multi-texte-multi-image/le-budget-de-paris-.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-04</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/rendre-la-rue-aux-enfants.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-04</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>rubrique-multi-texte-multi-image/etapes-du-vote.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-08-13</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>rubrique/la-charte-de-notrebudget.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-08-13</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/des-kiosques-pour-faire-la-fete.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-03</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>rubrique/abonnement-lettre-d-information.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-07-11</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>rubrique/le-mode-d-emploi-du-budget-participatif.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-02</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>actualite/formations-expositions-et-rencontres-paris-accompagne-les-citoyens-qui-veulent-participer.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-05</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/cultiver-dans-les-ecoles.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-05</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/l-art-aux-portes-de-paris.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-04</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>rubrique/tout-comprendre-en-30-secondes-.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-08-21</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/des-tipis-et-des-bougies.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-04</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/cultiver-dans-les-ecoles.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-05</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>actualite/le-budget-comment-ca-marche-.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-05</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/musees-parisiens-3-0.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-05</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>actualite/le-budget-participatif-a-travers-le-monde.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-04</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/des-tipis-et-des-bougies.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-04</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>actualite/isaac-jabola-carolus-le-budget-participatif-change-la-maniere-de-gouverner-une-ville-.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-05</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/reconquete-urbaine.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-05</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/musees-parisiens-3-0.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-05</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/reconquete-urbaine.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-05</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/les-evenements-sur-grand-ecrans.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-03</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/les-evenements-sur-grand-ecrans.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-03</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/des-piscines-ephemeres.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-05</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/des-piscines-ephemeres.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-05</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/trier-ses-dechets-au-plus-pres.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-05</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/sport-urbain-en-liberte.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-03</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/trier-ses-dechets-au-plus-pres.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-05</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/sport-urbain-en-liberte.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-03</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/jouer-de-7-a-77-ans.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-04</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/des-kiosques-pour-faire-la-fete.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-03</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/jouer-de-7-a-77-ans.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-04</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/des-jardins-sur-les-murs.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-04</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/des-jardins-sur-les-murs.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-04</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/coworking-etudiants-entrepreneurs.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-03</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/coworking-etudiants-entrepreneurs.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-03</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/les-uvres-d-art-investissent-la-rue.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-05</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/les-uvres-d-art-investissent-la-rue.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-05</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>projet/l-art-aux-portes-de-paris.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-04</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>accueil.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-03</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>le-budget-participatif-.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-08-04</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>les-projets.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-09-02</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>actualites.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-08-07</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>actualites/article.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-07-23</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
+    <url>
+
+
+        <loc>contact.html</loc>
+
+
+        <priority>1.0</priority>
+
+
+        <lastmod>2014-08-12</lastmod>
+
+
+        <changefreq>always</changefreq>
+
+
+    </url>
+
+
 </urlset>

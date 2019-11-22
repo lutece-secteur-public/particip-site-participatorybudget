@@ -1,12 +1,12 @@
 insert into core_datastore values ('solr.app.conf.list_idees.mapping', 'false');
 insert into core_datastore values ('solr.app.conf.list_idees.fq.1', 'type:idee');
 insert into core_datastore values ('solr.app.conf.list_idees.fq.2', 'idee_status_text:true');
-insert into core_datastore values ('solr.app.conf.list_idees.template', 'skin/plugins/ideation/ideation_list_solr_search_results.html');
+insert into core_datastore values ('solr.app.conf.list_idees.template', 'skin/plugins/participatoryideation/ideation_list_solr_search_results.html');
 insert into core_datastore values ('solr.app.conf.list_idees.addonBeans.0', 'ideation.IdeationSolrAddon');
 insert into core_datastore values ('solr.app.conf.map_idees.mapping', 'true');
 insert into core_datastore values ('solr.app.conf.map_idees.fq.1', 'type:idee');
 insert into core_datastore values ('solr.app.conf.map_idees.fq.2', 'idee_status_text:true');
-insert into core_datastore values ('solr.app.conf.map_idees.template', 'skin/plugins/ideation/ideation_map_solr_search_results.html');
+insert into core_datastore values ('solr.app.conf.map_idees.template', 'skin/plugins/participatoryideation/ideation_map_solr_search_results.html');
 insert into core_datastore values ('solr.app.conf.map_idees.addonBeans.0', 'ideation.IdeationSolrAddon');
 
 
