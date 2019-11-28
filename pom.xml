@@ -185,12 +185,6 @@
         </dependency>
         <dependency>
             <groupId>fr.paris.lutece.plugins</groupId>
-            <artifactId>plugin-matomo</artifactId>
-            <version>1.0.0</version>
-            <type>lutece-plugin</type>
-        </dependency>
-        <dependency>
-            <groupId>fr.paris.lutece.plugins</groupId>
             <artifactId>plugin-pagelinkservice</artifactId>
             <version>3.0.2</version>
             <type>lutece-plugin</type>
