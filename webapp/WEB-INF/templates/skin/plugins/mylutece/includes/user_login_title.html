@@ -39,13 +39,12 @@
 
 <script type="text/javascript">
 var _paq = _paq || [];  
-initBanner();
 
 	// Once to be sure that top-right button will be active.  
 	$(".btn-connect").click( function(e){
 		e.preventDefault();
 		var u = encodeURIComponent(window.location.href);
-		displayCreateAccountPage( u );
+		displayLoginBp( u );
 	});
 	
 	// Using load to ensure that copy of HTML code from extends boutons is applied (fav-src --> fav, vote-src --> vote...).
@@ -55,7 +54,7 @@ initBanner();
 		$(".btn-connect").click( function(e){
 			e.preventDefault();
 			var u = encodeURIComponent(window.location.href);
-			displayCreateAccountPage( u );
+			displayLoginBp( u );
 		});
 
 		_paq.push([function() {

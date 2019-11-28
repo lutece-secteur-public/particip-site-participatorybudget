@@ -183,3 +183,32 @@ $( document ).ready(function() {
       	checkValidAccountAfterAuthentication();
     }
 });
+
+//checked if the user is authenticated
+function checkIfUserIsAuthenticated() {
+    var result = false;
+    $.ajax({
+        url: baseUrl + 'jsp/site/plugins/mylutece/IsUserAuthenticatedJson.jsp',
+        type: 'GET',
+        dataType: "json",
+        data: {},
+        async: false,
+    	cache:false,
+        success: function (data) {
+            if (data.status == 'OK') {
+                result = data.result;
+
+            }
+
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+
+        }
+    });
+
+    return result;
+}
+
+
+
