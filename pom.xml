@@ -60,7 +60,7 @@
         <dependency>
             <groupId>fr.paris.lutece.plugins</groupId>
             <artifactId>plugin-document</artifactId>
-            <version>4.0.9</version>
+            <version>[4.0.10-SNAPSHOT,)</version>
             <type>lutece-plugin</type>
         </dependency>
         <dependency>
