@@ -8,24 +8,28 @@
     <xsl:output method="html" indent="yes"/>
 	
     <xsl:template match="content">
-        <xsl:apply-templates select="actualite"/>
+
+		<!-- Visualisation du contenu XML source -->
+		<!-- pre><xsl:copy-of select="."/></pre -->
+
+        <xsl:apply-templates select="news_topic"/>
     </xsl:template>
     
 	<!-- Actualité à la une -->
-	<xsl:template match="actualite">
+	<xsl:template match="news_topic">
 				<!-- Titre et image -->
 				<xsl:choose>
 
 					<!-- Image du titre, avec titre en surimpression -->
-					<xsl:when test="actualite-image/file-resource != ''">
-						<xsl:apply-templates select="actualite-image/file-resource"/>
+					<xsl:when test="news_topic-image/file-resource != ''">
+						<xsl:apply-templates select="news_topic-image/file-resource"/>
 					</xsl:when>
 					
 					<xsl:otherwise>		
 						<xsl:choose>
 							<!-- Sinon image mini, avec titre en surimpression -->
-							<xsl:when test="actualite-imagemini/file-resource != ''">
-								<xsl:apply-templates select="actualite-imagemini/file-resource"/>
+							<xsl:when test="news_topic-imagemini/file-resource != ''">
+								<xsl:apply-templates select="news_topic-imagemini/file-resource"/>
 							</xsl:when>
 							
 							<xsl:otherwise>
@@ -42,7 +46,7 @@
 				
 				<!-- Contenu de l'actualité -->
 				<div class="article-description">
-					<xsl:value-of disable-output-escaping="yes" select="actualite-content" />
+					<xsl:value-of disable-output-escaping="yes" select="news_topic-content" />
 				</div>
 
 				<!-- Visualisation du contenu XML source -->

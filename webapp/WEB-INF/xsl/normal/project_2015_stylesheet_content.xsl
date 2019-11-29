@@ -357,12 +357,6 @@
 							</p>
 						</xsl:if>
 						</div>
-            <xsl:if test="project_2015-contributeur !=''">
-						 <h2 class="project-data-title">ORIGINE DU PROJET </h2>
-						  <div class="project-data origin">
-							 <p><xsl:value-of disable-output-escaping="yes" select="project_2015-contributeur" /></p>
-						 </div>
-            </xsl:if>
 						<xsl:if test="project_2015-num_idea !=''">
 							<h2 class="project-data-title">Projet élaboré à partir des propositions suivantes :</h2>
               <div class="project-data origin">
