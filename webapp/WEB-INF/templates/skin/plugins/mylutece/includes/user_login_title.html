@@ -7,25 +7,25 @@
       		<span>Mon Espace <i class="fa fa-angle-down"></i></span>
     	</a>
     	<ul class="dropdown-menu dropdown-menu-right" role="menu">
-      		<li><a href="jsp/site/Portal.jsp?page=mesInfos"                                  onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu Mon compte', 'Mes infos personnelles', 0]);"><span>Mes infos personnelles</span></a></li>
+      		<li><a href="jsp/site/Portal.jsp?page=mesInfos"><span>My infos</span></a></li>
 	  
-	  		<li><a href="jsp/site/Portal.jsp?page=myProjects"                                onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu Mon compte', 'Mes projets déposés', 0]);"   ><span>Mes projets déposés</span></a></li>
-      		<li><a href="jsp/site/Portal.jsp?page=myFavourites"                              onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu Mon compte', 'Mes projets favoris', 0]);"   ><span>Mes projets favoris</span></a></li>
+	  		<li><a href="jsp/site/Portal.jsp?page=myProjects"><span>My proposals</span></a></li>
+      		<li><a href="jsp/site/Portal.jsp?page=myFavourites"><span>My favorite projects</span></a></li>
 
 			<#if campagneService?? && campagneService.isAfterBeginning( "VOTE" ) && campagneService.isBeforeEnd( "RESULT" ) >
-				<li><a href="jsp/site/Portal.jsp?page=mesVotes&view=myVotes&notify_valide=false" onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu Mon compte', 'Mes votes', 0]);"             ><span>Mon vote</span></a></li>
+				<li><a href="jsp/site/Portal.jsp?page=mesVotes&view=myVotes&notify_valide=false" <span>My votes</span></a></li>
 			</#if>
 	  
-     		<li><a href="jsp/site/Portal.jsp?page=mySubscriptions"                           onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu Mon compte', 'Mes notifications', 0]);"     ><span>Mes notifications</span></a></li>
+     		<li><a href="jsp/site/Portal.jsp?page=mySubscriptions"><span>Mes notifications</span></a></li>
 
-      		<li><a href="#" id="banner-mon-compte_menu__logout"                              onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu Mon compte', 'Déconnexion', 0]);"           ><span>Déconnexion</span></a></li>
+      		<li><a href="#" id="banner-mon-compte_menu__logout"><span>Log out</span></a></li>
     	</ul>
   	</li>
 
 <#else>
 
   <li id="connect">
-    <a href="#" class="btn-connect" ><img src="images/local/skin/mon-paris-icon.png"/><span class="hidden-md hidden-sm">Mon Paris</span></a>
+    <a href="#" class="btn-connect" ><span class="hidden-md hidden-sm">My OpenPB</span></a>
   </li>
 </#if>
 
@@ -38,7 +38,6 @@
 </noscript> 
 
 <script type="text/javascript">
-var _paq = _paq || [];  
 
 	// Once to be sure that top-right button will be active.  
 	$(".btn-connect").click( function(e){
@@ -57,31 +56,5 @@ var _paq = _paq || [];
 			displayLoginBp( u );
 		});
 
-		_paq.push([function() {
-		var self = this;
-		
-		function getOriginalVisitorCookieTimeout() {
-			var now = new Date(),
-			nowTs = Math.round(now.getTime() / 1000),
-			visitorInfo = self.getVisitorInfo();
-			var createTs = parseInt(visitorInfo[2]);
-			var cookieTimeout = 33696000; // 13 mois en secondes
-			var originalTimeout = createTs + cookieTimeout - nowTs;
-			return originalTimeout;
-		  }
-		  this.setVisitorCookieTimeout(getOriginalVisitorCookieTimeout());
-		}]);
-		_paq.push(['trackPageView']);
-		_paq.push(['enableLinkTracking']);
-		
-		(function(){ var u=(("https:" == document.location.protocol) ? "https://piwik.apps.paris.fr/piwik/" : "https://piwik.apps.paris.fr/piwik/");
-		_paq.push(['setSiteId', 20]);
-		_paq.push(['setTrackerUrl', u+'piwik.php']);
-
-		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.defer=true; g.async=true; g.src=u+'piwik.js';
-		s.parentNode.insertBefore(g,s); })();
 	});
- 
 </script>
-<noscript><p><img src="https://piwik.apps.paris.fr/piwik/piwik.php?idsite=20" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->

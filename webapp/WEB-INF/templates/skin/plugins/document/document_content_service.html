@@ -20,7 +20,7 @@ How to display the date publication : ${publication.datePublishing?date} or ${pu
 				<#if isExtendInstalled?? && isExtendInstalled>
 				<div id="toolbar" class="row content-padding hidden-print">
 					<div class="col-xs-12 col-sm-4 col-md-5 col-lg-5">
-						<a class="btn btn-link btn-retour" title="Retour" href="jsp/site/Portal.jsp?page=search-solr&sort_name=${numb_random}_random&sort_order=random&fq=localisation_text:Tout Paris&fq=type:Projet 2015">
+						<a class="btn btn-link btn-retour" title="Retour" href="jsp/site/Portal.jsp?page=search-solr&sort_name=${numb_random}_random&sort_order=random&fq=localisation_text:Tout Paris&fq=type:PB Project">
 						<i class="fa fa-arrow-left"></i>
 						<span class="hidden-xs hidden-sm">Retour aux projets</span>
 						</a>
@@ -57,7 +57,7 @@ How to display the date publication : ${publication.datePublishing?date} or ${pu
 					</div>
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-4 col-lg-8 col-lg-offset-4 project-sharing text-center hidden-print">
-							${avis_include}
+							${avis_include!''}
 						</div>
 					</div>
 				</div>
@@ -66,7 +66,7 @@ How to display the date publication : ${publication.datePublishing?date} or ${pu
 	</div>
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 hidden-print">
-			${alerte_include}
+			${alerte_include!''}
 		</div>
 	</div>
 </div>

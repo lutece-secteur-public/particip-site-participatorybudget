@@ -351,10 +351,6 @@
 							</p>
 						</xsl:if>
 						</div>
-						<h2 class="project-data-title">ORIGINE DU PROJET </h2>
-						<div class="project-data origin">
-							<p><xsl:value-of disable-output-escaping="yes" select="project_2015-contributeur" /></p>
-						</div>
 						<h2 class="project-data-title">
 							<xsl:element name="a">
 							  <xsl:attribute name="href"><xsl:value-of select="project_2015-url"/></xsl:attribute>

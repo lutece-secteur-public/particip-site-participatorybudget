@@ -56,9 +56,6 @@
 								</xsl:if>
 							</table>
 						</div>
-						<div class="project-data">
-							<p>Origine du projet : <xsl:value-of disable-output-escaping="yes" select="project_2015-contributeur" /></p>
-						</div>
 						<h2 class="project-data-title">DESCRIPTION DU PROJET</h2>
 						<xsl:value-of disable-output-escaping="yes" select="project_2015-description" />
 					</div>

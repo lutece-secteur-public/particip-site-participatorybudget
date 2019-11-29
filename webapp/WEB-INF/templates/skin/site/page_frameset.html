@@ -107,7 +107,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 	<nav id="main-navbar-bp" class="navbar-fixed-top" role="navigation">
 		<#-- Logo MDP responsive -->
 		
-		<a href="." title="Accueil" onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu', 'Retour accueil', 0]);">
+		<a href="." title="Accueil">
 			<div class="brand">
 				<div class="logo"><img src="images/logo-openpb-1280x1024.png"/></div>
 			</div>
@@ -118,17 +118,9 @@ ${rss?default( "<!-- no RSS feed -->" )}
 		<div class="collapse navbar-collapse" id="navbar-collapse-main">
 			<ul>
 				
-				<li>
-					<a href="jsp/site/Portal.jsp?page_id=10"                                                                                                              
-			   		   onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu', 'Démarche', 0]);">
-			   		   <span>Comment &ccedil;a marche ?</span>
-			   		</a>
-				</li>
-				
 				<#if campagneService.isDuring("IDEATION")>
 					<li>
-						<a href="jsp/site/Portal.jsp?page_id=2"                                                                                                               
-						   onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu', 'Déposer depuis menu', 0]);">
+						<a href="jsp/site/Portal.jsp?page_id=2">
 							<span>D&eacute;poser votre projet</span>
 						</a>
 					</li>
@@ -136,8 +128,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 				
 				<#if (campagneService.isAfterBeginning("IDEATION") && campagneService.isBeforeEnd("PRE_VOTE")) || (campagneService.isAfterBeginning("POST_VOTE") && campagneService.isBeforeEnd("RESULT")) >
 					<li>
-						<a href="jsp/site/Portal.jsp?page=search-solr&amp;conf=list_idees&amp;fq=campagne_text:${campagneService.lastCampagne.code}&amp;sort_name=${RANDOM!123456789}_random&amp;sort_order=asc" 
-						   onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu', 'Projets déposés', 0]);">
+						<a href="jsp/site/Portal.jsp?page=search-solr&amp;conf=list_idees&amp;fq=campagne_text:${campagneService.lastCampagne.code}&amp;sort_name=${RANDOM!123456789}_random&amp;sort_order=asc">
 							<span>Projets d&eacute;pos&eacute;s</span>
 						</a>
 					</li>
@@ -145,8 +136,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 				
 				<#if campagneService.isAfterBeginning("SUBMIT") && campagneService.isBeforeBeginning("RESULT") >
 					<li>
-						<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;conf=projects_mdp"                                   
-						   onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu', 'Projets au vote', 0]);">
+						<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;conf=projects_mdp">
 							<span><#if campagneService.isDuring("VOTE")>Je vote !<#else>Projets au vote</#if></span>
 						</a>
 					</li>
@@ -154,16 +144,14 @@ ${rss?default( "<!-- no RSS feed -->" )}
 				
 				<#if campagneService.isDuring("RESULT") >
 					<li>
-						<a href="jsp/site/Portal.jsp?page=search-solr&conf=elected_projects"                                   
-						   onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu', 'Projets gagnants', 0]);">
+						<a href="jsp/site/Portal.jsp?page=search-solr&conf=elected_projects">
 							<span>Projets lauréats</span>
 						</a>
 					</li>
 				</#if>
 
 				<li class="last">
-					<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;&amp;conf=list_projects"                             
-					   onclick="_paq.push(['trackEvent', 'PROD - Accueil', 'Click menu', 'Suivi des réalisations', 0]);">
+					<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;&amp;conf=list_projects">
 						<span>Suivi des r&eacute;alisations</span>
 					</a>
 				</li>
@@ -183,7 +171,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 	<#if user?has_content>
 		<#assign classConnect=""/>
 	</#if>
-	<nav id="vote-navbar-bp" class="navbar navbar-fixed-top${classConnect}" role="navigation" style="z-index:1025" onclick="_paq.push(['trackEvent', 'PROD - VOTE', 'Barre VOTE', 'Toggle barre', 0]);">
+	<nav id="vote-navbar-bp" class="navbar navbar-fixed-top${classConnect}" role="navigation" style="z-index:1025">
 		<div id="main_vote_navbar" class="container-fluid">
 			<div class="navbar-wrapper">
 				<div class="brand">
@@ -246,9 +234,9 @@ ${rss?default( "<!-- no RSS feed -->" )}
 				<#elseif voteValidated?has_content && ! voteValidated >
 					<div id="confirm_vote" class=" ">
 						<#if arrondUser?? && arrondUser!="">
-							<button class="btn btn-16rem btn-white-on-green" onclick="_paq.push(['trackEvent', 'PROD - VOTE', 'Barre VOTE', 'Affichage confirmation vote', 0]); valideVotes('${arrondUser?number}e arrondissement', 4, 4, false);">
+							<button class="btn btn-16rem btn-white-on-green" onclick="valideVotes('${arrondUser?number}e arrondissement', 4, 4, false);">
 						<#else>
-							<button class="btn btn-16rem btn-white-on-green" onclick="_paq.push(['trackEvent', 'PROD - VOTE', 'Barre VOTE', 'Affichage confirmation vote', 0]); valideVotes('1e arrondissement', 4, 4, false);">
+							<button class="btn btn-16rem btn-white-on-green" onclick="valideVotes('1e arrondissement', 4, 4, false);">
 						</#if>
 							JE VALIDE MON VOTE
 						</button>
@@ -256,7 +244,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 				</#if>
 
 				<div class="infos">
-					<a href="jsp/site/Portal.jsp?page_id=9" onclick="_paq.push(['trackEvent', 'PROD - VOTE', 'Barre VOTE', 'Voir r�gles', 0]);"><span>Consulter les r&egrave;gles du vote</span></a>
+					<a href="jsp/site/Portal.jsp?page_id=9"><span>Consulter les r&egrave;gles du vote</span></a>
 				</div>
 
 				<#-- div style="padding-top:20px; margin-top:20px; margin-bottom:20px;" class="col-xs-12 col-md-8 col-md-offset-2">
@@ -304,7 +292,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
   <!-- footer -->
 	<footer>
 		${page_footer}
-		<div class="links-wrapper app-version">Budget participatif de la ville de Paris v${webapp_version!'.'}</div>
+		<div class="links-wrapper app-version">OpenPB v${webapp_version!'.'}</div>
 	</footer>
 	
 	<!-- Static Modal -->

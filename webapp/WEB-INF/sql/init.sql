@@ -12,20 +12,20 @@ insert into core_datastore values ('solr.app.conf.map_idees.addonBeans.0', 'idea
 
 insert into core_datastore values ('solr.app.conf.projects_mdp.mapping', 'false');
 insert into core_datastore values ('solr.app.conf.projects_mdp.fq.1', 'statut_project_text:SOUMIS' );
-insert into core_datastore values ('solr.app.conf.projects_mdp.fq.2', 'type:Projet 2015' );
+insert into core_datastore values ('solr.app.conf.projects_mdp.fq.2', 'type:PB Project' );
 insert into core_datastore values ('solr.app.conf.projects_mdp.template', 'skin/plugins/participatorybudget/projet_mdp_list_solr_search_results.html');
 insert into core_datastore values ('solr.app.conf.projects_mdp.addonBeans.0', 'participatorybudget.BudgetSolrListAddon');
 
 
 insert into core_datastore values ('solr.app.conf.map_projets.mapping', 'true');
 insert into core_datastore values ('solr.app.conf.map_projets.fq.1', 'statut_project_text:SOUMIS');
-insert into core_datastore values ('solr.app.conf.map_projets.fq.2', 'type:Projet 2015');
+insert into core_datastore values ('solr.app.conf.map_projets.fq.2', 'type:PB Project');
 insert into core_datastore values ('solr.app.conf.map_projets.template', 'skin/pluginsparticipatorybudget/projet_mdp_map_solr_search_results.html');
 insert into core_datastore values ('solr.app.conf.map_projets.addonBeans.0', participatorybudget..BudgetSolrAddon');
 
 insert into core_datastore values ('solr.app.conf.projects_mdp_detail.mapping', 'false');
 insert into core_datastore values ('solr.app.conf.projects_mdp_detail.fq.1', 'statut_project_text:SOUMIS');
-insert into core_datastore values ('solr.app.conf.projects_mdp_detail.fq.2', 'type:Projet 2015');
+insert into core_datastore values ('solr.app.conf.projects_mdp_detail.fq.2', 'type:PB Project');
 insert into core_datastore values ('solr.app.conf.projects_mdp_detail.template', 'skin/pluginsparticipatorybudget/projet_mdp_details_solr_search_results.html');
 insert into core_datastore values ('solr.app.conf.projects_mdp_detail.addonBeans.0'participatorybudget.f.VotesSolrAddon');
 
@@ -33,7 +33,7 @@ insert into core_datastore values ('solr.app.conf.projects_mdp_detail.addonBeans
 
 insert into core_datastore values ('solr.app.conf.list_projects.mapping', 'false');
 insert into core_datastore values ('solr.app.conf.list_projects.fq.1', 'statut_project_text:GAGNANT');
-insert into core_datastore values ('solr.app.conf.list_projects.fq.2', 'type:Projet 2015');
+insert into core_datastore values ('solr.app.conf.list_projects.fq.2', 'type:PB Project');
 insert into core_datastore values ('solr.app.conf.list_projects.template', 'skin/pluginsparticipatorybudget/document_list_solr_search_results.html');
 
 

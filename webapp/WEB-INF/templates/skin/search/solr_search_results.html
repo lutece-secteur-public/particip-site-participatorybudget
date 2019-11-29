@@ -106,7 +106,7 @@ ${encoded_facets_queries}
 		<#assign theme_class = "autre">
         <#list results_list as result>
 
-		<#if result.type?? &&  result.type="Projet 2015">
+		<#if result.type?? &&  result.type="PB Project">
 		<#if result.dynamicFields?? && result.dynamicFields.thematique_text??>
 		<#if result.dynamicFields.thematique_text = "Cadre de vie"><#assign theme_class = "cadre_vie">
 		<#elseif result.dynamicFields.thematique_text = "Culture" || result.dynamicFields.thematique_text = "Culture et patrimoine"><#assign theme_class = "culture">
