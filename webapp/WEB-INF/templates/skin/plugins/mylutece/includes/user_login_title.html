@@ -4,36 +4,32 @@
 
   	<li class="dropdown">
     	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-      		<span>Mon Espace <i class="fa fa-angle-down"></i></span>
+      		<span>#i18n{portal.openpb.mylutece.menu.logged.title} <i class="fa fa-angle-down"></i></span>
     	</a>
     	<ul class="dropdown-menu dropdown-menu-right" role="menu">
-      		<li><a href="jsp/site/Portal.jsp?page=mesInfos"><span>My infos</span></a></li>
-	  
-	  		<li><a href="jsp/site/Portal.jsp?page=myProjects"><span>My proposals</span></a></li>
-      		<li><a href="jsp/site/Portal.jsp?page=myFavourites"><span>My favorite projects</span></a></li>
-
+      		<li><a href="jsp/site/Portal.jsp?page=mesInfos">      <span>#i18n{portal.openpb.mylutece.menu.logged.entry.myInfos}</span></a></li>
+	  		<li><a href="jsp/site/Portal.jsp?page=myProjects">    <span>#i18n{portal.openpb.mylutece.menu.logged.entry.myProposals}</span></a></li>
+      		<li><a href="jsp/site/Portal.jsp?page=myFavourites">  <span>#i18n{portal.openpb.mylutece.menu.logged.entry.myFavoriteProjects}</span></a></li>
 			<#if campagneService?? && campagneService.isAfterBeginning( "VOTE" ) && campagneService.isBeforeEnd( "RESULT" ) >
-				<li><a href="jsp/site/Portal.jsp?page=mesVotes&view=myVotes&notify_valide=false" <span>My votes</span></a></li>
+				<li><a href="jsp/site/Portal.jsp?page=mesVotes&view=myVotes&notify_valide=false" <span>#i18n{portal.openpb.mylutece.menu.logged.entry.myVotes}</span></a></li>
 			</#if>
-	  
-     		<li><a href="jsp/site/Portal.jsp?page=mySubscriptions"><span>Mes notifications</span></a></li>
-
-      		<li><a href="#" id="banner-mon-compte_menu__logout"><span>Log out</span></a></li>
+     		<li><a href="jsp/site/Portal.jsp?page=mySubscriptions"><span>#i18n{portal.openpb.mylutece.menu.logged.entry.myNotifications}</span></a></li>
+      		<li><a href="#" id="banner-mon-compte_menu__logout">   <span>#i18n{portal.openpb.mylutece.menu.logged.signout}</span></a></li>
     	</ul>
   	</li>
 
 <#else>
 
   <li id="connect">
-    <a href="#" class="btn-connect" ><span class="hidden-md hidden-sm">My OpenPB</span></a>
+    <a href="#" class="btn-connect" ><span class="hidden-md hidden-sm">#i18n{portal.openpb.mylutece.menu.unlogged.signin}</span></a>
   </li>
 </#if>
 
 <noscript>
   <#if user?has_content>
-    <li><a href="${url_dologout}"><span class="glyphicon glyphicon-off"></span>Déconnexion</a></li>
+    <li><a href="${url_dologout}"><span class="glyphicon glyphicon-off"></span>#i18n{portal.openpb.mylutece.menu.logged.signout}</a></li>
   <#else>
-    <li><a href="${url_dologin}">S'authentifier</a></li>
+    <li><a href="${url_dologin}">#i18n{portal.openpb.mylutece.menu.unlogged.signin}</a></li>
  </#if>
 </noscript> 
 

@@ -121,7 +121,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 				<#if campagneService.isDuring("IDEATION")>
 					<li>
 						<a href="jsp/site/Portal.jsp?page_id=2">
-							<span>D&eacute;poser votre projet</span>
+							<span>#i18n{portal.openpb.navbar.entry.doSubmitProposal}</span>
 						</a>
 					</li>
 				</#if>
@@ -129,7 +129,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 				<#if (campagneService.isAfterBeginning("IDEATION") && campagneService.isBeforeEnd("PRE_VOTE")) || (campagneService.isAfterBeginning("POST_VOTE") && campagneService.isBeforeEnd("RESULT")) >
 					<li>
 						<a href="jsp/site/Portal.jsp?page=search-solr&amp;conf=list_idees&amp;fq=campagne_text:${campagneService.lastCampagne.code}&amp;sort_name=${RANDOM!123456789}_random&amp;sort_order=asc">
-							<span>Projets d&eacute;pos&eacute;s</span>
+							<span>#i18n{portal.openpb.navbar.entry.getSubmittedProposals}</span>
 						</a>
 					</li>
 				</#if>
@@ -137,7 +137,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 				<#if campagneService.isAfterBeginning("SUBMIT") && campagneService.isBeforeBeginning("RESULT") >
 					<li>
 						<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;conf=projects_mdp">
-							<span><#if campagneService.isDuring("VOTE")>Je vote !<#else>Projets au vote</#if></span>
+							<span><#if campagneService.isDuring("VOTE")>#i18n{portal.openpb.navbar.entry.doVote}<#else>#i18n{portal.openpb.navbar.entry.getProjectsUnderVote}</#if></span>
 						</a>
 					</li>
 				</#if>
@@ -145,14 +145,14 @@ ${rss?default( "<!-- no RSS feed -->" )}
 				<#if campagneService.isDuring("RESULT") >
 					<li>
 						<a href="jsp/site/Portal.jsp?page=search-solr&conf=elected_projects">
-							<span>Projets lauréats</span>
+							<span>#i18n{portal.openpb.navbar.entry.getWinningProjets}</span>
 						</a>
 					</li>
 				</#if>
 
 				<li class="last">
 					<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;&amp;conf=list_projects">
-						<span>Suivi des r&eacute;alisations</span>
+						<span>#i18n{portal.openpb.navbar.entry.getProjectsUnderRealization}</span>
 					</a>
 				</li>
 				
@@ -162,7 +162,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 		
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main" class="visible-xs">
 			<span class="sr-only">Toggle navigation</span>
-			<i class="fa fa-bars fa-2x"></i><br>Menu
+			<i class="fa fa-bars fa-2x"></i><br>#i18n{portal.openpb.mylutece.menu.logged.titleMobile}
 		</button>
 	</nav>
 	

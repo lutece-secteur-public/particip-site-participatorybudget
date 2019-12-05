@@ -1,80 +1,79 @@
 <div id="homepage">
 
 	<#-- ---------------------------------------- Who is BP panel ---------------------------------------- -->
-	
+
 	<div id="who-wrapper" class="container hidden-xs">
 		<div class="row">
-			<div class="col-xs-12">
-				${htmlpage_1!}
-			</div>
+			<div class="col-xs-12">${htmlpage_1!}</div>
 		</div>
 	</div>
-	
-	<#-- ---------------------------------------- HomeMsg ---------------------------------------- -->
-	
-	<#assign date="">
-	<#assign slogan="">
-	<#assign button="">
 
+	<#-- ---------------------------------------- HomeMsg ---------------------------------------- -->
+
+	<#assign date=""> 
+	<#assign slogan=""> 
+	<#assign button=""> 
+	
 	<#if campagneService?? > <#-- Class not instanciated when this page is indexed by SOLR. This test avoid a lot of message into logs. -->
 		<#attempt>
 			<#if     campagneService.isDuring( "PRE_IDEATION" ) >
-				<#assign date="rendez-vous le<br/><span class=\"hl\">" + campagneService.startStr("IDEATION", "dd MMMMM", true)?replace(" ","&nbsp;")?replace("1er","1<sup style=\"text-transform:lowercase\">er</sup>") + " à 9H</span><br/>pour déposer vos projets&nbsp;!">
+				<#assign date = i18n("portal.openpb.homepage.mainLabel.PRE_IDEATION", campagneService.startStr("IDEATION", "dd MMMMM", true)?replace(" ","&nbsp;")?replace("1st","1<sup style=\"text-transform:lowercase\">st</sup>"))>
+				
 		
 			<#elseif campagneService.isDuring( "IDEATION" ) >
-				<#assign date="Déposez vos projets jusqu'au <span class=\"hl\">" + campagneService.endStr("IDEATION", "dd MMMMM", true)?replace(" ","&nbsp;")?replace("1er","1<sup style=\"text-transform:lowercase\">er</sup>") + "</span> à&nbsp;20H">
-				<#assign button="<a class=\"btn btn-18rem btn-white-on-green \" href=\"jsp/site/Portal.jsp?page_id=2\">déposer une idée de projet</a>">
+				<#assign date = i18n("portal.openpb.homepage.mainLabel.IDEATION", campagneService.endStr("IDEATION", "dd MMMMM", true)?replace(" ","&nbsp;")?replace("1st","1<sup style=\"text-transform:lowercase\">st</sup>"))>
+				<#assign button="<a class=\"btn btn-18rem btn-white-on-green \" href=\"jsp/site/Portal.jsp?page_id=2\">#i18n{portal.openpb.homepage.mainButton.IDEATION}</a>">
 		
 			<#elseif campagneService.isDuring( "POST_IDEATION" ) >
-				<#assign date="<span class=\"hl\">merci</span> pour vos projets !">
+				<#assign date="#i18n{portal.openpb.homepage.mainLabel.POST_IDEATION}">
 		
 			<#elseif campagneService.isDuring( "PRE_SUBMIT" ) >
-				<#assign date="rendez-vous le<br/><span class=\"hl\">" + campagneService.startStr("SUBMIT", "dd MMMMM", true)?replace(" ","&nbsp;")?replace("1er","1<sup style=\"text-transform:lowercase\">er</sup>") + "</span><br/>pour découvrir les projets<br/>soumis au vote&nbsp;!">
+				<#assign date = i18n("portal.openpb.homepage.mainLabel.PRE_SUBMIT", campagneService.startStr("SUBMIT", "dd MMMMM", true)?replace(" ","&nbsp;")?replace("1st","1<sup style=\"text-transform:lowercase\">st</sup>"))>
 		
 			<#elseif campagneService.isDuring( "SUBMIT" ) >
-				<#assign date="les&nbsp;projets soumis au&nbsp;vote sont en&nbsp;ligne&nbsp;!">
-				<#assign button="<a class=\"btn btn-18rem btn-white-on-green \" href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=projects_mdp&sort_name=RANDOM\">Découvrir les projets</a>">
+				<#assign date="#i18n{portal.openpb.homepage.mainLabel.SUBMIT}">
+				<#assign button="<a class=\"btn btn-18rem btn-white-on-green \" href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=projects_mdp&sort_name=RANDOM\">#i18n{portal.openpb.homepage.mainButton.SUBMIT}</a>">
 		
 			<#elseif campagneService.isDuring( "PRE_VOTE" ) >
-				<#assign date="rendez-vous le<br/><span class=\"hl\">" + campagneService.startStr("VOTE", "dd MMMMM", true)?replace(" ","&nbsp;")?replace("1er","1<sup style=\"text-transform:lowercase\">er</sup>") + "</span><br/>pour voter&nbsp;!">
-				<#assign button="<a href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=projects_mdp&sort_name=RANDOM\" class=\"btn btn-18rem btn-black-on-white\">Découvrir les projets soumis au vote</a>">
+				<#assign date = i18n("portal.openpb.homepage.mainLabel.PRE_VOTE", campagneService.startStr("VOTE", "dd MMMMM", true)?replace(" ","&nbsp;")?replace("1st","1<sup style=\"text-transform:lowercase\">st</sup>"))>
+				<#assign button="<a href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=projects_mdp&sort_name=RANDOM\" class=\"btn btn-18rem btn-black-on-white\">#i18n{portal.openpb.homepage.mainButton.PRE_VOTE}</a>">
 		
 			<#elseif campagneService.isDuring( "VOTE" ) >
-				<#assign date="C'est le&nbsp;moment de&nbsp;choisir vos projets&nbsp;préférés&nbsp;!">
-				<#assign button="<a href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=projects_mdp&sort_name=RANDOM\" class=\"btn btn-24rem btn-black-on-white\">Je&nbsp;clique ici pour&nbsp;voter&nbsp;!</a>">
+				<#assign date="#i18n{portal.openpb.homepage.mainLabel.VOTE}">
+				<#assign button="<a href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=projects_mdp&sort_name=RANDOM\" class=\"btn btn-24rem btn-black-on-white\">#i18n{portal.openpb.homepage.mainButton.VOTE}</a>">
 		
 			<#elseif campagneService.isDuring( "POST_VOTE" ) >
-				<#assign date="le vote est cloture.<br/>merci pour vos votes.">
+				<#assign date="#i18n{portal.openpb.homepage.mainLabel.POST_VOTE}">
 		
 			<#elseif campagneService.isDuring( "PRE_RESULT" ) >
-				<#assign date="rendez-vous le<br/>" + campagneService.startStr("RESULT", "dd MMMMM", false)?replace(" ","&nbsp;") + "<br/>pour découvrir<br/>les <span class=\"hl\">projets gagnants</span>&nbsp;!">
+				<#assign date = i18n("portal.openpb.homepage.mainLabel.PRE_RESULT", campagneService.startStr("RESULT", "dd MMMMM", true)?replace(" ","&nbsp;")?replace("1st","1<sup style=\"text-transform:lowercase\">st</sup>"))>
 		
 			<#elseif campagneService.isDuring( "RESULT" ) >
-				<#assign date="découvrez les <span class=\"hl\">projets gagnants</span>&nbsp;!">
-				<#assign button="<a class=\"btn btn-18rem btn-white-on-green \" href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=elected_projects\">Découvrir les projets gagnants</a>">
+				<#assign date="#i18n{portal.openpb.homepage.mainLabel.RESULT}">
+				<#assign button="<a class=\"btn btn-18rem btn-white-on-green \" href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=elected_projects\">#i18n{portal.openpb.homepage.mainButton.RESULT}</a>">
 	
 			<#else>
-				<#assign slogan="Faites&nbsp;Paris à&nbsp;votre&nbsp;idée&nbsp;!">
+				<#assign date="#i18n{portal.openpb.homepage.mainLabel.DEFAULT}">
 				
 			</#if>
 		<#recover>
 		</#attempt>
 	</#if>
-	
+
 	<div id="homemsg" class="container-fluid">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
 					<div id="homemsg-head">
-						<span id="homemsg-head-msg">en ce moment</span>
+						<span id="homemsg-head-msg">#i18n{portal.openpb.homepage.blackenedLabel}</span>
 					</div>
 					<div id="homemsg-date">${date!''}</div>
 					<div id="homemsg-slogan">${slogan!''}</div>
 					<div id="homemsg-button">${button!''}</div>
 					<nav id="homemsg-foot">
 						<ul>
-							<li><a href="jsp/site/Portal.jsp?page=helpdesk&faq_id=3">Tout savoir sur le Budget Participatif</a></li>
-							<li><a href="jsp/site/Portal.jsp?page_id=10">Voir le calendrier</a></li>
+							<li><a href="jsp/site/Portal.jsp?page=helpdesk&faq_id=3">#i18n{portal.openpb.homepage.mainButton.allInfosAboutPB}</a></li>
+							<li><a href="jsp/site/Portal.jsp?page_id=10">#i18n{portal.openpb.homepage.mainButton.timeline}</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -115,11 +114,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<div class="actus-title">dans l'actualité</div>
+					<div class="actus-title">#i18n{portal.openpb.homepage.news.title}</div>
 				</div>
 			</div>
 			${page_content_col5}
 		</div>
 	</div>
+
 
 </div>
