@@ -18,36 +18,36 @@
 				<document-id>2267</document-id>
 				<document-date-publication>09/06/2017</document-date-publication>
 				<document-xml-content>
-					<actualite>
+					<news_topic>
 						<document-id>2267</document-id>
 						<document-title>Un tirage au sort pour la réalisation d'une fresque street art par arrondissement </document-title>
 						<document-summary>Lors du vote du Budget participatif 2014, les Parisiens ont retenu...</document-summary>
 						<document-date-begin>11/02/2016</document-date-begin>
 						<document-date-end>
 							<document-categories>
-								<actualite-content>&lt;p&gt;&lt;img src="document?id=2264&amp;amp;id_attri...</actualite-content>
-								<actualite-imagemini>
+								<news_topic-content>&lt;p&gt;&lt;img src="document?id=2264&amp;amp;id_attri...</news_topic-content>
+								<news_topic-imagemini>
 									<file-resource>
 										<resource-document-id>2267</resource-document-id>
 										<resource-attribute-id>107</resource-attribute-id>
 										<resource-content-type>image/jpeg</resource-content-type>
 									</file-resource>
 									<file-size>82103</file-size>
-								</actualite-imagemini>
-								<actualite-image>
+								</news_topic-imagemini>
+								<news_topic-image>
 									<file-resource>
 										<resource-document-id>2267</resource-document-id>
 										<resource-attribute-id>47</resource-attribute-id>
 										<resource-content-type>image/jpeg</resource-content-type>
 									</file-resource>
 									<file-size>163798</file-size>
-								</actualite-image>
-								<actualite-video>
-									<actualite-url_redirection>http://www.paris.fr/talentsparis2024</actualite-url_redirection>
-								</actualite-video>
+								</news_topic-image>
+								<news_topic-video>
+									<news_topic-url_redirection>http://www.paris.fr/talentsparis2024</news_topic-url_redirection>
+								</news_topic-video>
 							</document-categories>
 						</document-date-end>
-					</actualite>
+					</news_topic>
 				</document-xml-content>
 				<document-number-comment>0</document-number-comment>
 			</document>
@@ -98,20 +98,20 @@
 <!-- Row d'une actualité -->
 <xsl:template match="document">
 	<div class="col-md-4">
-		<xsl:apply-templates select="document-xml-content/actualite" />
+		<xsl:apply-templates select="document-xml-content/news_topic" />
 	</div>
 </xsl:template>
 
 <!-- Affichage d'une actualité -->
-<xsl:template match="actualite">
+<xsl:template match="news_topic">
     <div id="actu-{document-id}" class="actualite">
 
 		<!-- a href="{$site-path}?document_id={document-id}&#38;portlet_id={$portlet-id}" title="{document-title}" target="_top" -->
 		<a title="{document-title}" target="_top">
 
 			<xsl:choose>
-				<xsl:when test="actualite-url_redirection != '' and actualite-url_redirection != 'http://' and actualite-url_redirection != 'https://'">
-					<xsl:attribute name="href"><xsl:value-of select="actualite-url_redirection"/></xsl:attribute>
+				<xsl:when test="news_topic-url_redirection != '' and news_topic-url_redirection != 'http://' and news_topic-url_redirection != 'https://'">
+					<xsl:attribute name="href"><xsl:value-of select="news_topic-url_redirection"/></xsl:attribute>
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:attribute name="href"><xsl:value-of select="$site-path"/>?document_id=<xsl:value-of select="document-id"/>&#38;portlet_id=<xsl:value-of select="$portlet-id"/></xsl:attribute>
@@ -121,15 +121,15 @@
 			<div class="article-banner">
 				<div class="article-banner-img">
 					<xsl:choose>
-						<xsl:when test="actualite-imagemini/file-resource != ''">
-							 <xsl:apply-templates select="actualite-imagemini/file-resource" />
+						<xsl:when test="news_topic-imagemini/file-resource != ''">
+							 <xsl:apply-templates select="news_topic-imagemini/file-resource" />
 						</xsl:when>
 					</xsl:choose>
 				</div>
 				<div class="article-banner-title"><xsl:value-of select="document-title"/></div>
 				<xsl:choose>
-					<xsl:when test="actualite-url_redirection != '' and actualite-url_redirection != 'http://' and actualite-url_redirection != 'https://'">
-						<div class="article-banner-from"><span>sur <xsl:value-of select="str:replaceAll(str:new(substring-before(substring-after(actualite-url_redirection, '://'), '/')), 'www.', '')"/></span></div>
+					<xsl:when test="news_topic-url_redirection != '' and news_topic-url_redirection != 'http://' and news_topic-url_redirection != 'https://'">
+						<div class="article-banner-from"><span>sur <xsl:value-of select="str:replaceAll(str:new(substring-before(substring-after(news_topic-url_redirection, '://'), '/')), 'www.', '')"/></span></div>
 					</xsl:when>
 					<xsl:otherwise>
 						<div class="article-banner-from"><span>sur budgetparticipatif.paris</span></div>
