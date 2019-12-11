@@ -126,7 +126,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 					</li>
 				</#if>
 				
-				<#if (campagneService.isAfterBeginning("IDEATION") && campagneService.isBeforeEnd("PRE_VOTE")) || (campagneService.isAfterBeginning("POST_VOTE") && campagneService.isBeforeEnd("RESULT")) >
+				<#if campagneService.isAfterBeginning("IDEATION") >
 					<li>
 						<a href="jsp/site/Portal.jsp?page=search-solr&amp;conf=list_idees&amp;fq=campagne_text:${campagneService.lastCampagne.code}&amp;sort_name=${RANDOM!123456789}_random&amp;sort_order=asc">
 							<span>#i18n{portal.openpb.navbar.entry.getSubmittedProposals}</span>
