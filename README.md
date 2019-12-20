@@ -21,3 +21,7 @@ To do
 ## Usage
 
 To do
+
+# Project Information
+
+ [Issue Tracking](http://dev.lutece.paris.fr/jira/browse/PARTIDEA) : this is a link to the issue management system for this project. Issues (bugs, features, change requests) can be created and queried using this link.
