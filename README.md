@@ -35,7 +35,7 @@ This demo will allow you to :
 - Add information about winner project realization in back-office
 - Search and view winner projects and their level of realization
 
-## Configuration
+## Business configuration
 
 Participary budget functionalities are provided depending on the dates of the current phase. You have to modify these dates to access some features, by accessing the [ManageIdeationCampagnes](http://localhost:8080/pb/jsp/admin/plugins/participatoryideation/ManageIdeationCampagnes.jsp) back-office page .
 
@@ -43,19 +43,33 @@ Participary budget functionalities are provided depending on the dates of the cu
 
 A **proposal** is an idea submitted by a citizen during the *ideation* process.
 
-To get the "Submit your proposal" menu on the homepage navbar, you need to change 'IDEATION' dates so the phase become active.
+To get the "Submit your proposal" menu on the homepage navbar, you need to change 'IDEATION' dates so the phase become active. Keep in mind you have to sign in to submit a proposal.
 
-##### Submit a project
+### Submit a project
 
-A **project**-named object is a project which can be submitted to vote. These projects are based on one or more proposals, and built by the city municipality (and eventualy with the citizens). If more than one proposals drive to a project, these proposals must be grouped in a new proposal, so this proposal can be linked with the project.
+A **"project"**-named object is a project which can be submitted to vote. These projects are based on one or more proposals, and built by the city municipality (and eventualy with the citizens). If more than one proposals drive to a project, these proposals must be grouped in a new proposal, and this proposal must be linked with the project (so one project is always linked to one proposal).
 
-To get the "Submit your proposal" menu on the homepage navbar, you need to change 'IDEATION' dates so the phase become active.
+To get the "Submitted proposals" menu on the homepage navbar, you need to change 'SUBMIT' dates so the phase become active.
+
+### Vote
+
+To get the "Let's go to the vote !" menu on the homepage navbar, you need to change 'VOTE' dates so the phase become active. Keep in mind you have to sign in to vote.
+
+### Winner projects
+
+To do 
+
+### New about projects realization
+
+The entry "Current realization" of the menu does not depend on the current campaign, so it is always available.
 
 ## Usage
 
 To do
 
 ## Build the image
+
+After you clone the git repository, please **verify the proxy parameters** in the Dockerfile.
 
 `docker build -t site-demo-openpb .`
 
