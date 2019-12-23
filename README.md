@@ -40,7 +40,6 @@ This demo will allow you to :
 Participary budget functionalities are provided depending on the dates of the current phase. You have to modify these dates to access some features, by accessing the [ManageIdeationCampagnes](http://localhost:8080/pb/jsp/admin/plugins/participatoryideation/ManageIdeationCampagnes.jsp) back-office page .
 
 ### Submit a proposal
->>>>>>> b06c75cd04e70fd3fe1ec02e37586d81d4db5a84
 
 A **proposal** is an idea submitted by a citizen during the *ideation* process.
 
