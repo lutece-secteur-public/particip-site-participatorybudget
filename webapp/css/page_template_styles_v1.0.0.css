@@ -1,27 +1,24 @@
 /* ********************************************************************************************* */
-/* * FONTS FONTS FONTS FONTS FONTS FONTS FONTS FONTS FONTS FONTS FONTS FONTS FONTS FONTS FONTS * */
-/* * FONTS FONTS FONTS FONTS FONTS FONTS FONTS FONTS FONTS FONTS FONTS FONTS FONTS FONTS FONTS * */
+/* * COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLOR * */
+/* * COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLOR * */
 /* ********************************************************************************************* */
 
-@font-face {
-	font-family: 'Archer-Bold';
-	src: url('../fonts/archerboldpro.eot');
-	src: url('../fonts/archerboldpro.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/archerboldpro.woff') format('woff'),
-	url('../fonts/archerboldpro.ttf') format('truetype'),
-	url('../fonts/archerboldpro.svg#archerboldpro') format('svg');
-	font-weight: normal;
-	font-style: normal;
+.bgcolor-theme-other                   { background-color: rgba(180, 202, 255, 1); }
+
+.bordered-4px-theme-lightgray               { border: 4px solid #dddddd; }
+.bordered-4px-theme-gray                    { border: 4px solid #b0b0b0; }
+
+.bordered-4px-theme-other                   { border: 4px solid rgba(180, 202, 255, 1); }
+
+.bordered-light-4px-theme-other                   { border: 4px solid rgba(180, 202, 255, 0.3); background-color: rgba(180, 202, 255, 0.3); }
+
+.separator-horiz-4px { 
+	margin-top: 50px; padding-top: 50px;
+	border-top: 4px solid #071f32; 
 }
 
-/* ********************************************************************************************* */
-/* * COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLOR * */
-/* * COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLORS COLOR * */
-/* ********************************************************************************************* */
+/* ------------------------------ Theme specific colors ------------------------------ */
 
-.bgcolor-theme-lightgray               { background-color: #dddddd; }
-.bgcolor-theme-gray                    { background-color: #b0b0b0; }
-.bgcolor-theme-autre                   { background-color: #888888; }
 .bgcolor-theme-cadre_vie               { background-color: #7d89af; }
 .bgcolor-theme-culture                 { background-color: #ffd7b3; }
 .bgcolor-theme-economie_emploi         { background-color: #e88899; }
@@ -37,10 +34,6 @@
 .bgcolor-theme-transport               { background-color: #addaff; }
 .bgcolor-theme-ville_numerique         { background-color: #0f98af; }
 
-.bordered-4px-theme-lightgray               { border: 4px solid #dddddd; }
-.bordered-4px-theme-gray                    { border: 4px solid #b0b0b0; }
-
-.bordered-4px-theme-autre                   { border: 4px solid #888888; }
 .bordered-4px-theme-cadre_vie               { border: 4px solid #7d89af; }
 .bordered-4px-theme-culture                 { border: 4px solid #ffd7b3; }
 .bordered-4px-theme-economie_emploi         { border: 4px solid #e88899; }
@@ -56,7 +49,6 @@
 .bordered-4px-theme-transport               { border: 4px solid #addaff; }
 .bordered-4px-theme-ville_numerique         { border: 4px solid #0f98af; }
 
-.bordered-light-4px-theme-autre                   { border: 4px solid rgba( 136, 136, 136, 0.3); background-color: rgba( 136, 136, 136, 0.3); }
 .bordered-light-4px-theme-cadre_vie               { border: 4px solid rgba( 125, 137, 175, 0.3); background-color: rgba( 125, 137, 175, 0.3); }
 .bordered-light-4px-theme-culture                 { border: 4px solid rgba( 255, 215, 179, 0.3); background-color: rgba( 255, 215, 179, 0.3); }
 .bordered-light-4px-theme-economie_emploi         { border: 4px solid rgba( 232, 136, 153, 0.3); background-color: rgba( 232, 136, 153, 0.3); }
@@ -71,11 +63,6 @@
 .bordered-light-4px-theme-sport                   { border: 4px solid rgba( 255, 115, 111, 0.3); background-color: rgba( 255, 115, 111, 0.3); }
 .bordered-light-4px-theme-transport               { border: 4px solid rgba( 173, 218, 255, 0.3); background-color: rgba( 173, 218, 255, 0.3); }
 .bordered-light-4px-theme-ville_numerique         { border: 4px solid rgba(  15, 152, 175, 0.3); background-color: rgba(  15, 152, 175, 0.3); }
-
-.separator-horiz-4px { 
-	margin-top: 50px; padding-top: 50px;
-	border-top: 4px solid #071f32; 
-}
 
 /* ------------------------------ Projets non retenus / perdants au vote / abandonnes ------------------------------ */
 
@@ -721,119 +708,6 @@ nav ul {
     border-bottom: 1px solid #ffffff;
 	color: #ffffff;
 	text-decoration: none;
-}
-
-/* ------------------------------ Realization focus ------------------------------ */
-
-#pgagn-focus {
-	margin-bottom: 70px;
-	display: flex; flex-direction: column; align-items: center; justify-content: center;
-}
-
-#pgagn-focus #portlet-pgagn p.main {
-	margin: 0px;
-	font-family: 'Archer-Bold', sans-serif; font-size: 4.1rem; font-variant-numeric: lining-nums; line-height: 4.1rem; text-transform: uppercase;
-}
-
-#pgagn-focus #portlet-pgagn p.sub {
-	margin-bottom: 60px;
-	text-align: right;
-	font-size: 1.2rem; 
-}
-
-#portlet-pgagn-focus p {
-	margin-bottom: 25px;
-	font-size: 3rem; font-weight: 700;
-}
-
-#portlet-pgagn-focus .focus-item {
-	height: 100%;
-	display: flex; flex-direction: column;
-}
-
-#portlet-pgagn-focus .col-md-4 a {
-	color: inherit;
-}
-
-#portlet-pgagn-focus .col-md-4 a:hover,
-#portlet-pgagn-focus .col-md-4 a:active,
-#portlet-pgagn-focus .col-md-4 a:focus {
-	text-decoration: none;
-}
-
-#portlet-pgagn-focus .col-md-4 a:hover  .focus-link,
-#portlet-pgagn-focus .col-md-4 a:active .focus-link,
-#portlet-pgagn-focus .col-md-4 a:focus  .focus-link {
-	background-color: #071f32;
-	color: #ffffff;
-}
-
-#portlet-pgagn-focus .focus-img img {
-	width: 100%; height: 200px;
-	object-fit: cover;
-}
-
-#portlet-pgagn-focus .focus-theme {
-	height: 46px;
-	padding-top: 2px;
-	display: flex; align-items: center;
-	font-family: 'Open Sans Condensed', sans-serif; font-size: 1.8rem; font-weight: 700; line-height: 2.6rem; text-transform: uppercase;
-}
-
-#portlet-pgagn-focus .focus-theme img {
-	margin-left: 20px; margin-right: 15px;
-	height: 38px;
-}
-
-#portlet-pgagn-focus div [class*='bordered-4px'] {
-	padding: 25px 20px; 
-	display: flex; flex-direction: column; align-items: center; justify-content: flex-start; flex-grow: 1; 
-}
-
-#portlet-pgagn-focus div .finished { 
-	border-width: 4px; 
-	border-radius: 1000px;
-}
-
-#portlet-pgagn-focus .focus-title {
-	width: 100%;
-	padding-bottom: 35px;
-	font-size: 1.8rem; font-weight: 700;
-}
-
-/* To force alignment on bottom */
-#portlet-pgagn-focus .focus-bottom {
-	margin-top: auto;
-}
-
-#portlet-pgagn-focus .focus-phase {
-	margin-bottom: 10px; 
-	text-align: center;
-	font-family: 'Open Sans Condensed', sans-serif; font-size: 1.8rem; font-weight: 700; text-transform: uppercase;
-}
-
-#portlet-pgagn-focus .focus-steps {
-	margin-bottom: 24px;
-	display: flex; justify-items: center;
-}
-
-#portlet-pgagn-focus .focus-step {
-	height: 18px;
-	flex-grow: 1;
-}
-
-#portlet-pgagn-focus .focus-step:first-child {
-	border-top-left-radius: 2rem;
-	border-bottom-left-radius: 2rem;
-}
-
-#portlet-pgagn-focus .focus-step:last-child {
-	border-top-right-radius: 2rem;
-	border-bottom-right-radius: 2rem;
-}
-
-#portlet-pgagn-focus .focus-step:not(last-child) {
-	margin-right: 1px;
 }
 
 /* ------------------------------ Realization links ------------------------------ */
