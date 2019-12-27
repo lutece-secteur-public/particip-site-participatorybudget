@@ -35,6 +35,37 @@ This demo will allow you to :
 - Add information about winner project realization in back-office
 - Search and view winner projects and their level of realization
 
+## Usage
+
+To do
+
+## Build the image
+
+After you clone the git repository, please **verify the proxy parameters** in the Dockerfile.
+
+`docker build -t site-demo-openpb .`
+
+## Launch the server
+
+`docker run -p 80:8080 site-demo-openpb`
+
+## Connect to the server to see the service
+
+`http://localhost/pb`
+
+## Back office management
+
+`http://localhost/pb/jsp/admin/AdminLogin.jsp`
+
+Connect to the back office with login/pwd : admin/adminadmin
+
+## Launch SOLR indexing
+
+To see proposals and projects into search pages, you have to index each documents :
+- Go to back-office
+- Go to "System > SOLR indexing"
+- Click on "Start indexing" button to launch the indexing process
+
 ## Business configuration
 
 Participary budget functionalities are provided depending on the dates of the current phase. You have to modify these dates to access some features, by accessing the [ManageIdeationCampagnes](http://localhost:8080/pb/jsp/admin/plugins/participatoryideation/ManageIdeationCampagnes.jsp) back-office page .
@@ -62,30 +93,6 @@ To do
 ### New about projects realization
 
 The entry "Current realization" of the menu does not depend on the current campaign, so it is always available.
-
-## Usage
-
-To do
-
-## Build the image
-
-After you clone the git repository, please **verify the proxy parameters** in the Dockerfile.
-
-`docker build -t site-demo-openpb .`
-
-## Launch the server
-
-`docker run -p 80:8080 site-demo-openpb`
-
-## Connect to the server to see the service
-
-`http://localhost/pb`
-
-## Back office management
-
-`http://localhost/pb/jsp/admin/AdminLogin.jsp`
-
-Connect to the back office with login/pwd : admin/adminadmin
 
 # Project Information
 
