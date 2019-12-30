@@ -19,8 +19,8 @@
 						<div class="col-xs-12 col-sm-offset-2 col-sm-8">
 							<br/>
 							<div class="alert alert-warning">
-								<h3 class="text-center text-warning"> <i class="fa fa-warning"></i> Attention !</h3>
-								<p class="text-center">Ce projet n'est pas disponible.</p>
+								<h3 class="text-center text-warning"> <i class="fa fa-warning"></i>#i18n{portal.openpb.project.sheet.warning}</h3>
+								<p class="text-center">#i18n{portal.openpb.project.sheet.not_available}</p>
 							</div>
 						</div>
 					</div>			
@@ -156,11 +156,11 @@
 				<span><xsl:value-of select="pb_project-thematique" /></span>
 			
 				<div class="psoum-header-share">
-					<a href="http://www.facebook.com" data-action="facebook-action" data-title="{document-title}" data-doc="{document-id}" class="share"  title="Partager sur Facebook">
-					  <img src="images/local/skin/pastille-fb.png" alt="Partager sur Facebook" title="Partager sur Facebook"/>
+					<a href="http://www.facebook.com" data-action="facebook-action" data-title="{document-title}" data-doc="{document-id}" class="share"  title="Share on Facebook">
+					  <img src="images/local/skin/pastille-fb.png" alt="Share on Facebook" title="Share on Facebook"/>
 					</a>
-					<a href="http://www.twitter.com" data-action="twitter-action" data-title="{document-title}" data-doc="{document-id}" class="share" title="Partager sur Twitter" target="_blank">
-					  <img src="images/local/skin/pastille-tw.png" alt="Partager sur Twitter" title="Partager sur Twitter"/>
+					<a href="http://www.twitter.com" data-action="twitter-action" data-title="{document-title}" data-doc="{document-id}" class="share" title="Share on Twitter" target="_blank">
+					  <img src="images/local/skin/pastille-tw.png" alt="Share on Twitter" title="Share on Twitter"/>
 					</a>
 				</div>
 			</div>
@@ -174,10 +174,10 @@
 				<!-- *********************************************************************************** -->
 				<div id="psoum-desc" class="col-xs-12 col-sm-8 bg-color0">
 				
-					<!-- Localisation -->
+					<!-- Location -->
 					<div class="psoum-desc-localisation">
 					
-						<img alt="Localisation" title="Localisation">
+						<img alt="Location" title="Location">
 							<xsl:attribute name="src">images/local/skin/marker-<xsl:value-of select="$theme"/>.png</xsl:attribute>
 						</img>
 					
@@ -187,7 +187,7 @@
 						</div>
 					</div>
 					
-					<!-- Titre -->
+					<!-- Title -->
 					<div class="psoum-desc-titre">
 						<h1>
 							<xsl:choose>
@@ -195,14 +195,14 @@
 									<p class="num-project"><xsl:variable name="ordre" select="pb_project-code_projet"></xsl:variable><span>Projet n° <xsl:value-of select='format-number($ordre, "##")' /></span></p>
 								</xsl:when>
 								<xsl:otherwise>
-									<p class="num-project">&#160;</p> <!-- To keep margin between localisation and title divs -->
+									<p class="num-project">&#160;</p> <!-- To keep margin between location and title divs -->
 								</xsl:otherwise>
 							</xsl:choose>
 							<p><xsl:value-of select="document-title" /></p>
 						</h1>
 					</div>
 					
-					<!-- Sous-titre -->
+					<!-- Subtitle -->
 					<div class="psoum-desc-soustitre">
 						<xsl:if test="not(string(pb_project-sous_titre)='')">
 							<h2>
@@ -211,23 +211,23 @@
 						</xsl:if>
 					</div>
 					
-					<!-- Projet livré (uniquement en format XS) -->
+					<!-- Delivered project (only in XS format) -->
 					<xsl:if test="($auj &gt; $date-step4f)">
 						<div>
 							<xsl:attribute name="class">psoum-desc-delivered visible-xs visible-sm bgcolor-theme-<xsl:value-of select="$theme"/></xsl:attribute>
-							Réalisé !
+							#i18n{portal.openpb.project.sheet.status.completed}
 						</div>
 					</xsl:if>
 
-					<!-- Projet abandonné (uniquement en format XS) -->
+					<!-- Abandoned project (only in XS format) -->
 					<xsl:if test="string(pb_project-statut_eudo)='Abandonné'">
 						<div>
 							<xsl:attribute name="class">psoum-desc-undeliverable visible-xs visible-sm bgcolor-theme-<xsl:value-of select="$theme"/></xsl:attribute>
-							Projet non réalisable
+							#i18n{portal.openpb.project.sheet.status.abandoned}
 						</div>
 					</xsl:if>
 
-					<!-- Image : spécifique au document courant ou générale à la thématique -->
+					<!-- Image: specific to the current document or general to the theme -->
 					<div class="psoum-desc-img">
 						<xsl:choose>
 							<xsl:when test="pb_project-image!=''">
@@ -239,17 +239,17 @@
 						</xsl:choose>
 					</div>
 					
-					<!-- Description textuelle du projet -->
+					<!-- Textual description of the project -->
 					<h2>
 						<xsl:attribute name="class">color-theme-<xsl:value-of select="$theme"/></xsl:attribute>
-						Le projet
-					</h2>
+                        #i18n{portal.openpb.project.sheet.project}
+                    </h2>
 					<div>
 						<xsl:attribute name="class">psoum-desc-txt</xsl:attribute>
 						<xsl:value-of disable-output-escaping="yes" select="pb_project-description" />
 					</div>
 					
-					<!-- Cartographie du projet -->
+					<!-- Project Mapping -->
 					<!-- 
 					<xsl:choose>
 						<xsl:when test="pb_project-localisation_precise/geoloc/address != ''">
@@ -262,12 +262,12 @@
 					</xsl:choose>
 					-->
 
-					<!-- Avancement du projet -->
+					<!-- Project progress -->
 					<xsl:if test="(string(pb_project-statut_project)='SUIVI' or string(pb_project-statut_project)='suivi') and (pb_project-content != '')">
 						<h2>
 							<xsl:attribute name="class">color-theme-<xsl:value-of select="$theme"/></xsl:attribute>
 							<a id="avct"></a>
-							Où en est-on ?
+							#i18n{portal.openpb.project.sheet.progress}
 						</h2>
 						<div class="psoum-desc-avct">
 							<xsl:value-of disable-output-escaping="yes" select="pb_project-content" />
@@ -282,28 +282,28 @@
 				<!-- *********************************************************************************** -->
 				<div id="psoum-data" class="col-xs-12 col-sm-4 bg-color0">
 				
-					<!-- Div uniquement visible en XS pour afficher une ligne horizontale de séparation -->
+					<!-- Div only visible in XS to display a horizontal dividing line -->
 					<div class="psoum-data-sep visible-xs"/>
 				
-					<!-- Projet livré -->
+					<!-- Delivered project -->
 					<xsl:if test="($auj &gt; $date-step4f)">
 						<div>
 							<xsl:attribute name="class">psoum-data-delivered hidden-xs hidden-sm bgcolor-theme-<xsl:value-of select="$theme"/></xsl:attribute>
-							Réalisé !
+							#i18n{portal.openpb.project.sheet.status.completed}
 						</div>
 					</xsl:if>
 					
-					<!-- Projet abandonné -->
+					<!-- Abandoned project -->
 					<xsl:if test="string(pb_project-statut_eudo)='Abandonné'">
 						<div>
 							<xsl:attribute name="class">psoum-data-undeliverable hidden-xs hidden-sm bgcolor-theme-<xsl:value-of select="$theme"/></xsl:attribute>
-							Projet non réalisable
+							#i18n{portal.openpb.project.sheet.status.abandoned}
 						</div>
 					</xsl:if>
 					
-					<div id="psoum-data-header">
+				<!-- 	<div id="psoum-data-header">
 						
-						<!-- Pastille QP et RATP -->
+						Pastille QP et RATP
 						<div id="psoum-data-pastilles">
 							<xsl:if test="not(string(pb_project-pop_district)='')">
 								<img class="img-qp" src="images/local/skin/quartier-populaire.png" alt="Projet en quartier populaire" />
@@ -315,19 +315,19 @@
 							</xsl:if>
 						</div>
 
-					</div>
+					</div> -->
 						
-					<!-- Bouton de vote. Le HTML du bouton de favori est en base de données (table = core-template, templatename = extend_follow). -->
+					<!-- Voting button. The HTML of the bookmark button is in the database (table = core-template, templatename = extend_follow). -->
 					<div id="title-{document-id}" title="{document-title}" style="display:none;">.</div>
 					<div id="vote">&#160;</div>		<!-- Extend : vote -->
 
-					<!-- Quelques données -->
-					<h2>Le projet</h2>
+					<!-- Some data -->
+					<h2>#i18n{portal.openpb.project.sheet.project}</h2>
 					
-					<!-- Edition du BP -->
+					<!-- Edition of the PB -->
 					<div class="psoum-data-kv">
 						<div class="psoum-data-key">
-							<img alt="Campagne" title="Campagne">
+							<img alt="Campaign" title="Campaign">
 								<xsl:attribute name="src">images/local/skin/logo_paris_bp_ultramini-<xsl:value-of select="$theme"/>.png</xsl:attribute>
 							</img>
 						</div>
@@ -336,38 +336,38 @@
 						</div>
 					</div>
 					
-					<!-- Résultat du vote -->
+					<!-- Result of the vote -->
 					<div class="psoum-data-kv">
 						<xsl:choose>
 							<xsl:when test="(string(pb_project-statut_project)='GAGNANT') or (string(pb_project-statut_project)='SUIVI')">
 								<div class="psoum-data-key">
-									<img alt="Résultat du vote" title="Résultat du vote">
+									<img alt="Result of the vote" title="Result of the vote">
 										<xsl:attribute name="src">images/local/skin/trophy-<xsl:value-of select="$theme"/>.png</xsl:attribute>
 									</img>
 								</div>
 								<div class="psoum-data-value">
 									<xsl:variable name="nb_votes" select="pb_project-nombre_de_votes"></xsl:variable>
-									Projet lauréat avec <xsl:value-of select='format-number($nb_votes, "# ###", "space")' /> votes !
+									#i18n{portal.openpb.project.sheet.vote_result.winning} <xsl:value-of select='format-number($nb_votes, "# ###", "space")' /> votes !
 								</div>
 							</xsl:when>
 							<xsl:when test="(string(pb_project-statut_project)='PERDANT') or (string(pb_project-statut_project)='NON_SUIVI')">
 								<div class="psoum-data-key">
-									<img src="images/local/skin/trophy-empty.png" alt="Résultat du vote" title="Résultat du vote"/>
+									<img src="images/local/skin/trophy-empty.png" alt="Result of the vote" title="Result of the vote"/>
 								</div>
 								<div class="psoum-data-value">
 									<xsl:variable name="nb_votes" select="pb_project-nombre_de_votes"></xsl:variable>
-									Projet non lauréat, <xsl:value-of select='format-number($nb_votes, "# ###", "space")' /> votes
+									#i18n{portal.openpb.project.sheet.vote_result.losing} <xsl:value-of select='format-number($nb_votes, "# ###", "space")' /> votes
 								</div>
 							</xsl:when>
 						</xsl:choose>
 					</div>
 					
 
-					<!-- Coût -->
+					<!-- Cost -->
 					<xsl:if test="not(string(pb_project-budget)='')">
 						<div class="psoum-data-kv last">
 							<div class="psoum-data-key">
-								<img alt="Coût" title="Coût">
+								<img alt="Cost" title="Cost">
 									<xsl:attribute name="src">images/local/skin/money-<xsl:value-of select="$theme"/>.png</xsl:attribute>
 								</img>
 							</div>
@@ -385,7 +385,7 @@
 						</p>
 					</xsl:if>
 
-					<!-- Cartographie du projet -->
+					<!-- Project Mapping -->
 					<xsl:choose>
 						<xsl:when test="(string(pb_project-localisation_precise/geoloc/address) = '') and (string(pb_project-statut_project)='SUIVI')">
 							<script type='text/javascript'>
@@ -410,137 +410,137 @@
 						</xsl:otherwise>
 					</xsl:choose>
 
-					<!-- Boutons de mise en favori. Le HTML du bouton de favori est en base de données (table = core-template, templatename = extend_follow). -->
+					<!-- Bookmark buttons. The HTML of the bookmark button is in the database (table = core-template, templatename = extend_follow). -->
 					<xsl:if test="string(pb_project-statut_eudo)!='Abandonné'">
 						<div id="fav">&#160;</div>		<!-- Extend : favorite -->
 						<div id="follow">&#160;</div>	<!-- Extend : follow -->
 					</xsl:if>
 
-					<!-- Planning : en gris si non démarré, en noir si démarré, en noir avec check si fini -->
+					<!-- Schedule: in grey if not started, in black if started, in black with check if finished -->
 					<xsl:if test="(string(pb_project-statut_project)='SUIVI' or string(pb_project-statut_project)='suivi') and (string(pb_project-statut_eudo)!='Abandonné')">
 						<div class="psoum-data-planning separator-horiz-4px">
 						
-							<h2>Planning</h2>
+							<h2>#i18n{portal.openpb.project.sheet.planning}</h2>
 	
-							<!-- Principe d'affichage des dates :
-									Phase non démarrée : marquée 'unactive'
-									Phase démarrée     : marquée   'active'                 + date de démarrage
-									Phase Achevée      : marquée   'active' + icône 'check' + date de démarrage (sauf phase 4 : date de fin) -->
+							<!-- Principle of date display :
+									Phase not started: marked 'unactive'.
+									Phase started    : marked 'active'         + start date
+									Phase Completed  : marked 'active'         + 'check' icon + start date (except phase 4: end date) -->
 							
 							<!-- <xsl:value-of select="pb_project-phase1_date_deb" /> -->
 							<xsl:choose>
 								<xsl:when test="($auj &gt;= $date-step2) and (pb_project-phase1_date_deb = '')">
-									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check.png" alt="Études terminées" title=""/>1. Études et conception</p>
+									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check.png" alt="Completed studies" title=""/>#i18n{portal.openpb.project.sheet.planning.study}</p>
 								</xsl:when>
 								<xsl:when test="($auj &gt;= $date-step2)">
-									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check.png" alt="Études terminées" title=""/>1. Études et conception<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>1. </span><span class="phase-beginning">(démarrées en <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep1 )" />)</span></p>
+									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check.png" alt="Completed studies" title=""/>#i18n{portal.openpb.project.sheet.planning.study}<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>1. </span><span class="phase-beginning">(#i18n{portal.openpb.project.sheet.planning.started_in} <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep1 )" />)</span></p>
 								</xsl:when>
 							
 								<xsl:when test="($auj &lt; $date-step2) and ($auj &gt;= $date-step1) and (pb_project-phase1_date_deb = '')">
-									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check-current.png" alt="Études en cours" title=""/>1. Études et conception</p>
+									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check-current.png" alt="Studies in progress" title=""/>#i18n{portal.openpb.project.sheet.planning.study}</p>
 								</xsl:when>
 								<xsl:when test="($auj &lt; $date-step2) and ($auj &gt;= $date-step1)">
-									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check-current.png" alt="Études en cours" title=""/>1. Études et conception<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>1. </span><span class="phase-beginning">(démarrées en <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep1 )" />)</span></p>
+									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check-current.png" alt="Studies in progress" title=""/>#i18n{portal.openpb.project.sheet.planning.study}<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>1. </span><span class="phase-beginning">(#i18n{portal.openpb.project.sheet.planning.started_in} <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep1 )" />)</span></p>
 								</xsl:when>
 
 								<xsl:when test="($auj &lt; $date-step1) and ($date-step1 &gt; 20990000)">
-									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Études à venir" title=""/>1. Études et conception</p>
+									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Upcoming studies" title=""/>#i18n{portal.openpb.project.sheet.planning.study}</p>
 								</xsl:when>
 
 								<xsl:when test="($auj &lt; $date-step1) and (pb_project-phase1_date_deb != '')">
-									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Études à venir" title=""/>1. Études et conception<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>1. </span><span class="phase-beginning">(prévues en <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep1 )" />)</span></p>
+									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Upcoming studies" title=""/>#i18n{portal.openpb.project.sheet.planning.study}<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>1. </span><span class="phase-beginning">(#i18n{portal.openpb.project.sheet.planning.expected_in} <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep1 )" />)</span></p>
 								</xsl:when>
 
 								<xsl:otherwise>
-									<p>Projet en cours de démarrage.</p>
-									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Études non démarrées" title=""/>1. Études et conception</p>
+									<p>#i18n{portal.openpb.project.sheet.planning.study.not_started.title}</p>
+									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Not started studies" title=""/>#i18n{portal.openpb.project.sheet.planning.study}</p>
 								</xsl:otherwise>
 							</xsl:choose>
 						
 							<!-- <xsl:value-of select="pb_project-phase2_date_deb" /> -->
 							<xsl:choose>
 								<xsl:when test="($auj &gt;= $date-step3) and (pb_project-phase2_date_deb = '')">
-									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check.png" alt="Procédures terminées" title=""/>2. Lancement des procédures</p>
+									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check.png" alt="Completed procedures" title=""/>#i18n{portal.openpb.project.sheet.planning.proceeding}</p>
 								</xsl:when>
 								<xsl:when test="($auj &gt;= $date-step3)">
-									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check.png" alt="Procédures terminées" title=""/>2. Lancement des procédures<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>2. </span><span class="phase-beginning">(démarré en <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep2 )" />)</span></p>
+									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check.png" alt="Completed procedures" title=""/>#i18n{portal.openpb.project.sheet.planning.proceeding}<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>2. </span><span class="phase-beginning">(#i18n{portal.openpb.project.sheet.planning.started_in} <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep2 )" />)</span></p>
 								</xsl:when>
 
 								<xsl:when test="($auj &lt; $date-step3) and ($auj &gt;= $date-step2) and (pb_project-phase2_date_deb = '')">
-									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check-current.png" alt="Procédures en cours" title=""/>2. Lancement des procédures</p>
+									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check-current.png" alt="Procedures in progress" title=""/>#i18n{portal.openpb.project.sheet.planning.proceeding}</p>
 								</xsl:when>
 								<xsl:when test="($auj &lt; $date-step3) and ($auj &gt;= $date-step2)">
-									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check-current.png" alt="Procédures en cours" title=""/>2. Lancement des procédures<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>2. </span><span class="phase-beginning">(démarré en <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep2 )" />)</span></p>
+									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check-current.png" alt="Procedures in progress" title=""/>#i18n{portal.openpb.project.sheet.planning.proceeding}<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>2. </span><span class="phase-beginning">(#i18n{portal.openpb.project.sheet.planning.started_in} <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep2 )" />)</span></p>
 								</xsl:when>
 
 								<xsl:when test="($auj &lt; $date-step2) and ($date-step2 &gt; 20990000)">
-									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Procédures à venir" title=""/>2. Lancement des procédures</p>
+									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Upcoming procedures" title=""/>#i18n{portal.openpb.project.sheet.planning.proceeding}</p>
 								</xsl:when>
 
 								<xsl:when test="($auj &lt; $date-step2) and (pb_project-phase2_date_deb != '')">
-									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Procédures à venir" title=""/>2. Lancement des procédures<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>2. </span><span class="phase-beginning">(prévu en <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep2 )" />)</span></p>
+									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Upcoming procedures" title=""/>#i18n{portal.openpb.project.sheet.planning.proceeding}<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>2. </span><span class="phase-beginning">(#i18n{portal.openpb.project.sheet.planning.expected_in} <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep2 )" />)</span></p>
 								</xsl:when>
 
 								<xsl:otherwise>
-									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Procédures non démarrées" title=""/>2. Lancement des procédures</p>
+									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Not started procedures" title=""/>#i18n{portal.openpb.project.sheet.planning.proceeding}</p>
 								</xsl:otherwise>
 							</xsl:choose>
 						
 							<!-- <xsl:value-of select="pb_project-phase3_date_deb" /> -->
 							<xsl:choose>
 								<xsl:when test="($auj &gt;= $date-step4) and (pb_project-phase3_date_deb = '')">
-									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check.png" alt="Travaux terminés" title=""/>3. Réalisation des travaux</p>
+									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check.png" alt="Completed work" title=""/>#i18n{portal.openpb.project.sheet.planning.work}</p>
 								</xsl:when>
 								<xsl:when test="($auj &gt;= $date-step4)">
-									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check.png" alt="Travaux terminés" title=""/>3. Réalisation des travaux<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>3. </span><span class="phase-beginning">(démarrée en <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep3 )" />)</span></p>
+									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check.png" alt="Completed work" title=""/>#i18n{portal.openpb.project.sheet.planning.work}<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>3. </span><span class="phase-beginning">(#i18n{portal.openpb.project.sheet.planning.started_in} <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep3 )" />)</span></p>
 								</xsl:when>
 								
 								<xsl:when test="($auj &lt; $date-step4) and ($auj &gt;= $date-step3) and (pb_project-phase3_date_deb = '')">
-									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check-current.png" alt="Travaux en cours" title=""/>3. Réalisation des travaux</p>
+									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check-current.png" alt="Work in progress" title=""/>#i18n{portal.openpb.project.sheet.planning.work}</p>
 								</xsl:when>
 								<xsl:when test="($auj &lt; $date-step4) and ($auj &gt;= $date-step3)">
-									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check-current.png" alt="Travaux en cours" title=""/>3. Réalisation des travaux<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>3. </span><span class="phase-beginning">(démarrée en <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep3 )" />)</span></p>
+									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check-current.png" alt="Work in progress" title=""/>#i18n{portal.openpb.project.sheet.planning.work}<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>3. </span><span class="phase-beginning">(#i18n{portal.openpb.project.sheet.planning.started_in} <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep3 )" />)</span></p>
 								</xsl:when>
 								
 								<xsl:when test="($auj &lt; $date-step3) and ($date-step3 &gt; 20990000)">
-									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Travaux à venir" title=""/>3. Réalisation des travaux</p>
+									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Upcoming work" title=""/>#i18n{portal.openpb.project.sheet.planning.work}</p>
 								</xsl:when>
 								
 								<xsl:when test="($auj &lt; $date-step3) and (pb_project-phase3_date_deb != '')">
-									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Travaux à venir" title=""/>3. Réalisation des travaux<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>3. </span><span class="phase-beginning">(prévue en <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep3 )" />)</span></p>
+									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Upcoming work" title=""/>#i18n{portal.openpb.project.sheet.planning.work}<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>3. </span><span class="phase-beginning">(#i18n{portal.openpb.project.sheet.planning.expected_in} <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep3 )" />)</span></p>
 								</xsl:when>
 								
 								<xsl:otherwise>
-									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Travaux non démarrés" title=""/>3. Réalisation des travaux</p>
+									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Not started work" title=""/>#i18n{portal.openpb.project.sheet.planning.work}</p>
 								</xsl:otherwise>
 							</xsl:choose>
 						
 							<!-- <xsl:value-of select="pb_project-phase4_date_deb" /> -->
 							<xsl:choose>
 								<xsl:when test="($auj &gt;= $date-step4f) and (pb_project-phase4_date_deb = '')">
-									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check.png" alt="Réalisé !" title=""/>4. Réalisé !</p>
+									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check.png" alt="Completed !" title=""/>#i18n{portal.openpb.project.sheet.planning.delivery.completed}</p>
 								</xsl:when>
 								<xsl:when test="($auj &gt;= $date-step4f)">
-									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check.png" alt="Réalisé !" title=""/>4. Réalisé !<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>4. </span><span class="phase-beginning">(livré en <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep4f )" />)</span></p>
+									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check.png" alt="Completed !" title=""/>#i18n{portal.openpb.project.sheet.planning.delivery.completed}<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>4. </span><span class="phase-beginning">(#i18n{portal.openpb.project.sheet.planning.delivered_in} <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep4f )" />)</span></p>
 								</xsl:when>
 								
 								<xsl:when test="($auj &lt; $date-step4f) and ($auj &gt;= $date-step4) and (pb_project-phase4_date_deb = '')">
-									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check-current.png" alt="Livraison en cours" title=""/>4. En cours de livraison</p>
+									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check-current.png" alt="Delivery in progress" title=""/>#i18n{portal.openpb.project.sheet.planning.delivery.in_progress}</p>
 								</xsl:when>
 								<xsl:when test="($auj &lt; $date-step4f) and ($auj &gt;= $date-step4)">
-									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check-current.png" alt="Livraison en cours" title=""/>4. En cours de livraison<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>3. </span><span class="phase-beginning">(démarrée en <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep4 )" />)</span></p>
+									<p class="date-step phase-active"><img src="images/local/skin/plugins/plugin-participatorybudget/check-current.png" alt="Delivery in progress" title=""/>#i18n{portal.openpb.project.sheet.planning.delivery.in_progress}<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>3. </span><span class="phase-beginning">(#i18n{portal.openpb.project.sheet.planning.started_in } <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep4 )" />)</span></p>
 								</xsl:when>
 								
 								<xsl:when test="($auj &lt; $date-step4) and ($date-step4 &gt; 20990000)">
-									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Livraison à venir" title=""/>4. Livraison</p>
+									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Upcoming delivery" title=""/>#i18n{portal.openpb.project.sheet.planning.delivery}</p>
 								</xsl:when>
 								
 								<xsl:when test="($auj &lt; $date-step4) and (pb_project-phase4_date_deb != '')">
-									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Livraison à venir" title=""/>4. Livraison<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>4. </span><span class="phase-beginning">(prévue en <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep4 )" />)</span></p>
+									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Upcoming delivery" title=""/>#i18n{portal.openpb.project.sheet.planning.delivery}<br/><span style="color:#ffffff"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png"/>4. </span><span class="phase-beginning">(#i18n{portal.openpb.project.sheet.planning.expected_in} <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMM yyyy'), $dtStep4 )" />)</span></p>
 								</xsl:when>
 								
 								<xsl:otherwise>
-									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Livraison non démarrée" title=""/>4. Livraison</p>
+									<p class="date-step phase-unactive"><img src="images/local/skin/plugins/plugin-participatorybudget/check-empty.png" alt="Livraison non démarrée" title=""/>#i18n{portal.openpb.project.sheet.planning.delivery}</p>
 								</xsl:otherwise>
 							</xsl:choose>
 							
@@ -549,10 +549,10 @@
 						</div>
 					</xsl:if>
 
-					<!-- Origine du projet -->
+					<!-- Origin of the project -->
 					<!-- Propositions source ; fonctionnement différent entre les projets des campagnes avant 2016 et à partir de 2016 (regroupements) -->
 					<div class="psoum-data-origin separator-horiz-4px">
-						<h2>Origine du projet</h2>
+						<h2>#i18n{portal.openpb.project.sheet.origin}</h2>
 
 						<xsl:choose> 
 							<div id="project-elaboration">
