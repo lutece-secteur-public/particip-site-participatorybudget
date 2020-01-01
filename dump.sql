@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS `avatarserver_avatar` (
   `hash_email` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id_avatar`),
   UNIQUE KEY `hash_email` (`hash_email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `avatarserver_avatar` DISABLE KEYS */;
 /*!40000 ALTER TABLE `avatarserver_avatar` ENABLE KEYS */;
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `childpages_portlet` (
   `id_portlet` int(11) NOT NULL DEFAULT '0',
   `id_child_page` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_portlet`,`id_child_page`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `childpages_portlet` DISABLE KEYS */;
 INSERT INTO `childpages_portlet` (`id_portlet`, `id_child_page`) VALUES
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `core_admin_auth_db_module` (
   `first_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`access_code`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_admin_auth_db_module` DISABLE KEYS */;
 INSERT INTO `core_admin_auth_db_module` (`access_code`, `password`, `date_valid_password`, `last_password`, `last_name`, `first_name`, `email`) VALUES
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `core_admin_dashboard` (
   `dashboard_column` int(11) NOT NULL,
   `dashboard_order` int(11) NOT NULL,
   PRIMARY KEY (`dashboard_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_admin_dashboard` DISABLE KEYS */;
 INSERT INTO `core_admin_dashboard` (`dashboard_name`, `dashboard_column`, `dashboard_order`) VALUES
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `core_admin_mailinglist` (
   `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `workgroup` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id_mailinglist`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ;
 
 /*!40000 ALTER TABLE `core_admin_mailinglist` DISABLE KEYS */;
 INSERT INTO `core_admin_mailinglist` (`id_mailinglist`, `name`, `description`, `workgroup`) VALUES
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `core_admin_mailinglist_filter` (
   `workgroup` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `role` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id_mailinglist`,`workgroup`,`role`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_admin_mailinglist_filter` DISABLE KEYS */;
 INSERT INTO `core_admin_mailinglist_filter` (`id_mailinglist`, `workgroup`, `role`) VALUES
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `core_admin_right` (
   `is_external_feature` smallint(6) DEFAULT '0',
   PRIMARY KEY (`id_right`),
   KEY `index_right` (`level_right`,`admin_url`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_admin_right` DISABLE KEYS */;
 INSERT INTO `core_admin_right` (`id_right`, `name`, `level_right`, `admin_url`, `description`, `is_updatable`, `plugin_name`, `id_feature_group`, `icon_url`, `documentation_url`, `id_order`, `is_external_feature`) VALUES
@@ -187,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `core_admin_role` (
   `role_key` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `role_description` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`role_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_admin_role` DISABLE KEYS */;
 INSERT INTO `core_admin_role` (`role_key`, `role_description`) VALUES
@@ -220,7 +220,7 @@ CREATE TABLE IF NOT EXISTS `core_admin_role_resource` (
   `resource_id` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `permission` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`rbac_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=992 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ;
 
 /*!40000 ALTER TABLE `core_admin_role_resource` DISABLE KEYS */;
 INSERT INTO `core_admin_role_resource` (`rbac_id`, `role_key`, `resource_type`, `resource_id`, `permission`) VALUES
@@ -287,7 +287,7 @@ CREATE TABLE IF NOT EXISTS `core_admin_user` (
   `last_login` timestamp NOT NULL DEFAULT '1980-01-01 00:00:00',
   `workgroup_key` varchar(50) COLLATE utf8_unicode_ci DEFAULT 'all',
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ;
 
 /*!40000 ALTER TABLE `core_admin_user` DISABLE KEYS */;
 INSERT INTO `core_admin_user` (`id_user`, `access_code`, `last_name`, `first_name`, `email`, `status`, `password`, `locale`, `level_user`, `reset_password`, `accessibility_mode`, `password_max_valid_date`, `account_max_valid_date`, `nb_alerts_sent`, `last_login`, `workgroup_key`) VALUES
@@ -302,7 +302,7 @@ CREATE TABLE IF NOT EXISTS `core_admin_user_anonymize_field` (
   `field_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `anonymize` smallint(6) NOT NULL,
   PRIMARY KEY (`field_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_admin_user_anonymize_field` DISABLE KEYS */;
 INSERT INTO `core_admin_user_anonymize_field` (`field_name`, `anonymize`) VALUES
@@ -322,7 +322,7 @@ CREATE TABLE IF NOT EXISTS `core_admin_user_field` (
   `user_field_value` mediumtext COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id_user_field`),
   KEY `core_admin_user_field_idx_file` (`id_file`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_admin_user_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `core_admin_user_field` ENABLE KEYS */;
@@ -334,7 +334,7 @@ CREATE TABLE IF NOT EXISTS `core_admin_user_preferences` (
   `pref_value` mediumtext COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id_user`,`pref_key`),
   KEY `index_admin_user_preferences` (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_admin_user_preferences` DISABLE KEYS */;
 /*!40000 ALTER TABLE `core_admin_user_preferences` ENABLE KEYS */;
@@ -344,7 +344,7 @@ CREATE TABLE IF NOT EXISTS `core_admin_workgroup` (
   `workgroup_key` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `workgroup_description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`workgroup_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_admin_workgroup` DISABLE KEYS */;
 /*!40000 ALTER TABLE `core_admin_workgroup` ENABLE KEYS */;
@@ -354,7 +354,7 @@ CREATE TABLE IF NOT EXISTS `core_admin_workgroup_user` (
   `workgroup_key` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `id_user` int(11) NOT NULL,
   PRIMARY KEY (`workgroup_key`,`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_admin_workgroup_user` DISABLE KEYS */;
 /*!40000 ALTER TABLE `core_admin_workgroup_user` ENABLE KEYS */;
@@ -373,7 +373,7 @@ CREATE TABLE IF NOT EXISTS `core_attribute` (
   `plugin_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `anonymize` smallint(6) DEFAULT NULL,
   PRIMARY KEY (`id_attribute`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_attribute` DISABLE KEYS */;
 /*!40000 ALTER TABLE `core_attribute` ENABLE KEYS */;
@@ -391,7 +391,7 @@ CREATE TABLE IF NOT EXISTS `core_attribute_field` (
   `is_multiple` smallint(6) DEFAULT '0',
   `field_position` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_field`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_attribute_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `core_attribute_field` ENABLE KEYS */;
@@ -403,7 +403,7 @@ CREATE TABLE IF NOT EXISTS `core_connections_log` (
   `date_login` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `login_status` int(11) DEFAULT NULL,
   KEY `index_connections_log` (`ip_address`,`date_login`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_connections_log` DISABLE KEYS */;
 /*!40000 ALTER TABLE `core_connections_log` ENABLE KEYS */;
@@ -414,7 +414,7 @@ CREATE TABLE IF NOT EXISTS `core_dashboard` (
   `dashboard_column` int(11) NOT NULL,
   `dashboard_order` int(11) NOT NULL,
   PRIMARY KEY (`dashboard_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_dashboard` DISABLE KEYS */;
 INSERT INTO `core_dashboard` (`dashboard_name`, `dashboard_column`, `dashboard_order`) VALUES
@@ -432,7 +432,7 @@ CREATE TABLE IF NOT EXISTS `core_datastore` (
   `entity_key` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `entity_value` mediumtext COLLATE utf8_unicode_ci,
   PRIMARY KEY (`entity_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_datastore` DISABLE KEYS */;
 INSERT INTO `core_datastore` (`entity_key`, `entity_value`) VALUES
@@ -947,7 +947,7 @@ CREATE TABLE IF NOT EXISTS `core_feature_group` (
   `feature_group_label` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `feature_group_order` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_feature_group`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_feature_group` DISABLE KEYS */;
 INSERT INTO `core_feature_group` (`id_feature_group`, `feature_group_description`, `feature_group_label`, `feature_group_order`) VALUES
@@ -969,7 +969,7 @@ CREATE TABLE IF NOT EXISTS `core_file` (
   `mime_type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `date_creation` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id_file`)
-) ENGINE=InnoDB AUTO_INCREMENT=5260 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ;
 
 /*!40000 ALTER TABLE `core_file` DISABLE KEYS */;
 INSERT INTO `core_file` (`id_file`, `title`, `id_physical_file`, `file_size`, `mime_type`, `date_creation`) VALUES
@@ -984,7 +984,7 @@ CREATE TABLE IF NOT EXISTS `core_group` (
   `group_key` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `group_description` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`group_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_group` DISABLE KEYS */;
 /*!40000 ALTER TABLE `core_group` ENABLE KEYS */;
@@ -994,7 +994,7 @@ CREATE TABLE IF NOT EXISTS `core_group_role` (
   `group_key` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `role_key` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   PRIMARY KEY (`group_key`,`role_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_group_role` DISABLE KEYS */;
 INSERT INTO `core_group_role` (`group_key`, `role_key`) VALUES
@@ -1006,7 +1006,7 @@ CREATE TABLE IF NOT EXISTS `core_id_generator` (
   `class_name` varchar(250) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `current_value` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`class_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_id_generator` DISABLE KEYS */;
 /*!40000 ALTER TABLE `core_id_generator` ENABLE KEYS */;
@@ -1019,7 +1019,7 @@ CREATE TABLE IF NOT EXISTS `core_indexer_action` (
   `indexer_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `id_portlet` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_action`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_indexer_action` DISABLE KEYS */;
 /*!40000 ALTER TABLE `core_indexer_action` ENABLE KEYS */;
@@ -1029,7 +1029,7 @@ CREATE TABLE IF NOT EXISTS `core_level_right` (
   `id_level` smallint(6) NOT NULL DEFAULT '0',
   `name` varchar(80) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_level`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_level_right` DISABLE KEYS */;
 INSERT INTO `core_level_right` (`id_level`, `name`) VALUES
@@ -1044,7 +1044,7 @@ CREATE TABLE IF NOT EXISTS `core_mail_item` (
   `id_mail_queue` int(11) NOT NULL DEFAULT '0',
   `mail_item` mediumblob,
   PRIMARY KEY (`id_mail_queue`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_mail_item` DISABLE KEYS */;
 /*!40000 ALTER TABLE `core_mail_item` ENABLE KEYS */;
@@ -1055,7 +1055,7 @@ CREATE TABLE IF NOT EXISTS `core_mail_queue` (
   `is_locked` smallint(6) DEFAULT '0',
   PRIMARY KEY (`id_mail_queue`),
   KEY `is_locked_core_mail_queue` (`is_locked`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_mail_queue` DISABLE KEYS */;
 /*!40000 ALTER TABLE `core_mail_queue` ENABLE KEYS */;
@@ -1073,7 +1073,7 @@ CREATE TABLE IF NOT EXISTS `core_mode` (
   `output_xsl_omit_xml_dec` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `output_xsl_standalone` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_mode`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_mode` DISABLE KEYS */;
 INSERT INTO `core_mode` (`id_mode`, `description_mode`, `path`, `output_xsl_method`, `output_xsl_version`, `output_xsl_media_type`, `output_xsl_encoding`, `output_xsl_indent`, `output_xsl_omit_xml_dec`, `output_xsl_standalone`) VALUES
@@ -1106,7 +1106,7 @@ CREATE TABLE IF NOT EXISTS `core_page` (
   PRIMARY KEY (`id_page`),
   KEY `index_page` (`id_template`,`id_parent`),
   KEY `index_childpage` (`id_parent`,`page_order`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ;
 
 /*!40000 ALTER TABLE `core_page` DISABLE KEYS */;
 INSERT INTO `core_page` (`id_page`, `id_parent`, `name`, `description`, `date_update`, `status`, `page_order`, `id_template`, `date_creation`, `role`, `code_theme`, `node_status`, `image_content`, `mime_type`, `meta_keywords`, `meta_description`, `id_authorization_node`, `display_date_update`, `is_manual_date_update`) VALUES
@@ -1125,7 +1125,7 @@ CREATE TABLE IF NOT EXISTS `core_page_template` (
   `file_name` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `picture` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_template`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ;
 
 /*!40000 ALTER TABLE `core_page_template` DISABLE KEYS */;
 INSERT INTO `core_page_template` (`id_template`, `description`, `file_name`, `picture`) VALUES
@@ -1145,7 +1145,7 @@ INSERT INTO `core_page_template` (`id_template`, `description`, `file_name`, `pi
 DROP TABLE IF EXISTS `core_parameters`;
 CREATE TABLE IF NOT EXISTS `core_parameters` (
   `password_duration` int(11) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_parameters` DISABLE KEYS */;
 INSERT INTO `core_parameters` (`password_duration`) VALUES
@@ -1158,7 +1158,7 @@ CREATE TABLE IF NOT EXISTS `core_physical_file` (
   `id_physical_file` int(11) NOT NULL AUTO_INCREMENT,
   `file_value` mediumblob,
   PRIMARY KEY (`id_physical_file`)
-) ENGINE=InnoDB AUTO_INCREMENT=4384 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ;
 
 /*!40000 ALTER TABLE `core_physical_file` DISABLE KEYS */;
 INSERT INTO `core_physical_file` (`id_physical_file`, `file_value`) VALUES
@@ -1173,7 +1173,7 @@ CREATE TABLE IF NOT EXISTS `core_portal_component` (
   `id_portal_component` int(11) NOT NULL DEFAULT '0',
   `name` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_portal_component`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_portal_component` DISABLE KEYS */;
 INSERT INTO `core_portal_component` (`id_portal_component`, `name`) VALUES
@@ -1206,7 +1206,7 @@ CREATE TABLE IF NOT EXISTS `core_portlet` (
   `device_display_flags` int(11) NOT NULL DEFAULT '15',
   PRIMARY KEY (`id_portlet`),
   KEY `index_portlet` (`id_page`,`id_portlet_type`,`id_style`)
-) ENGINE=InnoDB AUTO_INCREMENT=203 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_portlet` DISABLE KEYS */;
 INSERT INTO `core_portlet` (`id_portlet`, `id_portlet_type`, `id_page`, `name`, `date_update`, `status`, `portlet_order`, `column_no`, `id_style`, `accept_alias`, `date_creation`, `display_portlet_title`, `role`, `device_display_flags`) VALUES
@@ -1238,7 +1238,7 @@ CREATE TABLE IF NOT EXISTS `core_portlet_alias` (
   `id_portlet` int(11) NOT NULL DEFAULT '0',
   `id_alias` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_portlet`,`id_alias`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_portlet_alias` DISABLE KEYS */;
 /*!40000 ALTER TABLE `core_portlet_alias` ENABLE KEYS */;
@@ -1260,7 +1260,7 @@ CREATE TABLE IF NOT EXISTS `core_portlet_type` (
   `modify_specific` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `modify_specific_form` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_portlet_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_portlet_type` DISABLE KEYS */;
 INSERT INTO `core_portlet_type` (`id_portlet_type`, `name`, `url_creation`, `url_update`, `home_class`, `plugin_name`, `url_docreate`, `create_script`, `create_specific`, `create_specific_form`, `url_domodify`, `modify_script`, `modify_specific`, `modify_specific_form`) VALUES
@@ -1280,7 +1280,7 @@ CREATE TABLE IF NOT EXISTS `core_role` (
   `role_description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `workgroup_key` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`role`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_role` DISABLE KEYS */;
 /*!40000 ALTER TABLE `core_role` ENABLE KEYS */;
@@ -1290,7 +1290,7 @@ CREATE TABLE IF NOT EXISTS `core_search_parameter` (
   `parameter_key` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `parameter_value` mediumtext COLLATE utf8_unicode_ci,
   PRIMARY KEY (`parameter_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_search_parameter` DISABLE KEYS */;
 INSERT INTO `core_search_parameter` (`parameter_key`, `parameter_value`) VALUES
@@ -1310,7 +1310,7 @@ CREATE TABLE IF NOT EXISTS `core_style` (
   `id_portal_component` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_style`),
   KEY `index_style` (`id_portlet_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_style` DISABLE KEYS */;
 INSERT INTO `core_style` (`id_style`, `description_style`, `id_portlet_type`, `id_portal_component`) VALUES
@@ -1400,7 +1400,7 @@ CREATE TABLE IF NOT EXISTS `core_stylesheet` (
   `file_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `source` mediumblob,
   PRIMARY KEY (`id_stylesheet`)
-) ENGINE=InnoDB AUTO_INCREMENT=9043 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ;
 
 /*!40000 ALTER TABLE `core_stylesheet` DISABLE KEYS */;
 INSERT INTO `core_stylesheet` (`id_stylesheet`, `description`, `file_name`, `source`) VALUES
@@ -1483,7 +1483,7 @@ CREATE TABLE IF NOT EXISTS `core_style_mode_stylesheet` (
   `id_stylesheet` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_style`,`id_mode`,`id_stylesheet`),
   KEY `index_style_mode_stylesheet` (`id_stylesheet`,`id_mode`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_style_mode_stylesheet` DISABLE KEYS */;
 INSERT INTO `core_style_mode_stylesheet` (`id_style`, `id_mode`, `id_stylesheet`) VALUES
@@ -1569,7 +1569,7 @@ CREATE TABLE IF NOT EXISTS `core_template` (
   `template_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `template_value` mediumtext COLLATE utf8_unicode_ci,
   PRIMARY KEY (`template_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_template` DISABLE KEYS */;
 INSERT INTO `core_template` (`template_name`, `template_value`) VALUES
@@ -1599,7 +1599,7 @@ CREATE TABLE IF NOT EXISTS `core_text_editor` (
   `editor_description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `backOffice` smallint(6) NOT NULL,
   PRIMARY KEY (`editor_name`,`backOffice`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_text_editor` DISABLE KEYS */;
 INSERT INTO `core_text_editor` (`editor_name`, `editor_description`, `backOffice`) VALUES
@@ -1620,7 +1620,7 @@ CREATE TABLE IF NOT EXISTS `core_theme` (
   `theme_version` varchar(255) NOT NULL DEFAULT '',
   `theme_licence` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`code_theme`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ;
 
 /*!40000 ALTER TABLE `core_theme` DISABLE KEYS */;
 INSERT INTO `core_theme` (`code_theme`, `theme_description`, `path_images`, `path_css`, `theme_author`, `theme_author_url`, `theme_version`, `theme_licence`) VALUES
@@ -1632,7 +1632,7 @@ DROP TABLE IF EXISTS `core_theme_global`;
 CREATE TABLE IF NOT EXISTS `core_theme_global` (
   `global_theme_code` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`global_theme_code`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ;
 
 /*!40000 ALTER TABLE `core_theme_global` DISABLE KEYS */;
 INSERT INTO `core_theme_global` (`global_theme_code`) VALUES
@@ -1644,7 +1644,7 @@ CREATE TABLE IF NOT EXISTS `core_user_parameter` (
   `parameter_key` varchar(100) NOT NULL,
   `parameter_value` varchar(100) NOT NULL,
   PRIMARY KEY (`parameter_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 /*!40000 ALTER TABLE `core_user_parameter` DISABLE KEYS */;
 INSERT INTO `core_user_parameter` (`parameter_key`, `parameter_value`) VALUES
@@ -1690,7 +1690,7 @@ CREATE TABLE IF NOT EXISTS `core_user_password_history` (
   `password` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `date_password_change` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_user`,`date_password_change`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_user_password_history` DISABLE KEYS */;
 INSERT INTO `core_user_password_history` (`id_user`, `password`, `date_password_change`) VALUES
@@ -1704,7 +1704,7 @@ CREATE TABLE IF NOT EXISTS `core_user_preferences` (
   `pref_value` mediumtext COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id_user`,`pref_key`),
   KEY `index_user_preferences` (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_user_preferences` DISABLE KEYS */;
 INSERT INTO `core_user_preferences` (`id_user`, `pref_key`, `pref_value`) VALUES
@@ -1729,7 +1729,7 @@ CREATE TABLE IF NOT EXISTS `core_user_right` (
   `id_user` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_right`,`id_user`),
   KEY `index_user_right` (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_user_right` DISABLE KEYS */;
 INSERT INTO `core_user_right` (`id_right`, `id_user`) VALUES
@@ -1833,7 +1833,7 @@ CREATE TABLE IF NOT EXISTS `core_user_role` (
   `role_key` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `id_user` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`role_key`,`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `core_user_role` DISABLE KEYS */;
 INSERT INTO `core_user_role` (`role_key`, `id_user`) VALUES
@@ -1883,7 +1883,7 @@ CREATE TABLE IF NOT EXISTS `core_xsl_export` (
   `id_file` int(11) DEFAULT NULL,
   `plugin` varchar(255) COLLATE utf8_unicode_ci DEFAULT '',
   PRIMARY KEY (`id_xsl_export`)
-) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ;
 
 /*!40000 ALTER TABLE `core_xsl_export` DISABLE KEYS */;
 INSERT INTO `core_xsl_export` (`id_xsl_export`, `title`, `description`, `extension`, `id_file`, `plugin`) VALUES
@@ -1898,7 +1898,7 @@ CREATE TABLE IF NOT EXISTS `crm_client_crm_item` (
   `id_crm_queue` int(11) NOT NULL DEFAULT '0',
   `crm_item` mediumblob,
   PRIMARY KEY (`id_crm_queue`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 /*!40000 ALTER TABLE `crm_client_crm_item` DISABLE KEYS */;
 /*!40000 ALTER TABLE `crm_client_crm_item` ENABLE KEYS */;
@@ -1909,7 +1909,7 @@ CREATE TABLE IF NOT EXISTS `crm_client_crm_queue` (
   `is_locked` smallint(6) DEFAULT '0',
   PRIMARY KEY (`id_crm_queue`),
   KEY `is_locked_crm_client_crm_queue` (`is_locked`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 /*!40000 ALTER TABLE `crm_client_crm_queue` DISABLE KEYS */;
 /*!40000 ALTER TABLE `crm_client_crm_queue` ENABLE KEYS */;
@@ -1936,7 +1936,7 @@ CREATE TABLE IF NOT EXISTS `document` (
   `skip_portlet` smallint(6) NOT NULL DEFAULT '0',
   `skip_categories` smallint(6) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_document`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document` DISABLE KEYS */;
 INSERT INTO `document` (`id_document`, `code_document_type`, `date_creation`, `date_modification`, `title`, `id_space`, `id_state`, `xml_working_content`, `xml_validated_content`, `document_summary`, `document_comment`, `date_validity_begin`, `date_validity_end`, `xml_metadata`, `id_creator`, `id_mailinglist`, `id_page_template_document`, `skip_portlet`, `skip_categories`) VALUES
@@ -1957,7 +1957,7 @@ CREATE TABLE IF NOT EXISTS `document_attr_type` (
   `description_key` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `manager_class` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`code_attr_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_attr_type` DISABLE KEYS */;
 INSERT INTO `document_attr_type` (`code_attr_type`, `name_key`, `description_key`, `manager_class`) VALUES
@@ -1983,7 +1983,7 @@ CREATE TABLE IF NOT EXISTS `document_attr_type_parameter` (
   `parameter_description_key` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `parameter_default_value` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`code_attr_type`,`parameter_index`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_attr_type_parameter` DISABLE KEYS */;
 INSERT INTO `document_attr_type_parameter` (`code_attr_type`, `parameter_name`, `parameter_label_key`, `parameter_index`, `parameter_description_key`, `parameter_default_value`) VALUES
@@ -2006,7 +2006,7 @@ CREATE TABLE IF NOT EXISTS `document_auto_publication` (
   `id_portlet` int(11) NOT NULL DEFAULT '0',
   `id_space` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_portlet`,`id_space`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_auto_publication` DISABLE KEYS */;
 /*!40000 ALTER TABLE `document_auto_publication` ENABLE KEYS */;
@@ -2020,7 +2020,7 @@ CREATE TABLE IF NOT EXISTS `document_category` (
   `icon_mime_type` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `workgroup_key` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_category`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_category` DISABLE KEYS */;
 /*!40000 ALTER TABLE `document_category` ENABLE KEYS */;
@@ -2030,7 +2030,7 @@ CREATE TABLE IF NOT EXISTS `document_category_link` (
   `id_document` int(11) NOT NULL,
   `id_category` int(11) NOT NULL,
   PRIMARY KEY (`id_document`,`id_category`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_category_link` DISABLE KEYS */;
 /*!40000 ALTER TABLE `document_category_link` ENABLE KEYS */;
@@ -2040,7 +2040,7 @@ CREATE TABLE IF NOT EXISTS `document_category_list_portlet` (
   `id_portlet` int(11) NOT NULL,
   `id_category` int(11) NOT NULL,
   PRIMARY KEY (`id_portlet`,`id_category`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_category_list_portlet` DISABLE KEYS */;
 /*!40000 ALTER TABLE `document_category_list_portlet` ENABLE KEYS */;
@@ -2050,7 +2050,7 @@ CREATE TABLE IF NOT EXISTS `document_category_portlet` (
   `id_portlet` int(11) NOT NULL,
   `id_category` int(11) NOT NULL,
   PRIMARY KEY (`id_portlet`,`id_category`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_category_portlet` DISABLE KEYS */;
 /*!40000 ALTER TABLE `document_category_portlet` ENABLE KEYS */;
@@ -2064,7 +2064,7 @@ CREATE TABLE IF NOT EXISTS `document_content` (
   `mime_type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `binary_value` mediumblob,
   PRIMARY KEY (`id_document`,`id_document_attr`,`validated`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_content` DISABLE KEYS */;
 INSERT INTO `document_content` (`id_document`, `id_document_attr`, `validated`, `text_value`, `mime_type`, `binary_value`) VALUES
@@ -2242,7 +2242,7 @@ CREATE TABLE IF NOT EXISTS `document_history` (
   `document_space` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   KEY `index_history_id_document` (`id_document`),
   KEY `index_history_event_user` (`event_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `document_history` ENABLE KEYS */;
@@ -2253,7 +2253,7 @@ CREATE TABLE IF NOT EXISTS `document_indexer_action` (
   `id_record` int(11) NOT NULL DEFAULT '0',
   `id_task` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_action`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_indexer_action` DISABLE KEYS */;
 /*!40000 ALTER TABLE `document_indexer_action` ENABLE KEYS */;
@@ -2263,7 +2263,7 @@ CREATE TABLE IF NOT EXISTS `document_list_portlet` (
   `id_portlet` int(11) NOT NULL,
   `code_document_type` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_portlet`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_list_portlet` DISABLE KEYS */;
 INSERT INTO `document_list_portlet` (`id_portlet`, `code_document_type`) VALUES
@@ -2286,7 +2286,7 @@ CREATE TABLE IF NOT EXISTS `document_page_template` (
   `picture_path` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_page_template_document`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_page_template` DISABLE KEYS */;
 INSERT INTO `document_page_template` (`id_page_template_document`, `page_template_path`, `picture_path`, `description`) VALUES
@@ -2299,7 +2299,7 @@ CREATE TABLE IF NOT EXISTS `document_portlet` (
   `id_portlet` int(11) NOT NULL,
   `code_document_type` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_portlet`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_portlet` DISABLE KEYS */;
 INSERT INTO `document_portlet` (`id_portlet`, `code_document_type`) VALUES
@@ -2340,7 +2340,7 @@ CREATE TABLE IF NOT EXISTS `document_published` (
   `status` smallint(6) NOT NULL DEFAULT '1',
   `date_publishing` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_portlet`,`id_document`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_published` DISABLE KEYS */;
 INSERT INTO `document_published` (`id_portlet`, `id_document`, `document_order`, `status`, `date_publishing`) VALUES
@@ -2365,7 +2365,7 @@ CREATE TABLE IF NOT EXISTS `document_rule` (
   `id_rule` int(11) NOT NULL DEFAULT '0',
   `rule_type` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id_rule`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_rule` DISABLE KEYS */;
 /*!40000 ALTER TABLE `document_rule` ENABLE KEYS */;
@@ -2376,7 +2376,7 @@ CREATE TABLE IF NOT EXISTS `document_rule_attr` (
   `attr_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `attr_value` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_rule`,`attr_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_rule_attr` DISABLE KEYS */;
 /*!40000 ALTER TABLE `document_rule_attr` ENABLE KEYS */;
@@ -2393,7 +2393,7 @@ CREATE TABLE IF NOT EXISTS `document_space` (
   `document_creation_allowed` int(11) DEFAULT NULL,
   `workgroup_key` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_space`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_space` DISABLE KEYS */;
 INSERT INTO `document_space` (`id_space`, `id_parent`, `document_space_name`, `description`, `document_space_view`, `id_space_icon`, `space_order`, `document_creation_allowed`, `workgroup_key`) VALUES
@@ -2411,7 +2411,7 @@ CREATE TABLE IF NOT EXISTS `document_space_action` (
   `icon_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `action_permission` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_action`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_space_action` DISABLE KEYS */;
 INSERT INTO `document_space_action` (`id_action`, `name_key`, `description_key`, `action_url`, `icon_url`, `action_permission`) VALUES
@@ -2427,7 +2427,7 @@ CREATE TABLE IF NOT EXISTS `document_space_document_type` (
   `id_space` int(11) NOT NULL DEFAULT '0',
   `code_document_type` varchar(30) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id_space`,`code_document_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_space_document_type` DISABLE KEYS */;
 INSERT INTO `document_space_document_type` (`id_space`, `code_document_type`) VALUES
@@ -2440,7 +2440,7 @@ CREATE TABLE IF NOT EXISTS `document_space_icon` (
   `id_space_icon` int(11) NOT NULL DEFAULT '0',
   `icon_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_space_icon`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_space_icon` DISABLE KEYS */;
 INSERT INTO `document_space_icon` (`id_space_icon`, `icon_url`) VALUES
@@ -2469,7 +2469,7 @@ CREATE TABLE IF NOT EXISTS `document_type` (
   `content_service_xsl` mediumblob,
   `metadata_handler` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`code_document_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_type` DISABLE KEYS */;
 INSERT INTO `document_type` (`code_document_type`, `document_type_name`, `description`, `thumbnail_attr_id`, `default_thumbnail_url`, `admin_xsl`, `content_service_xsl`, `metadata_handler`) VALUES
@@ -2490,7 +2490,7 @@ CREATE TABLE IF NOT EXISTS `document_type_attr` (
   `required` int(11) DEFAULT NULL,
   `searchable` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_document_attr`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_type_attr` DISABLE KEYS */;
 INSERT INTO `document_type_attr` (`id_document_attr`, `code_document_type`, `code_attr_type`, `code`, `document_type_attr_name`, `description`, `attr_order`, `required`, `searchable`) VALUES
@@ -2537,7 +2537,7 @@ CREATE TABLE IF NOT EXISTS `document_type_attr_parameters` (
   `id_list_parameter` int(11) NOT NULL DEFAULT '0',
   `parameter_value` mediumtext COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id_document_attr`,`parameter_name`,`id_list_parameter`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_type_attr_parameters` DISABLE KEYS */;
 INSERT INTO `document_type_attr_parameters` (`id_document_attr`, `parameter_name`, `id_list_parameter`, `parameter_value`) VALUES
@@ -2594,7 +2594,7 @@ CREATE TABLE IF NOT EXISTS `document_type_attr_verify_by` (
   `id_document_attr` int(11) NOT NULL DEFAULT '0',
   `id_expression` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_document_attr`,`id_expression`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_type_attr_verify_by` DISABLE KEYS */;
 /*!40000 ALTER TABLE `document_type_attr_verify_by` ENABLE KEYS */;
@@ -2604,7 +2604,7 @@ CREATE TABLE IF NOT EXISTS `document_view` (
   `code_view` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `name_key` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`code_view`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_view` DISABLE KEYS */;
 INSERT INTO `document_view` (`code_view`, `name_key`) VALUES
@@ -2622,7 +2622,7 @@ CREATE TABLE IF NOT EXISTS `document_workflow_action` (
   `action_permission` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `id_finish_state` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_action`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_workflow_action` DISABLE KEYS */;
 INSERT INTO `document_workflow_action` (`id_action`, `name_key`, `description_key`, `action_url`, `icon_url`, `action_permission`, `id_finish_state`) VALUES
@@ -2652,7 +2652,7 @@ CREATE TABLE IF NOT EXISTS `document_workflow_state` (
   `description_key` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `state_order` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_state`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_workflow_state` DISABLE KEYS */;
 INSERT INTO `document_workflow_state` (`id_state`, `name_key`, `description_key`, `state_order`) VALUES
@@ -2670,7 +2670,7 @@ CREATE TABLE IF NOT EXISTS `document_workflow_transition` (
   `id_state` int(11) NOT NULL DEFAULT '0',
   `id_action` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_state`,`id_action`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `document_workflow_transition` DISABLE KEYS */;
 INSERT INTO `document_workflow_transition` (`id_state`, `id_action`) VALUES
@@ -2721,7 +2721,7 @@ CREATE TABLE IF NOT EXISTS `exportuserpreferences_key` (
   `pref_key` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `to_export` smallint(6) NOT NULL,
   PRIMARY KEY (`pref_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `exportuserpreferences_key` DISABLE KEYS */;
 INSERT INTO `exportuserpreferences_key` (`pref_key`, `to_export`) VALUES
@@ -2746,7 +2746,7 @@ CREATE TABLE IF NOT EXISTS `extend_actionbar_action` (
   `resource_type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `btn_order` int(11) NOT NULL,
   PRIMARY KEY (`id_action`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_actionbar_action` DISABLE KEYS */;
 INSERT INTO `extend_actionbar_action` (`id_action`, `name`, `html_content`, `resource_type`, `btn_order`) VALUES
@@ -2761,7 +2761,7 @@ CREATE TABLE IF NOT EXISTS `extend_actionbar_config` (
   `id_extender` int(11) NOT NULL,
   `id_action` int(11) NOT NULL,
   PRIMARY KEY (`id_extender`,`id_action`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_actionbar_config` DISABLE KEYS */;
 INSERT INTO `extend_actionbar_config` (`id_extender`, `id_action`) VALUES
@@ -2777,7 +2777,7 @@ CREATE TABLE IF NOT EXISTS `extend_actionhit_action_hit` (
   `hit` int(11) NOT NULL,
   PRIMARY KEY (`id_action_hit`),
   KEY `index_extend_actionhit_action_hit` (`action_name`,`id_extendable_resource`,`extendable_resource_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_actionhit_action_hit` DISABLE KEYS */;
 INSERT INTO `extend_actionhit_action_hit` (`id_action_hit`, `action_name`, `id_extendable_resource`, `extendable_resource_type`, `hit`) VALUES
@@ -2918,7 +2918,7 @@ CREATE TABLE IF NOT EXISTS `extend_comment` (
   `is_important` smallint(6) NOT NULL DEFAULT '0',
   `comment_order` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_comment`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_comment` DISABLE KEYS */;
 /*!40000 ALTER TABLE `extend_comment` ENABLE KEYS */;
@@ -2939,7 +2939,7 @@ CREATE TABLE IF NOT EXISTS `extend_comment_config` (
   `is_enabled_delete_comments` smallint(6) NOT NULL DEFAULT '0',
   `is_comments_sorted_by_date_creation` smallint(6) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_extender`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_comment_config` DISABLE KEYS */;
 INSERT INTO `extend_comment_config` (`id_extender`, `is_moderated`, `nb_comments`, `id_mailing_list`, `authorize_sub_comments`, `use_bbcode`, `admin_badge`, `message_comment_created`, `add_comment_position`, `is_enabled_auth_mode`, `is_enabled_display_sub_comments`, `is_enabled_delete_comments`, `is_comments_sorted_by_date_creation`) VALUES
@@ -2952,7 +2952,7 @@ CREATE TABLE IF NOT EXISTS `extend_default_extendable_resource` (
   `id_resource` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `resource_type` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_default_extendable_resource` DISABLE KEYS */;
 /*!40000 ALTER TABLE `extend_default_extendable_resource` ENABLE KEYS */;
@@ -2964,7 +2964,7 @@ CREATE TABLE IF NOT EXISTS `extend_extender_hit` (
   `resource_type` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `nb_hits` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_hit`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_extender_hit` DISABLE KEYS */;
 /*!40000 ALTER TABLE `extend_extender_hit` ENABLE KEYS */;
@@ -2976,7 +2976,7 @@ CREATE TABLE IF NOT EXISTS `extend_favorite` (
   `resource_type` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `favorite_count` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_favorite`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_favorite` DISABLE KEYS */;
 /*!40000 ALTER TABLE `extend_favorite` ENABLE KEYS */;
@@ -2987,7 +2987,7 @@ CREATE TABLE IF NOT EXISTS `extend_favorite_history` (
   `id_extender_history` int(11) NOT NULL DEFAULT '0',
   `favorite_value` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_favorite_history`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_favorite_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `extend_favorite_history` ENABLE KEYS */;
@@ -2998,7 +2998,7 @@ CREATE TABLE IF NOT EXISTS `extend_feedback_config` (
   `message` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `id_mailing_list` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_extender`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_feedback_config` DISABLE KEYS */;
 INSERT INTO `extend_feedback_config` (`id_extender`, `message`, `id_mailing_list`) VALUES
@@ -3012,7 +3012,7 @@ CREATE TABLE IF NOT EXISTS `extend_follow` (
   `resource_type` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `follow_count` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_follow`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_follow` DISABLE KEYS */;
 /*!40000 ALTER TABLE `extend_follow` ENABLE KEYS */;
@@ -3023,7 +3023,7 @@ CREATE TABLE IF NOT EXISTS `extend_follow_history` (
   `id_extender_history` int(11) NOT NULL DEFAULT '0',
   `follow_value` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_follow_history`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_follow_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `extend_follow_history` ENABLE KEYS */;
@@ -3033,7 +3033,7 @@ CREATE TABLE IF NOT EXISTS `extend_opengraph_config` (
   `id_extender` int(11) NOT NULL,
   `id_socialhub` int(11) NOT NULL,
   PRIMARY KEY (`id_extender`,`id_socialhub`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_opengraph_config` DISABLE KEYS */;
 INSERT INTO `extend_opengraph_config` (`id_extender`, `id_socialhub`) VALUES
@@ -3049,7 +3049,7 @@ CREATE TABLE IF NOT EXISTS `extend_opengraph_socialhub` (
   `content_body` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `content_footer` mediumtext COLLATE utf8_unicode_ci,
   PRIMARY KEY (`opengraph_socialhub_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_opengraph_socialhub` DISABLE KEYS */;
 INSERT INTO `extend_opengraph_socialhub` (`opengraph_socialhub_id`, `name`, `content_header`, `content_body`, `content_footer`) VALUES
@@ -3069,7 +3069,7 @@ CREATE TABLE IF NOT EXISTS `extend_rating` (
   `score_positifs_votes` int(11) NOT NULL DEFAULT '0',
   `score_negatives_votes` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_rating`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_rating` DISABLE KEYS */;
 /*!40000 ALTER TABLE `extend_rating` ENABLE KEYS */;
@@ -3088,7 +3088,7 @@ CREATE TABLE IF NOT EXISTS `extend_rating_config` (
   `date_start` timestamp NULL DEFAULT NULL,
   `date_end` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id_extender`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_rating_config` DISABLE KEYS */;
 INSERT INTO `extend_rating_config` (`id_extender`, `id_mailing_list`, `id_vote_type`, `is_unique_vote`, `nb_days_to_vote`, `is_connected`, `is_active`, `nb_vote_per_user`, `delete_vote`, `date_start`, `date_end`) VALUES
@@ -3104,7 +3104,7 @@ CREATE TABLE IF NOT EXISTS `extend_rating_vote_history` (
   `id_extender_history` int(11) NOT NULL DEFAULT '0',
   `vote_value` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_vote_history`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_rating_vote_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `extend_rating_vote_history` ENABLE KEYS */;
@@ -3115,7 +3115,7 @@ CREATE TABLE IF NOT EXISTS `extend_rating_vote_type` (
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `template_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id_vote_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_rating_vote_type` DISABLE KEYS */;
 /*!40000 ALTER TABLE `extend_rating_vote_type` ENABLE KEYS */;
@@ -3128,7 +3128,7 @@ CREATE TABLE IF NOT EXISTS `extend_resource_extender` (
   `resource_type` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `is_active` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_extender`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_resource_extender` DISABLE KEYS */;
 INSERT INTO `extend_resource_extender` (`id_extender`, `extender_type`, `id_resource`, `resource_type`, `is_active`) VALUES
@@ -3153,7 +3153,7 @@ CREATE TABLE IF NOT EXISTS `extend_resource_extender_history` (
   `ip_address` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `date_creation` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_history`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `extend_resource_extender_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `extend_resource_extender_history` ENABLE KEYS */;
@@ -3167,7 +3167,7 @@ CREATE TABLE IF NOT EXISTS `files2docs_mapping` (
   `summary` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_mapping`),
   UNIQUE KEY `code_document_type` (`code_document_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `files2docs_mapping` DISABLE KEYS */;
 INSERT INTO `files2docs_mapping` (`id_mapping`, `code_document_type`, `description`, `title`, `summary`) VALUES
@@ -3188,7 +3188,7 @@ CREATE TABLE IF NOT EXISTS `files2docs_mapping_attribute` (
   `id_document_attribute` int(11) NOT NULL DEFAULT '0',
   `format` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_attribute`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `files2docs_mapping_attribute` DISABLE KEYS */;
 INSERT INTO `files2docs_mapping_attribute` (`id_attribute`, `id_mapping`, `id_document_attribute`, `format`) VALUES
@@ -3223,7 +3223,7 @@ CREATE TABLE IF NOT EXISTS `htmlpage` (
   `workgroup_key` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'all',
   `role` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'none',
   PRIMARY KEY (`id_htmlpage`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `htmlpage` DISABLE KEYS */;
 INSERT INTO `htmlpage` (`id_htmlpage`, `description`, `html_content`, `status`, `workgroup_key`, `role`) VALUES
@@ -3236,7 +3236,7 @@ CREATE TABLE IF NOT EXISTS `html_portlet` (
   `id_portlet` int(11) NOT NULL DEFAULT '0',
   `html` mediumtext COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id_portlet`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `html_portlet` DISABLE KEYS */;
 INSERT INTO `html_portlet` (`id_portlet`, `html`) VALUES
@@ -3255,7 +3255,7 @@ CREATE TABLE IF NOT EXISTS `ideation_campagnes_depositaires` (
   KEY `fk_ideation_campagnes_depositaires_campagne` (`code_campagne`),
   KEY `fk_ideation_campagnes_depositaires_depositaire` (`code_depositaire_type`),
   CONSTRAINT `fk_ideation_campagnes_depositaires_depositaire` FOREIGN KEY (`code_depositaire_type`) REFERENCES `ideation_depositaire_types` (`code_depositaire_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `ideation_campagnes_depositaires` DISABLE KEYS */;
 INSERT INTO `ideation_campagnes_depositaires` (`id_campagne_depositaire`, `code_campagne`, `code_depositaire_type`) VALUES
@@ -3272,7 +3272,7 @@ CREATE TABLE IF NOT EXISTS `ideation_depositaire_complement_types` (
   `libelle` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id_depositaire_complement_type`),
   UNIQUE KEY `code_depositaire_complement_type` (`code_depositaire_complement_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `ideation_depositaire_complement_types` DISABLE KEYS */;
 INSERT INTO `ideation_depositaire_complement_types` (`id_depositaire_complement_type`, `code_depositaire_complement_type`, `libelle`) VALUES
@@ -3291,7 +3291,7 @@ CREATE TABLE IF NOT EXISTS `ideation_depositaire_types` (
   UNIQUE KEY `code_depositaire_type` (`code_depositaire_type`),
   KEY `fk_ideation_depositaire_types_complement` (`code_complement_type`),
   CONSTRAINT `fk_ideation_depositaire_types_complement` FOREIGN KEY (`code_complement_type`) REFERENCES `ideation_depositaire_complement_types` (`code_depositaire_complement_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `ideation_depositaire_types` DISABLE KEYS */;
 INSERT INTO `ideation_depositaire_types` (`id_depositaire_type`, `code_depositaire_type`, `libelle`, `code_complement_type`) VALUES
@@ -3310,7 +3310,7 @@ CREATE TABLE IF NOT EXISTS `ideation_depositaire_types_values` (
   PRIMARY KEY (`id_depositaire_type_value`),
   UNIQUE KEY `code_depositaire_type` (`code_depositaire_type`,`code`),
   CONSTRAINT `fk_ideation_depositaire_type_values_depositaire` FOREIGN KEY (`code_depositaire_type`) REFERENCES `ideation_depositaire_types` (`code_depositaire_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `ideation_depositaire_types_values` DISABLE KEYS */;
 INSERT INTO `ideation_depositaire_types_values` (`id_depositaire_type_value`, `code_depositaire_type`, `code`, `libelle`) VALUES
@@ -3357,7 +3357,7 @@ CREATE TABLE IF NOT EXISTS `ideation_idees` (
   `handicap_complement` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id_idee`),
   UNIQUE KEY `code_campagne` (`code_campagne`,`code_idee`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `ideation_idees` DISABLE KEYS */;
 INSERT INTO `ideation_idees` (`id_idee`, `lutece_user_name`, `titre`, `description`, `cout`, `code_campagne`, `code_idee`, `code_theme`, `localisation_type`, `localisation_ardt`, `depositaire_type`, `depositaire`, `accept_exploit`, `address`, `longitude`, `latitude`, `type_nqpv_qva`, `id_nqpv_qva`, `libelle_nqpv_qva`, `creation_timestamp`, `eudonet_exported_tag`, `status_public`, `status_eudonet`, `motif_recev`, `id_project`, `titre_projet`, `url_projet`, `dejadepose`, `accept_contact`, `winner_projet`, `creationmethod`, `operatingbudget`, `handicap`, `handicap_complement`) VALUES
@@ -3376,7 +3376,7 @@ CREATE TABLE IF NOT EXISTS `ideation_idees_files` (
   KEY `id_idee` (`id_idee`,`type`,`id_file`),
   KEY `id_file` (`id_file`),
   CONSTRAINT `ideation_idees_files_idee` FOREIGN KEY (`id_idee`) REFERENCES `ideation_idees` (`id_idee`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `ideation_idees_files` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ideation_idees_files` ENABLE KEYS */;
@@ -3389,7 +3389,7 @@ CREATE TABLE IF NOT EXISTS `ideation_idees_links` (
   PRIMARY KEY (`id_idee_link`),
   UNIQUE KEY `id_idee_child` (`id_idee_child`,`id_idee_parent`),
   KEY `id_idee_parent` (`id_idee_parent`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 /*!40000 ALTER TABLE `ideation_idees_links` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ideation_idees_links` ENABLE KEYS */;
@@ -3400,7 +3400,7 @@ CREATE TABLE IF NOT EXISTS `library_mapping` (
   `id_media` int(11) NOT NULL DEFAULT '0',
   `code_document_type` varchar(30) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id_mapping`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `library_mapping` DISABLE KEYS */;
 INSERT INTO `library_mapping` (`id_mapping`, `id_media`, `code_document_type`) VALUES
@@ -3419,7 +3419,7 @@ CREATE TABLE IF NOT EXISTS `library_mapping_attribute` (
   `id_media_attribute` int(11) NOT NULL DEFAULT '0',
   `id_document_attribute` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_mapping`,`id_media_attribute`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `library_mapping_attribute` DISABLE KEYS */;
 INSERT INTO `library_mapping_attribute` (`id_mapping`, `id_media_attribute`, `id_document_attribute`) VALUES
@@ -3450,7 +3450,7 @@ CREATE TABLE IF NOT EXISTS `library_media` (
   `stylesheet` mediumblob,
   `is_multiple_media` smallint(6) DEFAULT '0',
   PRIMARY KEY (`id_media`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `library_media` DISABLE KEYS */;
 INSERT INTO `library_media` (`id_media`, `name`, `description`, `stylesheet`, `is_multiple_media`) VALUES
@@ -3472,7 +3472,7 @@ CREATE TABLE IF NOT EXISTS `library_media_attribute` (
   `type` smallint(6) NOT NULL DEFAULT '0',
   `DEFAULT_value` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id_attribute`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `library_media_attribute` DISABLE KEYS */;
 INSERT INTO `library_media_attribute` (`id_attribute`, `id_media`, `code`, `description`, `type`, `DEFAULT_value`) VALUES
@@ -3511,7 +3511,7 @@ CREATE TABLE IF NOT EXISTS `linkpages_portlet` (
   `id_linkpage` int(11) NOT NULL DEFAULT '0',
   `linkpage_order` int(11) DEFAULT '0',
   PRIMARY KEY (`id_portlet`,`id_linkpage`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `linkpages_portlet` DISABLE KEYS */;
 /*!40000 ALTER TABLE `linkpages_portlet` ENABLE KEYS */;
@@ -3524,7 +3524,7 @@ CREATE TABLE IF NOT EXISTS `menus` (
   `id_page_root` int(11) NOT NULL DEFAULT '0',
   `menu_marker` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id_menu`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `menus` DISABLE KEYS */;
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
@@ -3536,7 +3536,7 @@ CREATE TABLE IF NOT EXISTS `mydashboard_configuration` (
   `dashboard_order` int(11) NOT NULL,
   `hide_dashboard` smallint(6) NOT NULL,
   PRIMARY KEY (`my_dashboard_component_id`,`id_config`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `mydashboard_configuration` DISABLE KEYS */;
 /*!40000 ALTER TABLE `mydashboard_configuration` ENABLE KEYS */;
@@ -3550,7 +3550,7 @@ CREATE TABLE IF NOT EXISTS `mydashboard_dashboard_association` (
   PRIMARY KEY (`id_dashboard_association`),
   KEY `fk_id_panel` (`id_panel`),
   CONSTRAINT `fk_id_panel` FOREIGN KEY (`id_panel`) REFERENCES `mydashboard_panel` (`id_panel`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `mydashboard_dashboard_association` DISABLE KEYS */;
 /*!40000 ALTER TABLE `mydashboard_dashboard_association` ENABLE KEYS */;
@@ -3563,7 +3563,7 @@ CREATE TABLE IF NOT EXISTS `mydashboard_panel` (
   `description` mediumtext COLLATE utf8_unicode_ci,
   `is_default` smallint(6) NOT NULL,
   PRIMARY KEY (`id_panel`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `mydashboard_panel` DISABLE KEYS */;
 /*!40000 ALTER TABLE `mydashboard_panel` ENABLE KEYS */;
@@ -3580,7 +3580,7 @@ CREATE TABLE IF NOT EXISTS `mylutece_attribute` (
   `plugin_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `anonymize` smallint(6) DEFAULT NULL,
   PRIMARY KEY (`id_attribute`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `mylutece_attribute` DISABLE KEYS */;
 /*!40000 ALTER TABLE `mylutece_attribute` ENABLE KEYS */;
@@ -3598,7 +3598,7 @@ CREATE TABLE IF NOT EXISTS `mylutece_attribute_field` (
   `is_multiple` smallint(6) DEFAULT '0',
   `field_position` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_field`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `mylutece_attribute_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `mylutece_attribute_field` ENABLE KEYS */;
@@ -3608,7 +3608,7 @@ CREATE TABLE IF NOT EXISTS `mylutece_connections_log` (
   `ip_address` varchar(63) COLLATE utf8_unicode_ci DEFAULT NULL,
   `date_login` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `login_status` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `mylutece_connections_log` DISABLE KEYS */;
 /*!40000 ALTER TABLE `mylutece_connections_log` ENABLE KEYS */;
@@ -3618,7 +3618,7 @@ CREATE TABLE IF NOT EXISTS `mylutece_database_group` (
   `group_key` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `group_description` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`group_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `mylutece_database_group` DISABLE KEYS */;
 /*!40000 ALTER TABLE `mylutece_database_group` ENABLE KEYS */;
@@ -3628,7 +3628,7 @@ CREATE TABLE IF NOT EXISTS `mylutece_database_group_role` (
   `group_key` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `role_key` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   PRIMARY KEY (`group_key`,`role_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `mylutece_database_group_role` DISABLE KEYS */;
 /*!40000 ALTER TABLE `mylutece_database_group_role` ENABLE KEYS */;
@@ -3638,7 +3638,7 @@ CREATE TABLE IF NOT EXISTS `mylutece_database_key` (
   `mylutece_database_user_key` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `mylutece_database_user_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`mylutece_database_user_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `mylutece_database_key` DISABLE KEYS */;
 /*!40000 ALTER TABLE `mylutece_database_key` ENABLE KEYS */;
@@ -3658,7 +3658,7 @@ CREATE TABLE IF NOT EXISTS `mylutece_database_user` (
   `nb_alerts_sent` int(11) NOT NULL DEFAULT '0',
   `last_login` timestamp NOT NULL DEFAULT '1980-01-01 00:00:00',
   PRIMARY KEY (`mylutece_database_user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `mylutece_database_user` DISABLE KEYS */;
 INSERT INTO `mylutece_database_user` (`mylutece_database_user_id`, `login`, `password`, `name_given`, `name_family`, `email`, `is_active`, `reset_password`, `password_max_valid_date`, `account_max_valid_date`, `nb_alerts_sent`, `last_login`) VALUES
@@ -3670,7 +3670,7 @@ CREATE TABLE IF NOT EXISTS `mylutece_database_user_group` (
   `mylutece_database_user_id` int(11) NOT NULL DEFAULT '0',
   `group_key` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`mylutece_database_user_id`,`group_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `mylutece_database_user_group` DISABLE KEYS */;
 /*!40000 ALTER TABLE `mylutece_database_user_group` ENABLE KEYS */;
@@ -3680,7 +3680,7 @@ CREATE TABLE IF NOT EXISTS `mylutece_database_user_parameter` (
   `parameter_key` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `parameter_value` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`parameter_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `mylutece_database_user_parameter` DISABLE KEYS */;
 INSERT INTO `mylutece_database_user_parameter` (`parameter_key`, `parameter_value`) VALUES
@@ -3730,7 +3730,7 @@ CREATE TABLE IF NOT EXISTS `mylutece_database_user_password_history` (
   `password` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `date_password_change` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`mylutece_database_user_id`,`date_password_change`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `mylutece_database_user_password_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `mylutece_database_user_password_history` ENABLE KEYS */;
@@ -3740,7 +3740,7 @@ CREATE TABLE IF NOT EXISTS `mylutece_database_user_role` (
   `mylutece_database_user_id` int(11) NOT NULL DEFAULT '0',
   `role_key` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`mylutece_database_user_id`,`role_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `mylutece_database_user_role` DISABLE KEYS */;
 /*!40000 ALTER TABLE `mylutece_database_user_role` ENABLE KEYS */;
@@ -3750,7 +3750,7 @@ CREATE TABLE IF NOT EXISTS `mylutece_user_anonymize_field` (
   `field_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `anonymize` smallint(6) NOT NULL,
   PRIMARY KEY (`field_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `mylutece_user_anonymize_field` DISABLE KEYS */;
 INSERT INTO `mylutece_user_anonymize_field` (`field_name`, `anonymize`) VALUES
@@ -3768,7 +3768,7 @@ CREATE TABLE IF NOT EXISTS `mylutece_user_field` (
   `id_field` int(11) DEFAULT NULL,
   `user_field_value` mediumtext COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id_user_field`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `mylutece_user_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `mylutece_user_field` ENABLE KEYS */;
@@ -3787,7 +3787,7 @@ CREATE TABLE IF NOT EXISTS `participatorybudget_bizstat_file` (
   `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `file_value` longblob,
   PRIMARY KEY (`id_bizstat_file`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `participatorybudget_bizstat_file` DISABLE KEYS */;
 /*!40000 ALTER TABLE `participatorybudget_bizstat_file` ENABLE KEYS */;
@@ -3805,7 +3805,7 @@ CREATE TABLE IF NOT EXISTS `participatorybudget_campaign` (
   UNIQUE KEY `code_campagne` (`code_campagne`),
   KEY `fk_participatorybudget_campaign_moderation` (`code_moderation_type`),
   CONSTRAINT `fk_participatorybudget_campaign_moderation` FOREIGN KEY (`code_moderation_type`) REFERENCES `participatorybudget_campaign_moderation_type` (`code_moderation_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `participatorybudget_campaign` DISABLE KEYS */;
 INSERT INTO `participatorybudget_campaign` (`id_campagne`, `code_campagne`, `title`, `description`, `active`, `code_moderation_type`, `moderation_duration`) VALUES
@@ -3823,7 +3823,7 @@ CREATE TABLE IF NOT EXISTS `participatorybudget_campaign_area` (
   PRIMARY KEY (`id_campagne_area`),
   KEY `fk_participatorybudget_campaign_areas_campagne_idx` (`code_campagne`),
   CONSTRAINT `fk_participatorybudget_campaign_areas_campagne` FOREIGN KEY (`code_campagne`) REFERENCES `participatorybudget_campaign` (`code_campagne`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `participatorybudget_campaign_area` DISABLE KEYS */;
 INSERT INTO `participatorybudget_campaign_area` (`id_campagne_area`, `code_campagne`, `title`, `active`, `type`, `number_votes`) VALUES
@@ -3845,7 +3845,7 @@ CREATE TABLE IF NOT EXISTS `participatorybudget_campaign_image` (
   KEY `id_file` (`id_file`),
   CONSTRAINT `fk_participatorybudget_campaign_images_campagne` FOREIGN KEY (`code_campagne`) REFERENCES `participatorybudget_campaign` (`code_campagne`),
   CONSTRAINT `fk_participatorybudget_campaign_images_file` FOREIGN KEY (`id_file`) REFERENCES `core_file` (`id_file`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `participatorybudget_campaign_image` DISABLE KEYS */;
 /*!40000 ALTER TABLE `participatorybudget_campaign_image` ENABLE KEYS */;
@@ -3857,7 +3857,7 @@ CREATE TABLE IF NOT EXISTS `participatorybudget_campaign_moderation_type` (
   `libelle` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id_moderation_type`),
   UNIQUE KEY `code_moderation_type` (`code_moderation_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `participatorybudget_campaign_moderation_type` DISABLE KEYS */;
 INSERT INTO `participatorybudget_campaign_moderation_type` (`id_moderation_type`, `code_moderation_type`, `libelle`) VALUES
@@ -3878,7 +3878,7 @@ CREATE TABLE IF NOT EXISTS `participatorybudget_campaign_phase` (
   KEY `fk_participatorybudget_campaign_phases_phase` (`code_phase_type`),
   CONSTRAINT `fk_participatorybudget_campaign_phases_campagne` FOREIGN KEY (`code_campagne`) REFERENCES `participatorybudget_campaign` (`code_campagne`),
   CONSTRAINT `fk_participatorybudget_campaign_phases_phase` FOREIGN KEY (`code_phase_type`) REFERENCES `participatorybudget_campaign_phase_type` (`code_phase_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `participatorybudget_campaign_phase` DISABLE KEYS */;
 INSERT INTO `participatorybudget_campaign_phase` (`id_campagne_phase`, `code_phase_type`, `code_campagne`, `start`, `end`) VALUES
@@ -3902,7 +3902,7 @@ CREATE TABLE IF NOT EXISTS `participatorybudget_campaign_phase_type` (
   `libelle` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id_phase_type`),
   UNIQUE KEY `code_phase_type` (`code_phase_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `participatorybudget_campaign_phase_type` DISABLE KEYS */;
 INSERT INTO `participatorybudget_campaign_phase_type` (`id_phase_type`, `code_phase_type`, `libelle`) VALUES
@@ -3931,7 +3931,7 @@ CREATE TABLE IF NOT EXISTS `participatorybudget_campaign_theme` (
   PRIMARY KEY (`id_campagne_theme`),
   UNIQUE KEY `code_campagne` (`code_campagne`,`code_theme`),
   CONSTRAINT `participatorybudget_campaign_themes_campagne` FOREIGN KEY (`code_campagne`) REFERENCES `participatorybudget_campaign` (`code_campagne`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `participatorybudget_campaign_theme` DISABLE KEYS */;
 INSERT INTO `participatorybudget_campaign_theme` (`id_campagne_theme`, `code_campagne`, `code_theme`, `title`, `description`, `active`, `image_file`) VALUES
@@ -3953,7 +3953,7 @@ CREATE TABLE IF NOT EXISTS `participatorybudget_rgpd_treatment_log` (
   `treatment_object_fields` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id_treatment_log`),
   KEY `id_treatment_log_index` (`id_treatment_log`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `participatorybudget_rgpd_treatment_log` DISABLE KEYS */;
 /*!40000 ALTER TABLE `participatorybudget_rgpd_treatment_log` ENABLE KEYS */;
@@ -3963,7 +3963,7 @@ CREATE TABLE IF NOT EXISTS `participatorybudget_user_access_vote` (
   `id_user` varchar(255) NOT NULL,
   `has_acces_vote` int(11) NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 /*!40000 ALTER TABLE `participatorybudget_user_access_vote` DISABLE KEYS */;
 /*!40000 ALTER TABLE `participatorybudget_user_access_vote` ENABLE KEYS */;
@@ -3984,7 +3984,7 @@ CREATE TABLE IF NOT EXISTS `participatorybudget_votes` (
   `mobile_phone` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_user`,`id_projet`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `participatorybudget_votes` DISABLE KEYS */;
 /*!40000 ALTER TABLE `participatorybudget_votes` ENABLE KEYS */;
@@ -4006,7 +4006,7 @@ CREATE TABLE IF NOT EXISTS `participatorybudget_votes_history` (
   `status_export_stats` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `participatorybudget_votes_history_index_id_user` (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `participatorybudget_votes_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `participatorybudget_votes_history` ENABLE KEYS */;
@@ -4017,7 +4017,7 @@ CREATE TABLE IF NOT EXISTS `participatorybudget_votes_per_location` (
   `localisation_ardt` varchar(50) NOT NULL,
   `nb_votes` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 /*!40000 ALTER TABLE `participatorybudget_votes_per_location` DISABLE KEYS */;
 INSERT INTO `participatorybudget_votes_per_location` (`id`, `localisation_ardt`, `nb_votes`) VALUES
@@ -4038,7 +4038,7 @@ CREATE TABLE IF NOT EXISTS `regularexpression_regular_expression` (
   `information_message` mediumtext COLLATE utf8_unicode_ci,
   `error_message` mediumtext COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id_expression`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `regularexpression_regular_expression` DISABLE KEYS */;
 INSERT INTO `regularexpression_regular_expression` (`id_expression`, `title`, `regular_expression_value`, `valid_exemple`, `information_message`, `error_message`) VALUES
@@ -4055,7 +4055,7 @@ CREATE TABLE IF NOT EXISTS `reportlauncher_parameter` (
   PRIMARY KEY (`id_parameter`),
   KEY `fk_reportlauncher_parameter_parameter` (`id_report`),
   CONSTRAINT `fk_reportlauncher_parameter_parameter` FOREIGN KEY (`id_report`) REFERENCES `reportlauncher_report` (`id_report`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `reportlauncher_parameter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `reportlauncher_parameter` ENABLE KEYS */;
@@ -4066,7 +4066,7 @@ CREATE TABLE IF NOT EXISTS `reportlauncher_report` (
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `page` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id_report`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `reportlauncher_report` DISABLE KEYS */;
 /*!40000 ALTER TABLE `reportlauncher_report` ENABLE KEYS */;
@@ -4075,7 +4075,7 @@ DROP TABLE IF EXISTS `solr_facet_intersection`;
 CREATE TABLE IF NOT EXISTS `solr_facet_intersection` (
   `id_field1` int(11) DEFAULT NULL,
   `id_field2` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `solr_facet_intersection` DISABLE KEYS */;
 /*!40000 ALTER TABLE `solr_facet_intersection` ENABLE KEYS */;
@@ -4092,7 +4092,7 @@ CREATE TABLE IF NOT EXISTS `solr_fields` (
   `enable_sort` tinyint(1) DEFAULT '0',
   `default_sort` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id_field`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `solr_fields` DISABLE KEYS */;
 INSERT INTO `solr_fields` (`id_field`, `name`, `label`, `description`, `is_facet`, `enable_facet`, `is_sort`, `enable_sort`, `default_sort`) VALUES
@@ -4153,7 +4153,7 @@ CREATE TABLE IF NOT EXISTS `solr_indexer_action` (
   `type_ressource` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `id_portlet` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_action`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `solr_indexer_action` DISABLE KEYS */;
 /*!40000 ALTER TABLE `solr_indexer_action` ENABLE KEYS */;
@@ -4166,7 +4166,7 @@ CREATE TABLE IF NOT EXISTS `subscribe_subscription` (
   `subscription_key` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `id_subscribed_resource` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id_subscription`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `subscribe_subscription` DISABLE KEYS */;
 INSERT INTO `subscribe_subscription` (`id_subscription`, `id_user`, `subscription_provider`, `subscription_key`, `id_subscribed_resource`) VALUES
@@ -4183,7 +4183,7 @@ CREATE TABLE IF NOT EXISTS `task_change_idee_status_cf` (
   `id_task` int(11) NOT NULL,
   `idee_status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_task`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 /*!40000 ALTER TABLE `task_change_idee_status_cf` DISABLE KEYS */;
 INSERT INTO `task_change_idee_status_cf` (`id_task`, `idee_status`) VALUES
@@ -4208,7 +4208,7 @@ CREATE TABLE IF NOT EXISTS `task_notify_documentbp_cf` (
   `recipients_bcc` varchar(255) NOT NULL DEFAULT '',
   `is_abonnes` smallint(6) NOT NULL,
   PRIMARY KEY (`id_task`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 /*!40000 ALTER TABLE `task_notify_documentbp_cf` DISABLE KEYS */;
 INSERT INTO `task_notify_documentbp_cf` (`id_task`, `sender_name`, `sender_email`, `subject`, `message`, `recipients_cc`, `recipients_bcc`, `is_abonnes`) VALUES
@@ -4227,7 +4227,7 @@ CREATE TABLE IF NOT EXISTS `task_notify_ideation_cf` (
   `isFollowers` smallint(6) NOT NULL,
   `isDepositaire` smallint(6) NOT NULL,
   PRIMARY KEY (`id_task`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 /*!40000 ALTER TABLE `task_notify_ideation_cf` DISABLE KEYS */;
 INSERT INTO `task_notify_ideation_cf` (`id_task`, `sender_name`, `sender_email`, `subject`, `message`, `recipients_cc`, `recipients_bcc`, `isFollowers`, `isDepositaire`) VALUES
@@ -4238,7 +4238,7 @@ DROP TABLE IF EXISTS `theme_global`;
 CREATE TABLE IF NOT EXISTS `theme_global` (
   `global_theme_code` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`global_theme_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `theme_global` DISABLE KEYS */;
 INSERT INTO `theme_global` (`global_theme_code`) VALUES
@@ -4257,7 +4257,7 @@ CREATE TABLE IF NOT EXISTS `theme_theme` (
   `theme_licence` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `path_js` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`code_theme`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `theme_theme` DISABLE KEYS */;
 INSERT INTO `theme_theme` (`code_theme`, `theme_description`, `path_images`, `path_css`, `theme_author`, `theme_author_url`, `theme_version`, `theme_licence`, `path_js`) VALUES
@@ -4295,7 +4295,7 @@ CREATE TABLE IF NOT EXISTS `workflow_action` (
   CONSTRAINT `fk_action_id_state_after` FOREIGN KEY (`id_state_after`) REFERENCES `workflow_state` (`id_state`),
   CONSTRAINT `fk_action_id_state_before` FOREIGN KEY (`id_state_before`) REFERENCES `workflow_state` (`id_state`),
   CONSTRAINT `fk_action_id_workflow` FOREIGN KEY (`id_workflow`) REFERENCES `workflow_workflow` (`id_workflow`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ;
 
 /*!40000 ALTER TABLE `workflow_action` DISABLE KEYS */;
 INSERT INTO `workflow_action` (`id_action`, `name`, `description`, `id_workflow`, `id_state_before`, `id_state_after`, `id_icon`, `is_automatic`, `is_mass_action`, `display_order`, `is_automatic_reflexive_action`) VALUES
@@ -4328,7 +4328,7 @@ CREATE TABLE IF NOT EXISTS `workflow_action_action` (
   `id_action` int(11) NOT NULL DEFAULT '0',
   `id_linked_action` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_action`,`id_linked_action`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `workflow_action_action` DISABLE KEYS */;
 /*!40000 ALTER TABLE `workflow_action_action` ENABLE KEYS */;
@@ -4343,7 +4343,7 @@ CREATE TABLE IF NOT EXISTS `workflow_assignment_history` (
   KEY `assignment_id_task_fk` (`id_task`),
   CONSTRAINT `fk_assignment_id_history` FOREIGN KEY (`id_history`) REFERENCES `workflow_resource_history` (`id_history`),
   CONSTRAINT `fk_assignment_id_task` FOREIGN KEY (`id_task`) REFERENCES `workflow_task` (`id_task`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `workflow_assignment_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `workflow_assignment_history` ENABLE KEYS */;
@@ -4357,7 +4357,7 @@ CREATE TABLE IF NOT EXISTS `workflow_icon` (
   `width` int(11) DEFAULT NULL,
   `height` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_icon`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ;
 
 /*!40000 ALTER TABLE `workflow_icon` DISABLE KEYS */;
 INSERT INTO `workflow_icon` (`id_icon`, `name`, `mime_type`, `file_value`, `width`, `height`) VALUES
@@ -4372,7 +4372,7 @@ CREATE TABLE IF NOT EXISTS `workflow_prerequisite` (
   `id_action` int(11) NOT NULL,
   `prerequisite_type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id_prerequisite`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ;
 
 /*!40000 ALTER TABLE `workflow_prerequisite` DISABLE KEYS */;
 INSERT INTO `workflow_prerequisite` (`id_prerequisite`, `id_action`, `prerequisite_type`) VALUES
@@ -4384,7 +4384,7 @@ CREATE TABLE IF NOT EXISTS `workflow_prerequisite_duration_cf` (
   `id_prerequisite` int(11) NOT NULL,
   `duration` int(11) NOT NULL,
   PRIMARY KEY (`id_prerequisite`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `workflow_prerequisite_duration_cf` DISABLE KEYS */;
 /*!40000 ALTER TABLE `workflow_prerequisite_duration_cf` ENABLE KEYS */;
@@ -4403,7 +4403,7 @@ CREATE TABLE IF NOT EXISTS `workflow_resource_history` (
   KEY `history_id_action_fk` (`id_action`),
   CONSTRAINT `fk_history_id_action` FOREIGN KEY (`id_action`) REFERENCES `workflow_action` (`id_action`),
   CONSTRAINT `fk_history_id_workflow` FOREIGN KEY (`id_workflow`) REFERENCES `workflow_workflow` (`id_workflow`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `workflow_resource_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `workflow_resource_history` ENABLE KEYS */;
@@ -4423,7 +4423,7 @@ CREATE TABLE IF NOT EXISTS `workflow_resource_workflow` (
   KEY `fk_document_id_state` (`id_state`),
   CONSTRAINT `fk_document_id_state` FOREIGN KEY (`id_state`) REFERENCES `workflow_state` (`id_state`),
   CONSTRAINT `fk_document_id_workflow` FOREIGN KEY (`id_workflow`) REFERENCES `workflow_workflow` (`id_workflow`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `workflow_resource_workflow` DISABLE KEYS */;
 /*!40000 ALTER TABLE `workflow_resource_workflow` ENABLE KEYS */;
@@ -4437,7 +4437,7 @@ CREATE TABLE IF NOT EXISTS `workflow_resource_workgroup` (
   KEY `workflow_resource_workgroup_id_resource_fk` (`id_resource`),
   KEY `workflow_resource_workgroup_resource_type_fk` (`resource_type`),
   KEY `workflow_resource_workgroup_id_workflow_fk` (`id_workflow`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `workflow_resource_workgroup` DISABLE KEYS */;
 /*!40000 ALTER TABLE `workflow_resource_workgroup` ENABLE KEYS */;
@@ -4455,7 +4455,7 @@ CREATE TABLE IF NOT EXISTS `workflow_state` (
   PRIMARY KEY (`id_state`),
   KEY `fk_state_id_workflow` (`id_workflow`),
   CONSTRAINT `fk_state_id_workflow` FOREIGN KEY (`id_workflow`) REFERENCES `workflow_workflow` (`id_workflow`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ;
 
 /*!40000 ALTER TABLE `workflow_state` DISABLE KEYS */;
 INSERT INTO `workflow_state` (`id_state`, `name`, `description`, `id_workflow`, `is_initial_state`, `is_required_workgroup_assigned`, `id_icon`, `display_order`) VALUES
@@ -4473,7 +4473,7 @@ CREATE TABLE IF NOT EXISTS `workflow_task` (
   PRIMARY KEY (`id_task`),
   KEY `task_id_action_fk` (`id_action`),
   CONSTRAINT `fk_task_id_action` FOREIGN KEY (`id_action`) REFERENCES `workflow_action` (`id_action`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ;
 
 /*!40000 ALTER TABLE `workflow_task` DISABLE KEYS */;
 INSERT INTO `workflow_task` (`id_task`, `task_type_key`, `id_action`, `display_order`) VALUES
@@ -4521,7 +4521,7 @@ CREATE TABLE IF NOT EXISTS `workflow_task_assignment_cf` (
   `subject` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `is_use_user_name` smallint(6) DEFAULT '0',
   PRIMARY KEY (`id_task`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `workflow_task_assignment_cf` DISABLE KEYS */;
 /*!40000 ALTER TABLE `workflow_task_assignment_cf` ENABLE KEYS */;
@@ -4533,7 +4533,7 @@ CREATE TABLE IF NOT EXISTS `workflow_task_comment_config` (
   `is_mandatory` smallint(6) DEFAULT '0',
   `is_richtext` smallint(6) DEFAULT '0',
   PRIMARY KEY (`id_task`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `workflow_task_comment_config` DISABLE KEYS */;
 /*!40000 ALTER TABLE `workflow_task_comment_config` ENABLE KEYS */;
@@ -4548,7 +4548,7 @@ CREATE TABLE IF NOT EXISTS `workflow_task_comment_value` (
   KEY `comment_value_id_task_fk` (`id_task`),
   CONSTRAINT `fk_comment_value_id_history` FOREIGN KEY (`id_history`) REFERENCES `workflow_resource_history` (`id_history`),
   CONSTRAINT `fk_comment_value_id_task` FOREIGN KEY (`id_task`) REFERENCES `workflow_task` (`id_task`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `workflow_task_comment_value` DISABLE KEYS */;
 /*!40000 ALTER TABLE `workflow_task_comment_value` ENABLE KEYS */;
@@ -4561,7 +4561,7 @@ CREATE TABLE IF NOT EXISTS `workflow_task_notification_cf` (
   `subject` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `message` mediumtext COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id_task`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `workflow_task_notification_cf` DISABLE KEYS */;
 /*!40000 ALTER TABLE `workflow_task_notification_cf` ENABLE KEYS */;
@@ -4575,7 +4575,7 @@ CREATE TABLE IF NOT EXISTS `workflow_workflow` (
   `is_enabled` smallint(6) DEFAULT '0',
   `workgroup_key` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_workflow`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ;
 
 /*!40000 ALTER TABLE `workflow_workflow` DISABLE KEYS */;
 INSERT INTO `workflow_workflow` (`id_workflow`, `name`, `description`, `creation_date`, `is_enabled`, `workgroup_key`) VALUES
@@ -4589,7 +4589,7 @@ CREATE TABLE IF NOT EXISTS `workflow_workgroup_cf` (
   `workgroup_key` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `id_mailing_list` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_task`,`workgroup_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+);
 
 /*!40000 ALTER TABLE `workflow_workgroup_cf` DISABLE KEYS */;
 /*!40000 ALTER TABLE `workflow_workgroup_cf` ENABLE KEYS */;
