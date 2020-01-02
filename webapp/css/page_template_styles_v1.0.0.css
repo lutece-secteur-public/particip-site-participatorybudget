@@ -422,6 +422,10 @@ span.avoidwrap { display: inline-block; white-space: pre; }
 	font-size: 1.6rem; 
 }
 
+#search-form .form-control.selected {
+	border: 3px solid #3c67ff;
+}
+
 #search-form label {
 	width: 100%;
 }
