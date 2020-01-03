@@ -423,7 +423,8 @@ span.avoidwrap { display: inline-block; white-space: pre; }
 }
 
 #search-form .form-control.selected {
-	border: 3px solid #3c67ff;
+	background-color: #3c67ff;
+	color:            #ffffff;
 }
 
 #search-form label {
@@ -465,8 +466,8 @@ span.avoidwrap { display: inline-block; white-space: pre; }
 }
 
 /* --- Icon top-to-bottom array --- */
-#search-form label.select:before { content: ''; right: 6px; top: 4px; width: 20px; height: 20px; background: #fff; position: absolute; pointer-events: none; display: block; }
-#search-form label.select:after  { content: '\f107'; color: #606059; font-family: 'FontAwesome'; font-size: 2rem; right: 8px; top: 4px; position: absolute; pointer-events: none; }
+#search-form label.select:before { content: ''; right: 6px; top: 4px; width: 20px; height: 20px; position: absolute; pointer-events: none; display: block; }
+#search-form label.select:after  { content: '\f107'; font-family: 'FontAwesome'; font-size: 2rem; right: 8px; top: 4px; position: absolute; pointer-events: none; }
 
 /* ------------------------------ Sub Search ------------------------------ */
 
