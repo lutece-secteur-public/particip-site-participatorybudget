@@ -719,6 +719,8 @@ INSERT INTO `core_datastore` (`entity_key`, `entity_value`) VALUES
 	('core.plugins.status.pagelinkservice.installed', 'true'),
 	('core.plugins.status.pagelinkservice.pool', 'portal'),
 	('core.plugins.status.parisconnect.installed', 'true'),
+	('core.plugins.status.participatoryideation-participatorybudget.installed', 'true'),
+	('core.plugins.status.participatoryideation-participatorybudget.pool', 'portal'),
 	('core.plugins.status.participatorybudget.installed', 'true'),
 	('core.plugins.status.participatorybudget.pool', 'portal'),
 	('core.plugins.status.participatoryideation.installed', 'true'),
@@ -3359,9 +3361,9 @@ CREATE TABLE IF NOT EXISTS `ideation_idees` (
 
 /*!40000 ALTER TABLE `ideation_idees` DISABLE KEYS */;
 INSERT INTO `ideation_idees` (`id_idee`, `lutece_user_name`, `titre`, `description`, `cout`, `code_campagne`, `code_idee`, `code_theme`, `localisation_type`, `localisation_ardt`, `depositaire_type`, `depositaire`, `accept_exploit`, `address`, `longitude`, `latitude`, `type_nqpv_qva`, `id_nqpv_qva`, `libelle_nqpv_qva`, `creation_timestamp`, `eudonet_exported_tag`, `status_public`, `status_eudonet`, `motif_recev`, `id_project`, `titre_projet`, `url_projet`, `dejadepose`, `accept_contact`, `winner_projet`, `creationmethod`, `operatingbudget`, `handicap`, `handicap_complement`) VALUES
-	(1, 'jerome.poirier@paris.fr', 'More space on sidewalk for children', 'Children car tree  The City of Philadelphia has received federal funding to make improvements along American Street between Girard and Indiana Avenues. The improvements include rehabilitating sidewalks with extensions at intersections that reduce pedestrian crossing distances, new medians with green stormwater infrastructure, protected bike lanes, new street trees, and new lighting. The street will be resurfaced with new pavement markings and signs installed. street will be resurfaced with new pavement markings and signs installed.', NULL, 'A', 1, 'SOCIAL', 'localized', 'area 1', 'PARTICULIER', NULL, 0, NULL, NULL, NULL, 'NON', NULL, NULL, '2019-12-11 12:06:00', 0, 'DEPOSE', NULL, NULL, NULL, NULL, NULL, '', 1, NULL, '', '', 'no', ''),
-	(2, 'jerome.poirier@paris.fr', 'Install some sport equipments', 'n pourrait favoriser l\'aménagement et l\'adaptation d\'installations et d\'équipements sportifs. www2.parl.gc.ca\r\nThe government could support the development and adaptation of sports facilities and equipment. www2.parl.gc.ca\r\nsoutenir une gestion environnementale de grande qualité dans l\'utilisation des équipements sportifs, démontrant ainsi l\'utilisation de technologies propres [...] sochi2014.com\r\nsustaining perfect quality environmental management in using and maintaining Olympic facilities demonstrating excellent environmentally efficient technologies [...] sochi2014.com\r\nVeuillez noter que les caméras vidéo, les radios, jumelles et équipements sportifs doivent être déclarés lors de l\'entrée dans le pays puis [...] xworld.cc\r\nIt should be noted that video cameras, radios, binoculars and sports equipment must be declared on entering the country and must be exported when leaving. xworld.cc\r\n[...] permettrait une meilleure utilisation, par exemple, des équipements sportifs par les équipes locales, contribuant ainsi à la création [...] eur-lex.europa.eu\r\nOpening up to the local environment would, for instance, make for better use of sports facilities by local teams, thus contributing to the establishment [...] eur-lex.europa.eu\r\nNous avons maintenant l\'outil pour corriger cela alors, allons de l\'avant et permettons un accès libre aux équipements sportifs. www2.parl.gc.ca\r\nTherefore, let us move forward and allow general access to sport facilities. www2.parl.gc.ca\r\n[...] rôle des pouvoirs publics, les cantines scolaires, équipements sportifs, la transmission d\'une bonne information, une alimentation [...] europarl.europa.eu\r\n[...] the role of the public authorities, school canteens, sports facilities, proper information, a healthy diet and the need for daily physical exercise.', NULL, 'A', 2, 'GENERAL', 'localized', 'area 2', 'ASSO', 'Sport for all !', 0, NULL, NULL, NULL, 'NON', NULL, NULL, '2019-12-12 14:01:00', 0, 'DEPOSE', NULL, NULL, NULL, NULL, NULL, '', 1, NULL, '', '', 'no', ''),
-	(3, 'jerome.poirier@paris.fr', 'Food for Everyone', 'This project aims to develop the societal and territorial dynamics of food solidarity, in the form of a call for projects meeting the following needs:\r\n \r\n - Foster the development of mobile and ecological shared kitchens ("foodtrucks", cargo bikes, etc.) offering not only to create social ties through cooking, but also to serve as a reception area for the poor;\r\n - Equip solidarity catering spaces or food halls (furniture, IT equipment, clean vehicles, renovation of premises, various equipment);\r\n - Develop solutions, especially digital, for:\r\n 1. put individuals who wish to donate food in touch with food seekers.\r\n 2. Improving the cooperation of food aid stakeholders and user information', 1500000, 'A', 3, 'SOCIAL', 'whole', NULL, 'COUNCIL', '01PALAI', 1, NULL, NULL, NULL, 'NON', NULL, NULL, '2019-12-23 11:41:18', 0, 'DEPOSE', NULL, NULL, NULL, NULL, NULL, '', 1, NULL, '', '', 'no', '');
+	(1, 'jerome.poirier@paris.fr', 'More space on sidewalk for children', 'Children car tree  The City of Philadelphia has received federal funding to make improvements along American Street between Girard and Indiana Avenues. The improvements include rehabilitating sidewalks with extensions at intersections that reduce pedestrian crossing distances, new medians with green stormwater infrastructure, protected bike lanes, new street trees, and new lighting. The street will be resurfaced with new pavement markings and signs installed. street will be resurfaced with new pavement markings and signs installed.', NULL, 'A', 1, 'SOCIAL', 'localized', 'area 1', 'PARTICULIER', NULL, 0, NULL, NULL, NULL, 'NON', NULL, NULL, '2019-12-11 12:06:00', 0, 'SUBMITTED', NULL, NULL, NULL, NULL, NULL, '', 1, NULL, '', '', 'no', ''),
+	(2, 'jerome.poirier@paris.fr', 'Install some sport equipments', 'n pourrait favoriser l\'aménagement et l\'adaptation d\'installations et d\'équipements sportifs. www2.parl.gc.ca\r\nThe government could support the development and adaptation of sports facilities and equipment. www2.parl.gc.ca\r\nsoutenir une gestion environnementale de grande qualité dans l\'utilisation des équipements sportifs, démontrant ainsi l\'utilisation de technologies propres [...] sochi2014.com\r\nsustaining perfect quality environmental management in using and maintaining Olympic facilities demonstrating excellent environmentally efficient technologies [...] sochi2014.com\r\nVeuillez noter que les caméras vidéo, les radios, jumelles et équipements sportifs doivent être déclarés lors de l\'entrée dans le pays puis [...] xworld.cc\r\nIt should be noted that video cameras, radios, binoculars and sports equipment must be declared on entering the country and must be exported when leaving. xworld.cc\r\n[...] permettrait une meilleure utilisation, par exemple, des équipements sportifs par les équipes locales, contribuant ainsi à la création [...] eur-lex.europa.eu\r\nOpening up to the local environment would, for instance, make for better use of sports facilities by local teams, thus contributing to the establishment [...] eur-lex.europa.eu\r\nNous avons maintenant l\'outil pour corriger cela alors, allons de l\'avant et permettons un accès libre aux équipements sportifs. www2.parl.gc.ca\r\nTherefore, let us move forward and allow general access to sport facilities. www2.parl.gc.ca\r\n[...] rôle des pouvoirs publics, les cantines scolaires, équipements sportifs, la transmission d\'une bonne information, une alimentation [...] europarl.europa.eu\r\n[...] the role of the public authorities, school canteens, sports facilities, proper information, a healthy diet and the need for daily physical exercise.', NULL, 'A', 2, 'GENERAL', 'localized', 'area 2', 'ASSO', 'Sport for all !', 0, NULL, NULL, NULL, 'NON', NULL, NULL, '2019-12-12 14:01:00', 0, 'SUBMITTED', NULL, NULL, NULL, NULL, NULL, '', 1, NULL, '', '', 'no', ''),
+	(3, 'jerome.poirier@paris.fr', 'Food for Everyone', 'This project aims to develop the societal and territorial dynamics of food solidarity, in the form of a call for projects meeting the following needs:\r\n \r\n - Foster the development of mobile and ecological shared kitchens ("foodtrucks", cargo bikes, etc.) offering not only to create social ties through cooking, but also to serve as a reception area for the poor;\r\n - Equip solidarity catering spaces or food halls (furniture, IT equipment, clean vehicles, renovation of premises, various equipment);\r\n - Develop solutions, especially digital, for:\r\n 1. put individuals who wish to donate food in touch with food seekers.\r\n 2. Improving the cooperation of food aid stakeholders and user information', 1500000, 'A', 3, 'SOCIAL', 'whole', NULL, 'COUNCIL', '01PALAI', 1, NULL, NULL, NULL, 'NON', NULL, NULL, '2019-12-23 11:41:18', 0, 'SUBMITTED', NULL, NULL, NULL, NULL, NULL, '', 1, NULL, '', '', 'no', '');
 /*!40000 ALTER TABLE `ideation_idees` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `ideation_idees_files`;
@@ -4296,29 +4298,11 @@ CREATE TABLE IF NOT EXISTS `workflow_action` (
 ) ;
 
 /*!40000 ALTER TABLE `workflow_action` DISABLE KEYS */;
-INSERT INTO `workflow_action` (`id_action`, `name`, `description`, `id_workflow`, `id_state_before`, `id_state_after`, `id_icon`, `is_automatic`, `is_mass_action`, `display_order`, `is_automatic_reflexive_action`) VALUES
-	(1, 'Déposé (avec notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Déposé\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 1, 0),
-	(2, 'A l\'étude (sans notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'A l’étude\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 4, 0),
-	(3, 'En co-construction (avec notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'En co-construction\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 5, 0),
-	(4, 'Non retenu (avec notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Non retenu\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 7, 0),
-	(5, 'Regroupé (avec notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Regroupé\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 9, 0),
-	(6, 'Retenu (avec notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Retenu\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 11, 0),
-	(7, 'Supprimé par MDP (avec notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Supprimé par MDP\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 13, 0),
-	(8, 'Supprimé par usager (avec notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Supprimé par usager\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 15, 0),
-	(9, 'IDEATION_NOUVEAU_COMMENTAIRE_FO', 'action appelée par l\'application idéation lors du dépot d\'un nouveau commentaire\r\nATTENTION  L\'ACTION  DOIT PORTÉE LE TITRE \'IDEATION_NOUVEAU_COMMENTAIRE_FO\'', 1, 1, 1, 1, 0, 1, 17, 0),
-	(10, 'IDEATION_NOUVELLE_IDEE_FO', 'action appelée par l\'application idéation lors du dépot d\'un nouveau commentaire\r\nATTENTION  L\'ACTION  DOIT PORTÉE LE TITRE \'IDEATION_NOUVELLE_IDEE_FO\'', 1, 1, 1, 1, 0, 1, 18, 0),
-	(11, 'IDEATION_NOUVEAU_FOLLOW', 'action appelée par l\'application idéation lors d\'une nouvelle participation\r\nATTENTION  L\'ACTION  DOIT PORTÉE LE TITRE \'IDEATION_NOUVEAU_FOLLOW\'', 1, 1, 1, 1, 0, 1, 19, 0),
-	(12, 'IDEATION_CANCEL_FOLLOW', 'action appelée par l\'application idéation lors de l\'annulation d\'une participation\r\nATTENTION  L\'ACTION  DOIT PORTÉE LE TITRE \'IDEATION_CANCEL_FOLLOW\'', 1, 1, 1, 1, 0, 1, 20, 0),
-	(25, 'PREPARE_TO_NOTIF', 'Initier notification', 3, 9, 10, 1, 0, 1, 1, 0),
-	(26, 'DO_NOTIF', 'Notifier', 3, 10, 9, 3, 0, 1, 2, 0),
-	(27, 'A l\'étude (avec notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'A l’étude\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 3, 0),
-	(28, 'Supprimé par MDP (sans notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Supprimé par MDP\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 14, 0),
-	(29, 'Retenu (sans notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Retenu\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 12, 0),
-	(30, 'Regroupé (sans notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Regroupé\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 10, 0),
-	(31, 'Non retenu (sans notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Non retenu\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 8, 0),
-	(32, 'En co-construction (sans notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'En co-construction\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 6, 0),
-	(33, 'Déposé (sans notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Déposé\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 2, 0),
-	(35, 'Supprimé par usager (sans notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Supprimé par usager\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 16, 0);
+INSERT INTO workflow_action (id_action, name, description, id_workflow, id_state_before, id_state_after, id_icon, is_automatic, is_mass_action, display_order, is_automatic_reflexive_action) VALUES
+	(100, 'Submit', 'Used when a draft proposal is definitely submitted. ', 100, 100, 101, 1, 0, 0, 1, 0),
+	(101, 'Reinit', 'Return to draft state. ', 100, 101, 100, 3, 0, 0, 1, 0),
+	(150, 'ExportToBudget', 'Export proposal to participatorybudget plugin as new project.', 100, 101, 150, 1, 0, 0, 10, 0),
+	(151, 'Reinit', 'Return to draft state. ', 100, 150, 100, 3, 0, 0, 1, 0);
 /*!40000 ALTER TABLE `workflow_action` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `workflow_action_action`;
@@ -4424,6 +4408,10 @@ CREATE TABLE IF NOT EXISTS `workflow_resource_workflow` (
 );
 
 /*!40000 ALTER TABLE `workflow_resource_workflow` DISABLE KEYS */;
+INSERT INTO `workflow_resource_workflow` (`id_resource`, `resource_type`, `id_state`, `id_workflow`, `id_external_parent`, `is_associated_workgroups`) VALUES 
+	(1, 'PARTICIPATORYIDEATION_PROPOSAL', 101, 100, -1, 0),
+	(2, 'PARTICIPATORYIDEATION_PROPOSAL', 100, 100, -1, 0),
+	(3, 'PARTICIPATORYIDEATION_PROPOSAL', 100, 100, -1, 0);
 /*!40000 ALTER TABLE `workflow_resource_workflow` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `workflow_resource_workgroup`;
@@ -4456,10 +4444,10 @@ CREATE TABLE IF NOT EXISTS `workflow_state` (
 ) ;
 
 /*!40000 ALTER TABLE `workflow_state` DISABLE KEYS */;
-INSERT INTO `workflow_state` (`id_state`, `name`, `description`, `id_workflow`, `is_initial_state`, `is_required_workgroup_assigned`, `id_icon`, `display_order`) VALUES
-	(1, 'Etat Initial', 'Etat Initial', 1, 1, 0, NULL, 1),
-	(9, 'Etat Initial', 'Etat Initial', 3, 1, 0, NULL, 1),
-	(10, 'Associés à notifier', 'Associés à notifier', 3, 0, 0, NULL, 2);
+INSERT INTO workflow_state (id_state, name, description, id_workflow, is_initial_state, is_required_workgroup_assigned, id_icon, display_order) VALUES
+	(100, 'Draft', 'Draft', 100, 1, 0, NULL, 1),
+	(101, 'Submitted', 'Submitted', 100, 0, 0, NULL, 2),
+	(150, 'ExportedToBudget', 'Exported as project in participatorybudget plugin', 100, 0, 0, NULL, 10);
 /*!40000 ALTER TABLE `workflow_state` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `workflow_task`;
@@ -4472,42 +4460,6 @@ CREATE TABLE IF NOT EXISTS `workflow_task` (
   KEY `task_id_action_fk` (`id_action`),
   CONSTRAINT `fk_task_id_action` FOREIGN KEY (`id_action`) REFERENCES `workflow_action` (`id_action`)
 ) ;
-
-/*!40000 ALTER TABLE `workflow_task` DISABLE KEYS */;
-INSERT INTO `workflow_task` (`id_task`, `task_type_key`, `id_action`, `display_order`) VALUES
-	(1, 'taskChangeIdeeStatus', 1, 1),
-	(2, 'taskNotifyIdeation', 1, 2),
-	(3, 'taskChangeIdeeStatus', 2, 1),
-	(5, 'taskChangeIdeeStatus', 3, 1),
-	(6, 'taskNotifyIdeation', 3, 2),
-	(7, 'taskChangeIdeeStatus', 4, 1),
-	(8, 'taskNotifyIdeation', 4, 2),
-	(9, 'taskChangeIdeeStatus', 5, 1),
-	(10, 'taskNotifyIdeation', 5, 2),
-	(11, 'taskChangeIdeeStatus', 6, 1),
-	(12, 'taskNotifyIdeation', 6, 2),
-	(13, 'taskChangeIdeeStatus', 7, 1),
-	(14, 'taskNotifyIdeation', 7, 2),
-	(15, 'taskChangeIdeeStatus', 8, 1),
-	(16, 'taskNotifyIdeation', 8, 2),
-	(17, 'taskNotifyIdeation', 9, 2),
-	(18, 'taskNotifyIdeation', 10, 1),
-	(19, 'taskNotifyIdeation', 9, 1),
-	(20, 'taskNotifyIdeation', 7, 3),
-	(21, 'taskNotifyIdeation', 8, 3),
-	(26, 'taskNotifyIdeation', 11, 1),
-	(36, 'taskNotifyDocumentbp', 26, 1),
-	(37, 'taskNotifyGru', 10, 2),
-	(40, 'taskChangeIdeeStatus', 27, 1),
-	(41, 'taskNotifyIdeation', 27, 2),
-	(42, 'taskChangeIdeeStatus', 28, 1),
-	(45, 'taskChangeIdeeStatus', 29, 1),
-	(47, 'taskChangeIdeeStatus', 30, 1),
-	(49, 'taskChangeIdeeStatus', 31, 1),
-	(51, 'taskChangeIdeeStatus', 32, 1),
-	(53, 'taskChangeIdeeStatus', 33, 1),
-	(57, 'taskChangeIdeeStatus', 35, 1);
-/*!40000 ALTER TABLE `workflow_task` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `workflow_task_assignment_cf`;
 CREATE TABLE IF NOT EXISTS `workflow_task_assignment_cf` (
@@ -4576,9 +4528,8 @@ CREATE TABLE IF NOT EXISTS `workflow_workflow` (
 ) ;
 
 /*!40000 ALTER TABLE `workflow_workflow` DISABLE KEYS */;
-INSERT INTO `workflow_workflow` (`id_workflow`, `name`, `description`, `creation_date`, `is_enabled`, `workgroup_key`) VALUES
-	(1, 'Workflow Idées', 'Workflow Idées', '2015-11-05 11:05:51', 1, 'all'),
-	(3, 'Workflow Document Suivi Synt', 'Workflow Document Suivi Synt', '2017-09-11 08:20:16', 1, 'all');
+INSERT INTO workflow_workflow (id_workflow, name, description, creation_date, is_enabled, workgroup_key) VALUES
+	(100, 'Proposal workflow', 'Proposal workflow', '2010-01-01 12:00:00', 1, 'all');
 /*!40000 ALTER TABLE `workflow_workflow` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `workflow_workgroup_cf`;
