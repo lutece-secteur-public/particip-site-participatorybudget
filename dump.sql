@@ -4297,28 +4297,7 @@ CREATE TABLE IF NOT EXISTS `workflow_action` (
 
 /*!40000 ALTER TABLE `workflow_action` DISABLE KEYS */;
 INSERT INTO `workflow_action` (`id_action`, `name`, `description`, `id_workflow`, `id_state_before`, `id_state_after`, `id_icon`, `is_automatic`, `is_mass_action`, `display_order`, `is_automatic_reflexive_action`) VALUES
-	(1, 'Déposé (avec notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Déposé\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 1, 0),
-	(2, 'A l\'étude (sans notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'A l’étude\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 4, 0),
-	(3, 'En co-construction (avec notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'En co-construction\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 5, 0),
-	(4, 'Non retenu (avec notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Non retenu\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 7, 0),
-	(5, 'Regroupé (avec notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Regroupé\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 9, 0),
-	(6, 'Retenu (avec notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Retenu\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 11, 0),
-	(7, 'Supprimé par MDP (avec notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Supprimé par MDP\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 13, 0),
-	(8, 'Supprimé par usager (avec notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Supprimé par usager\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 15, 0),
-	(9, 'IDEATION_NOUVEAU_COMMENTAIRE_FO', 'action appelée par l\'application idéation lors du dépot d\'un nouveau commentaire\r\nATTENTION  L\'ACTION  DOIT PORTÉE LE TITRE \'IDEATION_NOUVEAU_COMMENTAIRE_FO\'', 1, 1, 1, 1, 0, 1, 17, 0),
-	(10, 'IDEATION_NOUVELLE_IDEE_FO', 'action appelée par l\'application idéation lors du dépot d\'un nouveau commentaire\r\nATTENTION  L\'ACTION  DOIT PORTÉE LE TITRE \'IDEATION_NOUVELLE_IDEE_FO\'', 1, 1, 1, 1, 0, 1, 18, 0),
-	(11, 'IDEATION_NOUVEAU_FOLLOW', 'action appelée par l\'application idéation lors d\'une nouvelle participation\r\nATTENTION  L\'ACTION  DOIT PORTÉE LE TITRE \'IDEATION_NOUVEAU_FOLLOW\'', 1, 1, 1, 1, 0, 1, 19, 0),
-	(12, 'IDEATION_CANCEL_FOLLOW', 'action appelée par l\'application idéation lors de l\'annulation d\'une participation\r\nATTENTION  L\'ACTION  DOIT PORTÉE LE TITRE \'IDEATION_CANCEL_FOLLOW\'', 1, 1, 1, 1, 0, 1, 20, 0),
-	(25, 'PREPARE_TO_NOTIF', 'Initier notification', 3, 9, 10, 1, 0, 1, 1, 0),
-	(26, 'DO_NOTIF', 'Notifier', 3, 10, 9, 3, 0, 1, 2, 0),
-	(27, 'A l\'étude (avec notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'A l’étude\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 3, 0),
-	(28, 'Supprimé par MDP (sans notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Supprimé par MDP\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 14, 0),
-	(29, 'Retenu (sans notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Retenu\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 12, 0),
-	(30, 'Regroupé (sans notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Regroupé\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 10, 0),
-	(31, 'Non retenu (sans notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Non retenu\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 8, 0),
-	(32, 'En co-construction (sans notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'En co-construction\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 6, 0),
-	(33, 'Déposé (sans notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Déposé\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 2, 0),
-	(35, 'Supprimé par usager (sans notification)', 'Action lancée suite à une affectation dans EUDONET de l\'idée au statut \'Supprimé par usager\'\r\n\r\nATTENTION POUR QUE CETTE ACTION SOIT LANCÉ LE TITRE DE L\'ACTION DOIT CORRESPONDRE  LIBÉLLÉ DU STATUT EUDONNET !!!', 1, 1, 1, 1, 0, 1, 16, 0);
+	(1, 'Submit', 'Used when a draft proposal is definitely submitted. ', 1, 1, 2, 1, 0, 0, 1, 0);
 /*!40000 ALTER TABLE `workflow_action` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `workflow_action_action`;
@@ -4424,6 +4403,10 @@ CREATE TABLE IF NOT EXISTS `workflow_resource_workflow` (
 );
 
 /*!40000 ALTER TABLE `workflow_resource_workflow` DISABLE KEYS */;
+INSERT INTO `workflow_resource_workflow` (`id_resource`, `resource_type`, `id_state`, `id_workflow`, `id_external_parent`, `is_associated_workgroups`) VALUES 
+	(1, 'PARTICIPATORYIDEATION_PROPOSAL', 101, 100, -1, 0),
+	(2, 'PARTICIPATORYIDEATION_PROPOSAL', 100, 100, -1, 0),
+	(3, 'PARTICIPATORYIDEATION_PROPOSAL', 100, 100, -1, 0);
 /*!40000 ALTER TABLE `workflow_resource_workflow` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `workflow_resource_workgroup`;
@@ -4457,7 +4440,8 @@ CREATE TABLE IF NOT EXISTS `workflow_state` (
 
 /*!40000 ALTER TABLE `workflow_state` DISABLE KEYS */;
 INSERT INTO `workflow_state` (`id_state`, `name`, `description`, `id_workflow`, `is_initial_state`, `is_required_workgroup_assigned`, `id_icon`, `display_order`) VALUES
-	(1, 'Etat Initial', 'Etat Initial', 1, 1, 0, NULL, 1),
+	(1, 'Draft', 'Draft', 1, 1, 0, NULL, 1),
+	(2, 'Submitted', 'Submitted', 1, 0, 0, NULL, 2),
 	(9, 'Etat Initial', 'Etat Initial', 3, 1, 0, NULL, 1),
 	(10, 'Associés à notifier', 'Associés à notifier', 3, 0, 0, NULL, 2);
 /*!40000 ALTER TABLE `workflow_state` ENABLE KEYS */;
@@ -4472,42 +4456,6 @@ CREATE TABLE IF NOT EXISTS `workflow_task` (
   KEY `task_id_action_fk` (`id_action`),
   CONSTRAINT `fk_task_id_action` FOREIGN KEY (`id_action`) REFERENCES `workflow_action` (`id_action`)
 ) ;
-
-/*!40000 ALTER TABLE `workflow_task` DISABLE KEYS */;
-INSERT INTO `workflow_task` (`id_task`, `task_type_key`, `id_action`, `display_order`) VALUES
-	(1, 'taskChangeIdeeStatus', 1, 1),
-	(2, 'taskNotifyIdeation', 1, 2),
-	(3, 'taskChangeIdeeStatus', 2, 1),
-	(5, 'taskChangeIdeeStatus', 3, 1),
-	(6, 'taskNotifyIdeation', 3, 2),
-	(7, 'taskChangeIdeeStatus', 4, 1),
-	(8, 'taskNotifyIdeation', 4, 2),
-	(9, 'taskChangeIdeeStatus', 5, 1),
-	(10, 'taskNotifyIdeation', 5, 2),
-	(11, 'taskChangeIdeeStatus', 6, 1),
-	(12, 'taskNotifyIdeation', 6, 2),
-	(13, 'taskChangeIdeeStatus', 7, 1),
-	(14, 'taskNotifyIdeation', 7, 2),
-	(15, 'taskChangeIdeeStatus', 8, 1),
-	(16, 'taskNotifyIdeation', 8, 2),
-	(17, 'taskNotifyIdeation', 9, 2),
-	(18, 'taskNotifyIdeation', 10, 1),
-	(19, 'taskNotifyIdeation', 9, 1),
-	(20, 'taskNotifyIdeation', 7, 3),
-	(21, 'taskNotifyIdeation', 8, 3),
-	(26, 'taskNotifyIdeation', 11, 1),
-	(36, 'taskNotifyDocumentbp', 26, 1),
-	(37, 'taskNotifyGru', 10, 2),
-	(40, 'taskChangeIdeeStatus', 27, 1),
-	(41, 'taskNotifyIdeation', 27, 2),
-	(42, 'taskChangeIdeeStatus', 28, 1),
-	(45, 'taskChangeIdeeStatus', 29, 1),
-	(47, 'taskChangeIdeeStatus', 30, 1),
-	(49, 'taskChangeIdeeStatus', 31, 1),
-	(51, 'taskChangeIdeeStatus', 32, 1),
-	(53, 'taskChangeIdeeStatus', 33, 1),
-	(57, 'taskChangeIdeeStatus', 35, 1);
-/*!40000 ALTER TABLE `workflow_task` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `workflow_task_assignment_cf`;
 CREATE TABLE IF NOT EXISTS `workflow_task_assignment_cf` (
@@ -4577,7 +4525,7 @@ CREATE TABLE IF NOT EXISTS `workflow_workflow` (
 
 /*!40000 ALTER TABLE `workflow_workflow` DISABLE KEYS */;
 INSERT INTO `workflow_workflow` (`id_workflow`, `name`, `description`, `creation_date`, `is_enabled`, `workgroup_key`) VALUES
-	(1, 'Workflow Idées', 'Workflow Idées', '2015-11-05 11:05:51', 1, 'all'),
+	(1, 'Proposal workflow', 'Proposal workflow', '2015-11-05 11:05:51', 1, 'all'),
 	(3, 'Workflow Document Suivi Synt', 'Workflow Document Suivi Synt', '2017-09-11 08:20:16', 1, 'all');
 /*!40000 ALTER TABLE `workflow_workflow` ENABLE KEYS */;
 
