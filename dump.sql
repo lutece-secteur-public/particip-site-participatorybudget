@@ -719,6 +719,8 @@ INSERT INTO `core_datastore` (`entity_key`, `entity_value`) VALUES
 	('core.plugins.status.pagelinkservice.installed', 'true'),
 	('core.plugins.status.pagelinkservice.pool', 'portal'),
 	('core.plugins.status.parisconnect.installed', 'true'),
+	('core.plugins.status.participatoryideation-participatorybudget.installed', 'true'),
+	('core.plugins.status.participatoryideation-participatorybudget.pool', 'portal'),
 	('core.plugins.status.participatorybudget.installed', 'true'),
 	('core.plugins.status.participatorybudget.pool', 'portal'),
 	('core.plugins.status.participatoryideation.installed', 'true'),
@@ -3359,9 +3361,9 @@ CREATE TABLE IF NOT EXISTS `ideation_idees` (
 
 /*!40000 ALTER TABLE `ideation_idees` DISABLE KEYS */;
 INSERT INTO `ideation_idees` (`id_idee`, `lutece_user_name`, `titre`, `description`, `cout`, `code_campagne`, `code_idee`, `code_theme`, `localisation_type`, `localisation_ardt`, `depositaire_type`, `depositaire`, `accept_exploit`, `address`, `longitude`, `latitude`, `type_nqpv_qva`, `id_nqpv_qva`, `libelle_nqpv_qva`, `creation_timestamp`, `eudonet_exported_tag`, `status_public`, `status_eudonet`, `motif_recev`, `id_project`, `titre_projet`, `url_projet`, `dejadepose`, `accept_contact`, `winner_projet`, `creationmethod`, `operatingbudget`, `handicap`, `handicap_complement`) VALUES
-	(1, 'jerome.poirier@paris.fr', 'More space on sidewalk for children', 'Children car tree  The City of Philadelphia has received federal funding to make improvements along American Street between Girard and Indiana Avenues. The improvements include rehabilitating sidewalks with extensions at intersections that reduce pedestrian crossing distances, new medians with green stormwater infrastructure, protected bike lanes, new street trees, and new lighting. The street will be resurfaced with new pavement markings and signs installed. street will be resurfaced with new pavement markings and signs installed.', NULL, 'A', 1, 'SOCIAL', 'localized', 'area 1', 'PARTICULIER', NULL, 0, NULL, NULL, NULL, 'NON', NULL, NULL, '2019-12-11 12:06:00', 0, 'DEPOSE', NULL, NULL, NULL, NULL, NULL, '', 1, NULL, '', '', 'no', ''),
-	(2, 'jerome.poirier@paris.fr', 'Install some sport equipments', 'n pourrait favoriser l\'aménagement et l\'adaptation d\'installations et d\'équipements sportifs. www2.parl.gc.ca\r\nThe government could support the development and adaptation of sports facilities and equipment. www2.parl.gc.ca\r\nsoutenir une gestion environnementale de grande qualité dans l\'utilisation des équipements sportifs, démontrant ainsi l\'utilisation de technologies propres [...] sochi2014.com\r\nsustaining perfect quality environmental management in using and maintaining Olympic facilities demonstrating excellent environmentally efficient technologies [...] sochi2014.com\r\nVeuillez noter que les caméras vidéo, les radios, jumelles et équipements sportifs doivent être déclarés lors de l\'entrée dans le pays puis [...] xworld.cc\r\nIt should be noted that video cameras, radios, binoculars and sports equipment must be declared on entering the country and must be exported when leaving. xworld.cc\r\n[...] permettrait une meilleure utilisation, par exemple, des équipements sportifs par les équipes locales, contribuant ainsi à la création [...] eur-lex.europa.eu\r\nOpening up to the local environment would, for instance, make for better use of sports facilities by local teams, thus contributing to the establishment [...] eur-lex.europa.eu\r\nNous avons maintenant l\'outil pour corriger cela alors, allons de l\'avant et permettons un accès libre aux équipements sportifs. www2.parl.gc.ca\r\nTherefore, let us move forward and allow general access to sport facilities. www2.parl.gc.ca\r\n[...] rôle des pouvoirs publics, les cantines scolaires, équipements sportifs, la transmission d\'une bonne information, une alimentation [...] europarl.europa.eu\r\n[...] the role of the public authorities, school canteens, sports facilities, proper information, a healthy diet and the need for daily physical exercise.', NULL, 'A', 2, 'GENERAL', 'localized', 'area 2', 'ASSO', 'Sport for all !', 0, NULL, NULL, NULL, 'NON', NULL, NULL, '2019-12-12 14:01:00', 0, 'DEPOSE', NULL, NULL, NULL, NULL, NULL, '', 1, NULL, '', '', 'no', ''),
-	(3, 'jerome.poirier@paris.fr', 'Food for Everyone', 'This project aims to develop the societal and territorial dynamics of food solidarity, in the form of a call for projects meeting the following needs:\r\n \r\n - Foster the development of mobile and ecological shared kitchens ("foodtrucks", cargo bikes, etc.) offering not only to create social ties through cooking, but also to serve as a reception area for the poor;\r\n - Equip solidarity catering spaces or food halls (furniture, IT equipment, clean vehicles, renovation of premises, various equipment);\r\n - Develop solutions, especially digital, for:\r\n 1. put individuals who wish to donate food in touch with food seekers.\r\n 2. Improving the cooperation of food aid stakeholders and user information', 1500000, 'A', 3, 'SOCIAL', 'whole', NULL, 'COUNCIL', '01PALAI', 1, NULL, NULL, NULL, 'NON', NULL, NULL, '2019-12-23 11:41:18', 0, 'DEPOSE', NULL, NULL, NULL, NULL, NULL, '', 1, NULL, '', '', 'no', '');
+	(1, 'jerome.poirier@paris.fr', 'More space on sidewalk for children', 'Children car tree  The City of Philadelphia has received federal funding to make improvements along American Street between Girard and Indiana Avenues. The improvements include rehabilitating sidewalks with extensions at intersections that reduce pedestrian crossing distances, new medians with green stormwater infrastructure, protected bike lanes, new street trees, and new lighting. The street will be resurfaced with new pavement markings and signs installed. street will be resurfaced with new pavement markings and signs installed.', NULL, 'A', 1, 'SOCIAL', 'localized', 'area 1', 'PARTICULIER', NULL, 0, NULL, NULL, NULL, 'NON', NULL, NULL, '2019-12-11 12:06:00', 0, 'SUBMITTED', NULL, NULL, NULL, NULL, NULL, '', 1, NULL, '', '', 'no', ''),
+	(2, 'jerome.poirier@paris.fr', 'Install some sport equipments', 'n pourrait favoriser l\'aménagement et l\'adaptation d\'installations et d\'équipements sportifs. www2.parl.gc.ca\r\nThe government could support the development and adaptation of sports facilities and equipment. www2.parl.gc.ca\r\nsoutenir une gestion environnementale de grande qualité dans l\'utilisation des équipements sportifs, démontrant ainsi l\'utilisation de technologies propres [...] sochi2014.com\r\nsustaining perfect quality environmental management in using and maintaining Olympic facilities demonstrating excellent environmentally efficient technologies [...] sochi2014.com\r\nVeuillez noter que les caméras vidéo, les radios, jumelles et équipements sportifs doivent être déclarés lors de l\'entrée dans le pays puis [...] xworld.cc\r\nIt should be noted that video cameras, radios, binoculars and sports equipment must be declared on entering the country and must be exported when leaving. xworld.cc\r\n[...] permettrait une meilleure utilisation, par exemple, des équipements sportifs par les équipes locales, contribuant ainsi à la création [...] eur-lex.europa.eu\r\nOpening up to the local environment would, for instance, make for better use of sports facilities by local teams, thus contributing to the establishment [...] eur-lex.europa.eu\r\nNous avons maintenant l\'outil pour corriger cela alors, allons de l\'avant et permettons un accès libre aux équipements sportifs. www2.parl.gc.ca\r\nTherefore, let us move forward and allow general access to sport facilities. www2.parl.gc.ca\r\n[...] rôle des pouvoirs publics, les cantines scolaires, équipements sportifs, la transmission d\'une bonne information, une alimentation [...] europarl.europa.eu\r\n[...] the role of the public authorities, school canteens, sports facilities, proper information, a healthy diet and the need for daily physical exercise.', NULL, 'A', 2, 'GENERAL', 'localized', 'area 2', 'ASSO', 'Sport for all !', 0, NULL, NULL, NULL, 'NON', NULL, NULL, '2019-12-12 14:01:00', 0, 'SUBMITTED', NULL, NULL, NULL, NULL, NULL, '', 1, NULL, '', '', 'no', ''),
+	(3, 'jerome.poirier@paris.fr', 'Food for Everyone', 'This project aims to develop the societal and territorial dynamics of food solidarity, in the form of a call for projects meeting the following needs:\r\n \r\n - Foster the development of mobile and ecological shared kitchens ("foodtrucks", cargo bikes, etc.) offering not only to create social ties through cooking, but also to serve as a reception area for the poor;\r\n - Equip solidarity catering spaces or food halls (furniture, IT equipment, clean vehicles, renovation of premises, various equipment);\r\n - Develop solutions, especially digital, for:\r\n 1. put individuals who wish to donate food in touch with food seekers.\r\n 2. Improving the cooperation of food aid stakeholders and user information', 1500000, 'A', 3, 'SOCIAL', 'whole', NULL, 'COUNCIL', '01PALAI', 1, NULL, NULL, NULL, 'NON', NULL, NULL, '2019-12-23 11:41:18', 0, 'SUBMITTED', NULL, NULL, NULL, NULL, NULL, '', 1, NULL, '', '', 'no', '');
 /*!40000 ALTER TABLE `ideation_idees` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `ideation_idees_files`;
@@ -4296,8 +4298,11 @@ CREATE TABLE IF NOT EXISTS `workflow_action` (
 ) ;
 
 /*!40000 ALTER TABLE `workflow_action` DISABLE KEYS */;
-INSERT INTO `workflow_action` (`id_action`, `name`, `description`, `id_workflow`, `id_state_before`, `id_state_after`, `id_icon`, `is_automatic`, `is_mass_action`, `display_order`, `is_automatic_reflexive_action`) VALUES
-	(1, 'Submit', 'Used when a draft proposal is definitely submitted. ', 1, 1, 2, 1, 0, 0, 1, 0);
+INSERT INTO workflow_action (id_action, name, description, id_workflow, id_state_before, id_state_after, id_icon, is_automatic, is_mass_action, display_order, is_automatic_reflexive_action) VALUES
+	(100, 'Submit', 'Used when a draft proposal is definitely submitted. ', 100, 100, 101, 1, 0, 0, 1, 0),
+	(101, 'Reinit', 'Return to draft state. ', 100, 101, 100, 3, 0, 0, 1, 0),
+	(150, 'ExportToBudget', 'Export proposal to participatorybudget plugin as new project.', 100, 101, 150, 1, 0, 0, 10, 0),
+	(151, 'Reinit', 'Return to draft state. ', 100, 150, 100, 3, 0, 0, 1, 0);
 /*!40000 ALTER TABLE `workflow_action` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `workflow_action_action`;
@@ -4439,11 +4444,10 @@ CREATE TABLE IF NOT EXISTS `workflow_state` (
 ) ;
 
 /*!40000 ALTER TABLE `workflow_state` DISABLE KEYS */;
-INSERT INTO `workflow_state` (`id_state`, `name`, `description`, `id_workflow`, `is_initial_state`, `is_required_workgroup_assigned`, `id_icon`, `display_order`) VALUES
-	(1, 'Draft', 'Draft', 1, 1, 0, NULL, 1),
-	(2, 'Submitted', 'Submitted', 1, 0, 0, NULL, 2),
-	(9, 'Etat Initial', 'Etat Initial', 3, 1, 0, NULL, 1),
-	(10, 'Associés à notifier', 'Associés à notifier', 3, 0, 0, NULL, 2);
+INSERT INTO workflow_state (id_state, name, description, id_workflow, is_initial_state, is_required_workgroup_assigned, id_icon, display_order) VALUES
+	(100, 'Draft', 'Draft', 100, 1, 0, NULL, 1),
+	(101, 'Submitted', 'Submitted', 100, 0, 0, NULL, 2),
+	(150, 'ExportedToBudget', 'Exported as project in participatorybudget plugin', 100, 0, 0, NULL, 10);
 /*!40000 ALTER TABLE `workflow_state` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `workflow_task`;
@@ -4524,9 +4528,8 @@ CREATE TABLE IF NOT EXISTS `workflow_workflow` (
 ) ;
 
 /*!40000 ALTER TABLE `workflow_workflow` DISABLE KEYS */;
-INSERT INTO `workflow_workflow` (`id_workflow`, `name`, `description`, `creation_date`, `is_enabled`, `workgroup_key`) VALUES
-	(1, 'Proposal workflow', 'Proposal workflow', '2015-11-05 11:05:51', 1, 'all'),
-	(3, 'Workflow Document Suivi Synt', 'Workflow Document Suivi Synt', '2017-09-11 08:20:16', 1, 'all');
+INSERT INTO workflow_workflow (id_workflow, name, description, creation_date, is_enabled, workgroup_key) VALUES
+	(100, 'Proposal workflow', 'Proposal workflow', '2010-01-01 12:00:00', 1, 'all');
 /*!40000 ALTER TABLE `workflow_workflow` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `workflow_workgroup_cf`;
