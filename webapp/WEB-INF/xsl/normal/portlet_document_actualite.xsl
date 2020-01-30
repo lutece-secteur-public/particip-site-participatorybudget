@@ -18,7 +18,7 @@
 			<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-10 col-lg-offset-2 col-lg-10">
 			<xsl:if test="not(string(display-title)='1')">
 				<div class="title2">
-					<xsl:value-of disable-output-escapDing="yes" select="portlet-name" />
+					<xsl:value-of disable-output-escapding="yes" select="portlet-name" />
 					<a class="hidden-xs pull-right" href="actualites.html" alt="Actualités" title="Actualités" target="_top">Toutes les actualités</a>
 				</div>
 			</xsl:if>

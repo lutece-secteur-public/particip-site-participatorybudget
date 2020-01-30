@@ -15,7 +15,7 @@
     </xsl:variable>
     <div class="portlet-actualites {$device_class}">
         <xsl:if test="not(string(display-portlet-title)='1')">
-           <h3><xsl:value-of disable-output-escapDing="yes" select="portlet-name" /></h3>
+           <h3><xsl:value-of disable-output-escapding="yes" select="portlet-name" /></h3>
         </xsl:if>
 		<xsl:apply-templates select="document-list-portlet" />
     </div>
