@@ -2517,11 +2517,11 @@ INSERT INTO document_type_attr (id_document_attr, code_document_type, code_attr_
 	(175, 'pb_project', 'text', 'proposal_title', 'Proposal title', 'Proposal title', 31, 0, 1),
 	(176, 'news_topic', 'url', 'url_redirection', 'URL redirection', 'URL de redirection vers une fiche article hors du site BP', 5, 0, 0),
 	(184, 'pb_project', 'text', 'proposal_subtitle', 'Subtitle', 'Project subtitle', 1, 0, 1),
-	(199, 'pb_project', 'date', 'step1_start_date', 'Step1', 'Phase 1 - Start date (must be filled when in realization)', 33, 0, 1),
-	(200, 'pb_project', 'date', 'step2_start_date', 'Step2', 'Phase 2 - Start date (must be filled when in realization)', 34, 0, 1),
-	(201, 'pb_project', 'date', 'step3_start_date', 'Step3', 'Phase 3 - Start date (must be filled when in realization)', 35, 0, 1),
-	(202, 'pb_project', 'date', 'step4_start_date', 'Step4', 'Phase 4 - Start date (must be filled when in realization)', 36, 0, 1),
-	(203, 'pb_project', 'date', 'step5_start_date', 'Step5', 'Phase 4 - End date (must be filled when in realization)', 37, 0, 1);
+	(199, 'pb_project', 'date', 'step1_start_date', 'Step1', 'Step 1 - Start date (must be filled when in realization)', 33, 0, 1),
+	(200, 'pb_project', 'date', 'step2_start_date', 'Step2', 'Step 2 - Start date (must be filled when in realization)', 34, 0, 1),
+	(201, 'pb_project', 'date', 'step3_start_date', 'Step3', 'Step 3 - Start date (must be filled when in realization)', 35, 0, 1),
+	(202, 'pb_project', 'date', 'step4_start_date', 'Step4', 'Step 4 - Start date (must be filled when in realization)', 36, 0, 1),
+	(203, 'pb_project', 'date', 'step5_start_date', 'Step5', 'Step 5 - Start date (must be filled when in realization)', 37, 0, 1);
 /*!40000 ALTER TABLE document_type_attr ENABLE KEYS */;
 
 DROP TABLE IF EXISTS document_type_attr_parameters;
