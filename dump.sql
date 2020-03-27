@@ -4115,6 +4115,8 @@ INSERT INTO solr_fields (id_field, name, label, description, is_facet, enable_fa
 	(63, 'department_text', 'Departement', 'Departement', 1, 0, 0, 0, 0),
 	(65, 'total_votes_text', 'Total votes', 'Total votes', 1, 0, 0, 0, 0),
 	(66, 'status_text', 'Status', 'Status', 1, 1, 0, 0, 0),
+	(67, 'localisation_text', 'Localisation', 'Localisation', 1, 1, 0, 0, 0),
+	(68, 'code_theme_string', 'Theme code', 'Theme code', 1, 1, 0, 0, 0),
 	(85, 'like_long', 'Total likes', 'Total likes', 1, 0, 1, 1, 0),
 	(86, 'title', 'Title', 'Title', 1, 0, 1, 1, 0),
 	(90, 'phase1_start_date_text', 'Phase 1 - Start date', 'Phase 1 - Start date', 1, 0, 0, 0, 0),
