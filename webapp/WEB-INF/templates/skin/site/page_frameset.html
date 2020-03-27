@@ -128,7 +128,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 				
 				<#if campagneService.isAfterBeginning("IDEATION") >
 					<li>
-						<a href="jsp/site/Portal.jsp?page=search-solr&amp;conf=list_idees&amp;fq=campagne_text:${campagneService.lastCampagne.code}&amp;sort_name=${RANDOM!123456789}_random&amp;sort_order=asc">
+						<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;conf=list_idees&amp;fq=campagne_text:${campagneService.lastCampagne.code}">
 							<span>#i18n{portal.openpb.navbar.entry.getSubmittedProposals}</span>
 						</a>
 					</li>
@@ -151,7 +151,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 				</#if>
 
 				<li class="last">
-					<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;&amp;conf=list_projects">
+					<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;conf=list_projects">
 						<span>#i18n{portal.openpb.navbar.entry.getProjectsUnderRealization}</span>
 					</a>
 				</li>
