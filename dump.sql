@@ -3684,9 +3684,7 @@ CREATE TABLE IF NOT EXISTS participatorybudget_campaign (
   code_moderation_type varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   moderation_duration int(11) DEFAULT NULL,
   PRIMARY KEY (id_campagne),
-  UNIQUE KEY code_campagne (code_campagne),
-  KEY fk_participatorybudget_campaign_moderation (code_moderation_type),
-  CONSTRAINT fk_participatorybudget_campaign_moderation FOREIGN KEY (code_moderation_type) REFERENCES participatorybudget_campaign_moderation_type (code_moderation_type)
+  UNIQUE KEY code_campagne (code_campagne)
 );
 
 /*!40000 ALTER TABLE participatorybudget_campaign DISABLE KEYS */;
@@ -3702,9 +3700,7 @@ CREATE TABLE IF NOT EXISTS participatorybudget_campaign_area (
   active smallint(6) NOT NULL,
   type varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   number_votes int(6) NOT NULL,
-  PRIMARY KEY (id_campagne_area),
-  KEY fk_participatorybudget_campaign_areas_campagne_idx (code_campagne),
-  CONSTRAINT fk_participatorybudget_campaign_areas_campagne FOREIGN KEY (code_campagne) REFERENCES participatorybudget_campaign (code_campagne) ON DELETE NO ACTION ON UPDATE NO ACTION
+  PRIMARY KEY (id_campagne_area)
 );
 
 /*!40000 ALTER TABLE participatorybudget_campaign_area DISABLE KEYS */;
@@ -3722,11 +3718,7 @@ CREATE TABLE IF NOT EXISTS participatorybudget_campaign_image (
   id_campagne_image int(6) NOT NULL,
   code_campagne varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   id_file int(11) NOT NULL,
-  PRIMARY KEY (id_campagne_image),
-  KEY code_campagne (code_campagne,id_file),
-  KEY id_file (id_file),
-  CONSTRAINT fk_participatorybudget_campaign_images_campagne FOREIGN KEY (code_campagne) REFERENCES participatorybudget_campaign (code_campagne),
-  CONSTRAINT fk_participatorybudget_campaign_images_file FOREIGN KEY (id_file) REFERENCES core_file (id_file)
+  PRIMARY KEY (id_campagne_image)
 );
 
 /*!40000 ALTER TABLE participatorybudget_campaign_image DISABLE KEYS */;
@@ -3755,11 +3747,7 @@ CREATE TABLE IF NOT EXISTS participatorybudget_campaign_phase (
   code_campagne varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   start datetime NOT NULL,
   end datetime NOT NULL,
-  PRIMARY KEY (id_campagne_phase),
-  KEY code_campagne (code_campagne,code_phase_type),
-  KEY fk_participatorybudget_campaign_phases_phase (code_phase_type),
-  CONSTRAINT fk_participatorybudget_campaign_phases_campagne FOREIGN KEY (code_campagne) REFERENCES participatorybudget_campaign (code_campagne),
-  CONSTRAINT fk_participatorybudget_campaign_phases_phase FOREIGN KEY (code_phase_type) REFERENCES participatorybudget_campaign_phase_type (code_phase_type)
+  PRIMARY KEY (id_campagne_phase)
 );
 
 /*!40000 ALTER TABLE participatorybudget_campaign_phase DISABLE KEYS */;
@@ -3812,8 +3800,7 @@ CREATE TABLE IF NOT EXISTS participatorybudget_campaign_theme (
   active smallint(6) NOT NULL,
   image_file int(11) DEFAULT NULL,
   PRIMARY KEY (id_campagne_theme),
-  UNIQUE KEY code_campagne (code_campagne,code_theme),
-  CONSTRAINT participatorybudget_campaign_themes_campagne FOREIGN KEY (code_campagne) REFERENCES participatorybudget_campaign (code_campagne)
+  UNIQUE KEY code_campagne (code_campagne,code_theme)
 );
 
 /*!40000 ALTER TABLE participatorybudget_campaign_theme DISABLE KEYS */;
@@ -3834,8 +3821,7 @@ CREATE TABLE IF NOT EXISTS participatorybudget_rgpd_treatment_log (
   treatment_type varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   treatment_object_name varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   treatment_object_fields varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (id_treatment_log),
-  KEY id_treatment_log_index (id_treatment_log)
+  PRIMARY KEY (id_treatment_log)
 );
 
 /*!40000 ALTER TABLE participatorybudget_rgpd_treatment_log DISABLE KEYS */;
@@ -3887,8 +3873,7 @@ CREATE TABLE IF NOT EXISTS participatorybudget_votes_history (
   status int(11) NOT NULL,
   id int(11) NOT NULL,
   status_export_stats int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (id),
-  KEY participatorybudget_votes_history_index_id_user (id_user)
+  PRIMARY KEY (id)
 );
 
 /*!40000 ALTER TABLE participatorybudget_votes_history DISABLE KEYS */;
