@@ -1,13 +1,13 @@
-insert into core_datastore values ('solr.app.conf.list_idees.mapping', 'false');
-insert into core_datastore values ('solr.app.conf.list_idees.fq.1', 'type:idee');
-insert into core_datastore values ('solr.app.conf.list_idees.fq.2', 'idee_status_text:true');
-insert into core_datastore values ('solr.app.conf.list_idees.template', 'skin/plugins/participatoryideation/ideation_list_solr_search_results.html');
-insert into core_datastore values ('solr.app.conf.list_idees.addonBeans.0', 'ideation.IdeationSolrAddon');
-insert into core_datastore values ('solr.app.conf.map_idees.mapping', 'true');
-insert into core_datastore values ('solr.app.conf.map_idees.fq.1', 'type:idee');
-insert into core_datastore values ('solr.app.conf.map_idees.fq.2', 'idee_status_text:true');
-insert into core_datastore values ('solr.app.conf.map_idees.template', 'skin/plugins/participatoryideation/ideation_map_solr_search_results.html');
-insert into core_datastore values ('solr.app.conf.map_idees.addonBeans.0', 'ideation.IdeationSolrAddon');
+insert into core_datastore values ('solr.app.conf.list_proposals.mapping', 'false');
+insert into core_datastore values ('solr.app.conf.list_proposals.fq.1', 'type:proposal');
+insert into core_datastore values ('solr.app.conf.list_proposals.fq.2', 'proposal_status_text:true');
+insert into core_datastore values ('solr.app.conf.list_proposals.template', 'skin/plugins/participatoryideation/ideation_list_solr_search_results.html');
+insert into core_datastore values ('solr.app.conf.list_proposals.addonBeans.0', 'ideation.IdeationSolrAddon');
+insert into core_datastore values ('solr.app.conf.map_proposals.mapping', 'true');
+insert into core_datastore values ('solr.app.conf.map_proposals.fq.1', 'type:proposal');
+insert into core_datastore values ('solr.app.conf.map_proposals.fq.2', 'proposal_status_text:true');
+insert into core_datastore values ('solr.app.conf.map_proposals.template', 'skin/plugins/participatoryideation/ideation_map_solr_search_results.html');
+insert into core_datastore values ('solr.app.conf.map_proposals.addonBeans.0', 'ideation.IdeationSolrAddon');
 
 
 insert into core_datastore values ('solr.app.conf.projects_mdp.mapping', 'false');

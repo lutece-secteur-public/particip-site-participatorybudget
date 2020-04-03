@@ -212,7 +212,7 @@ creation
 creer
 fusionner
 habitant
-idee
+proposal
 installation
 modernisation
 moderniser

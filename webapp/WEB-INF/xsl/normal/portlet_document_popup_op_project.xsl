@@ -18,7 +18,7 @@
 		</xsl:choose>
 	</xsl:variable>
 	
-	<div class="popup-idee">
+	<div class="popup-proposal">
         <xsl:apply-templates select="document-portlet/document" />
 	</div>
 	
@@ -81,7 +81,7 @@
 		<xsl:variable name="dtStep1"    select="java:parse(java:java.text.SimpleDateFormat.new('dd/MM/yyyy'), $dtStep1-txt ))" />    <!-- Format Date : Thu Dec 31 00:00:00 CET 2099 -->
 		<xsl:variable name="date-step1" select="number( java:format(java:java.text.SimpleDateFormat.new('yyyyMMdd'), $dtStep1 ))" /> <!-- Format Number : 20990131 -->
 	
-	    <div class="popup-idee-content">
+	    <div class="popup-proposal-content">
 	      
 			<p style="display:none">OP #<xsl:value-of select="document-xml-content/project_2015_op/document-id"/></p>
 

@@ -14,7 +14,7 @@
 		<xsl:otherwise></xsl:otherwise>
 		</xsl:choose>
 	</xsl:variable>
-	<div class="popup-idee">
+	<div class="popup-proposal">
 			<xsl:apply-templates select="document-list-portlet/document" />
          	<xsl:apply-templates select="document-portlet/document" />
 	</div>
@@ -22,10 +22,10 @@
 
 <xsl:template match="document">      
 <xsl:if test="not(string(document-xml-content)='null')">
-	<div class="popup-idee-header project_old">
+	<div class="popup-proposal-header project_old">
 		<xsl:value-of select="document-xml-content/project_2015/project_2015-thematique" />
 	</div>
-    <div class="popup-idee-content">
+    <div class="popup-proposal-content">
         <a href="jsp/site/Portal.jsp?document_id={document-id}&amp;portlet_id={$portlet-id}" target="_blank">      
           	<xsl:for-each select="descendant::*">
                 <xsl:value-of select="document-title" />

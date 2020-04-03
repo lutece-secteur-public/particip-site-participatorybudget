@@ -128,7 +128,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 				
 				<#if campagneService.isAfterBeginning("IDEATION") >
 					<li>
-						<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;conf=list_idees&amp;fq=campagne_text:${campagneService.lastCampagne.code}">
+						<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;conf=list_proposals&amp;fq=campagne_text:${campagneService.lastCampagne.code}">
 							<span>#i18n{portal.openpb.navbar.entry.getSubmittedProposals}</span>
 						</a>
 					</li>
@@ -243,12 +243,12 @@ ${rss?default( "<!-- no RSS feed -->" )}
 		
 		/* QP PopOver*/
 		if ($(".img-qp").length > 0){
-			$(".img-qp").popover({placement: "right", container:"body", trigger:"click",html:"true", template:'<div class="popover qp" role="tooltip"><div class="arrow"></div><div class="popover-content"></div></div>', content:"#dskey{ideation.site_property.view_idee.userInfoPopQP.htmlblock}"});
+			$(".img-qp").popover({placement: "right", container:"body", trigger:"click",html:"true", template:'<div class="popover qp" role="tooltip"><div class="arrow"></div><div class="popover-content"></div></div>', content:"#dskey{ideation.site_property.view_proposal.userInfoPopQP.htmlblock}"});
 		}
 
 		/* RATP Popover*/
 		if ($(".img-ratp").length > 0){
-			$(".img-ratp").popover({placement: "right", container:"body", trigger:"click",html:"true", template:'<div class="popover ratp" role="tooltip"><div class="arrow"></div><div class="popover-content"></div></div>', content:"#dskey{ideation.site_property.view_idee.userInfoPopRATP.htmlblock}"});
+			$(".img-ratp").popover({placement: "right", container:"body", trigger:"click",html:"true", template:'<div class="popover ratp" role="tooltip"><div class="arrow"></div><div class="popover-content"></div></div>', content:"#dskey{ideation.site_property.view_proposal.userInfoPopRATP.htmlblock}"});
 		}
 		
 		$(".summary").mCustomScrollbar({
@@ -323,9 +323,9 @@ ${rss?default( "<!-- no RSS feed -->" )}
 			var arr = {
 				"la-demarche-sommaire.html" : "la-demarche-sommaire.html", 
 
-				"conf=list_idees"           : "conf=list_idees", 
-				"conf=map_idees"            : "conf=list_idees", 
-				"page=idee"                 : "conf=list_idees",
+				"conf=list_proposals"           : "conf=list_proposals", 
+				"conf=map_proposals"            : "conf=list_proposals", 
+				"page=proposal"                 : "conf=list_proposals",
 				
 				"conf=projects_mdp"         : "conf=projects_mdp", 
 				"conf=map_projets"          : "conf=projects_mdp", 

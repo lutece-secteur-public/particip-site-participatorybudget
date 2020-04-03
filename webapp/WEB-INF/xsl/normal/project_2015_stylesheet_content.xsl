@@ -228,7 +228,7 @@
 						   <div class="project-data origin">
 							    <p><xsl:element name="a">
   								  <xsl:attribute name="class">btn btn-link text-info</xsl:attribute>
-  								  <xsl:attribute name="href">jsp/site/Portal.jsp?page=idee&amp;campagne=c&amp;idee=<xsl:value-of select="project_2015-num_idea"/></xsl:attribute>
+  								  <xsl:attribute name="href">jsp/site/Portal.jsp?page=proposal&amp;campagne=c&amp;proposal=<xsl:value-of select="project_2015-num_idea"/></xsl:attribute>
   								   <xsl:value-of select="substring(project_2015-title_idea, 0,40) "/>…
   								</xsl:element>
                 </p>
@@ -237,7 +237,7 @@
 								<li>
 								<xsl:element name="a">
 								  <xsl:attribute name="class">btn btn-link text-info</xsl:attribute>
-								  <xsl:attribute name="href">jsp/site/Portal.jsp?page=idee&amp;campagne=c&amp;idee=<xsl:value-of select="project_2015-num_idea"/></xsl:attribute>
+								  <xsl:attribute name="href">jsp/site/Portal.jsp?page=proposal&amp;campagne=c&amp;proposal=<xsl:value-of select="project_2015-num_idea"/></xsl:attribute>
 								   <xsl:value-of select="substring(project_2015-title_idea, 0,40) "/>…
 								</xsl:element>
 								</li>
@@ -364,7 +364,7 @@
                   <li>
                     <xsl:element name="a">
                       <xsl:attribute name="class">btn btn-link text-info</xsl:attribute>
-                      <xsl:attribute name="href">jsp/site/Portal.jsp?page=idee&amp;campagne=c&amp;idee=<xsl:value-of select="project_2015-num_idea"/></xsl:attribute>
+                      <xsl:attribute name="href">jsp/site/Portal.jsp?page=proposal&amp;campagne=c&amp;proposal=<xsl:value-of select="project_2015-num_idea"/></xsl:attribute>
                       <xsl:value-of select="substring(project_2015-title_idea, 0,40) "/>…
                     </xsl:element>
                   </li>

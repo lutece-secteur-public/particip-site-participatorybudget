@@ -48,7 +48,7 @@ How to display the date publication : ${publication.datePublishing?date} or ${pu
 							<p>Projet élaboré à partir des propositions suivantes :</p>
 							<#list listChilds as child>
 								<p>
-									<a href="jsp/site/Portal.jsp?page=idee&campagne=${child.codeCampagne!''}&idee=${child.codeIdee!''}" >
+									<a href="jsp/site/Portal.jsp?page=proposal&campagne=${child.codeCampagne!''}&proposal=${child.codeProposal!''}" >
 										${child.titre!''}
 									</a>
 								</p>
@@ -58,7 +58,7 @@ How to display the date publication : ${publication.datePublishing?date} or ${pu
 					<#elseif idea?? >  <#-- Projet issu d'une proposition non co-construite -->
 						<p><span>Projet élaboré à partir de la proposition suivante :</span></p>
 						<p>
-							<a href="jsp/site/Portal.jsp?page=idee&campagne=${idea.codeCampagne!''}&idee=${idea.codeIdee!''}" >
+							<a href="jsp/site/Portal.jsp?page=proposal&campagne=${idea.codeCampagne!''}&proposal=${idea.codeProposal!''}" >
 								${idea.titre!''}
 							</a>
 						</p>
@@ -129,7 +129,7 @@ How to display the date publication : ${publication.datePublishing?date} or ${pu
 			</div>
 
 			<#if isExtendInstalled?? && isExtendInstalled>
-				<#if !(is_own_idee?? && is_own_idee)>
+				<#if !(is_own_proposal?? && is_own_proposal)>
 					@Extender[${id_document},document,follow,{show:"all"}]@
 				</#if>
 			</#if>

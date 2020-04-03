@@ -1347,7 +1347,7 @@ div.page_id_2 {
 }
 
 #current_step .btn-std{background-color: #909090;text-shadow:none; color:#fff; font-family:'TradeGothicNo.18-Condensed';font-size:1.8rem; padding:3px 40px 4px 40px;font-weight: bold;text-transform: uppercase;}
-#current_step p .btn-idee{display:inline-block;}
+#current_step p .btn-proposal{display:inline-block;}
 #current_step #confirm{margin-top:30px;margin-bottom:30px}
 #current_step .btn-upload{margin-bottom: 15px;text-shadow:none;background-color: #d7eff1 /* var(--bg_06) */;background-image: none;border: 1px solid #369661; color:#369661; border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;font-size:1.5rem; padding:1px 20px;}
 #current_step #cnt{ color:dark-red }
@@ -1377,20 +1377,20 @@ div.page_id_2 {
 #map-result .leaflet-popup-content p:last-of-type						{ text-align: center; margin-bottom: 0px; }
 #map-result .leaflet-popup-content p:last-of-type button				{ -webkit-box-shadow: 0; box-shadow: 0; font-family: 'TradeGothicNo.18-Condensed';font-size: 16px }
 
-#map-result .leaflet-popup-content .popup-idee							{ padding: 0;margin: -10px -10px 0 -10px;width: 210px;min-height: 50px }
-#map-result .leaflet-popup-content .popup-idee .popup-idee-header		{ font-family: "TradeGothicNo.18-Condensed"; color: #FFF; margin: 0 -6px;	padding: 8px 10px;	text-transform: uppercase;	font-size: 14px }
-#map-result .leaflet-popup-content .popup-idee .popup-idee-content		{ padding: 10px }
-#map-result .leaflet-popup-content .popup-idee .popup-idee-content .popup-title	{ font-family: "TradeGothicNo.18-Condensed"; font-size: 2rem; line-height: 2rem; margin-bottom: 10px; }
-#map-result .leaflet-popup-content .popup-idee .popup-idee-content .popup-localisation	{ font-size: 1rem; margin-bottom: 5px; display: none; }
-#map-result .leaflet-popup-content .popup-idee .popup-idee-content a	{ font-family: 'Archer-Semibold';font-size: 1.9rem;color: #000;line-height: 80%;height: 50px }
-#map-result .leaflet-popup-content .popup-idee .popup-idee-footer		{ margin: 5px;font-family: 'TradeGothicNo.20-CondBold';font-size: 1.3rem;color: #0a4264 /* var(--menu_bgcolor) */ }
+#map-result .leaflet-popup-content .popup-proposal							{ padding: 0;margin: -10px -10px 0 -10px;width: 210px;min-height: 50px }
+#map-result .leaflet-popup-content .popup-proposal .popup-proposal-header		{ font-family: "TradeGothicNo.18-Condensed"; color: #FFF; margin: 0 -6px;	padding: 8px 10px;	text-transform: uppercase;	font-size: 14px }
+#map-result .leaflet-popup-content .popup-proposal .popup-proposal-content		{ padding: 10px }
+#map-result .leaflet-popup-content .popup-proposal .popup-proposal-content .popup-title	{ font-family: "TradeGothicNo.18-Condensed"; font-size: 2rem; line-height: 2rem; margin-bottom: 10px; }
+#map-result .leaflet-popup-content .popup-proposal .popup-proposal-content .popup-localisation	{ font-size: 1rem; margin-bottom: 5px; display: none; }
+#map-result .leaflet-popup-content .popup-proposal .popup-proposal-content a	{ font-family: 'Archer-Semibold';font-size: 1.9rem;color: #000;line-height: 80%;height: 50px }
+#map-result .leaflet-popup-content .popup-proposal .popup-proposal-footer		{ margin: 5px;font-family: 'TradeGothicNo.20-CondBold';font-size: 1.3rem;color: #0a4264 /* var(--menu_bgcolor) */ }
 
-/* Styles for winner projects (it uses 'idee' classes but are projects) */
-#map-result .leaflet-popup-content .popup-idee .popup-idee-content .date-step		{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin: 0px; }
-#map-result .leaflet-popup-content .popup-idee .popup-idee-content .date-step	img	{ vertical-align: inherit; margin-right: 5px; }
-#map-result .leaflet-popup-content .popup-idee .popup-idee-content .date-step.phase-unactive { color: #737373; font-weight: normal; } 
-#map-result .leaflet-popup-content .popup-idee .popup-idee-content .date-step.phase-active	{ } 
-#map-result .leaflet-popup-content .popup-idee .popup-idee-content span.phase-beginning		{ font-size: 1.4rem; font-weight: initial; } 
+/* Styles for winner projects (it uses 'proposal' classes but are projects) */
+#map-result .leaflet-popup-content .popup-proposal .popup-proposal-content .date-step		{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin: 0px; }
+#map-result .leaflet-popup-content .popup-proposal .popup-proposal-content .date-step	img	{ vertical-align: inherit; margin-right: 5px; }
+#map-result .leaflet-popup-content .popup-proposal .popup-proposal-content .date-step.phase-unactive { color: #737373; font-weight: normal; } 
+#map-result .leaflet-popup-content .popup-proposal .popup-proposal-content .date-step.phase-active	{ } 
+#map-result .leaflet-popup-content .popup-proposal .popup-proposal-content span.phase-beginning		{ font-size: 1.4rem; font-weight: initial; } 
 
 #map-result .paris-cluster-small div					{ background-color: rgba(34,  67,  77, 0.8); border: 1px solid rgba(34,  67,  77, 0.7); }
 #map-result .paris-cluster div	{ width: 30px; height: 30px; margin-top: -15px; margin-left: -15px; text-align: center; border-radius: 20%; box-sizing: content-box; font: 1.1rem "montserrat"; color: #fff; }
@@ -1773,7 +1773,7 @@ div.page_id_2 {
 #recap_vote #right_item .withPrj .trash:active	{ color: #ffffff; }
 #recap_vote #right_item .withoutPrj 	{ font-size: 1.6rem; font-weight: 300; }
 
-.btn-idee-navbar					{ background-color: black;cursor: pointer; }
+.btn-proposal-navbar					{ background-color: black;cursor: pointer; }
 
 .modalVote 									{ color: #ffffff; }
 .modalVote .modal-md						{ width:680px; }
