@@ -125,7 +125,7 @@ CREATE TABLE IF NOT EXISTS core_admin_right (
 INSERT INTO core_admin_right (id_right, name, level_right, admin_url, description, is_updatable, plugin_name, id_feature_group, icon_url, documentation_url, id_order, is_external_feature) VALUES
 	('AVATARSERVER_MANAGEMENT', 'avatarserver.adminFeature.ManageAvatarserver.name', 1, 'jsp/admin/plugins/avatarserver/ManageAvatars.jsp', 'avatarserver.adminFeature.ManageAvatarserver.description', 0, 'avatarserver', 'SYSTEM', NULL, NULL, 17, 0),
 	('BIZ_STAT', 'participatorybudget.adminFeature.bizStat.name', 1, 'jsp/admin/plugins/participatorybudget/bizstat/BizStat.jsp', 'participatorybudget.adminFeature.bizStat.description', 0, 'participatorybudget', 'APPLICATIONS', NULL, NULL, 6, 0),
-	('CAMPAIGNBP_MANAGEMENT', 'participatorybudget.adminFeature.ManageCampaignbp.name', 1, 'jsp/admin/plugins/participatorybudget/campaign/ManageCampaignbp.jsp', 'participatorybudget.adminFeature.ManageCampaignbp.description', 0, 'participatorybudget', 'APPLICATIONS', NULL, NULL, 8, 0),
+	('CAMPAIGN_MANAGEMENT', 'participatorybudget.adminFeature.ManageCampaign.name', 1, 'jsp/admin/plugins/participatorybudget/campaign/ManageCampaign.jsp', 'participatorybudget.adminFeature.ManageCampaign.description', 0, 'participatorybudget', 'APPLICATIONS', NULL, NULL, 8, 0),
 	('CORE_ADMIN_SITE', 'portal.site.adminFeature.admin_site.name', 2, 'jsp/admin/site/AdminSite.jsp', 'portal.site.adminFeature.admin_site.description', 1, NULL, 'SITE', 'images/admin/skin/features/admin_site.png', 'jsp/admin/documentation/AdminDocumentation.jsp?doc=admin-site', 1, 0),
 	('CORE_ADMINDASHBOARD_MANAGEMENT', 'portal.admindashboard.adminFeature.right_management.name', 0, NULL, 'portal.admindashboard.adminFeature.right_management.description', 0, NULL, 'SYSTEM', 'images/admin/skin/features/manage_admindashboards.png', NULL, 8, 0),
 	('CORE_CACHE_MANAGEMENT', 'portal.system.adminFeature.cache_management.name', 0, 'jsp/admin/system/ManageCaches.jsp', 'portal.system.adminFeature.cache_management.description', 1, '', 'SYSTEM', 'images/admin/skin/features/manage_caches.png', NULL, 6, 0),
@@ -1734,7 +1734,7 @@ CREATE TABLE IF NOT EXISTS core_user_right (
 INSERT INTO core_user_right (id_right, id_user) VALUES
 	('AVATARSERVER_MANAGEMENT', 1),
 	('BIZ_STAT', 1),
-	('CAMPAIGNBP_MANAGEMENT', 1),
+	('CAMPAIGN_MANAGEMENT', 1),
 	('CORE_ADMIN_SITE', 1),
 	('CORE_ADMINDASHBOARD_MANAGEMENT', 1),
 	('CORE_CACHE_MANAGEMENT', 1),
@@ -3130,17 +3130,17 @@ INSERT INTO html_portlet (id_portlet, html) VALUES
 
 DROP TABLE IF EXISTS participatoryideation_depositaries;
 CREATE TABLE IF NOT EXISTS participatoryideation_depositaries (
-  id_campaign_depositary int(6) NOT NULL,
+  id_depositary int(6) NOT NULL,
   code_campaign varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   code_depositary_type varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (id_campaign_depositary),
+  PRIMARY KEY (id_depositary),
   KEY fk_participatoryideation_depositaries_campaign (code_campaign),
   KEY fk_participatoryideation_depositaries_depositary (code_depositary_type),
   CONSTRAINT fk_participatoryideation_depositaries_depositary FOREIGN KEY (code_depositary_type) REFERENCES participatoryideation_depositaries_types (code_depositary_type)
 );
 
 /*!40000 ALTER TABLE participatoryideation_depositaries DISABLE KEYS */;
-INSERT INTO participatoryideation_depositaries (id_campaign_depositary, code_campaign, code_depositary_type) VALUES
+INSERT INTO participatoryideation_depositaries (id_depositary, code_campaign, code_depositary_type) VALUES
 	(1, 'A', 'INDIVIDUAL'),
 	(2, 'A', 'COUNCIL'),
 	(3, 'A', 'ASSOCIATION'),
