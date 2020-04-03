@@ -68,7 +68,7 @@ To see proposals and projects into search pages, you have to index each document
 
 ## Business configuration
 
-Participary budget functionalities are provided depending on the dates of the current phase. You have to modify these dates to access some features, by accessing the [ManageIdeationCampagnes](http://localhost:8080/pb/jsp/admin/plugins/participatoryideation/ManageIdeationCampagnes.jsp) back-office page .
+Participary budget functionalities are provided depending on the dates of the current phase. You have to modify these dates to access some features, by accessing the [ManageIdeationCampaigns](http://localhost:8080/pb/jsp/admin/plugins/participatoryideation/ManageIdeationCampaigns.jsp) back-office page .
 
 ### Submit a proposal
 

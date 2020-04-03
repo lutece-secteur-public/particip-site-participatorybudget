@@ -125,7 +125,7 @@ CREATE TABLE IF NOT EXISTS core_admin_right (
 INSERT INTO core_admin_right (id_right, name, level_right, admin_url, description, is_updatable, plugin_name, id_feature_group, icon_url, documentation_url, id_order, is_external_feature) VALUES
 	('AVATARSERVER_MANAGEMENT', 'avatarserver.adminFeature.ManageAvatarserver.name', 1, 'jsp/admin/plugins/avatarserver/ManageAvatars.jsp', 'avatarserver.adminFeature.ManageAvatarserver.description', 0, 'avatarserver', 'SYSTEM', NULL, NULL, 17, 0),
 	('BIZ_STAT', 'participatorybudget.adminFeature.bizStat.name', 1, 'jsp/admin/plugins/participatorybudget/bizstat/BizStat.jsp', 'participatorybudget.adminFeature.bizStat.description', 0, 'participatorybudget', 'APPLICATIONS', NULL, NULL, 6, 0),
-	('CAMPAGNEBP_MANAGEMENT', 'participatorybudget.adminFeature.ManageCampagnebp.name', 1, 'jsp/admin/plugins/participatorybudget/campaign/ManageCampagnebp.jsp', 'participatorybudget.adminFeature.ManageCampagnebp.description', 0, 'participatorybudget', 'APPLICATIONS', NULL, NULL, 8, 0),
+	('CAMPAIGNBP_MANAGEMENT', 'participatorybudget.adminFeature.ManageCampaignbp.name', 1, 'jsp/admin/plugins/participatorybudget/campaign/ManageCampaignbp.jsp', 'participatorybudget.adminFeature.ManageCampaignbp.description', 0, 'participatorybudget', 'APPLICATIONS', NULL, NULL, 8, 0),
 	('CORE_ADMIN_SITE', 'portal.site.adminFeature.admin_site.name', 2, 'jsp/admin/site/AdminSite.jsp', 'portal.site.adminFeature.admin_site.description', 1, NULL, 'SITE', 'images/admin/skin/features/admin_site.png', 'jsp/admin/documentation/AdminDocumentation.jsp?doc=admin-site', 1, 0),
 	('CORE_ADMINDASHBOARD_MANAGEMENT', 'portal.admindashboard.adminFeature.right_management.name', 0, NULL, 'portal.admindashboard.adminFeature.right_management.description', 0, NULL, 'SYSTEM', 'images/admin/skin/features/manage_admindashboards.png', NULL, 8, 0),
 	('CORE_CACHE_MANAGEMENT', 'portal.system.adminFeature.cache_management.name', 0, 'jsp/admin/system/ManageCaches.jsp', 'portal.system.adminFeature.cache_management.description', 1, '', 'SYSTEM', 'images/admin/skin/features/manage_caches.png', NULL, 6, 0),
@@ -162,9 +162,9 @@ INSERT INTO core_admin_right (id_right, name, level_right, admin_url, descriptio
 	('EXTEND_VOTE_TYPES_MANAGEMENT', 'module.extend.rating.adminFeature.vote_types_management.name', 2, 'jsp/admin/plugins/extend/modules/rating/ManageVoteTypes.jsp', 'module.extend.rating.adminFeature.vote_types_management.description', 0, 'extend-rating', 'CONTENT', 'images/admin/skin/plugins/extend/modules/rating/extend-rating.png', 'jsp/admin/documentation/AdminDocumentation.jsp?doc=admin-extend-rating', 5, 0),
 	('FILES2DOCS_MANAGEMENT', 'files2docs.adminFeature.files2docs_management.name', 3, 'jsp/admin/plugins/files2docs/SelectFiles.jsp', 'files2docs.adminFeature.files2docs_management.description', 0, 'files2docs', 'CONTENT', NULL, NULL, 6, 0),
 	('HTMLPAGE_MANAGEMENT', 'htmlpage.adminFeature.htmlpage_management.name', 2, 'jsp/admin/plugins/htmlpage/ManageHtmlPage.jsp', 'htmlpage.adminFeature.htmlpage_management.description', 0, 'htmlpage', 'APPLICATIONS', NULL, 'jsp/admin/documentation/AdminDocumentation.jsp?doc=admin-htmlpage', 4, 0),
-	('IDEATION_PROPOSALS_MANAGEMENT', 'participatoryideation.adminFeature.ManageIdeationProposals.name', 1, 'jsp/admin/plugins/participatoryideation/ManageProposals.jsp', 'participatoryideation.adminFeature.ManageIdeationProposals.description', 0, 'participatoryideation', 'APPLICATIONS', NULL, NULL, 5, 0),
-	('IDEATION_LINKS_MANAGEMENT', 'participatoryideation.adminFeature.ManageProposalLinks.name', 1, 'jsp/admin/plugins/participatoryideation/ManageProposalLinks.jsp', 'participatoryideation.adminFeature.ManageProposalLinks.description', 0, 'participatoryideation', 'APPLICATIONS', NULL, NULL, 7, 0),
-	('IDEATION_MANAGEMENT', 'participatoryideation.adminFeature.ManageIdeation.name', 1, 'jsp/admin/plugins/participatoryideation/ManageCampagneDepositaires.jsp', 'participatoryideation.adminFeature.ManageIdeation.description', 0, 'participatoryideation', 'APPLICATIONS', NULL, NULL, 9, 0),
+	('PARTICIPATORYIDEATION_PROPOSALS_MANAGEMENT', 'participatoryideation.adminFeature.ManageIdeationProposals.name', 1, 'jsp/admin/plugins/participatoryideation/ManageProposals.jsp', 'participatoryideation.adminFeature.ManageIdeationProposals.description', 0, 'participatoryideation', 'APPLICATIONS', NULL, NULL, 5, 0),
+	('PARTICIPATORYIDEATION_LINKS_MANAGEMENT', 'participatoryideation.adminFeature.ManageProposalLinks.name', 1, 'jsp/admin/plugins/participatoryideation/ManageProposalLinks.jsp', 'participatoryideation.adminFeature.ManageProposalLinks.description', 0, 'participatoryideation', 'APPLICATIONS', NULL, NULL, 7, 0),
+	('PARTICIPATORYIDEATION_MANAGEMENT', 'participatoryideation.adminFeature.ManageIdeation.name', 1, 'jsp/admin/plugins/participatoryideation/ManageDepositaries.jsp', 'participatoryideation.adminFeature.ManageIdeation.description', 0, 'participatoryideation', 'APPLICATIONS', NULL, NULL, 9, 0),
 	('LIBRARY_MANAGEMENT', 'library.adminFeature.library_management.name', 0, 'jsp/admin/plugins/library/ManageLibrary.jsp', 'library.adminFeature.library_management.description', 0, 'library', 'CONTENT', 'images/admin/skin/plugins/library/library.png', NULL, 7, 0),
 	('MANAGE_ACTION_BUTTONS', 'module.extend.actionbar.adminFeature.manage_action_buttons.name', 2, 'jsp/admin/plugins/extend/modules/actionbar/GetManageActionButtons.jsp', 'module.extend.actionbar.adminFeature.manage_action_buttons.description', 0, 'extend-actionbar', 'CONTENT', 'images/admin/skin/plugins/extend/modules/actionbar/extend-actionbar.png', 'jsp/admin/documentation/AdminDocumentation.jsp?doc=admin-extend-actionbar', 8, 0),
 	('MANAGE_OPENGRAPH_SOCIALHUB', 'module.extend.opengraph.adminFeature.manage_opengraph_socialhub.name', 2, 'jsp/admin/plugins/extend/modules/opengraph/GetManageOpengraphSocialHub.jsp', 'module.extend.opengraph.adminFeature.manage_opengraph_socialhub.description', 0, 'extend-opengraph', 'CONTENT', 'images/admin/skin/plugins/extend/modules/opengraph/extend-opengraph.png', 'jsp/admin/documentation/AdminDocumentation.jsp?doc=admin-extend-opengraph', 9, 0),
@@ -853,7 +853,6 @@ INSERT INTO core_datastore (entity_key, entity_value) VALUES
 	('participatorybudget.site_property.extend.template.userCannotVote.textblock', '<div id="divVotedocument@id@" class="vote">\r\n     <div class="bg-jannule">\r\n             <span class="budget-label-jai-vote"><i class="glyphicon glyphicon-ok-circle"></i> J\'ai voté</span>\r\n             <a  class="budget-cancel-vote-button" href="jsp/site/plugins/extend/modules/rating/DoCancelVote.jsp?idExtendableResource=@id@&extendableResourceType=document"  \r\n                       onclick="doCancelVote(\'@id@\',\'document\');" >\r\n         <span class="budget-label-remove-vote"><i class=\'glyphicon glyphicon-remove-circle\'></i> J\'annule mon vote</span>\r\n         </div>\r\n       </a>\r\n</div>\r\n'),
 	('participatorybudget.site_property.extend.template.userCanVote.textblock', '<div id="divVotedocument@id@" class="vote">\r\n    <a href="jsp/site/plugins/extend/modules/rating/DoVote.jsp?idExtendableResource=@id@&extendableResourceType=document&voteValue=1"\r\n        class="budget-btn-do-vote" onclick="checkIfUserIsValid(\'@id@\',\'document\',\'1\');">\r\n        <div class="bg-jevote">\r\n              <i class="glyphicon glyphicon-ok-circle"></i> Je Vote\r\n         </div>\r\n      </a>\r\n</div>'),
 	('participatorybudget.site_property.extend.template.voteClosed.textblock', ''),
-	('participatorybudget.site_property.send_account_validation_back_url', 'https://budgetparticipatif.paris.fr/bp/je-vote.html'),
 	('participatoryideation.site_property.form.accept_contact_label_text', 'Acceptez-vous d\'être contacté par courrier électronique par d\'autres usagers du site ? Votre adresse email ne sera pas communiquée.'),
 	('participatoryideation.site_property.form.adress_label.htmlblock', '<p>Vous pouvez optionellement indiquer une adresse pr&eacute;cise ou le nom d\'un &eacute;quipement.</p>'),
 	('participatoryideation.site_property.form.approx.distanceLimit', '1000'),
@@ -865,7 +864,7 @@ INSERT INTO core_datastore (entity_key, entity_value) VALUES
 	('participatoryideation.site_property.form.cout_label_text', 'J\'estime le coût de mon projet (facultatif, exprimé en €) :'),
 	('participatoryideation.site_property.form.creationmethod_label_text', 'Quelle méthode d\'élaboration avez-vous suivie ?'),
 	('participatoryideation.site_property.form.dejadepose_label_text', 'Avez-vous déja déposé ce projet lors d\'une précédente édition ?'),
-	('participatoryideation.site_property.form.depositaire_label.htmlblock', '<p>&Agrave; quel titre d&eacute;posez-vous ce projet ?</p>'),
+	('participatoryideation.site_property.form.depositary_label.htmlblock', '<p>&Agrave; quel titre d&eacute;posez-vous ce projet ?</p>'),
 	('participatoryideation.site_property.form.description_label_text', 'Description * du projet'),
 	('participatoryideation.site_property.form.description_label.htmlblock', '<p>D&eacute;crivez votre projet explicitement (...). ?</p>'),
 	('participatoryideation.site_property.form.description.maxLength', '2000'),
@@ -883,7 +882,7 @@ INSERT INTO core_datastore (entity_key, entity_value) VALUES
 	('participatoryideation.site_property.form.titre.maxLength', '60'),
 	('participatoryideation.site_property.form.titre.minLength', '15'),
 	('participatoryideation.site_property.view_proposal.non_existing.htmlblock', '<p class="text-center">No such proposal.</p>'),
-	('participatoryideation.site_property.view_proposal.site_properties.contact_message_content.textblock', '${nom_depositaire}, ${nom_contacteur}, ${message}'),
+	('participatoryideation.site_property.view_proposal.site_properties.contact_message_content.textblock', '${nom_depositary}, ${nom_contacteur}, ${message}'),
 	('participatoryideation.site_property.view_proposal.site_properties.contact_message_not_accept', 'Unable to sent the message.'),
 	('participatoryideation.site_property.view_proposal.site_properties.contact_subject', 'contact submitter'),
 	('participatoryideation.site_property.view_my_subscriptions.buttonSave', 'Save my subscriptions'),
@@ -1735,7 +1734,7 @@ CREATE TABLE IF NOT EXISTS core_user_right (
 INSERT INTO core_user_right (id_right, id_user) VALUES
 	('AVATARSERVER_MANAGEMENT', 1),
 	('BIZ_STAT', 1),
-	('CAMPAGNEBP_MANAGEMENT', 1),
+	('CAMPAIGNBP_MANAGEMENT', 1),
 	('CORE_ADMIN_SITE', 1),
 	('CORE_ADMINDASHBOARD_MANAGEMENT', 1),
 	('CORE_CACHE_MANAGEMENT', 1),
@@ -1776,11 +1775,10 @@ INSERT INTO core_user_right (id_right, id_user) VALUES
 	('FILES2DOCS_MANAGEMENT', 1),
 	('HELPDESK_MANAGEMENT', 1),
 	('HTMLPAGE_MANAGEMENT', 1),
-	('IDEATION_PROPOSAL_MANAGEMENT', 1),
-	('IDEATION_PROPOSALS_MANAGEMENT', 1),
-	('IDEATION_LINKS_MANAGEMENT', 1),
-	('IDEATION_MANAGEMENT', 1),
-	('IDEATION_TAGS_MANAGEMENT', 1),
+	('PARTICIPATORYIDEATION_PROPOSALS_MANAGEMENT', 1),
+	('PARTICIPATORYIDEATION_LINKS_MANAGEMENT', 1),
+	('PARTICIPATORYIDEATION_MANAGEMENT', 1),
+	('PARTICIPATORYIDEATION_TAGS_MANAGEMENT', 1),
 	('LIBRARY_MANAGEMENT', 1),
 	('MANAGE_ACTION_BUTTONS', 1),
 	('MANAGE_OPENGRAPH_SOCIALHUB', 1),
@@ -3130,93 +3128,93 @@ INSERT INTO html_portlet (id_portlet, html) VALUES
 	(202, '<p>&nbsp;</p> \n<p>&nbsp;</p> \n<p>&nbsp;</p> \n<p><span class="h1">Here are the&nbsp;rules for voting :</span></p> \n<p><span class="h2">Rule 1&nbsp;</span></p> \n<p>(...)</p> \n<p><span class="h2">Rule&nbsp;2&nbsp;</span></p> \n<p>(...)</p>');
 /*!40000 ALTER TABLE html_portlet ENABLE KEYS */;
 
-DROP TABLE IF EXISTS ideation_campagnes_depositaires;
-CREATE TABLE IF NOT EXISTS ideation_campagnes_depositaires (
-  id_campagne_depositaire int(6) NOT NULL,
-  code_campagne varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  code_depositaire_type varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (id_campagne_depositaire),
-  KEY fk_ideation_campagnes_depositaires_campagne (code_campagne),
-  KEY fk_ideation_campagnes_depositaires_depositaire (code_depositaire_type),
-  CONSTRAINT fk_ideation_campagnes_depositaires_depositaire FOREIGN KEY (code_depositaire_type) REFERENCES ideation_depositaire_types (code_depositaire_type)
+DROP TABLE IF EXISTS participatoryideation_depositaries;
+CREATE TABLE IF NOT EXISTS participatoryideation_depositaries (
+  id_campaign_depositary int(6) NOT NULL,
+  code_campaign varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  code_depositary_type varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (id_campaign_depositary),
+  KEY fk_participatoryideation_depositaries_campaign (code_campaign),
+  KEY fk_participatoryideation_depositaries_depositary (code_depositary_type),
+  CONSTRAINT fk_participatoryideation_depositaries_depositary FOREIGN KEY (code_depositary_type) REFERENCES participatoryideation_depositaries_types (code_depositary_type)
 );
 
-/*!40000 ALTER TABLE ideation_campagnes_depositaires DISABLE KEYS */;
-INSERT INTO ideation_campagnes_depositaires (id_campagne_depositaire, code_campagne, code_depositaire_type) VALUES
+/*!40000 ALTER TABLE participatoryideation_depositaries DISABLE KEYS */;
+INSERT INTO participatoryideation_depositaries (id_campaign_depositary, code_campaign, code_depositary_type) VALUES
 	(1, 'A', 'INDIVIDUAL'),
 	(2, 'A', 'COUNCIL'),
 	(3, 'A', 'ASSOCIATION'),
 	(4, 'A', 'OTHER');
-/*!40000 ALTER TABLE ideation_campagnes_depositaires ENABLE KEYS */;
+/*!40000 ALTER TABLE participatoryideation_depositaries ENABLE KEYS */;
 
-DROP TABLE IF EXISTS ideation_depositaire_complement_types;
-CREATE TABLE IF NOT EXISTS ideation_depositaire_complement_types (
-  id_depositaire_complement_type int(6) NOT NULL,
-  code_depositaire_complement_type varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+DROP TABLE IF EXISTS participatoryideation_depositaries_complement_types;
+CREATE TABLE IF NOT EXISTS participatoryideation_depositaries_complement_types (
+  id_depositary_complement_type int(6) NOT NULL,
+  code_depositary_complement_type varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   libelle varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (id_depositaire_complement_type),
-  UNIQUE KEY code_depositaire_complement_type (code_depositaire_complement_type)
+  PRIMARY KEY (id_depositary_complement_type),
+  UNIQUE KEY code_depositary_complement_type (code_depositary_complement_type)
 );
 
-/*!40000 ALTER TABLE ideation_depositaire_complement_types DISABLE KEYS */;
-INSERT INTO ideation_depositaire_complement_types (id_depositaire_complement_type, code_depositaire_complement_type, libelle) VALUES
+/*!40000 ALTER TABLE participatoryideation_depositaries_complement_types DISABLE KEYS */;
+INSERT INTO participatoryideation_depositaries_complement_types (id_depositary_complement_type, code_depositary_complement_type, libelle) VALUES
 	(1, 'NONE', 'No complement'),
 	(2, 'LIST', 'List of values'),
 	(3, 'FREE', 'Free value');
-/*!40000 ALTER TABLE ideation_depositaire_complement_types ENABLE KEYS */;
+/*!40000 ALTER TABLE participatoryideation_depositaries_complement_types ENABLE KEYS */;
 
-DROP TABLE IF EXISTS ideation_depositaire_types;
-CREATE TABLE IF NOT EXISTS ideation_depositaire_types (
-  id_depositaire_type int(6) NOT NULL,
-  code_depositaire_type varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+DROP TABLE IF EXISTS participatoryideation_depositaries_types;
+CREATE TABLE IF NOT EXISTS participatoryideation_depositaries_types (
+  id_depositary_type int(6) NOT NULL,
+  code_depositary_type varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   libelle varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   code_complement_type varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (id_depositaire_type),
-  UNIQUE KEY code_depositaire_type (code_depositaire_type),
-  KEY fk_ideation_depositaire_types_complement (code_complement_type),
-  CONSTRAINT fk_ideation_depositaire_types_complement FOREIGN KEY (code_complement_type) REFERENCES ideation_depositaire_complement_types (code_depositaire_complement_type)
+  PRIMARY KEY (id_depositary_type),
+  UNIQUE KEY code_depositary_type (code_depositary_type),
+  KEY fk_participatoryideation_depositaries_types_complement (code_complement_type),
+  CONSTRAINT fk_participatoryideation_depositaries_types_complement FOREIGN KEY (code_complement_type) REFERENCES participatoryideation_depositaries_complement_types (code_depositary_complement_type)
 );
 
-/*!40000 ALTER TABLE ideation_depositaire_types DISABLE KEYS */;
-INSERT INTO ideation_depositaire_types (id_depositaire_type, code_depositaire_type, libelle, code_complement_type) VALUES
+/*!40000 ALTER TABLE participatoryideation_depositaries_types DISABLE KEYS */;
+INSERT INTO participatoryideation_depositaries_types (id_depositary_type, code_depositary_type, libelle, code_complement_type) VALUES
 	(1, 'INDIVIDUAL', 'Individual', 'NONE'),
 	(2, 'OTHER', 'Other', 'FREE'),
 	(3, 'COUNCIL', 'District council', 'LIST'),
 	(4, 'ASSOCIATION', 'Association', 'FREE');
-/*!40000 ALTER TABLE ideation_depositaire_types ENABLE KEYS */;
+/*!40000 ALTER TABLE participatoryideation_depositaries_types ENABLE KEYS */;
 
-DROP TABLE IF EXISTS ideation_depositaire_types_values;
-CREATE TABLE IF NOT EXISTS ideation_depositaire_types_values (
-  id_depositaire_type_value int(6) NOT NULL,
-  code_depositaire_type varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+DROP TABLE IF EXISTS participatoryideation_depositaries_types_values;
+CREATE TABLE IF NOT EXISTS participatoryideation_depositaries_types_values (
+  id_depositary_type_value int(6) NOT NULL,
+  code_depositary_type varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   code varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   libelle varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (id_depositaire_type_value),
-  UNIQUE KEY code_depositaire_type (code_depositaire_type,code),
-  CONSTRAINT fk_ideation_depositaire_type_values_depositaire FOREIGN KEY (code_depositaire_type) REFERENCES ideation_depositaire_types (code_depositaire_type)
+  PRIMARY KEY (id_depositary_type_value),
+  UNIQUE KEY code_depositary_type (code_depositary_type,code),
+  CONSTRAINT fk_ideation_depositary_type_values_depositary FOREIGN KEY (code_depositary_type) REFERENCES participatoryideation_depositaries_types (code_depositary_type)
 );
 
-/*!40000 ALTER TABLE ideation_depositaire_types_values DISABLE KEYS */;
-INSERT INTO ideation_depositaire_types_values (id_depositaire_type_value, code_depositaire_type, code, libelle) VALUES
+/*!40000 ALTER TABLE participatoryideation_depositaries_types_values DISABLE KEYS */;
+INSERT INTO participatoryideation_depositaries_types_values (id_depositary_type_value, code_depositary_type, code, libelle) VALUES
 	(1, 'COUNCIL', '01VENDO', '1er - Vendôme'),
 	(2, 'COUNCIL', '01PALAI', '1er - Palais Royal'),
 	(3, 'COUNCIL', '02VIVIE', '2e - Vivienne – Gaillon');
-/*!40000 ALTER TABLE ideation_depositaire_types_values ENABLE KEYS */;
+/*!40000 ALTER TABLE participatoryideation_depositaries_types_values ENABLE KEYS */;
 
-DROP TABLE IF EXISTS ideation_proposals;
-CREATE TABLE IF NOT EXISTS ideation_proposals (
+DROP TABLE IF EXISTS participatoryideation_proposals;
+CREATE TABLE IF NOT EXISTS participatoryideation_proposals (
   id_proposal int(6) NOT NULL,
   lutece_user_name varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   titre mediumtext COLLATE utf8_unicode_ci NOT NULL,
   description mediumtext COLLATE utf8_unicode_ci NOT NULL,
   cout bigint(20) DEFAULT NULL,
-  code_campagne varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  code_campaign varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   code_proposal int(6) NOT NULL,
   code_theme varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   localisation_type varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   localisation_ardt varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  depositaire_type varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  depositaire mediumtext COLLATE utf8_unicode_ci,
+  depositary_type varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  depositary mediumtext COLLATE utf8_unicode_ci,
   accept_exploit smallint(6) NOT NULL DEFAULT '0',
   address mediumtext COLLATE utf8_unicode_ci,
   longitude float DEFAULT NULL,
@@ -3240,18 +3238,18 @@ CREATE TABLE IF NOT EXISTS ideation_proposals (
   handicap varchar(3) COLLATE utf8_unicode_ci NOT NULL,
   handicap_complement varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (id_proposal),
-  UNIQUE KEY code_campagne (code_campagne,code_proposal)
+  UNIQUE KEY code_campaign (code_campaign,code_proposal)
 );
 
-/*!40000 ALTER TABLE ideation_proposals DISABLE KEYS */;
-INSERT INTO ideation_proposals (id_proposal, lutece_user_name, titre, description, cout, code_campagne, code_proposal, code_theme, localisation_type, localisation_ardt, depositaire_type, depositaire, accept_exploit, address, longitude, latitude, type_nqpv_qva, id_nqpv_qva, libelle_nqpv_qva, creation_timestamp, eudonet_exported_tag, status_public, status_eudonet, motif_recev, id_project, titre_projet, url_projet, dejadepose, accept_contact, winner_projet, creationmethod, operatingbudget, handicap, handicap_complement) VALUES
+/*!40000 ALTER TABLE participatoryideation_proposals DISABLE KEYS */;
+INSERT INTO participatoryideation_proposals (id_proposal, lutece_user_name, titre, description, cout, code_campaign, code_proposal, code_theme, localisation_type, localisation_ardt, depositary_type, depositary, accept_exploit, address, longitude, latitude, type_nqpv_qva, id_nqpv_qva, libelle_nqpv_qva, creation_timestamp, eudonet_exported_tag, status_public, status_eudonet, motif_recev, id_project, titre_projet, url_projet, dejadepose, accept_contact, winner_projet, creationmethod, operatingbudget, handicap, handicap_complement) VALUES
 	(1, 'jerome.poirier@paris.fr', 'More space on sidewalk for children', 'Children car tree  The City of Philadelphia has received federal funding to make improvements along American Street between Girard and Indiana Avenues. The improvements include rehabilitating sidewalks with extensions at intersections that reduce pedestrian crossing distances, new medians with green stormwater infrastructure, protected bike lanes, new street trees, and new lighting. The street will be resurfaced with new pavement markings and signs installed. street will be resurfaced with new pavement markings and signs installed.', NULL, 'A', 1, 'SOCIAL', 'localized', 'area 1', 'PARTICULIER', NULL, 0, NULL, NULL, NULL, '1', NULL, NULL, '2019-12-11 12:06:00', 0, 'SUBMITTED', NULL, NULL, NULL, NULL, NULL, '', 1, NULL, '', '', 'no', ''),
 	(2, 'jerome.poirier@paris.fr', 'Install some sport equipments', 'n pourrait favoriser l\'aménagement et l\'adaptation d\'installations et d\'équipements sportifs. www2.parl.gc.ca\r\nThe government could support the development and adaptation of sports facilities and equipment. www2.parl.gc.ca\r\nsoutenir une gestion environnementale de grande qualité dans l\'utilisation des équipements sportifs, démontrant ainsi l\'utilisation de technologies propres [...] sochi2014.com\r\nsustaining perfect quality environmental management in using and maintaining Olympic facilities demonstrating excellent environmentally efficient technologies [...] sochi2014.com\r\nVeuillez noter que les caméras vidéo, les radios, jumelles et équipements sportifs doivent être déclarés lors de l\'entrée dans le pays puis [...] xworld.cc\r\nIt should be noted that video cameras, radios, binoculars and sports equipment must be declared on entering the country and must be exported when leaving. xworld.cc\r\n[...] permettrait une meilleure utilisation, par exemple, des équipements sportifs par les équipes locales, contribuant ainsi à la création [...] eur-lex.europa.eu\r\nOpening up to the local environment would, for instance, make for better use of sports facilities by local teams, thus contributing to the establishment [...] eur-lex.europa.eu\r\nNous avons maintenant l\'outil pour corriger cela alors, allons de l\'avant et permettons un accès libre aux équipements sportifs. www2.parl.gc.ca\r\nTherefore, let us move forward and allow general access to sport facilities. www2.parl.gc.ca\r\n[...] rôle des pouvoirs publics, les cantines scolaires, équipements sportifs, la transmission d\'une bonne information, une alimentation [...] europarl.europa.eu\r\n[...] the role of the public authorities, school canteens, sports facilities, proper information, a healthy diet and the need for daily physical exercise.', NULL, 'A', 2, 'GENERAL', 'localized', 'area 2', 'ASSO', 'Sport for all !', 0, NULL, NULL, NULL, 'NO', NULL, NULL, '2019-12-12 14:01:00', 0, 'SUBMITTED', NULL, NULL, NULL, NULL, NULL, '', 1, NULL, '', '', 'yes', ''),
 	(3, 'jerome.poirier@paris.fr', 'Food for Everyone', 'This project aims to develop the societal and territorial dynamics of food solidarity, in the form of a call for projects meeting the following needs:\r\n \r\n - Foster the development of mobile and ecological shared kitchens ("foodtrucks", cargo bikes, etc.) offering not only to create social ties through cooking, but also to serve as a reception area for the poor;\r\n - Equip solidarity catering spaces or food halls (furniture, IT equipment, clean vehicles, renovation of premises, various equipment);\r\n - Develop solutions, especially digital, for:\r\n 1. put individuals who wish to donate food in touch with food seekers.\r\n 2. Improving the cooperation of food aid stakeholders and user information', 1500000, 'A', 3, 'SOCIAL', 'whole', NULL, 'COUNCIL', '01PALAI', 1, NULL, NULL, NULL, 'NO', NULL, NULL, '2019-12-23 11:41:18', 0, 'SUBMITTED', NULL, NULL, NULL, NULL, NULL, '', 1, NULL, '', '', 'no', '');
-/*!40000 ALTER TABLE ideation_proposals ENABLE KEYS */;
+/*!40000 ALTER TABLE participatoryideation_proposals ENABLE KEYS */;
 
-DROP TABLE IF EXISTS ideation_proposals_files;
-CREATE TABLE IF NOT EXISTS ideation_proposals_files (
+DROP TABLE IF EXISTS participatoryideation_proposals_files;
+CREATE TABLE IF NOT EXISTS participatoryideation_proposals_files (
   id_proposal_file int(6) NOT NULL,
   id_file int(11) NOT NULL,
   id_proposal int(11) NOT NULL,
@@ -3259,14 +3257,14 @@ CREATE TABLE IF NOT EXISTS ideation_proposals_files (
   PRIMARY KEY (id_proposal_file),
   KEY id_proposal (id_proposal,type,id_file),
   KEY id_file (id_file),
-  CONSTRAINT ideation_proposals_files_proposal FOREIGN KEY (id_proposal) REFERENCES ideation_proposals (id_proposal)
+  CONSTRAINT participatoryideation_proposals_files_proposal FOREIGN KEY (id_proposal) REFERENCES participatoryideation_proposals (id_proposal)
 );
 
-/*!40000 ALTER TABLE ideation_proposals_files DISABLE KEYS */;
-/*!40000 ALTER TABLE ideation_proposals_files ENABLE KEYS */;
+/*!40000 ALTER TABLE participatoryideation_proposals_files DISABLE KEYS */;
+/*!40000 ALTER TABLE participatoryideation_proposals_files ENABLE KEYS */;
 
-DROP TABLE IF EXISTS ideation_proposals_links;
-CREATE TABLE IF NOT EXISTS ideation_proposals_links (
+DROP TABLE IF EXISTS participatoryideation_proposals_links;
+CREATE TABLE IF NOT EXISTS participatoryideation_proposals_links (
   id_proposal_link int(6) NOT NULL,
   id_proposal_parent int(6) NOT NULL,
   id_proposal_child int(6) NOT NULL,
@@ -3275,8 +3273,8 @@ CREATE TABLE IF NOT EXISTS ideation_proposals_links (
   KEY id_proposal_parent (id_proposal_parent)
 );
 
-/*!40000 ALTER TABLE ideation_proposals_links DISABLE KEYS */;
-/*!40000 ALTER TABLE ideation_proposals_links ENABLE KEYS */;
+/*!40000 ALTER TABLE participatoryideation_proposals_links DISABLE KEYS */;
+/*!40000 ALTER TABLE participatoryideation_proposals_links ENABLE KEYS */;
 
 DROP TABLE IF EXISTS library_mapping;
 CREATE TABLE IF NOT EXISTS library_mapping (
@@ -3678,35 +3676,35 @@ CREATE TABLE IF NOT EXISTS participatorybudget_bizstat_file (
 
 DROP TABLE IF EXISTS participatorybudget_campaign;
 CREATE TABLE IF NOT EXISTS participatorybudget_campaign (
-  id_campagne int(6) NOT NULL,
-  code_campagne varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  id_campaign int(6) NOT NULL,
+  code_campaign varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   title varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   description mediumtext COLLATE utf8_unicode_ci NOT NULL,
   active smallint(6) NOT NULL,
   code_moderation_type varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   moderation_duration int(11) DEFAULT NULL,
-  PRIMARY KEY (id_campagne),
-  UNIQUE KEY code_campagne (code_campagne)
+  PRIMARY KEY (id_campaign),
+  UNIQUE KEY code_campaign (code_campaign)
 );
 
 /*!40000 ALTER TABLE participatorybudget_campaign DISABLE KEYS */;
-INSERT INTO participatorybudget_campaign (id_campagne, code_campagne, title, description, active, code_moderation_type, moderation_duration) VALUES
+INSERT INTO participatorybudget_campaign (id_campaign, code_campaign, title, description, active, code_moderation_type, moderation_duration) VALUES
 	(1, 'A', 'Participatory Budget 2019', 'Participatory Budget 2019', 1, 'NONE', 0);
 /*!40000 ALTER TABLE participatorybudget_campaign ENABLE KEYS */;
 
 DROP TABLE IF EXISTS participatorybudget_campaign_area;
 CREATE TABLE IF NOT EXISTS participatorybudget_campaign_area (
-  id_campagne_area int(6) NOT NULL,
-  code_campagne varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  id_campaign_area int(6) NOT NULL,
+  code_campaign varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   title varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   active smallint(6) NOT NULL,
   type varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   number_votes int(6) NOT NULL,
-  PRIMARY KEY (id_campagne_area)
+  PRIMARY KEY (id_campaign_area)
 );
 
 /*!40000 ALTER TABLE participatorybudget_campaign_area DISABLE KEYS */;
-INSERT INTO participatorybudget_campaign_area (id_campagne_area, code_campagne, title, active, type, number_votes) VALUES
+INSERT INTO participatorybudget_campaign_area (id_campaign_area, code_campaign, title, active, type, number_votes) VALUES
 	(0, 'A', 'whole city', 1, 'whole', 3),
 	(1, 'A', 'area 1', 1, 'localized', 1),
 	(2, 'A', 'area 2', 1, 'localized', 1),
@@ -3717,10 +3715,10 @@ INSERT INTO participatorybudget_campaign_area (id_campagne_area, code_campagne, 
 
 DROP TABLE IF EXISTS participatorybudget_campaign_image;
 CREATE TABLE IF NOT EXISTS participatorybudget_campaign_image (
-  id_campagne_image int(6) NOT NULL,
-  code_campagne varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  id_campaign_image int(6) NOT NULL,
+  code_campaign varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   id_file int(11) NOT NULL,
-  PRIMARY KEY (id_campagne_image)
+  PRIMARY KEY (id_campaign_image)
 );
 
 /*!40000 ALTER TABLE participatorybudget_campaign_image DISABLE KEYS */;
@@ -3744,16 +3742,16 @@ INSERT INTO participatorybudget_campaign_moderation_type (id_moderation_type, co
 
 DROP TABLE IF EXISTS participatorybudget_campaign_phase;
 CREATE TABLE IF NOT EXISTS participatorybudget_campaign_phase (
-  id_campagne_phase int(6) NOT NULL,
+  id_campaign_phase int(6) NOT NULL,
   code_phase_type varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  code_campagne varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  code_campaign varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   start datetime NOT NULL,
   end datetime NOT NULL,
-  PRIMARY KEY (id_campagne_phase)
+  PRIMARY KEY (id_campaign_phase)
 );
 
 /*!40000 ALTER TABLE participatorybudget_campaign_phase DISABLE KEYS */;
-INSERT INTO participatorybudget_campaign_phase (id_campagne_phase, code_phase_type, code_campagne, start, end) VALUES
+INSERT INTO participatorybudget_campaign_phase (id_campaign_phase, code_phase_type, code_campaign, start, end) VALUES
 	(1, 'PRE_IDEATION', 'A', '2019-01-03 00:00:00', '2019-01-10 23:59:59'),
 	(2, 'IDEATION', 'A', '2019-01-11 00:00:00', '2019-02-05 23:59:59'),
 	(3, 'POST_IDEATION', 'A', '2019-02-06 00:00:00', '2019-03-10 23:59:59'),
@@ -3794,19 +3792,19 @@ INSERT INTO participatorybudget_campaign_phase_type (id_phase_type, code_phase_t
 
 DROP TABLE IF EXISTS participatorybudget_campaign_theme;
 CREATE TABLE IF NOT EXISTS participatorybudget_campaign_theme (
-  id_campagne_theme int(6) NOT NULL,
-  code_campagne varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  id_campaign_theme int(6) NOT NULL,
+  code_campaign varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   code_theme varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   title varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   description mediumtext COLLATE utf8_unicode_ci NOT NULL,
   active smallint(6) NOT NULL,
   image_file int(11) DEFAULT NULL,
-  PRIMARY KEY (id_campagne_theme),
-  UNIQUE KEY code_campagne (code_campagne,code_theme)
+  PRIMARY KEY (id_campaign_theme),
+  UNIQUE KEY code_campaign (code_campaign,code_theme)
 );
 
 /*!40000 ALTER TABLE participatorybudget_campaign_theme DISABLE KEYS */;
-INSERT INTO participatorybudget_campaign_theme (id_campagne_theme, code_campagne, code_theme, title, description, active, image_file) VALUES
+INSERT INTO participatorybudget_campaign_theme (id_campaign_theme, code_campaign, code_theme, title, description, active, image_file) VALUES
 	(1, 'A', 'ENVIRONMENT', 'Environment issues', 'Environment issues', 1, NULL),
 	(2, 'A', 'SOCIAL', 'Social issues', 'Social issues', 1, NULL),
 	(3, 'A', 'SPORT', 'Sport', 'Sport', 1, NULL),
@@ -3993,8 +3991,8 @@ INSERT INTO solr_fields (id_field, name, label, description, is_facet, enable_fa
 	(67, 'localisation_text', 'Localisation', 'Localisation', 1, 1, 0, 0, 0),
 	(68, 'code_theme_string', 'Theme code', 'Theme code', 1, 1, 0, 0, 0),
 	(69, 'statut_publique_project_text', 'Public status', 'Public status', 1, 1, 0, 0, 0),
-	(70, 'code_depositaire_type_string', 'Depositary type', 'Depositary type', 1, 1, 0, 0, 0),
-	(71, 'campagne_text', 'Campaign', 'Campaign code', 1, 1, 0, 0, 0),
+	(70, 'code_depositary_type_string', 'Depositary type', 'Depositary type', 1, 1, 0, 0, 0),
+	(71, 'campaign_text', 'Campaign', 'Campaign code', 1, 1, 0, 0, 0),
 	(72, 'type_qpvqva_string', 'Popular district', 'Popular district', 1, 1, 0, 0, 0),
 	(73, 'handicap_string', 'Handicap', 'Handicap oriented', 1, 1, 0, 0, 0),
 	(74, 'popular_area_text', 'Popular area', 'Popular area', 1, 1, 0, 0, 0),
@@ -4099,12 +4097,12 @@ CREATE TABLE IF NOT EXISTS task_notify_ideation_cf (
   recipients_cc varchar(255) NOT NULL DEFAULT '',
   recipients_bcc varchar(255) NOT NULL DEFAULT '',
   isFollowers smallint(6) NOT NULL,
-  isDepositaire smallint(6) NOT NULL,
+  isDepositary smallint(6) NOT NULL,
   PRIMARY KEY (id_task)
 );
 
 /*!40000 ALTER TABLE task_notify_ideation_cf DISABLE KEYS */;
-INSERT INTO task_notify_ideation_cf (id_task, sender_name, sender_email, subject, message, recipients_cc, recipients_bcc, isFollowers, isDepositaire) VALUES
+INSERT INTO task_notify_ideation_cf (id_task, sender_name, sender_email, subject, message, recipients_cc, recipients_bcc, isFollowers, isDepositary) VALUES
 	(2, 'OpenPB', 'no-reply@openbp.org', 'Open PB - About your proposal', 'Thanks for submitting your proposal !', '', '', 0, 0);
 /*!40000 ALTER TABLE task_notify_ideation_cf ENABLE KEYS */;
 

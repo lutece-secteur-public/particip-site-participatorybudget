@@ -10,7 +10,7 @@
       		<li><a href="jsp/site/Portal.jsp?page=mesInfos">      <span>#i18n{portal.openpb.mylutece.menu.logged.entry.myInfos}</span></a></li>
 	  		<li><a href="jsp/site/Portal.jsp?page=myProjects">    <span>#i18n{portal.openpb.mylutece.menu.logged.entry.myProposals}</span></a></li>
       		<li><a href="jsp/site/Portal.jsp?page=myFavourites">  <span>#i18n{portal.openpb.mylutece.menu.logged.entry.myFavoriteProjects}</span></a></li>
-			<#if campagneService?? && campagneService.isAfterBeginning( "VOTE" ) && campagneService.isBeforeEnd( "RESULT" ) >
+			<#if campaignService?? && campaignService.isAfterBeginning( "VOTE" ) && campaignService.isBeforeEnd( "RESULT" ) >
 				<li><a href="jsp/site/Portal.jsp?page=mesVotes&view=myVotes&notify_valide=false" <span>#i18n{portal.openpb.mylutece.menu.logged.entry.myVotes}</span></a></li>
 			</#if>
      		<li><a href="jsp/site/Portal.jsp?page=mySubscriptions"><span>#i18n{portal.openpb.mylutece.menu.logged.entry.myNotifications}</span></a></li>

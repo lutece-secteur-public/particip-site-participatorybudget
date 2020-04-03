@@ -50,7 +50,7 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700"      rel="stylesheet">
 
 <#assign bpBodyClass="" />
-<#if campagneService.isDuring("VOTE") >
+<#if campaignService.isDuring("VOTE") >
 	<#--
 	<link href="${thetheme.pathCss}/navbar.css" rel="stylesheet" media="screen">
 	-->
@@ -118,7 +118,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 		<div class="collapse navbar-collapse" id="navbar-collapse-main">
 			<ul>
 				
-				<#if campagneService.isDuring("IDEATION")>
+				<#if campaignService.isDuring("IDEATION")>
 					<li>
 						<a href="jsp/site/Portal.jsp?page_id=2">
 							<span>#i18n{portal.openpb.navbar.entry.doSubmitProposal}</span>
@@ -126,23 +126,23 @@ ${rss?default( "<!-- no RSS feed -->" )}
 					</li>
 				</#if>
 				
-				<#if campagneService.isAfterBeginning("IDEATION") >
+				<#if campaignService.isAfterBeginning("IDEATION") >
 					<li>
-						<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;conf=list_proposals&amp;fq=campagne_text:${campagneService.lastCampagne.code}">
+						<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;conf=list_proposals&amp;fq=campaign_text:${campaignService.lastCampaign.code}">
 							<span>#i18n{portal.openpb.navbar.entry.getSubmittedProposals}</span>
 						</a>
 					</li>
 				</#if>
 				
-				<#if campagneService.isAfterBeginning("SUBMIT") && campagneService.isBeforeBeginning("RESULT") >
+				<#if campaignService.isAfterBeginning("SUBMIT") && campaignService.isBeforeBeginning("RESULT") >
 					<li>
 						<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;conf=projects_mdp">
-							<span><#if campagneService.isDuring("VOTE")>#i18n{portal.openpb.navbar.entry.doVote}<#else>#i18n{portal.openpb.navbar.entry.getProjectsUnderVote}</#if></span>
+							<span><#if campaignService.isDuring("VOTE")>#i18n{portal.openpb.navbar.entry.doVote}<#else>#i18n{portal.openpb.navbar.entry.getProjectsUnderVote}</#if></span>
 						</a>
 					</li>
 				</#if>
 				
-				<#if campagneService.isDuring("RESULT") >
+				<#if campaignService.isDuring("RESULT") >
 					<li>
 						<a href="jsp/site/Portal.jsp?page=search-solr&conf=elected_projects">
 							<span>#i18n{portal.openpb.navbar.entry.getWinningProjets}</span>
@@ -167,7 +167,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 	</nav>
 	
 	<#-- VOTE BAR -->
-	<#if campagneService.isDuring("VOTE") >
+	<#if campaignService.isDuring("VOTE") >
 		<#include "/skin/site/vote_bar.html" />
 	</#if>
 
@@ -401,7 +401,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 <script type="text/javascript" src="js/jquery/plugins/dataTables/js/jquery.dataTables.min.js"></script>
 
 <script type="text/javascript" src="js/site-bp.js"></script>
-<#if campagneService.isDuring("VOTE") >
+<#if campaignService.isDuring("VOTE") >
 <script type="text/javascript" src="js/plugins/participatorybudget/navbar.js"></script>
 </#if>
 

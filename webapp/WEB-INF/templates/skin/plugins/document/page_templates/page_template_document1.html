@@ -48,7 +48,7 @@ How to display the date publication : ${publication.datePublishing?date} or ${pu
 							<p>Projet élaboré à partir des propositions suivantes :</p>
 							<#list listChilds as child>
 								<p>
-									<a href="jsp/site/Portal.jsp?page=proposal&campagne=${child.codeCampagne!''}&proposal=${child.codeProposal!''}" >
+									<a href="jsp/site/Portal.jsp?page=proposal&campaign=${child.codeCampaign!''}&proposal=${child.codeProposal!''}" >
 										${child.titre!''}
 									</a>
 								</p>
@@ -58,7 +58,7 @@ How to display the date publication : ${publication.datePublishing?date} or ${pu
 					<#elseif idea?? >  <#-- Projet issu d'une proposition non co-construite -->
 						<p><span>Projet élaboré à partir de la proposition suivante :</span></p>
 						<p>
-							<a href="jsp/site/Portal.jsp?page=proposal&campagne=${idea.codeCampagne!''}&proposal=${idea.codeProposal!''}" >
+							<a href="jsp/site/Portal.jsp?page=proposal&campaign=${idea.codeCampaign!''}&proposal=${idea.codeProposal!''}" >
 								${idea.titre!''}
 							</a>
 						</p>
@@ -68,19 +68,19 @@ How to display the date publication : ${publication.datePublishing?date} or ${pu
 				<div id="vote-src" class="hidden">
 				
 
-					<#-- Displaying button only if current campagne -->				
-					<#assign currentCampagneCode = 2014 + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"?index_of(campagneService.lastCampagne.code)>
-					<#if campagne_text_document == ("Budget Participatif " + currentCampagneCode)> 
+					<#-- Displaying button only if current campaign -->				
+					<#assign currentCampaignCode = 2014 + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"?index_of(campaignService.lastCampaign.code)>
+					<#if campaign_text_document == ("Budget Participatif " + currentCampaignCode)> 
 					
 						<div class="psoum-data-vote">
 
-							<#if campagneService.isDuring("VOTE") = true && voteValidated= true >
+							<#if campaignService.isDuring("VOTE") = true && voteValidated= true >
 								<div class="vote-done">Vous avez d&eacute;j&agrave; vot&eacute; ! Merci de votre int&eacute;r&ecirc;t pour le Budget Participatif.</div>
-							<#elseif campagneService.isDuring("VOTE") && voteValidated= false && arrondissementVote= "notConnected" >
+							<#elseif campaignService.isDuring("VOTE") && voteValidated= false && arrondissementVote= "notConnected" >
 								@Extender[${id_document},document,vote,{show:"all"}]@
-							<#elseif campagneService.isDuring("VOTE") && voteValidated= false && (arrondissementVote == localisation_text || localisation_text= "Tout Paris")>
+							<#elseif campaignService.isDuring("VOTE") && voteValidated= false && (arrondissementVote == localisation_text || localisation_text= "Tout Paris")>
 								@Extender[${id_document},document,vote,{show:"all"}]@
-							<#elseif campagneService.isDuring("VOTE") >
+							<#elseif campaignService.isDuring("VOTE") >
 								<div class="novote">Vous ne pouvez pas voter pour ce projet car il n'est pas situ&eacute; dans l'arrondissement de vote que vous avez indiqu&eacute; dans les informations de votre compte.</div>
 							</#if>
 
@@ -106,7 +106,7 @@ How to display the date publication : ${publication.datePublishing?date} or ${pu
 				<input type="hidden" name="thematique_${id_document}" id="thematique_${id_document}" value="${thematique_text!}">
 				<input type="hidden" name="arrondUser" id="arrondUser" value="${arrondissementVote!}">
 				<input type="hidden" name="status_document_${id_document}" id="status_document_${id_document}" value="${status_document!}">
-				<input type="hidden" name="campagne_text_document_${id_document}" id="campagne_text_document_${id_document}" value="${campagne_text_document!}">
+				<input type="hidden" name="campaign_text_document_${id_document}" id="campaign_text_document_${id_document}" value="${campaign_text_document!}">
 				
 		</div>
 </section>
