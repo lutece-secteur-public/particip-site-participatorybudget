@@ -31,7 +31,7 @@
 				<div id="project-info_new" class="row">
 					<div class="col-xs-12 col-sm-8">
 						<div class="project_image">
-							<xsl:if test="not(string(project_2015-pop_district)='')">
+							<xsl:if test="not(string(project_2015-pop_location)='')">
 								<img class="img-qp" src="images/local/skin/quartier-populaire.png" alt="Quartier Populaire" />
 							</xsl:if>
 							<xsl:choose>
@@ -39,28 +39,28 @@
 										<xsl:value-of disable-output-escaping="yes" select="project_2015-image" />
 								</xsl:when>
 								<xsl:otherwise>
-									<xsl:if test="not(string(project_2015-thematique)='')">
+									<xsl:if test="not(string(project_2015-theme)='')">
 										<xsl:choose>
-											<xsl:when test="(project_2015-thematique='Cadre de vie')" ><img src="images/local/skin/i_cadre_vie_wide.jpg"/></xsl:when>
-											<xsl:when test="(project_2015-thematique='Culture')" ><img src="images/local/skin/i_culture_wide.jpg"/></xsl:when>
-											<xsl:when test="(project_2015-thematique='Culture et patrimoine')" ><img src="images/local/skin/i_culture_wide.jpg"/></xsl:when>
-											<xsl:when test="(project_2015-thematique='Economie et emploi')" ><img src="images/local/skin/i_economie_wide.jpg"/></xsl:when>
-											<xsl:when test="(project_2015-thematique='Education et jeunesse')" ><img src="images/local/skin/i_jeunesse_wide.jpg"/></xsl:when>
-											<xsl:when test="(project_2015-thematique='Environnement')" ><img src="images/local/skin/i_environnement_wide.jpg"/></xsl:when>
-											<xsl:when test="(project_2015-thematique='Logement et habitat')" ><img src="images/local/skin/i_logement_wide.jpg"/></xsl:when>
-											<xsl:when test="(project_2015-thematique='Nature en ville')" ><img src="images/local/skin/i_Nature en ville_wide.jpg"/></xsl:when>
-											<xsl:when test="(project_2015-thematique='Participation citoyenne')" ><img src="images/local/skin/i_participation_citoyenne_wide.jpg"/></xsl:when>
-											<xsl:when test="(project_2015-thematique='Propreté')" ><img src="images/local/skin/i_proprete_wide.jpg"/></xsl:when>
-											<xsl:when test="(project_2015-thematique='Prévention et sécurité')" ><img src="images/local/skin/i_securite_wide.jpg"/></xsl:when>
-											<xsl:when test="(project_2015-thematique='Santé')" ><img src="images/local/skin/i_sante_wide.jpg"/></xsl:when>
-											<xsl:when test="(project_2015-thematique='Solidarité')" ><img src="images/local/skin/i_solidarites_wide.jpg"/></xsl:when>
-											<xsl:when test="(project_2015-thematique='Solidarité')" ><img src="images/local/skin/i_solidarites_wide.jpg"/></xsl:when>
-											<xsl:when test="(project_2015-thematique='Solidarité et cohésion sociale')" ><img src="images/local/skin/i_solidarites_wide.jpg"/></xsl:when>
-											<xsl:when test="(project_2015-thematique='Solidarité et cohésion sociale ')" ><img src="images/local/skin/i_solidarites_wide.jpg"/></xsl:when>
-											<xsl:when test="(project_2015-thematique='Sport')" ><img src="images/local/skin/i_sport_wide.jpg"/></xsl:when>
-											<xsl:when test="(project_2015-thematique='Transport et mobilité')" ><img src="images/local/skin/i_transport_wide.jpg"/></xsl:when>
-											<xsl:when test="(project_2015-thematique='Ville intelligente et numérique')" ><img src="images/local/skin/i_ville_intelligente_wide.jpg"/></xsl:when>
-											<xsl:when test="(project_2015-thematique='Vivre ensemble')" ><img src="images/local/skin/i_solidarites_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Cadre de vie')" ><img src="images/local/skin/i_cadre_vie_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Culture')" ><img src="images/local/skin/i_culture_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Culture et patrimoine')" ><img src="images/local/skin/i_culture_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Economie et emploi')" ><img src="images/local/skin/i_economie_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Education et jeunesse')" ><img src="images/local/skin/i_jeunesse_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Environnement')" ><img src="images/local/skin/i_environnement_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Logement et habitat')" ><img src="images/local/skin/i_logement_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Nature en ville')" ><img src="images/local/skin/i_Nature en ville_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Participation citoyenne')" ><img src="images/local/skin/i_participation_citoyenne_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Propreté')" ><img src="images/local/skin/i_proprete_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Prévention et sécurité')" ><img src="images/local/skin/i_securite_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Santé')" ><img src="images/local/skin/i_sante_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Solidarité')" ><img src="images/local/skin/i_solidarites_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Solidarité')" ><img src="images/local/skin/i_solidarites_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Solidarité et cohésion sociale')" ><img src="images/local/skin/i_solidarites_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Solidarité et cohésion sociale ')" ><img src="images/local/skin/i_solidarites_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Sport')" ><img src="images/local/skin/i_sport_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Transport et mobilité')" ><img src="images/local/skin/i_transport_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Ville intelligente et numérique')" ><img src="images/local/skin/i_ville_intelligente_wide.jpg"/></xsl:when>
+											<xsl:when test="(project_2015-theme='Vivre ensemble')" ><img src="images/local/skin/i_solidarites_wide.jpg"/></xsl:when>
 											<xsl:otherwise><img src="images/local/skin/default_illustration.jpg"/></xsl:otherwise>
 										</xsl:choose>
 									</xsl:if>
@@ -74,44 +74,44 @@
 						<!-- JPO, 21/09 : suppression temporaire de l'icone "favoris" pendant la période de vote -->
 						<xsl:text disable-output-escaping="yes">@Extender[</xsl:text><xsl:value-of disable-output-escaping="yes" select="document-id" /><xsl:text disable-output-escaping="yes">,document,follow,{show:"favtag"}]@</xsl:text>
 						</xsl:comment>
-						<xsl:if test="not(string(project_2015-thematique)='')">
+						<xsl:if test="not(string(project_2015-theme)='')">
 							<xsl:variable name="code-theme">
 								<xsl:choose>
-									<xsl:when test="(project_2015-thematique='Cadre de vie')" ><xsl:text>i_cadre_vie_1.png</xsl:text></xsl:when>
-									<xsl:when test="(project_2015-thematique='Culture')" ><xsl:text>i_culture_1.png</xsl:text></xsl:when>
-									<xsl:when test="(project_2015-thematique='Culture et patrimoine')" ><xsl:text>i_culture_1.png</xsl:text></xsl:when>
-									<xsl:when test="(project_2015-thematique='Economie et emploi')" ><xsl:text>i_economie_1.png</xsl:text></xsl:when>
-									<xsl:when test="(project_2015-thematique='Education et jeunesse')" ><xsl:text>i_jeunesse_1.png</xsl:text></xsl:when>
-									<xsl:when test="(project_2015-thematique='Environnement')" ><xsl:text>i_environnement_1.png</xsl:text></xsl:when>
-									<xsl:when test="(project_2015-thematique='Logement et habitat')" ><xsl:text>i_logement_1.png</xsl:text></xsl:when>
-									<xsl:when test="(project_2015-thematique='Nature en ville')" ><xsl:text>i_Nature en ville_1.png</xsl:text></xsl:when>
-									<xsl:when test="(project_2015-thematique='Participation citoyenne')" ><xsl:text>i_participation_citoyenne_1.png</xsl:text></xsl:when>
-									<xsl:when test="(project_2015-thematique='Propreté')" ><xsl:text>i_proprete_1.png</xsl:text></xsl:when>
-									<xsl:when test="(project_2015-thematique='Prévention et sécurité')" ><xsl:text>i_securite_1.png</xsl:text></xsl:when>
-									<xsl:when test="(project_2015-thematique='Santé')" ><xsl:text>i_sante_1.png</xsl:text></xsl:when>
-									<xsl:when test="(project_2015-thematique='Solidarité')" ><xsl:text>i_solidarites_1.png</xsl:text></xsl:when>
-									<xsl:when test="(project_2015-thematique='Solidarité et cohésion sociale')" ><xsl:text>i_solidarites_1.png</xsl:text></xsl:when>
-									<xsl:when test="(project_2015-thematique='Solidarité et cohésion sociale ')" ><xsl:text>i_solidarites_1.png</xsl:text></xsl:when>
-									<xsl:when test="(project_2015-thematique='Sport')" ><xsl:text>i_sport_1.png</xsl:text></xsl:when>
-									<xsl:when test="(project_2015-thematique='Transport et mobilité')" ><xsl:text>i_transport_1.png</xsl:text></xsl:when>
-									<xsl:when test="(project_2015-thematique='Ville intelligente et numérique')" ><xsl:text>i_ville_intelligente_1.png</xsl:text></xsl:when>
-									<xsl:when test="(project_2015-thematique='Vivre ensemble')" ><xsl:text>i_solidarites_1.png</xsl:text></xsl:when>
+									<xsl:when test="(project_2015-theme='Cadre de vie')" ><xsl:text>i_cadre_vie_1.png</xsl:text></xsl:when>
+									<xsl:when test="(project_2015-theme='Culture')" ><xsl:text>i_culture_1.png</xsl:text></xsl:when>
+									<xsl:when test="(project_2015-theme='Culture et patrimoine')" ><xsl:text>i_culture_1.png</xsl:text></xsl:when>
+									<xsl:when test="(project_2015-theme='Economie et emploi')" ><xsl:text>i_economie_1.png</xsl:text></xsl:when>
+									<xsl:when test="(project_2015-theme='Education et jeunesse')" ><xsl:text>i_jeunesse_1.png</xsl:text></xsl:when>
+									<xsl:when test="(project_2015-theme='Environnement')" ><xsl:text>i_environnement_1.png</xsl:text></xsl:when>
+									<xsl:when test="(project_2015-theme='Logement et habitat')" ><xsl:text>i_logement_1.png</xsl:text></xsl:when>
+									<xsl:when test="(project_2015-theme='Nature en ville')" ><xsl:text>i_Nature en ville_1.png</xsl:text></xsl:when>
+									<xsl:when test="(project_2015-theme='Participation citoyenne')" ><xsl:text>i_participation_citoyenne_1.png</xsl:text></xsl:when>
+									<xsl:when test="(project_2015-theme='Propreté')" ><xsl:text>i_proprete_1.png</xsl:text></xsl:when>
+									<xsl:when test="(project_2015-theme='Prévention et sécurité')" ><xsl:text>i_securite_1.png</xsl:text></xsl:when>
+									<xsl:when test="(project_2015-theme='Santé')" ><xsl:text>i_sante_1.png</xsl:text></xsl:when>
+									<xsl:when test="(project_2015-theme='Solidarité')" ><xsl:text>i_solidarites_1.png</xsl:text></xsl:when>
+									<xsl:when test="(project_2015-theme='Solidarité et cohésion sociale')" ><xsl:text>i_solidarites_1.png</xsl:text></xsl:when>
+									<xsl:when test="(project_2015-theme='Solidarité et cohésion sociale ')" ><xsl:text>i_solidarites_1.png</xsl:text></xsl:when>
+									<xsl:when test="(project_2015-theme='Sport')" ><xsl:text>i_sport_1.png</xsl:text></xsl:when>
+									<xsl:when test="(project_2015-theme='Transport et mobilité')" ><xsl:text>i_transport_1.png</xsl:text></xsl:when>
+									<xsl:when test="(project_2015-theme='Ville intelligente et numérique')" ><xsl:text>i_ville_intelligente_1.png</xsl:text></xsl:when>
+									<xsl:when test="(project_2015-theme='Vivre ensemble')" ><xsl:text>i_solidarites_1.png</xsl:text></xsl:when>
 									<xsl:otherwise><xsl:text>i_participation_citoyenne_1.png</xsl:text></xsl:otherwise>
 								</xsl:choose>
 							</xsl:variable>
 							<p>
 								<img src="images/local/skin/{$code-theme}" alt="Thématique" title="Thématique" />
-								<xsl:value-of select="project_2015-thematique" />
+								<xsl:value-of select="project_2015-theme" />
 							</p>
-								<input type="hidden" name="Localisation_{document-id}" id="localisation_{document-id}" value="{project_2015-localisation}"/>
+								<input type="hidden" name="Location_{document-id}" id="location_{document-id}" value="{project_2015-location}"/>
 								<input type="hidden" name="title_{document-id}" id="title_{document-id}" value="{document-title}"/>
-								<input type="hidden" name="thematique_{document-id}" id="thematique_{document-id}" value="{project_2015-thematique}"/>
+								<input type="hidden" name="theme_{document-id}" id="theme_{document-id}" value="{project_2015-theme}"/>
 						</xsl:if>
-						<xsl:if test="not(string(project_2015-localisation)='')">
+						<xsl:if test="not(string(project_2015-location)='')">
 							<p>
 								<xsl:if test="not(string(project_2015-lieu)='')"><xsl:value-of select="project_2015-lieu" /><br /></xsl:if>
-									<img src="images/local/skin/marker_1.png" alt="Localisation" title="Localisation" />
-								<xsl:value-of select="project_2015-localisation" />
+									<img src="images/local/skin/marker_1.png" alt="Location" title="Location" />
+								<xsl:value-of select="project_2015-location" />
 							</p>
 						</xsl:if>
 						<xsl:if test="not(string(project_2015-budget)='')">
@@ -315,38 +315,38 @@
 				<div id="project-info" class="row">
 					<aside class="col-xs-12 col-sm-4 col-md-4 col-lg-4 hidden-print">
 						<div class="project-data info">
-						<xsl:if test="not(string(project_2015-thematique)='')">
+						<xsl:if test="not(string(project_2015-theme)='')">
 							<xsl:variable name="code-theme">
 								<xsl:choose>
-								<xsl:when test="(project_2015-thematique='Cadre de vie')" ><xsl:text>i_cadre_vie_1.png</xsl:text></xsl:when>
-								<xsl:when test="(project_2015-thematique='Culture')" ><xsl:text>i_culture_1.png</xsl:text></xsl:when>
-								<xsl:when test="(project_2015-thematique='Culture et patrimoine')" ><xsl:text>i_culture_1.png</xsl:text></xsl:when>
-								<xsl:when test="(project_2015-thematique='Economie et emploi')" ><xsl:text>i_economie_1.png</xsl:text></xsl:when>
-								<xsl:when test="(project_2015-thematique='Education et jeunesse')" ><xsl:text>i_jeunesse_1.png</xsl:text></xsl:when>
-								<xsl:when test="(project_2015-thematique='Environnement')" ><xsl:text>i_environnement_1.png</xsl:text></xsl:when>
-								<xsl:when test="(project_2015-thematique='Logement et habitat')" ><xsl:text>i_logement_1.png</xsl:text></xsl:when>
-								<xsl:when test="(project_2015-thematique='Nature en ville')" ><xsl:text>i_Nature en ville_1.png</xsl:text></xsl:when>
-								<xsl:when test="(project_2015-thematique='Participation citoyenne')" ><xsl:text>i_participation_citoyenne_1.png</xsl:text></xsl:when>
-								<xsl:when test="(project_2015-thematique='Propreté')" ><xsl:text>i_proprete_1.png</xsl:text></xsl:when>
-								<xsl:when test="(project_2015-thematique='Prévention et sécurité')" ><xsl:text>i_securite_1.png</xsl:text></xsl:when>
-								<xsl:when test="(project_2015-thematique='Solidarité')" ><xsl:text>i_solidarites_1.png</xsl:text></xsl:when>
-								<xsl:when test="(project_2015-thematique='Sport')" ><xsl:text>i_sport_1.png</xsl:text></xsl:when>
-								<xsl:when test="(project_2015-thematique='Transport et mobilité')" ><xsl:text>i_transport_1.png</xsl:text></xsl:when>
-								<xsl:when test="(project_2015-thematique='Ville intelligente et numérique')" ><xsl:text>i_ville_intelligente_1.png</xsl:text></xsl:when>
-								<xsl:when test="(project_2015-thematique='Vivre ensemble')" ><xsl:text>i_solidarites_1.png</xsl:text></xsl:when>
+								<xsl:when test="(project_2015-theme='Cadre de vie')" ><xsl:text>i_cadre_vie_1.png</xsl:text></xsl:when>
+								<xsl:when test="(project_2015-theme='Culture')" ><xsl:text>i_culture_1.png</xsl:text></xsl:when>
+								<xsl:when test="(project_2015-theme='Culture et patrimoine')" ><xsl:text>i_culture_1.png</xsl:text></xsl:when>
+								<xsl:when test="(project_2015-theme='Economie et emploi')" ><xsl:text>i_economie_1.png</xsl:text></xsl:when>
+								<xsl:when test="(project_2015-theme='Education et jeunesse')" ><xsl:text>i_jeunesse_1.png</xsl:text></xsl:when>
+								<xsl:when test="(project_2015-theme='Environnement')" ><xsl:text>i_environnement_1.png</xsl:text></xsl:when>
+								<xsl:when test="(project_2015-theme='Logement et habitat')" ><xsl:text>i_logement_1.png</xsl:text></xsl:when>
+								<xsl:when test="(project_2015-theme='Nature en ville')" ><xsl:text>i_Nature en ville_1.png</xsl:text></xsl:when>
+								<xsl:when test="(project_2015-theme='Participation citoyenne')" ><xsl:text>i_participation_citoyenne_1.png</xsl:text></xsl:when>
+								<xsl:when test="(project_2015-theme='Propreté')" ><xsl:text>i_proprete_1.png</xsl:text></xsl:when>
+								<xsl:when test="(project_2015-theme='Prévention et sécurité')" ><xsl:text>i_securite_1.png</xsl:text></xsl:when>
+								<xsl:when test="(project_2015-theme='Solidarité')" ><xsl:text>i_solidarites_1.png</xsl:text></xsl:when>
+								<xsl:when test="(project_2015-theme='Sport')" ><xsl:text>i_sport_1.png</xsl:text></xsl:when>
+								<xsl:when test="(project_2015-theme='Transport et mobilité')" ><xsl:text>i_transport_1.png</xsl:text></xsl:when>
+								<xsl:when test="(project_2015-theme='Ville intelligente et numérique')" ><xsl:text>i_ville_intelligente_1.png</xsl:text></xsl:when>
+								<xsl:when test="(project_2015-theme='Vivre ensemble')" ><xsl:text>i_solidarites_1.png</xsl:text></xsl:when>
 									<xsl:otherwise><xsl:text>i_participation_citoyenne_1.png</xsl:text></xsl:otherwise>
 								</xsl:choose>
 							</xsl:variable>
 							<p>
 							  <img src="images/local/skin/{$code-theme}" alt="Thématique" title="Thématique" />
-							  <xsl:value-of select="project_2015-thematique" />
+							  <xsl:value-of select="project_2015-theme" />
 							</p>
 						</xsl:if>
-						<xsl:if test="not(string(project_2015-localisation)='')">
+						<xsl:if test="not(string(project_2015-location)='')">
 							<p>
 							  <xsl:if test="not(string(project_2015-lieu)='')"><xsl:value-of select="project_2015-lieu" /><br /></xsl:if>
-							  <img src="images/local/skin/marker_1.png" alt="Localisation" title="Localisation" />
-								<xsl:value-of select="project_2015-localisation" />
+							  <img src="images/local/skin/marker_1.png" alt="Location" title="Location" />
+								<xsl:value-of select="project_2015-location" />
 							</p>
 						</xsl:if>
 						<xsl:if test="not(string(project_2015-budget)='')">

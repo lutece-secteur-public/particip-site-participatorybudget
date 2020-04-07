@@ -87,7 +87,7 @@
 
 			<div class="popup-title"><xsl:value-of select="document-xml-content/project_2015_op/document-title" /></div>
 			
-	        <div class="popup-localisation"><xsl:value-of select="document-xml-content/project_2015_op/project_2015_op-localisation_precise/geoloc/address" /></div>
+	        <div class="popup-location"><xsl:value-of select="document-xml-content/project_2015_op/project_2015_op-location_precise/geoloc/address" /></div>
 
 	        <br/>
 			

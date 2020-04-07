@@ -23,7 +23,7 @@
 <xsl:template match="document">      
 <xsl:if test="not(string(document-xml-content)='null')">
 	<div class="popup-proposal-header project_old">
-		<xsl:value-of select="document-xml-content/project_2015/project_2015-thematique" />
+		<xsl:value-of select="document-xml-content/project_2015/project_2015-theme" />
 	</div>
     <div class="popup-proposal-content">
         <a href="jsp/site/Portal.jsp?document_id={document-id}&amp;portlet_id={$portlet-id}" target="_blank">      

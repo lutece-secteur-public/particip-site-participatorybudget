@@ -7,8 +7,8 @@
 
 <#setting url_escaping_charset=encoding>
 <#-- Encode facet queries -->
-<#assign allParisCity = "-localisation_text:Tout Paris"> 
-<#assign allArrParisCity = "localisation_text:"> 
+<#assign allParisCity = "-location_text:Tout Paris"> 
+<#assign allArrParisCity = "location_text:"> 
 <#macro EncodeFQ list_fq  optionalParam1="" optionalParam2="">
     <#assign bCheck = false>
     <#assign encoded_facets_queries = ""> 
@@ -34,7 +34,7 @@ ${encoded_facets_queries}</#macro>
     <#assign encoded_facets_queries = "">
         
     <#list list_fq as facet>
-    <#if facet?starts_with("localisation_text") || facet?starts_with("type") || facet?starts_with("-localisation_text")>
+    <#if facet?starts_with("location_text") || facet?starts_with("type") || facet?starts_with("-location_text")>
             <#assign encoded_facets_queries = encoded_facets_queries+"&fq="+facet?url>
     </#if>
     </#list>
@@ -107,21 +107,21 @@ ${encoded_facets_queries}
         <#list results_list as result>
 
 		<#if result.type?? &&  result.type="PB Project">
-		<#if result.dynamicFields?? && result.dynamicFields.thematique_text??>
-		<#if result.dynamicFields.thematique_text = "Cadre de vie"><#assign theme_class = "cadre_vie">
-		<#elseif result.dynamicFields.thematique_text = "Culture" || result.dynamicFields.thematique_text = "Culture et patrimoine"><#assign theme_class = "culture">
-		<#elseif result.dynamicFields.thematique_text = "Economie et emploi"><#assign theme_class = "economie_emploi">
-		<#elseif result.dynamicFields.thematique_text = "Education et jeunesse"><#assign theme_class = "education">
-		<#elseif result.dynamicFields.thematique_text = "Environnement" || result.dynamicFields.thematique_text = "Nature en ville"><#assign theme_class = "environnement">
-		<#elseif result.dynamicFields.thematique_text = "Logement et habitat"><#assign theme_class = "logement">
-		<#elseif result.dynamicFields.thematique_text = "Participation citoyenne"><#assign theme_class = "participation_citoyenne">
-		<#elseif result.dynamicFields.thematique_text = "Prévention et sécurité"><#assign theme_class = "prevention_securite">
-		<#elseif result.dynamicFields.thematique_text = "Propreté"><#assign theme_class = "proprete">
-		<#elseif result.dynamicFields.thematique_text = "Solidarité" || result.dynamicFields.thematique_text = "Vivre ensemble"><#assign theme_class = "solidarite">
-		<#elseif result.dynamicFields.thematique_text = "Sport"><#assign theme_class = "sport">
-		<#elseif result.dynamicFields.thematique_text = "Transport et mobilité"><#assign theme_class = "transport">
-		<#elseif result.dynamicFields.thematique_text = "Ville intelligente et numérique"><#assign theme_class = "ville_numerique">
-		<#elseif result.dynamicFields.thematique_text = "Santé"><#assign theme_class = "sante">
+		<#if result.dynamicFields?? && result.dynamicFields.theme_text??>
+		<#if result.dynamicFields.theme_text = "Cadre de vie"><#assign theme_class = "cadre_vie">
+		<#elseif result.dynamicFields.theme_text = "Culture" || result.dynamicFields.theme_text = "Culture et patrimoine"><#assign theme_class = "culture">
+		<#elseif result.dynamicFields.theme_text = "Economie et emploi"><#assign theme_class = "economie_emploi">
+		<#elseif result.dynamicFields.theme_text = "Education et jeunesse"><#assign theme_class = "education">
+		<#elseif result.dynamicFields.theme_text = "Environnement" || result.dynamicFields.theme_text = "Nature en ville"><#assign theme_class = "environnement">
+		<#elseif result.dynamicFields.theme_text = "Logement et habitat"><#assign theme_class = "logement">
+		<#elseif result.dynamicFields.theme_text = "Participation citoyenne"><#assign theme_class = "participation_citoyenne">
+		<#elseif result.dynamicFields.theme_text = "Prévention et sécurité"><#assign theme_class = "prevention_securite">
+		<#elseif result.dynamicFields.theme_text = "Propreté"><#assign theme_class = "proprete">
+		<#elseif result.dynamicFields.theme_text = "Solidarité" || result.dynamicFields.theme_text = "Vivre ensemble"><#assign theme_class = "solidarite">
+		<#elseif result.dynamicFields.theme_text = "Sport"><#assign theme_class = "sport">
+		<#elseif result.dynamicFields.theme_text = "Transport et mobilité"><#assign theme_class = "transport">
+		<#elseif result.dynamicFields.theme_text = "Ville intelligente et numérique"><#assign theme_class = "ville_numerique">
+		<#elseif result.dynamicFields.theme_text = "Santé"><#assign theme_class = "sante">
 		</#if>
 		</#if>
 						
@@ -142,52 +142,52 @@ ${encoded_facets_queries}
 					</div>
 					
                     <div class="project_category col-xs-12 hidden-sm hidden-md hidden-lg
-						<#if result.dynamicFields?? && result.dynamicFields.thematique_text??>
-							${theme_class}"><img src="images/local/skin/i_${theme_class}.png" alt="${result.dynamicFields.thematique_text}" title="${result.dynamicFields.thematique_text}">
+						<#if result.dynamicFields?? && result.dynamicFields.theme_text??>
+							${theme_class}"><img src="images/local/skin/i_${theme_class}.png" alt="${result.dynamicFields.theme_text}" title="${result.dynamicFields.theme_text}">
 					
-						${result.dynamicFields.thematique_text}
+						${result.dynamicFields.theme_text}
 						<#else>
 							<#assign theme_class = "notheme">
 							${theme_class}">
 							<img src="images/local/skin/i_notheme.png">
-							PAS DE THEMATIQUE
+							PAS DE THEME
 						</#if>
 						
 					</div>
 					<div class="project_category hidden-xs col-sm-12 hidden-md hidden-lg 
-						<#if result.dynamicFields?? && result.dynamicFields.thematique_text??>
-							${theme_class}"><img src="images/local/skin/i_${theme_class}.png" alt="${result.dynamicFields.thematique_text}" title="${result.dynamicFields.thematique_text}">
+						<#if result.dynamicFields?? && result.dynamicFields.theme_text??>
+							${theme_class}"><img src="images/local/skin/i_${theme_class}.png" alt="${result.dynamicFields.theme_text}" title="${result.dynamicFields.theme_text}">
 					
-						<#if result.dynamicFields.thematique_text?length &gt; 32>${result.dynamicFields.thematique_text?substring(0,32)}...<#else>${result.dynamicFields.thematique_text}</#if>
+						<#if result.dynamicFields.theme_text?length &gt; 32>${result.dynamicFields.theme_text?substring(0,32)}...<#else>${result.dynamicFields.theme_text}</#if>
 						<#else>
 							<#assign theme_class = "notheme">
 							${theme_class}">
 							<img src="images/local/skin/i_notheme.png">
-							PAS DE THEMATIQUE
+							PAS DE THEME
 						</#if>
 					</div>
 					<div class="project_category hidden-xs hidden-sm col-md-12 hidden-lg 
-						<#if result.dynamicFields?? && result.dynamicFields.thematique_text??>
-							${theme_class}"><img src="images/local/skin/i_${theme_class}.png" alt="${result.dynamicFields.thematique_text}" title="${result.dynamicFields.thematique_text}">
+						<#if result.dynamicFields?? && result.dynamicFields.theme_text??>
+							${theme_class}"><img src="images/local/skin/i_${theme_class}.png" alt="${result.dynamicFields.theme_text}" title="${result.dynamicFields.theme_text}">
 					
-						<#if result.dynamicFields.thematique_text?length &gt; 16>${result.dynamicFields.thematique_text?substring(0,16)}...<#else>${result.dynamicFields.thematique_text}</#if>
+						<#if result.dynamicFields.theme_text?length &gt; 16>${result.dynamicFields.theme_text?substring(0,16)}...<#else>${result.dynamicFields.theme_text}</#if>
 						<#else>
 							<#assign theme_class = "notheme">
 							${theme_class}">
 							<img src="images/local/skin/i_notheme.png">
-							PAS DE THEMATIQUE
+							PAS DE THEME
 						</#if>
 					</div>
 					<div class="project_category hidden-xs hidden-sm hidden-md col-lg-12 
-						<#if result.dynamicFields?? && result.dynamicFields.thematique_text??>
-							${theme_class}"><img src="images/local/skin/i_${theme_class}.png" alt="${result.dynamicFields.thematique_text}" title="${result.dynamicFields.thematique_text}">
+						<#if result.dynamicFields?? && result.dynamicFields.theme_text??>
+							${theme_class}"><img src="images/local/skin/i_${theme_class}.png" alt="${result.dynamicFields.theme_text}" title="${result.dynamicFields.theme_text}">
 					
-						<#if result.dynamicFields.thematique_text?length &gt; 27>${result.dynamicFields.thematique_text?substring(0,27)}...<#else>${result.dynamicFields.thematique_text}</#if>
+						<#if result.dynamicFields.theme_text?length &gt; 27>${result.dynamicFields.theme_text?substring(0,27)}...<#else>${result.dynamicFields.theme_text}</#if>
 						<#else>
 							<#assign theme_class = "notheme">
 							${theme_class}">
 							<img src="images/local/skin/i_notheme.png">
-							PAS DE THEMATIQUE
+							PAS DE THEME
 						</#if>
 					</div>
 					
@@ -213,11 +213,11 @@ ${encoded_facets_queries}
 					</div>
 					<div>
 						<span class="project_location">
-						<img src="images/local/skin/projet_localisation.png" width="25px" height="25px" alt="Localisation" title="Localisation">
-						<#if result.dynamicFields?? && result.dynamicFields.localisation_text??>
-							<#if result.dynamicFields.localisation_text = "Tout Paris">
-								${result.dynamicFields.localisation_text}
-							<#elseif result.dynamicFields.localisation_text?length &gt; 3>${result.dynamicFields.localisation_text?substring(0,3)}<#else>${result.dynamicFields.localisation_text}</#if>
+						<img src="images/local/skin/projet_location.png" width="25px" height="25px" alt="Location" title="Location">
+						<#if result.dynamicFields?? && result.dynamicFields.location_text??>
+							<#if result.dynamicFields.location_text = "Tout Paris">
+								${result.dynamicFields.location_text}
+							<#elseif result.dynamicFields.location_text?length &gt; 3>${result.dynamicFields.location_text?substring(0,3)}<#else>${result.dynamicFields.location_text}</#if>
 						</#if>
 						</span>
 						<span class="project_budget">
@@ -259,9 +259,9 @@ ${encoded_facets_queries}
 					</#if>
 
 
-						<input type="hidden" name="localisation_${id_document}" id="localisation_${id_document}" value="${result.dynamicFields.localisation_text}" />
+						<input type="hidden" name="location_${id_document}" id="location_${id_document}" value="${result.dynamicFields.location_text}" />
 						<input type="hidden" name="title_${id_document}" id="title_${id_document}" value="${result.title}" />
-						<input type="hidden" name="thematique_${id_document}" id="thematique_${id_document}" value="${result.dynamicFields.thematique_text}" />
+						<input type="hidden" name="theme_${id_document}" id="theme_${id_document}" value="${result.dynamicFields.theme_text}" />
                     </div>
                 </div> 
             </div> 

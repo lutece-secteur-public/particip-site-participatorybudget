@@ -78,7 +78,7 @@ How to display the date publication : ${publication.datePublishing?date} or ${pu
 								<div class="vote-done">Vous avez d&eacute;j&agrave; vot&eacute; ! Merci de votre int&eacute;r&ecirc;t pour le Budget Participatif.</div>
 							<#elseif campaignService.isDuring("VOTE") && voteValidated= false && arrondissementVote= "notConnected" >
 								@Extender[${id_document},document,vote,{show:"all"}]@
-							<#elseif campaignService.isDuring("VOTE") && voteValidated= false && (arrondissementVote == localisation_text || localisation_text= "Tout Paris")>
+							<#elseif campaignService.isDuring("VOTE") && voteValidated= false && (arrondissementVote == location_text || location_text= "Tout Paris")>
 								@Extender[${id_document},document,vote,{show:"all"}]@
 							<#elseif campaignService.isDuring("VOTE") >
 								<div class="novote">Vous ne pouvez pas voter pour ce projet car il n'est pas situ&eacute; dans l'arrondissement de vote que vous avez indiqu&eacute; dans les informations de votre compte.</div>
@@ -101,9 +101,9 @@ How to display the date publication : ${publication.datePublishing?date} or ${pu
 				</div>
 				
 				<#-- hidden input for vote -->
-				<input type="hidden" name="localisation_${id_document}" id="localisation_${id_document}" value="${localisation_text!}">
+				<input type="hidden" name="location_${id_document}" id="location_${id_document}" value="${location_text!}">
 				<input type="hidden" name="title_${id_document}" id="title_${id_document}" value="${title_text!}">
-				<input type="hidden" name="thematique_${id_document}" id="thematique_${id_document}" value="${thematique_text!}">
+				<input type="hidden" name="theme_${id_document}" id="theme_${id_document}" value="${theme_text!}">
 				<input type="hidden" name="arrondUser" id="arrondUser" value="${arrondissementVote!}">
 				<input type="hidden" name="status_document_${id_document}" id="status_document_${id_document}" value="${status_document!}">
 				<input type="hidden" name="campaign_text_document_${id_document}" id="campaign_text_document_${id_document}" value="${campaign_text_document!}">

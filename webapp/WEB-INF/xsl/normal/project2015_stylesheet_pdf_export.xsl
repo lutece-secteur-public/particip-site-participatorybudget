@@ -32,17 +32,17 @@
 
 						<div class="project-data">
 							<table>
-								<xsl:if test="not(string(project_2015-thematique)='')">
+								<xsl:if test="not(string(project_2015-theme)='')">
 									<tr>
 										<td><img src="images/local/skin/projet_theme.png" alt="Thématique" title="Thématique" /></td>
-										<td><p><xsl:value-of select="project_2015-thematique" /></p></td>
+										<td><p><xsl:value-of select="project_2015-theme" /></p></td>
 									</tr>
 								</xsl:if>
-								<xsl:if test="not(string(project_2015-localisation)='')">
+								<xsl:if test="not(string(project_2015-location)='')">
 									<tr>
-										<td><img src="images/local/skin/projet_localisation.png" alt="Localisation" title="Localisation" /></td>
+										<td><img src="images/local/skin/projet_location.png" alt="Location" title="Location" /></td>
 										<td><p><xsl:if test="not(string(project_2015-lieu)='')"><xsl:value-of select="project_2015-lieu" /><br /></xsl:if>
-										<xsl:value-of select="project_2015-localisation" /></p></td>
+										<xsl:value-of select="project_2015-location" /></p></td>
 									</tr>
 								</xsl:if>
 								<xsl:if test="not(string(project_2015-budget)='')">

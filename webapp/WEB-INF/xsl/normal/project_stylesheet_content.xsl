@@ -52,8 +52,8 @@
 							</xsl:if>
 							<xsl:if test="not(string(project-location)='')">
 								<tr>
-									<td><img src="images/local/skin/projet_localisation.png" /></td>
-									<td><p>Localisation :</p>
+									<td><img src="images/local/skin/projet_location.png" /></td>
+									<td><p>Location :</p>
 									<xsl:value-of select="project-location" />
 									</td>
 								</tr>
