@@ -14,14 +14,14 @@
 				<li><a href="jsp/site/Portal.jsp?page=mesVotes&view=myVotes&notify_valide=false" <span>#i18n{portal.openpb.mylutece.menu.logged.entry.myVotes}</span></a></li>
 			</#if>
      		<li><a href="jsp/site/Portal.jsp?page=mySubscriptions"><span>#i18n{portal.openpb.mylutece.menu.logged.entry.myNotifications}</span></a></li>
-      		<li><a href="#" id="banner-mon-compte_menu__logout">   <span>#i18n{portal.openpb.mylutece.menu.logged.signout}</span></a></li>
+      		<li><a href="jsp/site/plugins/mylutece/DoMyLuteceLogout.jsp" id="banner-mon-compte_menu__logout">   <span>#i18n{portal.openpb.mylutece.menu.logged.signout}</span></a></li>
     	</ul>
   	</li>
 
 <#else>
 
   <li id="connect">
-    <a href="#" class="btn-connect" ><span class="hidden-md hidden-sm">#i18n{portal.openpb.mylutece.menu.unlogged.signin}</span></a>
+    <a href="#" class="main-btn-connect" ><span class="hidden-md hidden-sm">#i18n{portal.openpb.mylutece.menu.unlogged.signin}</span></a>
   </li>
 </#if>
 
@@ -34,9 +34,9 @@
 </noscript> 
 
 <script type="text/javascript">
-
+	
 	// Once to be sure that top-right button will be active.  
-	$(".btn-connect").click( function(e){
+	$(".main-btn-connect").click( function(e){
 		e.preventDefault();
 		var u = encodeURIComponent(window.location.href);
 		displayLoginBp( u );
