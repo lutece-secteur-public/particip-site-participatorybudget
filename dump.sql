@@ -3801,16 +3801,17 @@ CREATE TABLE IF NOT EXISTS participatorybudget_campaign_theme (
   description mediumtext COLLATE utf8_unicode_ci NOT NULL,
   active smallint(6) NOT NULL,
   image_file int(11) DEFAULT NULL,
+  front_rgb varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (id_campaign_theme),
   UNIQUE KEY code_campaign (code_campaign,code_theme)
 );
 
 /*!40000 ALTER TABLE participatorybudget_campaign_theme DISABLE KEYS */;
-INSERT INTO participatorybudget_campaign_theme (id_campaign_theme, code_campaign, code_theme, title, description, active, image_file) VALUES
-	(1, 'A', 'ENVIRONMENT', 'Environment issues', 'Environment issues', 1, NULL),
-	(2, 'A', 'SOCIAL', 'Social issues', 'Social issues', 1, NULL),
-	(3, 'A', 'SPORT', 'Sport', 'Sport', 1, NULL),
-	(4, 'A', 'GENERAL', 'General', 'General', 1, NULL);
+INSERT INTO participatorybudget_campaign_theme (id_campaign_theme, code_campaign, code_theme, title, description, active, image_file, front_rgb) VALUES
+	(1, 'A', 'ENVIRONMENT', 'Environment issues', 'Environment issues', 1, NULL, '#800000'),
+	(2, 'A', 'SOCIAL', 'Social issues', 'Social issues', 1, NULL, '#008000'),
+	(3, 'A', 'SPORT', 'Sport', 'Sport', 1, NULL, '#000080'),
+	(4, 'A', 'GENERAL', 'General', 'General', 1, NULL, '#808000');
 /*!40000 ALTER TABLE participatorybudget_campaign_theme ENABLE KEYS */;
 
 DROP TABLE IF EXISTS participatorybudget_rgpd_treatment_log;
