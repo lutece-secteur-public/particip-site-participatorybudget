@@ -19,50 +19,9 @@
 
 /* ------------------------------ Theme specific colors ------------------------------ */
 
-.bgcolor-theme-cadre_vie               { background-color: #7d89af; }
-.bgcolor-theme-culture                 { background-color: #ffd7b3; }
-.bgcolor-theme-economie_emploi         { background-color: #e88899; }
-.bgcolor-theme-education               { background-color: #bfbfff; }
-.bgcolor-theme-environnement           { background-color: #84c76e; }
-.bgcolor-theme-logement                { background-color: #ed7214; }
-.bgcolor-theme-participation_citoyenne { background-color: #db0c14; }
-.bgcolor-theme-prevention_securite     { background-color: #ffa96f; }
-.bgcolor-theme-proprete                { background-color: #3a9de6; }
-.bgcolor-theme-sante                   { background-color: #0fcd9d; }
-.bgcolor-theme-solidarite              { background-color: #ff9de2; }
-.bgcolor-theme-sport                   { background-color: #ff736f; }
-.bgcolor-theme-transport               { background-color: #addaff; }
-.bgcolor-theme-ville_numerique         { background-color: #0f98af; }
-
-.bordered-4px-theme-cadre_vie               { border: 4px solid #7d89af; }
-.bordered-4px-theme-culture                 { border: 4px solid #ffd7b3; }
-.bordered-4px-theme-economie_emploi         { border: 4px solid #e88899; }
-.bordered-4px-theme-education               { border: 4px solid #bfbfff; }
-.bordered-4px-theme-environnement           { border: 4px solid #84c76e; }
-.bordered-4px-theme-logement                { border: 4px solid #ed7214; }
-.bordered-4px-theme-participation_citoyenne { border: 4px solid #db0c14; }
-.bordered-4px-theme-prevention_securite     { border: 4px solid #ffa96f; }
-.bordered-4px-theme-proprete                { border: 4px solid #3a9de6; }
-.bordered-4px-theme-sante                   { border: 4px solid #0fcd9d; }
-.bordered-4px-theme-solidarite              { border: 4px solid #ff9de2; }
-.bordered-4px-theme-sport                   { border: 4px solid #ff736f; }
-.bordered-4px-theme-transport               { border: 4px solid #addaff; }
-.bordered-4px-theme-ville_numerique         { border: 4px solid #0f98af; }
-
-.bordered-light-4px-theme-cadre_vie               { border: 4px solid rgba( 125, 137, 175, 0.3); background-color: rgba( 125, 137, 175, 0.3); }
-.bordered-light-4px-theme-culture                 { border: 4px solid rgba( 255, 215, 179, 0.3); background-color: rgba( 255, 215, 179, 0.3); }
-.bordered-light-4px-theme-economie_emploi         { border: 4px solid rgba( 232, 136, 153, 0.3); background-color: rgba( 232, 136, 153, 0.3); }
-.bordered-light-4px-theme-education               { border: 4px solid rgba( 191, 191, 255, 0.3); background-color: rgba( 191, 191, 255, 0.3); }
-.bordered-light-4px-theme-environnement           { border: 4px solid rgba( 132, 199, 110, 0.3); background-color: rgba( 132, 199, 110, 0.3); }
-.bordered-light-4px-theme-logement                { border: 4px solid rgba( 237, 114,  20, 0.3); background-color: rgba( 237, 114,  20, 0.3); }
-.bordered-light-4px-theme-participation_citoyenne { border: 4px solid rgba( 219,  12,  20, 0.3); background-color: rgba( 219,  12,  20, 0.3); }
-.bordered-light-4px-theme-prevention_securite     { border: 4px solid rgba( 255, 169, 111, 0.3); background-color: rgba( 255, 169, 111, 0.3); }
-.bordered-light-4px-theme-proprete                { border: 4px solid rgba(  58, 157, 230, 0.3); background-color: rgba(  58, 157, 230, 0.3); }
-.bordered-light-4px-theme-sante                   { border: 4px solid rgba(  15, 205, 157, 0.3); background-color: rgba(  15, 205, 157, 0.3); }
-.bordered-light-4px-theme-solidarite              { border: 4px solid rgba( 255, 157, 226, 0.3); background-color: rgba( 255, 157, 226, 0.3); }
-.bordered-light-4px-theme-sport                   { border: 4px solid rgba( 255, 115, 111, 0.3); background-color: rgba( 255, 115, 111, 0.3); }
-.bordered-light-4px-theme-transport               { border: 4px solid rgba( 173, 218, 255, 0.3); background-color: rgba( 173, 218, 255, 0.3); }
-.bordered-light-4px-theme-ville_numerique         { border: 4px solid rgba(  15, 152, 175, 0.3); background-color: rgba(  15, 152, 175, 0.3); }
+.bgcolor-theme-nonane { background-color: #071f32; }
+.bordered-4px-theme-nonane               { border: 4px solid #071f32; }
+.bordered-light-4px-theme-nonane         { border: 4px solid rgba( 7, 31, 50, 0.3); background-color: rgba( 7, 31, 50, 0.3); }
 
 /* ------------------------------ Projets non retenus / perdants au vote / abandonnes ------------------------------ */
 
