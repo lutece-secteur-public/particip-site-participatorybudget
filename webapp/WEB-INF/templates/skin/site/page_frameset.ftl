@@ -55,7 +55,7 @@
 	<link href="${thetheme.pathCss}/navbar.css" rel="stylesheet" media="screen">
 	-->
 	<#assign bpBodyClass=" phaseVote" />
-	<#include "/skin/plugins/participatorybudget/votes_modal.html" />
+	<#include "/skin/plugins/participatorybudget/votes_modal.ftl" />
 </#if>
 
 ${plugins_css_links}
@@ -76,7 +76,7 @@ ${plugins_css_links}
 <link rel="apple-touch-icon-precomposed" sizes="120x120" href="${base_url}apple-touch-icon-120x120-precomposed.png">
 <link rel="apple-touch-icon-precomposed" href="${base_url}apple-touch-icon.png">
 -->
-<#include "/skin/plugins/participatorybudget/modal_info.html" />
+<#include "/skin/plugins/participatorybudget/modal_info.ftl" />
 <#if isExtendInstalled?? && isExtendInstalled >
 	<#if page_id??>
 		@Extender[${page_id},PAGE,opengraph,{header:true}]@
@@ -168,7 +168,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 	
 	<#-- VOTE BAR -->
 	<#if campaignService.isDuring("VOTE") >
-		<#include "/skin/site/vote_bar.html" />
+		<#include "/skin/site/vote_bar.ftl" />
 	</#if>
 
   <div>
@@ -321,7 +321,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 		else
 		{
 			var arr = {
-				"la-demarche-sommaire.html" : "la-demarche-sommaire.html", 
+				"la-demarche-sommaire.ftl" : "la-demarche-sommaire.ftl", 
 
 				"conf=list_proposals"           : "conf=list_proposals", 
 				"conf=map_proposals"            : "conf=list_proposals", 
@@ -336,8 +336,8 @@ ${rss?default( "<!-- no RSS feed -->" )}
 				"conf=map_projects"         : "conf=list_projects", 
 				"portlet_id=158"            : "conf=list_projects",
 				
-				"je-depose.html"            : "je-depose.html",
-				"page=ideation"             : "je-depose.html",
+				"je-depose.ftl"            : "je-depose.ftl",
+				"page=ideation"             : "je-depose.ftl",
 				
 				"page=mesInfos"             : "page=mesInfos",
 				"page=myProjects"           : "page=myProjects",

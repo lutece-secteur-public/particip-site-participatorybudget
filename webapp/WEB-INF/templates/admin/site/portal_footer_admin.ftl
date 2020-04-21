@@ -15,7 +15,7 @@
 		<div class="col-md-3 bordered-left footer-content">
 			<h2>Plan du site</h2>
 			<ul class="list-unstyled">
-				<li><a href="accueil.html">Accueil</a></li>
+				<li><a href="accueil.ftl">Accueil</a></li>
 				${page_tree_menu_main?if_exists}
 				<li><a href="jsp/site/Portal.jsp?page=helpdesk&faq_id=3">FAQ</a></li>
 				<li><a href="jsp/site/Portal.jsp?page=htmlpage&htmlpage_id=5">Mentions l&eacute;gales</a></li>
