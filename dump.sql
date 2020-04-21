@@ -913,34 +913,34 @@ INSERT INTO core_datastore (entity_key, entity_value) VALUES
 	('solr.app.conf.elected_projects.addonBeans.0', 'participatorybudget.ProjectLaureatAddOn'),
 	('solr.app.conf.elected_projects.fq', 'status_text:GAGNANT" AND type:"PB Project'),
 	('solr.app.conf.elected_projects.mapping', 'false'),
-	('solr.app.conf.elected_projects.template', 'skin/plugins/participatorybudget/projets_laureats_list_solr_search_results.html'),
+	('solr.app.conf.elected_projects.template', 'skin/plugins/participatorybudget/projets_laureats_list_solr_search_results.ftl'),
 	('solr.app.conf.list_proposals.addonBeans.0', 'participatoryideation.IdeationSolrAddon'),
 	('solr.app.conf.list_proposals.fq', 'type:proposal" AND proposal_status_text:"true'),
 	('solr.app.conf.list_proposals.mapping', 'false'),
-	('solr.app.conf.list_proposals.template', 'skin/plugins/participatoryideation/ideation_list_solr_search_results.html'),
+	('solr.app.conf.list_proposals.template', 'skin/plugins/participatoryideation/ideation_list_solr_search_results.ftl'),
 	('solr.app.conf.list_projects.addonBeans.0', 'participatorybudget.ProjectsRealisationSolrListAddon'),
 	('solr.app.conf.list_projects.fq', '(status_text:SUIVI" OR status_text:"suivi") AND type:"PB Project'),
 	('solr.app.conf.list_projects.mapping', 'false'),
-	('solr.app.conf.list_projects.template', 'skin/plugins/participatorybudget/document_list_solr_search_results.html'),
+	('solr.app.conf.list_projects.template', 'skin/plugins/participatorybudget/document_list_solr_search_results.ftl'),
 	('solr.app.conf.map_proposals.addonBeans.0', 'participatoryideation.IdeationSolrAddon'),
 	('solr.app.conf.map_proposals.fq', 'type:proposal" AND proposal_status_text:"true'),
 	('solr.app.conf.map_proposals.mapping', 'true'),
-	('solr.app.conf.map_proposals.template', 'skin/plugins/participatoryideation/ideation_map_solr_search_results.html'),
+	('solr.app.conf.map_proposals.template', 'skin/plugins/participatoryideation/ideation_map_solr_search_results.ftl'),
 	('solr.app.conf.map_projects.fq', '(status_text:SUIVI" OR status_text:"suivi") AND type:"PB Project'),
 	('solr.app.conf.map_projects.mapping', 'true'),
-	('solr.app.conf.map_projects.template', 'skin/plugins/participatorybudget/document_map_solr_search_results.html'),
+	('solr.app.conf.map_projects.template', 'skin/plugins/participatorybudget/document_map_solr_search_results.ftl'),
 	('solr.app.conf.map_projets.addonBeans.0', 'participatorybudget.BudgetSolrAddon'),
 	('solr.app.conf.map_projets.fq', '(status_text:SOUMIS" OR status_text:"GAGNANT" OR status_text:"PERDANT") AND type:"PB Project'),
 	('solr.app.conf.map_projets.mapping', 'true'),
-	('solr.app.conf.map_projets.template', 'skin/plugins/participatorybudget/projet_mdp_map_solr_search_results.html'),
+	('solr.app.conf.map_projets.template', 'skin/plugins/participatorybudget/projet_mdp_map_solr_search_results.ftl'),
 	('solr.app.conf.projects_mdp_detail.addonBeans.0', 'participatorybudget.VotesSolrAddon'),
 	('solr.app.conf.projects_mdp_detail.fq', '(status_text:SOUMIS" OR status_text:"GAGNANT" OR status_text:"PERDANT") AND type:"PB Project'),
 	('solr.app.conf.projects_mdp_detail.mapping', 'false'),
-	('solr.app.conf.projects_mdp_detail.template', 'skin/plugins/participatorybudget/projet_mdp_details_solr_search_results.html'),
+	('solr.app.conf.projects_mdp_detail.template', 'skin/plugins/participatorybudget/projet_mdp_details_solr_search_results.ftl'),
 	('solr.app.conf.projects_mdp.addonBeans.0', 'participatorybudget.BudgetSolrListAddon'),
 	('solr.app.conf.projects_mdp.fq', '(status_text:SOUMIS" OR status_text:"GAGNANT" OR status_text:"PERDANT") AND type:"PB Project'),
 	('solr.app.conf.projects_mdp.mapping', 'false'),
-	('solr.app.conf.projects_mdp.template', 'skin/plugins/participatorybudget/projet_mdp_list_solr_search_results.html');
+	('solr.app.conf.projects_mdp.template', 'skin/plugins/participatorybudget/projet_mdp_list_solr_search_results.ftl');
 /*!40000 ALTER TABLE core_datastore ENABLE KEYS */;
 
 DROP TABLE IF EXISTS core_feature_group;
@@ -1132,17 +1132,17 @@ CREATE TABLE IF NOT EXISTS core_page_template (
 
 /*!40000 ALTER TABLE core_page_template DISABLE KEYS */;
 INSERT INTO core_page_template (id_template, description, file_name, picture) VALUES
-	(1, 'Une colonne', 'skin/site/page_template1.html', 'page_template1.gif'),
-	(2, 'Deux colonnes', 'skin/site/page_template2.html', 'page_template2.gif'),
-	(3, 'Trois colonnes', 'skin/site/page_template3.html', 'page_template3.gif'),
-	(4, '1 + 2 colonnes', 'skin/site/page_template4.html', 'page_template4.gif'),
-	(5, 'Deux colonnes égales', 'skin/site/page_template5.html', 'page_template5.gif'),
-	(6, 'Trois colonnes inégales', 'skin/site/page_template6.html', 'page_template6.gif'),
-	(7, 'Le Budget Participatif ?', 'skin/site/budgetparticipatif.html', 'icone.jpg'),
-	(8, 'La Démarche - Chapitre', 'skin/site/page_template_ladem_chp.html', 'icone.jpg'),
-	(9, 'La Démarche', 'skin/site/page_template_ladem.html', 'icone.jpg'),
-	(10, 'La charte du budget participatif', 'skin/site/page_template_policy.html', 'icone.jpg'),
-	(11, 'Template pour TESTS uniquement', 'skin/site/page_template_tests.html', 'icone.jpg');
+	(1, 'Une colonne', 'skin/site/page_template1.ftl', 'page_template1.gif'),
+	(2, 'Deux colonnes', 'skin/site/page_template2.ftl', 'page_template2.gif'),
+	(3, 'Trois colonnes', 'skin/site/page_template3.ftl', 'page_template3.gif'),
+	(4, '1 + 2 colonnes', 'skin/site/page_template4.ftl', 'page_template4.gif'),
+	(5, 'Deux colonnes égales', 'skin/site/page_template5.ftl', 'page_template5.gif'),
+	(6, 'Trois colonnes inégales', 'skin/site/page_template6.ftl', 'page_template6.gif'),
+	(7, 'Le Budget Participatif ?', 'skin/site/budgetparticipatif.ftl', 'icone.jpg'),
+	(8, 'La Démarche - Chapitre', 'skin/site/page_template_ladem_chp.ftl', 'icone.jpg'),
+	(9, 'La Démarche', 'skin/site/page_template_ladem.ftl', 'icone.jpg'),
+	(10, 'La charte du budget participatif', 'skin/site/page_template_policy.ftl', 'icone.jpg'),
+	(11, 'Template pour TESTS uniquement', 'skin/site/page_template_tests.ftl', 'icone.jpg');
 /*!40000 ALTER TABLE core_page_template ENABLE KEYS */;
 
 DROP TABLE IF EXISTS core_parameters;
@@ -1266,14 +1266,14 @@ CREATE TABLE IF NOT EXISTS core_portlet_type (
 
 /*!40000 ALTER TABLE core_portlet_type DISABLE KEYS */;
 INSERT INTO core_portlet_type (id_portlet_type, name, url_creation, url_update, home_class, plugin_name, url_docreate, create_script, create_specific, create_specific_form, url_domodify, modify_script, modify_specific, modify_specific_form) VALUES
-	('ALIAS_PORTLET', 'portal.site.portletAlias.name', 'plugins/alias/CreatePortletAlias.jsp', 'plugins/alias/ModifyPortletAlias.jsp', 'fr.paris.lutece.portal.business.portlet.AliasPortletHome', 'alias', 'plugins/alias/DoCreatePortletAlias.jsp', '/admin/portlet/script_create_portlet.html', '/admin/portlet/alias/create_portlet_alias.html', '', 'plugins/alias/DoModifyPortletAlias.jsp', '/admin/portlet/script_modify_portlet.html', '/admin/portlet/alias/modify_portlet_alias.html', ''),
-	('CHILDPAGES_PORTLET', 'childpages.portlet.name', 'plugins/childpages/CreatePortletChildPages.jsp', 'plugins/childpages/ModifyPortletChildPages.jsp', 'fr.paris.lutece.plugins.childpages.business.portlet.ChildPagesPortletHome', 'childpages', 'plugins/childpages/DoCreatePortletChildPages.jsp', '/admin/portlet/script_create_portlet.html', '/admin/plugins/childpages/value_id_parent.html', '', 'plugins/childpages/DoModifyPortletChildPages.jsp', '/admin/portlet/script_modify_portlet.html', '/admin/plugins/childpages/value_id_parent.html', ''),
-	('DOCUMENT_LIST_PORTLET', 'document.portlet.documentListPortlet.name', 'plugins/document/CreateDocumentListPortlet.jsp', 'plugins/document/ModifyDocumentListPortlet.jsp', 'fr.paris.lutece.plugins.document.business.portlet.DocumentListPortletHome', 'document', 'plugins/document/DoCreateDocumentListPortlet.jsp', '/admin/portlet/script_create_portlet.html', '/admin/plugins/document/portlet/document_list_portlet_type.html', '', 'plugins/document/DoModifyDocumentListPortlet.jsp', '/admin/portlet/script_modify_portlet.html', '/admin/plugins/document/portlet/document_list_portlet_type.html', ''),
-	('DOCUMENT_PORTLET', 'document.portlet.documentPortlet.name', 'plugins/document/CreateDocumentPortlet.jsp', 'plugins/document/ModifyDocumentPortlet.jsp', 'fr.paris.lutece.plugins.document.business.portlet.DocumentPortletHome', 'document', 'plugins/document/DoCreateDocumentPortlet.jsp', '/admin/portlet/script_create_portlet.html', '/admin/plugins/document/portlet/document_portlet_type.html', '', 'plugins/document/DoModifyDocumentPortlet.jsp', '/admin/portlet/script_modify_portlet.html', '/admin/plugins/document/portlet/document_portlet_type.html', ''),
-	('HTML_PORTLET', 'html.portlet.name', 'plugins/html/CreatePortletHtml.jsp', 'plugins/html/ModifyPortletHtml.jsp', 'fr.paris.lutece.plugins.html.business.portlet.HtmlPortletHome', 'html', 'plugins/html/DoCreatePortletHtml.jsp', '/admin/portlet/script_create_portlet.html', '/admin/plugins/html/portlet_html.html', '', 'plugins/html/DoModifyPortletHtml.jsp', '/admin/portlet/script_modify_portlet.html', '/admin/plugins/html/portlet_html.html', ''),
-	('LINK_PAGES_PORTLET', 'linkpages.portlet.name', 'plugins/linkpages/CreatePortletLinkPages.jsp', 'plugins/linkpages/ModifyPortletLinkPages.jsp', 'fr.paris.lutece.plugins.linkpages.business.portlet.LinkPagesPortletHome', 'linkpages', 'plugins/linkpages/DoCreatePortletLinkPages.jsp', '/admin/portlet/script_create_portlet.html', '', '', 'plugins/linkpages/DoModifyPortletLinkPages.jsp', '/admin/portlet/script_modify_portlet.html', '', '/admin/plugins/linkpages/modify_portlet_linkpages_list.html'),
-	('MYDASHBOARD_PORTLET', 'mydashboard.portlet.myDashboardPortlet.name', 'plugins/mydashboard/GetCreateMyDashboardPortlet.jsp', 'plugins/mydashboard/GetModifyMyDashboardPortlet.jsp', 'fr.paris.lutece.plugins.mydashboard.business.portlet.MyDashboardPortletHome', 'mydashboard', 'plugins/mydashboard/DoCreateMyDashboardPortlet.jsp', '/admin/portlet/script_create_portlet.html', '', '', 'plugins/mydashboard/DoModifyMyDashboardPortlet.jsp', '/admin/portlet/script_modify_portlet.html', '', ''),
-	('MYLUTECE_PORTLET', 'mylutece.portlet.name', 'plugins/mylutece/CreatePortletMyLutece.jsp', 'plugins/mylutece/ModifyPortletMyLutece.jsp', 'fr.paris.lutece.plugins.mylutece.business.portlet.MyLutecePortletHome', 'mylutece', 'plugins/mylutece/DoCreatePortletMyLutece.jsp', '/admin/portlet/script_create_portlet.html', '', '', 'plugins/mylutece/DoModifyPortletMyLutece.jsp', '/admin/portlet/script_modify_portlet.html', '', '');
+	('ALIAS_PORTLET', 'portal.site.portletAlias.name', 'plugins/alias/CreatePortletAlias.jsp', 'plugins/alias/ModifyPortletAlias.jsp', 'fr.paris.lutece.portal.business.portlet.AliasPortletHome', 'alias', 'plugins/alias/DoCreatePortletAlias.jsp', '/admin/portlet/script_create_portlet.ftl', '/admin/portlet/alias/create_portlet_alias.ftl', '', 'plugins/alias/DoModifyPortletAlias.jsp', '/admin/portlet/script_modify_portlet.ftl', '/admin/portlet/alias/modify_portlet_alias.ftl', ''),
+	('CHILDPAGES_PORTLET', 'childpages.portlet.name', 'plugins/childpages/CreatePortletChildPages.jsp', 'plugins/childpages/ModifyPortletChildPages.jsp', 'fr.paris.lutece.plugins.childpages.business.portlet.ChildPagesPortletHome', 'childpages', 'plugins/childpages/DoCreatePortletChildPages.jsp', '/admin/portlet/script_create_portlet.ftl', '/admin/plugins/childpages/value_id_parent.ftl', '', 'plugins/childpages/DoModifyPortletChildPages.jsp', '/admin/portlet/script_modify_portlet.ftl', '/admin/plugins/childpages/value_id_parent.ftl', ''),
+	('DOCUMENT_LIST_PORTLET', 'document.portlet.documentListPortlet.name', 'plugins/document/CreateDocumentListPortlet.jsp', 'plugins/document/ModifyDocumentListPortlet.jsp', 'fr.paris.lutece.plugins.document.business.portlet.DocumentListPortletHome', 'document', 'plugins/document/DoCreateDocumentListPortlet.jsp', '/admin/portlet/script_create_portlet.ftl', '/admin/plugins/document/portlet/document_list_portlet_type.ftl', '', 'plugins/document/DoModifyDocumentListPortlet.jsp', '/admin/portlet/script_modify_portlet.ftl', '/admin/plugins/document/portlet/document_list_portlet_type.ftl', ''),
+	('DOCUMENT_PORTLET', 'document.portlet.documentPortlet.name', 'plugins/document/CreateDocumentPortlet.jsp', 'plugins/document/ModifyDocumentPortlet.jsp', 'fr.paris.lutece.plugins.document.business.portlet.DocumentPortletHome', 'document', 'plugins/document/DoCreateDocumentPortlet.jsp', '/admin/portlet/script_create_portlet.ftl', '/admin/plugins/document/portlet/document_portlet_type.ftl', '', 'plugins/document/DoModifyDocumentPortlet.jsp', '/admin/portlet/script_modify_portlet.ftl', '/admin/plugins/document/portlet/document_portlet_type.ftl', ''),
+	('HTML_PORTLET', 'html.portlet.name', 'plugins/html/CreatePortletHtml.jsp', 'plugins/html/ModifyPortletHtml.jsp', 'fr.paris.lutece.plugins.html.business.portlet.HtmlPortletHome', 'html', 'plugins/html/DoCreatePortletHtml.jsp', '/admin/portlet/script_create_portlet.ftl', '/admin/plugins/html/portlet_html.ftl', '', 'plugins/html/DoModifyPortletHtml.jsp', '/admin/portlet/script_modify_portlet.ftl', '/admin/plugins/html/portlet_html.ftl', ''),
+	('LINK_PAGES_PORTLET', 'linkpages.portlet.name', 'plugins/linkpages/CreatePortletLinkPages.jsp', 'plugins/linkpages/ModifyPortletLinkPages.jsp', 'fr.paris.lutece.plugins.linkpages.business.portlet.LinkPagesPortletHome', 'linkpages', 'plugins/linkpages/DoCreatePortletLinkPages.jsp', '/admin/portlet/script_create_portlet.ftl', '', '', 'plugins/linkpages/DoModifyPortletLinkPages.jsp', '/admin/portlet/script_modify_portlet.ftl', '', '/admin/plugins/linkpages/modify_portlet_linkpages_list.ftl'),
+	('MYDASHBOARD_PORTLET', 'mydashboard.portlet.myDashboardPortlet.name', 'plugins/mydashboard/GetCreateMyDashboardPortlet.jsp', 'plugins/mydashboard/GetModifyMyDashboardPortlet.jsp', 'fr.paris.lutece.plugins.mydashboard.business.portlet.MyDashboardPortletHome', 'mydashboard', 'plugins/mydashboard/DoCreateMyDashboardPortlet.jsp', '/admin/portlet/script_create_portlet.ftl', '', '', 'plugins/mydashboard/DoModifyMyDashboardPortlet.jsp', '/admin/portlet/script_modify_portlet.ftl', '', ''),
+	('MYLUTECE_PORTLET', 'mylutece.portlet.name', 'plugins/mylutece/CreatePortletMyLutece.jsp', 'plugins/mylutece/ModifyPortletMyLutece.jsp', 'fr.paris.lutece.plugins.mylutece.business.portlet.MyLutecePortletHome', 'mylutece', 'plugins/mylutece/DoCreatePortletMyLutece.jsp', '/admin/portlet/script_create_portlet.ftl', '', '', 'plugins/mylutece/DoModifyPortletMyLutece.jsp', '/admin/portlet/script_modify_portlet.ftl', '', '');
 /*!40000 ALTER TABLE core_portlet_type ENABLE KEYS */;
 
 DROP TABLE IF EXISTS core_role;
@@ -2293,8 +2293,8 @@ CREATE TABLE IF NOT EXISTS document_page_template (
 
 /*!40000 ALTER TABLE document_page_template DISABLE KEYS */;
 INSERT INTO document_page_template (id_page_template_document, page_template_path, picture_path, description) VALUES
-	(1, '/skin/plugins/document/page_templates/page_template_document1.html', 'images/admin/skin/plugins/document/page_templates/page_template_document1.png', 'PB Project'),
-	(3, '/skin/plugins/document/page_templates/page_template_actualites.html', 'images/admin/skin/plugins/document/page_templates/page_template_actualites.png', 'News topic');
+	(1, '/skin/plugins/document/page_templates/page_template_document1.ftl', 'images/admin/skin/plugins/document/page_templates/page_template_document1.png', 'PB Project'),
+	(3, '/skin/plugins/document/page_templates/page_template_actualites.ftl', 'images/admin/skin/plugins/document/page_templates/page_template_actualites.png', 'News topic');
 /*!40000 ALTER TABLE document_page_template ENABLE KEYS */;
 
 DROP TABLE IF EXISTS document_portlet;
