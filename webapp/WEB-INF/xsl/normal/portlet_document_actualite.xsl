@@ -19,7 +19,7 @@
 			<xsl:if test="not(string(display-title)='1')">
 				<div class="title2">
 					<xsl:value-of disable-output-escapding="yes" select="portlet-name" />
-					<a class="hidden-xs pull-right" href="actualites.ftl" alt="Actualités" title="Actualités" target="_top">Toutes les actualités</a>
+					<a class="hidden-xs pull-right" href="actualites.html" alt="Actualités" title="Actualités" target="_top">Toutes les actualités</a>
 				</div>
 			</xsl:if>
 			<xsl:apply-templates select="document-portlet/document/document-xml-content/actualite" />  

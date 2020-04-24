@@ -39,8 +39,8 @@
 	
 	<div class="row notre-budget-hashtag">
 		<!-- Modif VOTE URL  -->
-		<div class="col-xs-12 col-sm-7 col-md-8"><a href="les-projets.ftl" title="{document-title}"><span class="title1">Les projets 2014</span></a></div>
-		<div class="col-xs-12 col-sm-5 col-md-4 title2"><a href="les-projets.ftl" alt="Voir tous les projets" title="Voir tous les projets">Tous les projets</a></div>
+		<div class="col-xs-12 col-sm-7 col-md-8"><a href="les-projets.html" title="{document-title}"><span class="title1">Les projets 2014</span></a></div>
+		<div class="col-xs-12 col-sm-5 col-md-4 title2"><a href="les-projets.html" alt="Voir tous les projets" title="Voir tous les projets">Tous les projets</a></div>
 	</div>
 	<div class="row notre-budget-content">
 	<xsl:apply-templates select="document" >
@@ -51,7 +51,7 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12" >
-			<a id="project-list-btn" class="btn btn-block title2" href="les-projets.ftl" alt="Voir tous les projets" title="Voir tous les projets">
+			<a id="project-list-btn" class="btn btn-block title2" href="les-projets.html" alt="Voir tous les projets" title="Voir tous les projets">
 				Voir tous les projets
 			</a>
 		</div>
