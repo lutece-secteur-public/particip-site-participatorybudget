@@ -6,7 +6,7 @@
 
 ## Introduction
 
-This site is an effort of City of Paris to provide a <a href="https://budgetparticipatif.paris">budgetparticipatif.paris</a>-like website to help other cities to get their own participatory budgeting process.
+This site is an effort of City of Paris to provide a <a href="http://budgetparticipatif.paris">budgetparticipatif.paris</a>-like website to help other cities to get their own participatory budgeting process.
 
 It is based on [Lutece](https://fr.lutece.paris.fr/fr/) open source portal, and mainly uses the following Lutece plugins :
 - [participatory budget](https://github.com/lutece-secteur-public/particip-plugin-participatorybudget)
