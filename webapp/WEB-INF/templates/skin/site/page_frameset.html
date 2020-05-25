@@ -128,7 +128,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 				
 				<#if campaignService.isAfterBeginning("IDEATION") >
 					<li>
-						<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;conf=list_proposals&amp;fq=campaign_text:${campaignService.lastCampaign.code}">
+						<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;conf=proposals_list&amp;fq=campaign_text:${campaignService.lastCampaign.code}">
 							<span>#i18n{portal.openpb.navbar.entry.getSubmittedProposals}</span>
 						</a>
 					</li>
@@ -136,7 +136,7 @@ ${rss?default( "<!-- no RSS feed -->" )}
 				
 				<#if campaignService.isAfterBeginning("SUBMIT") && campaignService.isBeforeBeginning("RESULT") >
 					<li>
-						<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;conf=projects_mdp">
+						<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;conf=projects_submitted_list">
 							<span><#if campaignService.isDuring("VOTE")>#i18n{portal.openpb.navbar.entry.doVote}<#else>#i18n{portal.openpb.navbar.entry.getProjectsUnderVote}</#if></span>
 						</a>
 					</li>
@@ -144,14 +144,14 @@ ${rss?default( "<!-- no RSS feed -->" )}
 				
 				<#if campaignService.isDuring("RESULT") >
 					<li>
-						<a href="jsp/site/Portal.jsp?page=search-solr&conf=elected_projects">
+						<a href="jsp/site/Portal.jsp?page=search-solr&conf=projects_win">
 							<span>#i18n{portal.openpb.navbar.entry.getWinningProjets}</span>
 						</a>
 					</li>
 				</#if>
 
 				<li class="last">
-					<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;conf=list_projects">
+					<a href="jsp/site/Portal.jsp?page=solrProjectSearch&amp;sort_name=${RANDOM!123456789}_random&amp;conf=projects_real_list">
 						<span>#i18n{portal.openpb.navbar.entry.getProjectsUnderRealization}</span>
 					</a>
 				</li>
@@ -316,25 +316,25 @@ ${rss?default( "<!-- no RSS feed -->" )}
 		<#-- Sets active link in Bootstrap menu : location url (key) matching relay to navbar url (value). For document viewing, specific treatment... -->
 		if ( $('input[value = "SOUMIS"]').length > 0 )
 		{
-			$('a[href *= "conf=projects_mdp"]').parent('li').addClass('active');
+			$('a[href *= "conf=projects_submitted_list"]').parent('li').addClass('active');
 		}
 		else
 		{
 			var arr = {
 				"la-demarche-sommaire.html" : "la-demarche-sommaire.html", 
 
-				"conf=list_proposals"           : "conf=list_proposals", 
-				"conf=map_proposals"            : "conf=list_proposals", 
-				"page=proposal"                 : "conf=list_proposals",
+				"conf=proposals_list"           : "conf=proposals_list", 
+				"conf=proposals_map"            : "conf=proposals_list", 
+				"page=proposal"                 : "conf=proposals_list",
 				
-				"conf=projects_mdp"         : "conf=projects_mdp", 
-				"conf=map_projets"          : "conf=projects_mdp", 
+				"conf=projects_submitted_list"         : "conf=projects_submitted_list", 
+				"conf=projects_submitted_map"          : "conf=projects_submitted_list", 
 				
-				"conf=elected_projects"     : "conf=elected_projects", 
+				"conf=projects_win"     : "conf=projects_win", 
 				
-				"conf=list_projects"        : "conf=list_projects", 
-				"conf=map_projects"         : "conf=list_projects", 
-				"portlet_id=158"            : "conf=list_projects",
+				"conf=projects_real_list"        : "conf=projects_real_list", 
+				"conf=projects_real_map"         : "conf=projects_real_list", 
+				"portlet_id=158"            : "conf=projects_real_list",
 				
 				"je-depose.html"            : "je-depose.html",
 				"page=ideation"             : "je-depose.html",

@@ -280,7 +280,7 @@
 			<xsl:otherwise>
 				<div id="toolbar" class="row content-padding hidden-print">
 					<div class="col-xs-12 col-sm-8">
-						<a class="btn btn-include btn-small" title="Retour" href="jsp/site/Portal.jsp?page=search-solr&#38;conf=list_projects">
+						<a class="btn btn-include btn-small" title="Retour" href="jsp/site/Portal.jsp?page=search-solr&#38;conf=projects_real_list">
 							<i class="fa fa-arrow-left"></i>
 							<span class="hidden-xs hidden-sm">Retour aux projets</span>
 						</a>

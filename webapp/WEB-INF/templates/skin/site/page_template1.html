@@ -32,15 +32,15 @@
 		
 			<#elseif campaignService.isDuring( "SUBMIT" ) >
 				<#assign date="#i18n{portal.openpb.homepage.mainLabel.SUBMIT}">
-				<#assign button="<a class=\"btn btn-18rem btn-white-on-green \" href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=projects_mdp&sort_name=RANDOM\">#i18n{portal.openpb.homepage.mainButton.SUBMIT}</a>">
+				<#assign button="<a class=\"btn btn-18rem btn-white-on-green \" href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=projects_submitted_list&sort_name=RANDOM\">#i18n{portal.openpb.homepage.mainButton.SUBMIT}</a>">
 		
 			<#elseif campaignService.isDuring( "PRE_VOTE" ) >
 				<#assign date = i18n("portal.openpb.homepage.mainLabel.PRE_VOTE", campaignService.startStr("VOTE", "dd MMMMM", true)?replace(" ","&nbsp;")?replace("1st","1<sup style=\"text-transform:lowercase\">st</sup>"))>
-				<#assign button="<a href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=projects_mdp&sort_name=RANDOM\" class=\"btn btn-18rem btn-black-on-white\">#i18n{portal.openpb.homepage.mainButton.PRE_VOTE}</a>">
+				<#assign button="<a href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=projects_submitted_list&sort_name=RANDOM\" class=\"btn btn-18rem btn-black-on-white\">#i18n{portal.openpb.homepage.mainButton.PRE_VOTE}</a>">
 		
 			<#elseif campaignService.isDuring( "VOTE" ) >
 				<#assign date="#i18n{portal.openpb.homepage.mainLabel.VOTE}">
-				<#assign button="<a href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=projects_mdp&sort_name=RANDOM\" class=\"btn btn-24rem btn-black-on-white\">#i18n{portal.openpb.homepage.mainButton.VOTE}</a>">
+				<#assign button="<a href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=projects_submitted_list&sort_name=RANDOM\" class=\"btn btn-24rem btn-black-on-white\">#i18n{portal.openpb.homepage.mainButton.VOTE}</a>">
 		
 			<#elseif campaignService.isDuring( "POST_VOTE" ) >
 				<#assign date="#i18n{portal.openpb.homepage.mainLabel.POST_VOTE}">
@@ -50,7 +50,7 @@
 		
 			<#elseif campaignService.isDuring( "RESULT" ) >
 				<#assign date="#i18n{portal.openpb.homepage.mainLabel.RESULT}">
-				<#assign button="<a class=\"btn btn-18rem btn-white-on-green \" href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=elected_projects\">#i18n{portal.openpb.homepage.mainButton.RESULT}</a>">
+				<#assign button="<a class=\"btn btn-18rem btn-white-on-green \" href=\"jsp/site/Portal.jsp?page=solrProjectSearch&conf=projects_win\">#i18n{portal.openpb.homepage.mainButton.RESULT}</a>">
 	
 			<#else>
 				<#assign date="#i18n{portal.openpb.homepage.mainLabel.DEFAULT}">
@@ -96,7 +96,7 @@
 					<div id="pgagn-discover">
 						<p>Let's have a look on projects under development !</p>
 						<div class="final-btn">
-							<a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=list_projects" class="btn btn-14rem btn-black-on-white">
+							<a href="jsp/site/Portal.jsp?page=solrProjectSearch&sort_name=${RANDOM!123456789}_random&&conf=projects_real_list" class="btn btn-14rem btn-black-on-white">
 								Learn about all projects
 							</a>
 						</div>
