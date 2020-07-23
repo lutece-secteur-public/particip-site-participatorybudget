@@ -3202,6 +3202,7 @@ DROP TABLE IF EXISTS participatoryideation_proposals;
 CREATE TABLE IF NOT EXISTS participatoryideation_proposals (
   id_proposal int(6) NOT NULL,
   lutece_user_name varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  is_from_bo int default 0 NOT NULL,
   titre mediumtext COLLATE utf8_unicode_ci NOT NULL,
   description mediumtext COLLATE utf8_unicode_ci NOT NULL,
   cout bigint(20) DEFAULT NULL,
