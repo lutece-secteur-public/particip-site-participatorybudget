@@ -913,7 +913,7 @@ INSERT INTO core_datastore (entity_key, entity_value) VALUES
 	('solr.app.conf.projects_win.mapping', 'false'),
 	('solr.app.conf.projects_win.template', 'skin/plugins/participatorybudget/projets_laureats_list_solr_search_results.html'),
 	('solr.app.conf.proposals_list.addonBeans.0', 'participatoryideation.IdeationSolrAddon'),
-	('solr.app.conf.proposals_list.fq', 'type:proposal" AND proposal_status_text:"true'),
+	('solr.app.conf.proposals_list.fq', 'type:proposal" AND -workflow_id_state_long:100 AND proposal_status_text:"true'),
 	('solr.app.conf.proposals_list.mapping', 'false'),
 	('solr.app.conf.proposals_list.template', 'skin/plugins/participatoryideation/ideation_list_solr_search_results.html'),
 	('solr.app.conf.projects_real_list.addonBeans.0', 'participatorybudget.ProjectsRealisationSolrListAddon'),
@@ -3565,8 +3565,8 @@ CREATE TABLE IF NOT EXISTS mylutece_database_user_parameter (
 /*!40000 ALTER TABLE mylutece_database_user_parameter DISABLE KEYS */;
 INSERT INTO mylutece_database_user_parameter (parameter_key, parameter_value) VALUES
 	('access_failures_captcha', ''),
-	('access_failures_interval', '10'),
-	('access_failures_max', '3'),
+	('access_failures_interval', '1'),
+	('access_failures_max', '20'),
 	('account_creation_validation_email', ''),
 	('account_life_time', '360'),
 	('account_reactivated_mail_sender', 'LUTECE'),
