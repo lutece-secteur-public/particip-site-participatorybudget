@@ -4169,10 +4169,10 @@ CREATE TABLE IF NOT EXISTS workflow_action (
 
 /*!40000 ALTER TABLE workflow_action DISABLE KEYS */;
 INSERT INTO workflow_action (id_action, name, description, id_workflow, id_state_before, id_state_after, id_icon, is_automatic, is_mass_action, display_order, is_automatic_reflexive_action) VALUES
-	(100, 'Submit', 'Used when a draft proposal is definitely submitted. ', 100, 100, 101, 152, 0, 0, 1, 0),
-	(101, 'Reinit', 'Return to draft state. ', 100, 101, 100, 151, 0, 0, 1, 0),
+	(100, 'Publish', 'Used when a proposal is accepted and published. ', 100, 100, 101, 152, 0, 0, 1, 0),
+	(101, 'Reinit', 'Return to submitted state. ', 100, 101, 100, 151, 0, 0, 1, 0),
 	(150, 'ExportToBudget', 'Export proposal to participatorybudget plugin as new project.', 100, 101, 150, 150, 0, 0, 10, 0),
-	(151, 'Reinit', 'Return to draft state. ', 100, 150, 100, 151, 0, 0, 1, 0);
+	(151, 'Reinit', 'Return to submitted state. ', 100, 150, 100, 151, 0, 0, 1, 0);
 /*!40000 ALTER TABLE workflow_action ENABLE KEYS */;
 
 DROP TABLE IF EXISTS workflow_action_action;
@@ -4318,8 +4318,8 @@ CREATE TABLE IF NOT EXISTS workflow_state (
 
 /*!40000 ALTER TABLE workflow_state DISABLE KEYS */;
 INSERT INTO workflow_state (id_state, name, description, id_workflow, is_initial_state, is_required_workgroup_assigned, id_icon, display_order) VALUES
-	(100, 'Draft', 'Draft', 100, 1, 0, NULL, 1),
-	(101, 'Submitted', 'Submitted', 100, 0, 0, NULL, 2),
+	(100, 'Submitted', 'Submitted', 100, 1, 0, NULL, 1),
+	(101, 'Published', 'Published', 100, 0, 0, NULL, 2),
 	(150, 'ExportedToBudget', 'Exported as project in participatorybudget plugin', 100, 0, 0, NULL, 10);
 /*!40000 ALTER TABLE workflow_state ENABLE KEYS */;
 
